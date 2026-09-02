@@ -145,7 +145,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 603080
+    "char_offset": 603074
    },
    "dose": null,
    "tags": [
@@ -670,7 +670,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 618256
+    "char_offset": 618250
    },
    "dose": null,
    "tags": [
@@ -770,7 +770,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 618731
+    "char_offset": 618725
    },
    "dose": null,
    "tags": [
@@ -1039,7 +1039,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 586335
+    "char_offset": 586329
    },
    "dose": null,
    "tags": [
@@ -1277,7 +1277,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 613670
+    "char_offset": 613664
    },
    "dose": null,
    "tags": [
@@ -1655,7 +1655,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 617061
+    "char_offset": 617055
    },
    "dose": null,
    "tags": [
@@ -2032,7 +2032,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 604967
+    "char_offset": 604961
    },
    "dose": null,
    "tags": [
@@ -2204,7 +2204,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 593456
+    "char_offset": 593450
    },
    "dose": null,
    "tags": [
@@ -2933,7 +2933,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 614503
+    "char_offset": 614497
    },
    "dose": null,
    "tags": [
@@ -3065,7 +3065,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 617129
+    "char_offset": 617123
    },
    "dose": null,
    "tags": [],
@@ -3295,7 +3295,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 601547
+    "char_offset": 601541
    },
    "dose": null,
    "tags": [
@@ -3659,7 +3659,7 @@
     "page": null,
     "screenshot": null,
     "kindle_location": null,
-    "char_offset": 614503
+    "char_offset": 614497
    },
    "dose": null,
    "tags": [
@@ -3932,6 +3932,43 @@
    "review_state": "draft",
    "superseded_by": null,
    "extracted_at": "2026-08-19T21:47:55+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-HELLS-000124",
+   "kind": "toxicity_sign",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "liver_cirrhosis",
+    "pancreatitis",
+    "colon_cancer"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach relays a report released in the summer of 2004 by the National Institute on Alcohol Abuse and Alcoholism: in general a single alcoholic drink each day can be beneficial; wine may protect a sixty-five-year-old man from cardiovascular disease but may increase the risk of a car accident in a twenty-two-year-old; and two drinks per day can increase the risk of liver cirrhosis, pancreatitis and colon cancer. The report also credits one or two drinks a day with reducing heart attack risk by thirty to forty percent, about the same as statin drugs, and says alcohol is thought to protect against gallstones. Wallach lets the harm findings stand without objection, but he does not accept the benefit findings as stated: he answers that there is a considerable body of evidence showing the 'benefits of alcohol' are really the benefits of the phytonutrients in the alcoholic drink rather than the alcohol itself. The liver threshold is a per-day drink count, not a quantity of alcohol.",
+   "verbatim": "A report released during the summer of 2004 by the National \nInstitute on Alcohol Abuse and Alcoholism concluded that, in general, a single alcoholic drink each day can be beneficial. Wine may \nprotect a sixty five year old man from cardiovascular disease, but \nmay increase the risk of a car accident in a twenty two year old. \nTwo drinks per day can increase the risk of liver cirrhosis, pancreatitis and colon cancer. \nOne or two drinks per day can reduce the risk of a heart attack \nby thirty to forty percent about the same as statin drugs. Alcohol is \nthought to protect against gall stones. \nAccording to a study discussed in the report, “If all current drinkers\n\n320 \nwere to quite drinking, the USA would suffer from an additional \n80,000 cardiovascular deaths per years.” There is a considerable body \nof evidence which shows that the “benefits of alcohol” are really the \nbenefits of the phytonutrients in the alcoholic drink rather than the \nalcohol itself.",
+   "locator": {
+    "book": "hells-kitchen",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 584032
+   },
+   "dose": null,
+   "tags": [
+    "liver-health",
+    "alcohol",
+    "cirrhosis",
+    "niaaa-2004",
+    "phytonutrients-not-alcohol"
+   ],
+   "confidence": "medium",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-09-01T22:04:01+00:00",
    "reviewed_at": null,
    "reviewed_by": null
   }

@@ -1250,6 +1250,7 @@
         "omega-3",
         "omega-6",
         "selenium",
+        "sulfur",
         "taurine",
         "vanadium",
         "vitamin-a",
@@ -1260,6 +1261,9 @@
         "vitamin-d",
         "vitamin-e",
         "vitamin-k"
+      ],
+      "groups": [
+        "plant-derived"
       ]
     },
     {

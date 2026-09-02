@@ -17,7 +17,7 @@ no internet connection, and nothing about you ever leaves the machine.
 | **Runs from** | a single file, double-clicked. No install, no localhost, no build step. |
 | **Network use** | none, ever. There is no server to talk to and no endpoint to leak to. |
 | **Your data** | lives in your browser on your device. Export it as a plain `.json` file you can read. |
-| **Sourced from** | 7 Wallach books (1994–2020), 2,601 hand-checked claims, every one citable. |
+| **Sourced from** | 7 Wallach books (1994–2020), 2,617 hand-checked claims, every one citable. |
 
 ---
 
@@ -185,7 +185,7 @@ node tools/probes/render_probe.js        # a headless render check
 
 `tools/build.mjs` installs its own dev dependencies on first run. **You do not need to build to run the
 app** — `dist/main.js` is committed, so a fresh clone opens and works immediately. Alongside the build,
-`tools/probes/` holds 59 headless render probes and `tools/tests/` 55 standalone Python
+`tools/probes/` holds 60 headless render probes and `tools/tests/` 55 standalone Python
 control tests. The render probes need Puppeteer, which lives in the ROOT `package.json` — run
 `npm install` at the repo root once, or `render_probe.js` exits 2 with `NO_PUPPETEER`.
 

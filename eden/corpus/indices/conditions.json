@@ -2635,7 +2635,7 @@
   },
   "cancer": {
     "display_name": "Cancer",
-    "claim_count": 76,
+    "claim_count": 77,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000010",
@@ -2708,6 +2708,7 @@
         "WAL-CLM-LETS-000179"
       ],
       "prognosis": [
+        "WAL-CLM-DDDL-000608",
         "WAL-CLM-IMMORT-000500",
         "WAL-CLM-RARE-000077",
         "WAL-CLM-RARE-000203"
@@ -2952,7 +2953,7 @@
   },
   "cardiomyopathy": {
     "display_name": "Cardiomyopathy",
-    "claim_count": 12,
+    "claim_count": 14,
     "claims_by_role": {
       "anecdotes": [
         "WAL-CLM-EPIGEN-000458"
@@ -2975,6 +2976,8 @@
       ],
       "prognosis": [
         "WAL-CLM-DDDL-000007",
+        "WAL-CLM-DDDL-000608",
+        "WAL-CLM-DDDL-000609",
         "WAL-CLM-RARE-000077"
       ],
       "protocols": [
@@ -3777,7 +3780,7 @@
   },
   "colon_cancer": {
     "display_name": "Colon Cancer",
-    "claim_count": 6,
+    "claim_count": 7,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-HELLS-000087",
@@ -3788,6 +3791,9 @@
         "WAL-CLM-EPIGEN-000078",
         "WAL-CLM-IMMORT-000096",
         "WAL-CLM-RARE-000125"
+      ],
+      "toxicity_signs": [
+        "WAL-CLM-HELLS-000124"
       ]
     },
     "essentials_involved": [
@@ -4778,7 +4784,7 @@
   },
   "diabetes": {
     "display_name": "Diabetes",
-    "claim_count": 35,
+    "claim_count": 36,
     "claims_by_role": {
       "anecdotes": [
         "WAL-CLM-DDDL-000008"
@@ -4821,6 +4827,7 @@
       "prognosis": [
         "WAL-CLM-DDDL-000035",
         "WAL-CLM-DDDL-000046",
+        "WAL-CLM-DDDL-000608",
         "WAL-CLM-RARE-000077"
       ],
       "protocols": [
@@ -6204,13 +6211,16 @@
   },
   "glaucoma": {
     "display_name": "Glaucoma",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-IMMORT-000063"
       ],
       "protocols": [
         "WAL-CLM-LETS-000286"
+      ],
+      "toxicity_signs": [
+        "WAL-CLM-RARE-000419"
       ]
     },
     "essentials_involved": [
@@ -6219,13 +6229,15 @@
     ],
     "other_substances_involved": [
       "betaine-hcl",
+      "cadmium",
       "pilocarpine",
       "pulse-test",
       "rutin"
     ],
     "books_cited": [
       "immortality",
-      "lets-play-doctor"
+      "lets-play-doctor",
+      "rare-earths"
     ]
   },
   "glucose_intolerance": {
@@ -6752,9 +6764,16 @@
   },
   "hepatitis": {
     "display_name": "Hepatitis",
-    "claim_count": 1,
+    "claim_count": 4,
     "claims_by_role": {
+      "diagnostics": [
+        "WAL-CLM-DDDL-000606"
+      ],
+      "prevalence": [
+        "WAL-CLM-DDDL-000611"
+      ],
       "protocols": [
+        "WAL-CLM-DDDL-000610",
         "WAL-CLM-LETS-000298"
       ]
     },
@@ -6772,6 +6791,7 @@
       "licorice"
     ],
     "books_cited": [
+      "dddl-3e-2011",
       "lets-play-doctor"
     ]
   },
@@ -8149,10 +8169,13 @@
   },
   "jaundice": {
     "display_name": "Jaundice",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-LETS-000100"
+      ],
+      "diagnostics": [
+        "WAL-CLM-DDDL-000606"
       ],
       "protocols": [
         "WAL-CLM-LETS-000325"
@@ -8172,6 +8195,7 @@
       "olive-oil"
     ],
     "books_cited": [
+      "dddl-3e-2011",
       "lets-play-doctor"
     ]
   },
@@ -8385,7 +8409,7 @@
   },
   "kidney_disease": {
     "display_name": "Kidney Disease",
-    "claim_count": 7,
+    "claim_count": 8,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-LETS-000011"
@@ -8400,7 +8424,8 @@
       "toxicity_signs": [
         "WAL-CLM-LETS-000005",
         "WAL-CLM-LETS-000007",
-        "WAL-CLM-LETS-000031"
+        "WAL-CLM-LETS-000031",
+        "WAL-CLM-RARE-000419"
       ]
     },
     "essentials_involved": [
@@ -8416,6 +8441,7 @@
       "vitamin-b6"
     ],
     "other_substances_involved": [
+      "cadmium",
       "cranberry",
       "dandelion",
       "dwarf-elder",
@@ -8428,7 +8454,8 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
-      "lets-play-doctor"
+      "lets-play-doctor",
+      "rare-earths"
     ]
   },
   "kidney_stones": {
@@ -8888,12 +8915,16 @@
   },
   "liver_cancer": {
     "display_name": "Liver Cancer",
-    "claim_count": 4,
+    "claim_count": 6,
     "claims_by_role": {
       "causes": [
+        "WAL-CLM-EPIGEN-000500",
         "WAL-CLM-LETS-000187",
         "WAL-CLM-LETS-000195",
         "WAL-CLM-RARE-000134"
+      ],
+      "prevalence": [
+        "WAL-CLM-DDDL-000611"
       ],
       "toxicity_signs": [
         "WAL-CLM-IMMORT-000123"
@@ -8906,6 +8937,8 @@
       "levamisole"
     ],
     "books_cited": [
+      "dddl-3e-2011",
+      "epigenetics",
       "immortality",
       "lets-play-doctor",
       "rare-earths"
@@ -8913,8 +8946,11 @@
   },
   "liver_cirrhosis": {
     "display_name": "Liver Cirrhosis",
-    "claim_count": 10,
+    "claim_count": 18,
     "claims_by_role": {
+      "anecdotes": [
+        "WAL-CLM-EPIGEN-000499"
+      ],
       "causes": [
         "WAL-CLM-DDDL-000010"
       ],
@@ -8925,21 +8961,36 @@
         "WAL-CLM-EPIGEN-000044",
         "WAL-CLM-EPIGEN-000063",
         "WAL-CLM-IMMORT-000099",
+        "WAL-CLM-IMMORT-000543",
         "WAL-CLM-LETS-000030",
         "WAL-CLM-RARE-000122",
         "WAL-CLM-RARE-000227",
-        "WAL-CLM-RARE-000269"
+        "WAL-CLM-RARE-000269",
+        "WAL-CLM-RARE-000420"
+      ],
+      "diagnostics": [
+        "WAL-CLM-LETS-000541"
+      ],
+      "prognosis": [
+        "WAL-CLM-DDDL-000608",
+        "WAL-CLM-DDDL-000609"
       ],
       "protocols": [
+        "WAL-CLM-EPIGEN-000501",
         "WAL-CLM-LETS-000348"
+      ],
+      "toxicity_signs": [
+        "WAL-CLM-HELLS-000124"
       ]
     },
     "essentials_involved": [
       "choline",
       "copper",
       "iron",
+      "methionine",
       "omega-3",
       "selenium",
+      "sulfur",
       "vitamin-a",
       "vitamin-b12",
       "vitamin-b9",
@@ -8959,6 +9010,7 @@
     "books_cited": [
       "dddl-3e-2011",
       "epigenetics",
+      "hells-kitchen",
       "immortality",
       "lets-play-doctor",
       "rare-earths"
@@ -8966,7 +9018,7 @@
   },
   "liver_disease": {
     "display_name": "Liver Disease",
-    "claim_count": 27,
+    "claim_count": 32,
     "claims_by_role": {
       "causes": [
         "WAL-CLM-DDDL-000010",
@@ -8993,12 +9045,16 @@
         "WAL-CLM-RARE-000269"
       ],
       "diagnostics": [
-        "WAL-CLM-LETS-000517"
+        "WAL-CLM-LETS-000517",
+        "WAL-CLM-LETS-000540"
       ],
       "prognosis": [
+        "WAL-CLM-DDDL-000607",
         "WAL-CLM-IMMORT-000529"
       ],
       "protocols": [
+        "WAL-CLM-DDDL-000612",
+        "WAL-CLM-EPIGEN-000501",
         "WAL-CLM-LETS-000298",
         "WAL-CLM-LETS-000348"
       ],
@@ -9007,7 +9063,8 @@
         "WAL-CLM-LETS-000007",
         "WAL-CLM-LETS-000020",
         "WAL-CLM-LETS-000031",
-        "WAL-CLM-LETS-000040"
+        "WAL-CLM-LETS-000040",
+        "WAL-CLM-RARE-000419"
       ]
     },
     "essentials_involved": [
@@ -9034,6 +9091,8 @@
     "other_substances_involved": [
       "amino-acids",
       "b-complex",
+      "beta-carotene",
+      "cadmium",
       "carbamide",
       "catechin",
       "chicory",
@@ -10863,10 +10922,13 @@
   },
   "pancreatitis": {
     "display_name": "Pancreatitis",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
       "deficiency_signs": [
         "WAL-CLM-RARE-000270"
+      ],
+      "toxicity_signs": [
+        "WAL-CLM-HELLS-000124"
       ]
     },
     "essentials_involved": [
@@ -10874,6 +10936,7 @@
     ],
     "other_substances_involved": [],
     "books_cited": [
+      "hells-kitchen",
       "rare-earths"
     ]
   },
@@ -12079,8 +12142,11 @@
   },
   "reyes_syndrome": {
     "display_name": "Reyes Syndrome",
-    "claim_count": 1,
+    "claim_count": 2,
     "claims_by_role": {
+      "prognosis": [
+        "WAL-CLM-DDDL-000607"
+      ],
       "protocols": [
         "WAL-CLM-LETS-000417"
       ]
@@ -12094,6 +12160,7 @@
       "b-complex"
     ],
     "books_cited": [
+      "dddl-3e-2011",
       "lets-play-doctor"
     ]
   },

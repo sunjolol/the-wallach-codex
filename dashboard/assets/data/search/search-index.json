@@ -1401,7 +1401,7 @@
         "mercury",
         "obscure_elements"
       ],
-      "claim_count": 2,
+      "claim_count": 3,
       "symbol": "Cd"
     },
     "calcium": {
@@ -4440,7 +4440,7 @@
         "hepatitus"
       ],
       "related": [],
-      "claim_count": 1
+      "claim_count": 3
     },
     "herbal_medicine": {
       "display_name": "Herbal Medicine",
@@ -5904,6 +5904,78 @@
       "claim_count": 21,
       "symbol": "Li"
     },
+    "liver": {
+      "display_name": "Liver Health",
+      "type": "topic",
+      "synonyms": [
+        "bad for the liver",
+        "bad for your liver",
+        "bad liver",
+        "damaged liver",
+        "failing liver",
+        "health of the liver",
+        "healthy liver",
+        "hepatic",
+        "hepatic function",
+        "liver",
+        "liver care",
+        "liver cleanse",
+        "liver damage",
+        "liver detox",
+        "liver diet",
+        "liver enzymes",
+        "liver failure",
+        "liver flush",
+        "liver function",
+        "liver function test",
+        "liver functions",
+        "liver health",
+        "liver issues",
+        "liver panel",
+        "liver problems",
+        "liver regeneration",
+        "liver repair",
+        "liver support",
+        "liver test",
+        "liver trouble",
+        "liver warning signs",
+        "my liver",
+        "sick liver",
+        "signs of liver problems",
+        "symptoms of liver problems",
+        "the liver",
+        "what damages the liver",
+        "what hurts the liver"
+      ],
+      "related": [
+        "liver_disease",
+        "liver_cirrhosis",
+        "hepatitis",
+        "jaundice",
+        "gallstones",
+        "selenium",
+        "choline",
+        "detox"
+      ],
+      "claim_count": 11,
+      "intro_claim": "WAL-CLM-EPIGEN-000498"
+    },
+    "liver_cancer": {
+      "display_name": "Liver Cancer",
+      "type": "condition",
+      "synonyms": [
+        "cancer of the liver",
+        "hepatic cancer",
+        "liver tumor",
+        "liver tumour",
+        "hepatocellular carcinoma"
+      ],
+      "related": [
+        "colon_cancer",
+        "prostate_cancer"
+      ],
+      "claim_count": 2
+    },
     "liver_disease": {
       "display_name": "Liver Disease",
       "type": "condition",
@@ -6320,10 +6392,12 @@
         "beef",
         "poultry",
         "organ meats",
-        "liver",
         "shellfish",
         "animal fats",
-        "meats"
+        "meats",
+        "beef liver",
+        "liver and onions",
+        "chicken liver"
       ],
       "related": [
         "cholesterol",
@@ -14279,7 +14353,9 @@
     {
       "id": "WAL-CLM-DDDL-000127",
       "subject": "detox",
-      "also_about": [],
+      "also_about": [
+        "liver"
+      ],
       "facet": "protocol",
       "question": "What is Wallach's routine for detoxing and clearing toxic metals?",
       "answer_short": "Take alfalfa daily as a detoxifier, do a monthly apple-juice liver flush, and get a yearly hair analysis to track your toxic-metal load.",
@@ -18125,7 +18201,8 @@
       "id": "WAL-CLM-DDDL-000319",
       "subject": "painkillers",
       "also_about": [
-        "aspirin"
+        "aspirin",
+        "liver"
       ],
       "facet": "warning",
       "question": "Is ibuprofen safe to take?",
@@ -19602,7 +19679,9 @@
     {
       "id": "WAL-CLM-DDDL-000372",
       "subject": "gallstones",
-      "also_about": [],
+      "also_about": [
+        "liver"
+      ],
       "facet": "mechanism",
       "question": "What causes gallstones?",
       "answer_short": "Wallach traces gallstones to liver problems with fat and cholesterol metabolism, so his approach aims at liver health, not just the gallbladder.",
@@ -25904,6 +25983,222 @@
       }
     },
     {
+      "id": "WAL-CLM-DDDL-000606",
+      "subject": "hepatitis",
+      "also_about": [
+        "liver",
+        "jaundice"
+      ],
+      "facet": "physiology",
+      "question": "What are the early signs of hepatitis?",
+      "answer_short": "Flu-like at first — appetite loss, prostration, nausea, vomiting and fever; dark urine and yellow eyes arrive 3 to 10 days in, and you start feeling better just as you look worse.",
+      "answer": "Wallach says hepatitis is difficult to diagnose in the early stages but easy after a week or so. The early signs are flu-like: loss of appetite, prostration, nausea and vomiting, and fever. After 3 to 10 days the urine turns dark and jaundice — yellow eyes and skin — appears, and at that point the patient starts to feel better. On blood work he expects SGOT (AST) and SGPT (ALT) to run elevated up to ten times normal values, decreasing gradually as recovery takes place.",
+      "verbatim": "Diagnosis of hepatitis is difficult in the early stages\nbut easy after a week or so. Loss of appetite, prostration, nausea and\nvomiting, and fever are the early flu-like signs; after 3-10 days the urine\nwill turn dark and jaundice (yellow eyes and skin) will appear. The patient\nfeels better at this point. Blood test show a marked elevation in the SGOT\n(AST) and SGPT (ALT) up ten times the normal values; the elevated\nenzymes gradually decrease as recovery takes place.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "hepatitis",
+        "jaundice",
+        "liver",
+        "symptoms",
+        "liver-enzymes"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "hepatitis",
+          "jaundice"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000607",
+      "subject": "liver",
+      "also_about": [
+        "reyes_syndrome"
+      ],
+      "facet": "physiology",
+      "question": "Can liver tissue grow back after it has been damaged?",
+      "answer_short": "In Reye's syndrome, yes — Wallach reports survivors recover 100 percent of the liver tissue within twelve weeks. He states it for Reye's specifically, not for liver damage in general.",
+      "answer": "Wallach says the cause of Reye's syndrome is thought to be consumption of aflatoxin, an exotoxin of the grain mold Aspergillus flavus, and that a typical liver necrosis — dead liver tissue — is present on biopsy. Survivors, he reports, show a 100 percent recovery of the liver tissue twelve weeks after the attack. He states this recovery for survivors of a Reye's syndrome attack specifically; he does not extend it here to liver damage in general or to cirrhosis.",
+      "verbatim": "The cause of Reye’s syndrome is thought to be\nconsumption of aflatoxin (an exotoxin of the grain mold Aspergillus\nflavus). A typical liver necrosis is present on biopsy. Survivors show a 100\npercent recovery of the liver tissue in twelve weeks after the\nattack.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "liver",
+        "recovery",
+        "reyes-syndrome",
+        "liver-necrosis"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "reyes_syndrome",
+          "liver_disease"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000608",
+      "subject": "liver",
+      "also_about": [
+        "liver_cirrhosis"
+      ],
+      "facet": "physiology",
+      "question": "How quickly can a mineral deficiency disease respond to treatment?",
+      "answer_short": "In as little as 48 hours to 30 days — Wallach says replacing the missing trace element is often the whole cure, except where the deficiency has already done permanent damage.",
+      "answer": "Wallach places liver cirrhosis in what he calls the clinical phase of trace mineral deficiency — the stage of full-blown disease and even death, alongside cardiomyopathy, diabetes and cancer. He says these are almost never diagnosed as deficiencies by the orthodox physician, that the cure is often simply a matter of replacing the missing trace element, and that positive clinical responses can come in as little as 48 hours to 30 days. He states the limit himself: only the very few whose deficiencies have already caused permanent biochemical, chromosomal or gross physical damage will not return to normal health. He does not name which trace element is missing in cirrhosis here, and states no amount.",
+      "verbatim": "The clinical phase of trace mineral deficiencies is characterized by the onset\nof full-blown disease states and even death—i.e., cardiomyopathy, diabetes,\ncancer, liver cirrhosis. Most trace mineral deficiencies in the clinical phase,\nthough, are never diagnosed as such by the “orthodox” physician. The\n“cure,” however, is often simply a matter of replacing the missing trace\nelement. Positive clinical responses using this method can occur in as little\nas 48 hours to 30 days. Only those very few people whose deficiencies have\ncaused permanent biochemical, chromosomal, or gross physical damage\nwill not return to normal health.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "trace-minerals",
+        "liver",
+        "cirrhosis",
+        "reversal",
+        "deficiency"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "liver_cirrhosis",
+          "cardiomyopathy",
+          "diabetes",
+          "cancer"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000609",
+      "subject": "liver",
+      "also_about": [
+        "selenium",
+        "liver_cirrhosis"
+      ],
+      "facet": "stance",
+      "question": "Why do farmers prevent cirrhosis in cattle while people get liver transplants?",
+      "answer_short": "Because nobody insures a cow. Wallach says livestock get a few pennies a day of selenium, while people get the transplant — treating the symptom instead of the deficiency.",
+      "answer": "Wallach draws a contrast between livestock and people. In livestock, he says, these diseases are prevented and reversed with a few pennies a day of selenium — because there is no health insurance to pay for symptomatic treatment or for the losses in meat production. In humans the same conditions — fibromyalgia, muscular dystrophy, liver cirrhosis and cardiomyopathy — are met with treatments aimed at the symptom rather than the deficiency: muscle relaxants, prednisone, liver transplants, pacemakers and heart transplants. His position is that the transplant is what you get when the deficiency is never addressed. The 'few pennies a day' is a cost, not a dose; he states no human amount here.",
+      "verbatim": "Muscle is meat. Muscle disease costs farmers money. In livestock we\nprevent and reverse these diseases with a few pennies a day of selenium\nbecause we don’t have health insurance to pay for symptomatic treatment or\nto pay for the losses of meat production.\nIn humans we deal with fibromyalgia, muscular dystrophy, liver cirrhosis,\nand cardiomyopathy by treating the symptoms—not the deficiency, with\nmuscle relaxants, prednisone, liver transplants, pacemakers, and heart\ntransplants.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "liver",
+        "cirrhosis",
+        "selenium",
+        "transplant",
+        "livestock",
+        "veterinary-medicine"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "selenium"
+        ],
+        "conditions": [
+          "liver_cirrhosis",
+          "cardiomyopathy"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000610",
+      "subject": "hepatitis",
+      "also_about": [
+        "liver"
+      ],
+      "facet": "protocol",
+      "question": "How do I avoid catching hepatitis?",
+      "answer_short": "Hand-washing, and no shared needles — Wallach puts the risk reduction at 97 percent. He says nothing here about the vaccine.",
+      "answer": "Wallach's hepatitis prevention program is hygiene. Follow good personal hygiene: wash your hands after using the toilet, and wash your hands before cooking and eating. He addresses doctors and nurses directly, telling them to wash their hands between patients and saying that failing to do so causes two million infections each year in hospitals alone. He adds: do not do illegal drugs, and do not use shared 'community' needles. Following these rules, he says, will reduce your risk of contracting hepatitis by 97 percent. This passage says nothing about the hepatitis B vaccine.",
+      "verbatim": "Prevention of hepatitis is fairly simple—follow good personal hygiene,\nwash your hands after using the toilet, and wash your hands before cooking\nand eating. DOCTORS AND NURSES, PLEASE WASH YOUR HANDS\nBETWEEN PATIENTS. By not washing their hands between patients\ndoctors and nurses cause two million infections each\nyear in hospitals alone. Do not do illegal drugs, do not use “community”\nneedles, etc. Follow the above simple rules and you will reduce your risk of\ncontracting hepatitis by 97 percent.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "hepatitis",
+        "prevention",
+        "hygiene",
+        "liver"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "hepatitis"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000611",
+      "subject": "liver_cancer",
+      "also_about": [
+        "liver",
+        "hepatitis"
+      ],
+      "facet": "warning",
+      "question": "Is liver cancer more common where hepatitis is common?",
+      "answer_short": "In China, Wallach puts endemic hepatitis at 10 percent — 100 million cases a year — and the liver cancer rate very high. He sets the two side by side without claiming one causes the other.",
+      "answer": "Wallach sets hepatitis and liver cancer side by side at the population level: in China, where he puts the endemic hepatitis rate at 10 percent — 100 million cases a year — the rate of liver cancer is very high. He states the two rates together; in this passage he does not assert a causal link or a mechanism between them.",
+      "verbatim": "In China, where there is an endemic hepatitis rate of 10 percent (that\nis 100 million cases a year!), the rate of liver cancer is very high.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "liver-cancer",
+        "hepatitis",
+        "china",
+        "liver"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "hepatitis",
+          "liver_cancer"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-DDDL-000612",
+      "subject": "liver",
+      "also_about": [
+        "liver_disease",
+        "selenium",
+        "vitamin-c",
+        "vitamin-a",
+        "omega-3"
+      ],
+      "facet": "sources",
+      "question": "Which foods and nutrients support a healthy liver?",
+      "answer_short": "Vitamin C, vitamin A as beta carotene, B-complex, B12, folic acid, selenium and the EFAs in salmon and flaxseed oil — with milk thistle, and fried foods and margarine off the plate.",
+      "answer": "Wallach's liver-disease protocol — the entry covers cirrhosis and nonviral hepatitis — is a nutrient list: vitamin C to bowel tolerance, vitamin A at 10,000 to 300,000 IU per day as beta carotene, B-complex at 100 mg each three times a day, selenium at 500-1,000 mcg per day, B12 at 1,000 mcg per day, folic acid at 15-25 mg per day, and essential fatty acids from both salmon oil and flaxseed oil at 1 gm three times a day, with amino acids and interlipids alongside IV or oral chelation. He names herbs with it — milk thistle, parsley, tamarac and hemp acrimony — tells you not to forget the base line nutrition program and colloidal minerals, and says to avoid fried foods and margarine. For hepatitis he keeps vitamin C, B12 and folic acid and adds catechin, germanium, selenium and an oxygen supplement, with licorice, chicory and dandelion as the herbs, fluids including chicken soup, and no sugar, fat, margarine, fried foods or alcohol. Salmon and other cold-water fish are rich sources of the essential fatty acids the liver requires to process cholesterol properly and prevent platelet clumping. Selenium is the nutrient he ties to the liver in book after book, listing liver necrosis and cirrhosis as direct results of a selenium deficiency. Copper deficiency also carries liver cirrhosis, and with it abnormal iron accumulation in the liver; choline deficiency produces fatty liver and cirrhosis, because choline's job in humans is transporting fat out of the liver, where it forms lecithin; inositol deficiency produces fatty liver; biotin deficiency shows as fatty liver; and vitamin E deficiency shows as liver necrosis. Excess iron can cause cirrhosis too, but he says that is not iron toxicity — the extra iron raises the body's need for selenium, copper and zinc. Underneath all of it, he says optimal liver nutrition takes the faithful use of every one of the essential nutrients.",
+      "verbatim": "Treatment of liver disease includes IV or oral chelation with complete IV\nsupplementation including amino acids and interlipids, vitamin C to bowel\ntolerance, vitamin A at 10,000 to 300,000 IU per day as beta carotene, B-\ncomplex at 100 mg each t.i.d., selenium at 500-1,000 mcg per day, B12 at\n1,000 mcg per day, folic acid at 15-25 mg per day, essential fatty acids\n(both salmon oil and flaxseed oil) at 1 gm t.i.d., and herbs including\ntamarac (Larix americana), parsley (Carum petro-selinum), hemp acrimony\n(Eupatorium cannabium), and milk thistle (Silybum marianum). Don’t\nforget the base line nutrition program and colloidal minerals and avoid fried\nfoods and margarine.",
+      "page": null,
+      "book_id": "dddl-3e-2011",
+      "topics": [
+        "best foods for liver",
+        "best supplement for liver",
+        "essential-fatty-acids",
+        "folic-acid",
+        "foods",
+        "foods good for liver",
+        "liver",
+        "liver-protocol",
+        "milk-thistle",
+        "selenium",
+        "supplements for liver",
+        "vitamin-a",
+        "vitamin-c",
+        "vitamins for liver",
+        "what to eat for liver",
+        "what to take for liver"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "vitamin-c",
+          "vitamin-a",
+          "selenium",
+          "vitamin-b12",
+          "vitamin-b9",
+          "omega-3"
+        ],
+        "conditions": [
+          "liver_disease"
+        ]
+      }
+    },
+    {
       "id": "WAL-CLM-EPIGEN-000001",
       "subject": "essential_nutrients",
       "also_about": [
@@ -27240,7 +27535,8 @@
       "subject": "choline",
       "also_about": [
         "dementia",
-        "memory_loss"
+        "memory_loss",
+        "liver"
       ],
       "facet": "warning",
       "question": "What are the signs of choline deficiency?",
@@ -37106,6 +37402,131 @@
       }
     },
     {
+      "id": "WAL-CLM-EPIGEN-000498",
+      "subject": "liver",
+      "also_about": [],
+      "facet": "basics",
+      "question": "What does the liver actually do?",
+      "answer_short": "Over 500 jobs, by the British Liver Trust’s count that Wallach cites — three of them being to manage digested food, disarm toxins, and make the bile you need to absorb fats and fat-soluble vitamins.",
+      "answer": "Citing the British Liver Trust, Wallach reports that the liver brags of over 500 functions. He names three of them: it manages food that has been digested and absorbed from the gastrointestinal tract, it disarms toxins, and it produces bile to support the absorption of lipids and fat-soluble vitamins — and, he adds, 497 other tasks. The 500 figure is the British Liver Trust's, relayed by him.",
+      "verbatim": "The British Liver Trust points out that the liver brags of over 500 functions,\nincluding managing food that has been digested and absorbed from the\ngastrointestinal tract, disarms toxins, produces bile to support absorption of\nlipids and fat soluble vitamins, and 497 other tasks.",
+      "page": 342,
+      "book_id": "epigenetics",
+      "topics": [
+        "bile",
+        "detoxification",
+        "digestion",
+        "liver",
+        "liver job",
+        "liver-function",
+        "what does the liver do",
+        "what the liver does"
+      ]
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000499",
+      "subject": "liver",
+      "also_about": [
+        "liver_cirrhosis",
+        "selenium"
+      ],
+      "facet": "protocol",
+      "question": "Can cirrhosis be reversed without a liver transplant?",
+      "answer_short": "Wallach reports one patient who did it — off the transplant list in sixty days on a gluten-free diet plus the 90 essentials spiked with selenium and B vitamins. No amounts are stated.",
+      "answer": "Wallach gives a case history with a stated outcome. In 1998 he was introduced to a woman diagnosed ten years earlier with primary sclerosing cholangitis — a form of liver cirrhosis, and the disease that caused the death of NFL great Walter Payton. The preferred medical treatment was to install stents into the bile ducts to stop them being crushed by scar tissue and to surgically remove as much damaged liver as possible until a transplant became necessary; she had had 12 major liver surgeries at the Harvard Teaching Hospital and was on the liver transplant list. Wallach put her on a gluten-free anti-inflammatory diet and added the 90 essential nutrient supplement program spiked with selenium and mega doses of B vitamins. In sixty days she had regrown her liver to normal size, cancelled the transplant, and went back to a normal life. No amounts are stated — 'spiked with selenium' and 'mega doses of B vitamins' are the only quantities the passage gives.",
+      "verbatim": "Later in 1998, Wallach was introduced to Elaine lagotta, who was diagnosed\nten years earlier with primary sclerosing cholangitis, a form of liver cirrhosis that\ncaused the death of NFL great Walter Payton, and for which the preferred medical\ntreatment was to install stints into the bile ducts to prevent them from being\ncrushed by scar tissue and surgically remove as much damaged liver as possible\nuntil a liver transplant became necessary. lagotta had had 12 major liver surgeries\nat the Harvard Teaching Hospital prior to meeting Wallach and was on the liver\n\n\ntransplant list.\n\nWallach put lagotta on a gluten-free anti-inflammatory diet and added the 90\nessential nutrient supplement program spiked with selenium and mega doses of\nB vitamins. In sixty days she had regrown her liver to normal size, canceled the\nplans for a liver transplant, and went back to a normal life.",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "liver",
+        "cirrhosis",
+        "reversal",
+        "transplant",
+        "selenium",
+        "gluten-free",
+        "case-history"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "selenium"
+        ],
+        "conditions": [
+          "liver_cirrhosis"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000500",
+      "subject": "liver_cancer",
+      "also_about": [
+        "liver"
+      ],
+      "facet": "mechanism",
+      "question": "Can moldy food cause liver cancer?",
+      "answer_short": "Wallach says the bread mold Aspergillus makes aflatoxin — a large dose kills the liver outright, a low dose produces a very specific liver cancer, the one that struck zoo bears.",
+      "answer": "Wallach explains that Aspergillus is a common bread mold which, under certain circumstances, produces an exotoxin called aflatoxin. He splits the effect by dose: in large doses aflatoxin causes sudden death from liver necrosis — liver death — while in low doses it produces a very specific type of liver cancer, the same type that plagued the captive bear populations in the world's zoos. He gives no human threshold; 'large' and 'low' are the only quantities stated.",
+      "verbatim": "Aspergillus is a common bread mold. However, under certain circumstances it\nproduces an exotoxin called aflatoxin, which in large doses causes a sudden death\nfrom liver necrosis (liver death). In low doses the aflatoxin produces a very specific\ntype of liver cancer—the same type of liver cancer that plagued the captive bear\npopulations in the world's zoos!",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "liver-cancer",
+        "aflatoxin",
+        "mold",
+        "liver",
+        "zoo-animals"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "liver_cancer"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-EPIGEN-000501",
+      "subject": "liver",
+      "also_about": [
+        "liver_cirrhosis",
+        "liver_disease",
+        "selenium"
+      ],
+      "facet": "protocol",
+      "question": "How do I improve my liver health and reverse liver damage?",
+      "answer_short": "Wallach’s answer is that a damaged liver can come back: a gluten-free diet on the platform of all 90 essentials, therapeutic levels of what is missing, a monthly liver flush, and fried food, margarine, sugar and alcohol out.",
+      "answer": "Wallach's answer is that a damaged liver can come back. His case history is a woman on the liver transplant list with primary sclerosing cholangitis, a form of liver cirrhosis, after 12 major liver surgeries: he puts her on a gluten-free anti-inflammatory diet plus the 90 essential nutrient supplement program spiked with selenium and mega doses of B vitamins, and in sixty days she has regrown her liver to normal size, cancels the transplant and goes back to a normal life. He states the same shape generally — a gluten-free diet, the basic platform of the 90 essential nutrients, and therapeutic levels of the deficient nutrient — because gluten intolerance strips the villi from the small intestine and cuts absorption, which is what leaves a person short of selenium and at risk of liver cirrhosis in the first place. Underneath that sits his liver-disease protocol: vitamin C, vitamin A as beta carotene, B-complex, B12, folic acid, selenium and the essential fatty acids in salmon oil and flaxseed oil, with milk thistle, parsley, tamarac and hemp acrimony, plus the base line nutrition program and colloidal minerals. For upkeep he prescribes alfalfa daily as a detoxifier and a liver flush — an apple juice fast followed by olive oil and lemon juice — repeated monthly, and he names virgin olive oil in grapefruit or lemon juice as another way to flush the liver. He is equally clear about what to stop: fried foods, margarine, sugar, fat and alcohol come out, and he says the pigment of aging that accumulates in the liver can be prevented and quickly reversed by cutting free radicals and sharply raising essential nutrients and antioxidants. He says of Reye's syndrome that biopsy shows liver necrosis and survivors recover the liver tissue completely. In animals the same reversal shows up nutrient by nutrient: rats on a methionine-free diet develop fatty liver disease and methionine supplementation resolves all of it, and selenium supplementation prevents and in many cases reverses or cures existing disease, liver cirrhosis included, in laboratory animals and livestock.",
+      "verbatim": "will significantly\n\nincrease the risk for cardiomyopathy heart disease, liver cirrhosis, cancer,\ncataracts, macular degeneration, MS, dementia, infertility, muscular dystrophy,\ncystic fibrosis, fibromyalgia, lupus, thyroid disease, and other illness.\n\nPutting an afflicted individual on a gluten-free diet and supplementing the\nperson correctly with the basic platform of the 90 essential nutrients and\ntherapeutic levels of the deficient nutrient will solve many health problems,\nsave the community an enormous amount of unnecessary misery, save an\nenormous amount of unnecessary spending, and add many healthful years to the\nindividual's life.",
+      "page": null,
+      "book_id": "epigenetics",
+      "topics": [
+        "alfalfa",
+        "detox",
+        "gluten-free",
+        "how to take care of my liver",
+        "improve liver health",
+        "liver",
+        "liver care",
+        "liver-flush",
+        "look after my liver",
+        "ninety-essentials",
+        "reversal",
+        "take care of my liver"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "selenium",
+          "vitamin-c",
+          "vitamin-a",
+          "vitamin-b12",
+          "vitamin-b9",
+          "omega-3",
+          "methionine"
+        ],
+        "conditions": [
+          "liver_cirrhosis",
+          "liver_disease"
+        ]
+      }
+    },
+    {
       "id": "WAL-CLM-HELLS-000001",
       "subject": "beef",
       "also_about": [
@@ -39537,6 +39958,35 @@
       "tier1_link": {
         "conditions": [
           "obesity"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-HELLS-000124",
+      "subject": "liver",
+      "also_about": [
+        "liver_cirrhosis"
+      ],
+      "facet": "warning",
+      "question": "How many drinks a day does it take to damage my liver?",
+      "answer_short": "Two a day, on a 2004 NIAAA report Wallach passes on without objection — though he rejects its benefit half: any good comes from the drink’s phytonutrients, not the alcohol.",
+      "answer": "Wallach relays a report released in the summer of 2004 by the National Institute on Alcohol Abuse and Alcoholism: in general a single alcoholic drink each day can be beneficial; wine may protect a sixty-five-year-old man from cardiovascular disease but may increase the risk of a car accident in a twenty-two-year-old; and two drinks per day can increase the risk of liver cirrhosis, pancreatitis and colon cancer. The report also credits one or two drinks a day with reducing heart attack risk by thirty to forty percent, about the same as statin drugs, and says alcohol is thought to protect against gallstones. Wallach lets the harm findings stand without objection, but he does not accept the benefit findings as stated: he answers that there is a considerable body of evidence showing the 'benefits of alcohol' are really the benefits of the phytonutrients in the alcoholic drink rather than the alcohol itself. The liver threshold is a per-day drink count, not a quantity of alcohol.",
+      "verbatim": "A report released during the summer of 2004 by the National \nInstitute on Alcohol Abuse and Alcoholism concluded that, in general, a single alcoholic drink each day can be beneficial. Wine may \nprotect a sixty five year old man from cardiovascular disease, but \nmay increase the risk of a car accident in a twenty two year old. \nTwo drinks per day can increase the risk of liver cirrhosis, pancreatitis and colon cancer. \nOne or two drinks per day can reduce the risk of a heart attack \nby thirty to forty percent about the same as statin drugs. Alcohol is \nthought to protect against gall stones. \nAccording to a study discussed in the report, “If all current drinkers\n\n320 \nwere to quite drinking, the USA would suffer from an additional \n80,000 cardiovascular deaths per years.” There is a considerable body \nof evidence which shows that the “benefits of alcohol” are really the \nbenefits of the phytonutrients in the alcoholic drink rather than the \nalcohol itself.",
+      "page": null,
+      "book_id": "hells-kitchen",
+      "topics": [
+        "liver",
+        "alcohol",
+        "cirrhosis",
+        "pancreatitis",
+        "colon-cancer",
+        "phytonutrients"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "liver_cirrhosis",
+          "pancreatitis",
+          "colon_cancer"
         ]
       }
     },
@@ -47144,7 +47594,9 @@
     {
       "id": "WAL-CLM-IMMORT-000334",
       "subject": "choline",
-      "also_about": [],
+      "also_about": [
+        "liver"
+      ],
       "facet": "mechanism",
       "question": "Does choline affect the liver?",
       "answer_short": "Choline transports fat out of the liver, so a deficiency lets fat build up as a fatty liver that in severe cases can require a liver transplant.",
@@ -51461,30 +51913,35 @@
       "id": "WAL-CLM-IMMORT-000543",
       "subject": "veganism",
       "also_about": [
-        "gray_hair",
         "alopecia",
-        "periodontal_disease",
-        "anemia"
+        "anemia",
+        "gray_hair",
+        "liver",
+        "liver_cirrhosis",
+        "periodontal_disease"
       ],
       "facet": "physiology",
       "question": "Can a vegan diet turn your hair gray?",
-      "answer_short": "Wallach says strict vegans who don't supplement heavily with minerals tend to develop gray hair (along with receding gums, anemia and more) within about five years.",
+      "answer_short": "Wallach says strict vegans who do not supplement minerals develop grey hair, receding gums, anemia and liver cirrhosis inside five years — he blames the missing minerals, not the plants.",
       "answer": "Yes — Wallach lists gray hair as one of the early signs of a strict vegan diet. His reasoning is about minerals, not vitamins: plants can't manufacture minerals, so a diet built entirely on plants leaves the body short of them — by his count, an unsupplemented vegan runs 51 to 57 of the body's essential minerals short. Because most vegans don't supplement heavily and correctly with a special emphasis on minerals, he says the shortfall shows on the body within about five years.\n\nIn his telling gray hair rarely comes alone — he groups it with a whole cluster of deficiency signs that surface in the same window: receding gums and periodontal disease, anemia, osteoporosis and arthritis, hypertension, blood sugar problems, chronic fatigue, and in the worst cases even cancer and liver cirrhosis. Wallach rejects the vegan premise outright, arguing that every long-lived population on earth eats animal foods — red meat (pork, beef, goat, lamb), poultry, fish, eggs and dairy — and pointing to vegan crusader Linda McCartney, who he says died at 56 of breast cancer.",
       "verbatim": "Most vegans do not seriously supplement heavily and\ncorrectly with a special emphasis on minerals, and as a result\nstrict vegans develop grey hair, receding gums, periodontal\ndisease, blood sugar problems, arthritis, osteoporosis, anemia,\nhypertension, fibromyalgia, chronic fatigue syndrome, cancer,\nliver cirrhosis, cognitive, memory and emotional problems\nbefore five years has elapsed.",
       "page": null,
       "book_id": "immortality",
       "topics": [
-        "vegan",
-        "veganism",
+        "anemia",
+        "cirrhosis",
         "gray hair",
+        "liver",
         "minerals",
-        "supplements",
         "receding gums",
-        "anemia"
+        "supplements",
+        "vegan",
+        "veganism"
       ],
       "tier1_link": {
         "conditions": [
-          "gray_hair"
+          "gray_hair",
+          "liver_cirrhosis"
         ]
       }
     },
@@ -57145,7 +57602,8 @@
       "subject": "cancer",
       "also_about": [
         "liver_cancer",
-        "dmso"
+        "dmso",
+        "liver"
       ],
       "facet": "mechanism",
       "question": "What is autoimmune urine therapy for cancer?",
@@ -59868,13 +60326,14 @@
         "vitamin-e",
         "vitamin-c",
         "selenium",
-        "taurine"
+        "taurine",
+        "liver"
       ],
       "facet": "protocol",
       "question": "How do you treat gallstones naturally?",
       "answer_short": "Wallach treats gallbladder disease and gallstones with high-fiber diets, lecithin, essential fatty acids, vitamin E, vitamin C, selenium, taurine, an olive-oil liver flush, and various herbs.",
       "answer": "Gallbladder disease (gall stones) is generally caused by liver problems with fat and cholesterol metabolism; gallstones are made of cholesterol and fat that later calcify, and Wallach notes eggs precipitate 93% of gallbladder attacks, followed by onions and pork. For prevention he uses glycyrrhizin (a licorice extract) plus the baseline supplement with 5 grams of essential fatty acids three times a day. His treatment of gallbladder disease and gallstones includes high-fiber diets (aim for 2-3 bowel movements a day), lecithin at 2,500 milligrams three times a day, essential fatty acids at 5 grams three times a day, vitamin E at 800-1,200 international units a day, vitamin C to bowel tolerance, selenium at 200 micrograms three times a day, and taurine at 500 milligrams three times a day; virgin olive oil in grapefruit or lemon juice helps flush the liver, and herbs include agrimony, blessed thistle, fumitory, horehound, licorice, peppermint, wormwood, artichoke, sweet coltsfoot, celandine, chicory, and dandelion.",
-      "verbatim": "Treatment of gallbladder disease and gallstones includes the use of high fiber diets (i.e.\nmake sure you are having 2-3 bowel movements per day), lecithin at 2,500 mg t.i.d.,\nessential fatty acids at 5 gm t.i.d., vitamin E at\n800-1,200 IU per day, vitamin C to bowel\ntolerance, selenium at 200 mcg t.i.d., and\ntaurine at 500 mg t.i.d",
+      "verbatim": "GALLBLADDER DISEASE (gall stones): is\ngenerally caused by liver problems, especially\nwith fatandcholesterolmetabolism. Gallbladder \"attacks\" are caused by a cramping of the\nmuscles in the gallbladder after a fatty meal or\na temporary blockage of the bile duct by a\ngallstone. Gallstones are composed of cholesterol and fat when they first form and become\ncalcified after the passage of time. Prevention\nof gallbladder problems includes the use of\nglycyrrhizin (an extract of the licorice plant,\nGlycyrrhyza glabra), the base line nutritional\nsupplement including 5 gm of essential fatty\nacids t.i.d. Eggs are known to precipitate 93%\nof all gallbladder attacks, followed closely by\nonions and pork.\nTreatment of gallbladder disease and gallstones includes the use of high fiber diets (i.e.\nmake sure you are having 2-3 bowel movements per day), lecithin at 2,500 mg t.i.d.,\nessential fatty acids at 5 gm t.i.d., vitamin E at\n800-1,200 IU per day, vitamin C to bowel\ntolerance, selenium at 200 mcg t.i.d., and\ntaurine at 500 mg t.i.d. Virgin olive oil in eight\noz. of grapefruit or lemon juice will help to\nflush liver",
       "page": null,
       "book_id": "lets-play-doctor",
       "topics": [
@@ -60372,7 +60831,8 @@
         "vitamin-b9",
         "vitamin-c",
         "selenium",
-        "germanium"
+        "germanium",
+        "liver"
       ],
       "facet": "protocol",
       "question": "How do you treat hepatitis naturally?",
@@ -61188,7 +61648,8 @@
         "vitamin-c",
         "vitamin-a",
         "selenium",
-        "vitamin-e"
+        "vitamin-e",
+        "liver"
       ],
       "facet": "protocol",
       "question": "What causes yellow eyes and how do you treat jaundice?",
@@ -61351,7 +61812,9 @@
     {
       "id": "WAL-CLM-LETS-000330",
       "subject": "kernicterus",
-      "also_about": [],
+      "also_about": [
+        "liver"
+      ],
       "facet": "protocol",
       "question": "How do you treat kernicterus in a newborn?",
       "answer_short": "Wallach prevents and treats kernicterus by feeding the infant frequently to reduce bile-pigment absorption and exposing the baby to blue and ultraviolet light to photo-oxidize the bilirubin.",
@@ -61888,7 +62351,8 @@
         "selenium",
         "vitamin-b12",
         "vitamin-b9",
-        "omega-3"
+        "omega-3",
+        "liver"
       ],
       "facet": "protocol",
       "question": "How do you treat liver disease or cirrhosis naturally?",
@@ -67154,6 +67618,59 @@
       "tier1_link": {
         "conditions": [
           "shingles"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-LETS-000540",
+      "subject": "liver",
+      "also_about": [
+        "liver_disease"
+      ],
+      "facet": "physiology",
+      "question": "Is there a cheap test I can do at home to check for liver disease?",
+      "answer_short": "Urine dip sticks — about $1.50 a test, and they flag liver disease alongside kidney disease, diabetes and blood in the urine. Wallach names no brand and no reading to look for.",
+      "answer": "Wallach points to urine dip sticks as a cheap self-administered screen: several brands will give indications of liver disease, along with urinary infection of the bladder or kidney, blood in the urine, blood-destructive diseases, kidney disease and diabetes — all for about $1.50 per test. He names no brand, no threshold and no reading to look for. This is the urine screen, distinct from the blood panel.",
+      "verbatim": "Several brands of urine \"dip sticks\" can\ntell you if you have a urinary infection (bladder\nor kidney), blood in your urine (infection,\nstones, tumors, etc.), indications of blood destructive diseases, liver disease, kidney disease, diabetes (sugar) all for about $1.50 per\ntest!!",
+      "page": null,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "liver",
+        "liver-disease",
+        "self-testing",
+        "urine-test",
+        "diagnosis"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "liver_disease"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-LETS-000541",
+      "subject": "liver",
+      "also_about": [
+        "liver_cirrhosis"
+      ],
+      "facet": "physiology",
+      "question": "Can a blood test show whether drinking has affected my liver?",
+      "answer_short": "GGT is the one Wallach names — a barometer of connective tissue growth in the liver, which is cirrhosis, and highly sensitive to alcohol and drug abuse.",
+      "answer": "Wallach describes GGT — gamma-glutamyl transpeptidase — as a barometer of connective tissue growth in the liver, which he glosses as cirrhosis, and as a highly sensitive barometer of alcohol and drug abuse. The test detects both on one marker; in this passage he does not say that alcohol causes the scarring.",
+      "verbatim": "GGT (gamma-glutamyl transpeptidase) is\na barometer of connective tissue growth in the\nliver (cirrhosis), and a highly sensitive barometer of alcohol and drug abuse.",
+      "page": null,
+      "book_id": "lets-play-doctor",
+      "topics": [
+        "liver",
+        "ggt",
+        "blood-test",
+        "alcohol",
+        "cirrhosis",
+        "diagnosis"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "liver_cirrhosis"
         ]
       }
     },
@@ -76764,6 +77281,70 @@
       "tier1_link": {
         "conditions": [
           "vertigo"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-RARE-000419",
+      "subject": "cadmium",
+      "also_about": [
+        "liver"
+      ],
+      "facet": "warning",
+      "question": "Can cadmium damage my liver?",
+      "answer_short": "Wallach reports liver disease, kidney damage and treatment-resistant glaucoma attributed to elevated tissue cadmium. It is an attribution he relays, not a mechanism he demonstrates.",
+      "answer": "Wallach reports that kidney damage, liver disease and treatment-resistant glaucoma have been attributed to elevated tissue cadmium levels. The hedge is his own — 'have been attributed to' — so this is an attribution rather than a mechanism he demonstrates. He states no safe or toxic tissue level.",
+      "verbatim": "Kidney damage, liver disease and treatment resistant glaucoma have been attributed to elevated tissue cadmium levels.",
+      "page": null,
+      "book_id": "rare-earths",
+      "topics": [
+        "cadmium",
+        "liver",
+        "toxic-metals",
+        "glaucoma",
+        "kidney"
+      ],
+      "tier1_link": {
+        "conditions": [
+          "liver_disease",
+          "kidney_disease",
+          "glaucoma"
+        ]
+      }
+    },
+    {
+      "id": "WAL-CLM-RARE-000420",
+      "subject": "liver",
+      "also_about": [
+        "liver_cirrhosis",
+        "selenium",
+        "copper",
+        "sulfur"
+      ],
+      "facet": "physiology",
+      "question": "Which nutrient deficiencies does Wallach blame for cirrhosis?",
+      "answer_short": "Selenium, copper and sulfur — the row he sets against liver cirrhosis in his table of what kills American physicians.",
+      "answer": "In his table of the causes of death in American allopathic physicians, Wallach pairs each cause with the nutritional deficiency he holds responsible, and against liver cirrhosis he sets selenium, copper and sulfur. The table is his argument that doctors, who as a profession refuse to supplement with the essential 90 nutrients, make a good control group for preventable nutritional deficiency diseases. He states element names only — no amounts appear anywhere in the table.",
+      "verbatim": "Looking at the specific causes of death\nwe find that doctors die of a\ndisproportionately high rate of\npreventable nutritional deficiency\ndiseases (Table 12-2). As a whole medical\ndoctors refuse to take supplements of the\nessential 90 nutrients so the medical\nprofession makes a great control group\n\nTable 12-2. Causes of Death In American Allopathic Physicians.\n\nCause of Death\nCardiomyopathy\n\nCoronary disease\n(including aneurysms & stroke)\n\nCerebrovascular disease\n(including aneurysms & stroke)\n\nAneurysms\nDiabetes\nLiver cirrhosis\n\nCancer\n\nSuicide\n\nAlzheimer’s disease\n\nNutritional Deficiency\nSelenium, Vitamin E, essential fatty acids\n\nSelenium, Vitamin E, vitamin C\nmagnesium, copper, essential fatty acids\n\nSame as above\n\nCopper\nChromium, Vanadium, Zinc\nSelenium, Copper, Sulfur\n\nSelenium, Tin, Zinc, Gallium, Vitamin E (all types) ,\nbeta carotene, Germanium, Vitamin C\n\nLithium, Chromium, Vanadium\n\nVitamin E, Selenium, Thiamine",
+      "page": 463,
+      "book_id": "rare-earths",
+      "topics": [
+        "liver",
+        "cirrhosis",
+        "selenium",
+        "copper",
+        "sulfur",
+        "physician-mortality",
+        "deficiency"
+      ],
+      "tier1_link": {
+        "essentials": [
+          "selenium",
+          "copper",
+          "sulfur"
+        ],
+        "conditions": [
+          "liver_cirrhosis"
         ]
       }
     }

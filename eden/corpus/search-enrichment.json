@@ -482,7 +482,9 @@
   },
   "WAL-CLM-DDDL-000127": {
    "subject": "detox",
-   "also_about": [],
+   "also_about": [
+    "liver"
+   ],
    "facet": "protocol",
    "question": "What is Wallach's routine for detoxing and clearing toxic metals?",
    "answer_short": "Take alfalfa daily as a detoxifier, do a monthly apple-juice liver flush, and get a yearly hair analysis to track your toxic-metal load.",
@@ -11952,7 +11954,9 @@
   },
   "WAL-CLM-IMMORT-000334": {
    "subject": "choline",
-   "also_about": [],
+   "also_about": [
+    "liver"
+   ],
    "facet": "mechanism",
    "question": "Does choline affect the liver?",
    "answer_short": "Choline transports fat out of the liver, so a deficiency lets fat build up as a fatty liver that in severe cases can require a liver transplant.",
@@ -12130,7 +12134,8 @@
    "subject": "choline",
    "also_about": [
     "dementia",
-    "memory_loss"
+    "memory_loss",
+    "liver"
    ],
    "facet": "warning",
    "question": "What are the signs of choline deficiency?",
@@ -22188,7 +22193,9 @@
   },
   "WAL-CLM-LETS-000330": {
    "subject": "kernicterus",
-   "also_about": [],
+   "also_about": [
+    "liver"
+   ],
    "facet": "protocol",
    "question": "How do you treat kernicterus in a newborn?",
    "answer_short": "Wallach prevents and treats kernicterus by feeding the infant frequently to reduce bile-pigment absorption and exposing the baby to blue and ultraviolet light to photo-oxidize the bilirubin.",
@@ -22437,7 +22444,8 @@
     "vitamin-c",
     "vitamin-a",
     "selenium",
-    "vitamin-e"
+    "vitamin-e",
+    "liver"
    ],
    "facet": "protocol",
    "question": "What causes yellow eyes and how do you treat jaundice?",
@@ -23777,7 +23785,8 @@
     "vitamin-e",
     "vitamin-c",
     "selenium",
-    "taurine"
+    "taurine",
+    "liver"
    ],
    "facet": "protocol",
    "question": "How do you treat gallstones naturally?",
@@ -26701,7 +26710,8 @@
     "vitamin-b9",
     "vitamin-c",
     "selenium",
-    "germanium"
+    "germanium",
+    "liver"
    ],
    "facet": "protocol",
    "question": "How do you treat hepatitis naturally?",
@@ -26726,7 +26736,8 @@
     "selenium",
     "vitamin-b12",
     "vitamin-b9",
-    "omega-3"
+    "omega-3",
+    "liver"
    ],
    "facet": "protocol",
    "question": "How do you treat liver disease or cirrhosis naturally?",
@@ -28383,7 +28394,8 @@
    "subject": "cancer",
    "also_about": [
     "liver_cancer",
-    "dmso"
+    "dmso",
+    "liver"
    ],
    "facet": "mechanism",
    "question": "What is autoimmune urine therapy for cancer?",
@@ -33898,7 +33910,8 @@
   "WAL-CLM-DDDL-000319": {
    "subject": "painkillers",
    "also_about": [
-    "aspirin"
+    "aspirin",
+    "liver"
    ],
    "facet": "warning",
    "question": "Is ibuprofen safe to take?",
@@ -34653,7 +34666,9 @@
   },
   "WAL-CLM-DDDL-000372": {
    "subject": "gallstones",
-   "also_about": [],
+   "also_about": [
+    "liver"
+   ],
    "facet": "mechanism",
    "question": "What causes gallstones?",
    "answer_short": "Wallach traces gallstones to liver problems with fat and cholesterol metabolism, so his approach aims at liver health, not just the gallbladder.",
@@ -40019,23 +40034,27 @@
   "WAL-CLM-IMMORT-000543": {
    "subject": "veganism",
    "also_about": [
-    "gray_hair",
     "alopecia",
-    "periodontal_disease",
-    "anemia"
+    "anemia",
+    "gray_hair",
+    "liver",
+    "liver_cirrhosis",
+    "periodontal_disease"
    ],
    "facet": "physiology",
    "question": "Can a vegan diet turn your hair gray?",
-   "answer_short": "Wallach says strict vegans who don't supplement heavily with minerals tend to develop gray hair (along with receding gums, anemia and more) within about five years.",
+   "answer_short": "Wallach says strict vegans who do not supplement minerals develop grey hair, receding gums, anemia and liver cirrhosis inside five years — he blames the missing minerals, not the plants.",
    "answer_full": "Yes — Wallach lists gray hair as one of the early signs of a strict vegan diet. His reasoning is about minerals, not vitamins: plants can't manufacture minerals, so a diet built entirely on plants leaves the body short of them — by his count, an unsupplemented vegan runs 51 to 57 of the body's essential minerals short. Because most vegans don't supplement heavily and correctly with a special emphasis on minerals, he says the shortfall shows on the body within about five years.\n\nIn his telling gray hair rarely comes alone — he groups it with a whole cluster of deficiency signs that surface in the same window: receding gums and periodontal disease, anemia, osteoporosis and arthritis, hypertension, blood sugar problems, chronic fatigue, and in the worst cases even cancer and liver cirrhosis. Wallach rejects the vegan premise outright, arguing that every long-lived population on earth eats animal foods — red meat (pork, beef, goat, lamb), poultry, fish, eggs and dairy — and pointing to vegan crusader Linda McCartney, who he says died at 56 of breast cancer.",
    "topics": [
-    "vegan",
-    "veganism",
+    "anemia",
+    "cirrhosis",
     "gray hair",
+    "liver",
     "minerals",
-    "supplements",
     "receding gums",
-    "anemia"
+    "supplements",
+    "vegan",
+    "veganism"
    ]
   },
   "WAL-CLM-IMMORT-000544": {
@@ -41041,6 +41060,298 @@
     "digestion",
     "skin",
     "nutrients"
+   ]
+  },
+  "WAL-CLM-DDDL-000606": {
+   "subject": "hepatitis",
+   "facet": "physiology",
+   "also_about": [
+    "liver",
+    "jaundice"
+   ],
+   "question": "What are the early signs of hepatitis?",
+   "answer_short": "Flu-like at first — appetite loss, prostration, nausea, vomiting and fever; dark urine and yellow eyes arrive 3 to 10 days in, and you start feeling better just as you look worse.",
+   "topics": [
+    "hepatitis",
+    "jaundice",
+    "liver",
+    "symptoms",
+    "liver-enzymes"
+   ]
+  },
+  "WAL-CLM-DDDL-000607": {
+   "subject": "liver",
+   "facet": "physiology",
+   "also_about": [
+    "reyes_syndrome"
+   ],
+   "question": "Can liver tissue grow back after it has been damaged?",
+   "answer_short": "In Reye's syndrome, yes — Wallach reports survivors recover 100 percent of the liver tissue within twelve weeks. He states it for Reye's specifically, not for liver damage in general.",
+   "topics": [
+    "liver",
+    "recovery",
+    "reyes-syndrome",
+    "liver-necrosis"
+   ]
+  },
+  "WAL-CLM-DDDL-000608": {
+   "subject": "liver",
+   "facet": "physiology",
+   "also_about": [
+    "liver_cirrhosis"
+   ],
+   "question": "How quickly can a mineral deficiency disease respond to treatment?",
+   "answer_short": "In as little as 48 hours to 30 days — Wallach says replacing the missing trace element is often the whole cure, except where the deficiency has already done permanent damage.",
+   "topics": [
+    "trace-minerals",
+    "liver",
+    "cirrhosis",
+    "reversal",
+    "deficiency"
+   ]
+  },
+  "WAL-CLM-DDDL-000609": {
+   "subject": "liver",
+   "facet": "stance",
+   "also_about": [
+    "selenium",
+    "liver_cirrhosis"
+   ],
+   "question": "Why do farmers prevent cirrhosis in cattle while people get liver transplants?",
+   "answer_short": "Because nobody insures a cow. Wallach says livestock get a few pennies a day of selenium, while people get the transplant — treating the symptom instead of the deficiency.",
+   "topics": [
+    "liver",
+    "cirrhosis",
+    "selenium",
+    "transplant",
+    "livestock",
+    "veterinary-medicine"
+   ]
+  },
+  "WAL-CLM-DDDL-000610": {
+   "subject": "hepatitis",
+   "facet": "protocol",
+   "also_about": [
+    "liver"
+   ],
+   "question": "How do I avoid catching hepatitis?",
+   "answer_short": "Hand-washing, and no shared needles — Wallach puts the risk reduction at 97 percent. He says nothing here about the vaccine.",
+   "topics": [
+    "hepatitis",
+    "prevention",
+    "hygiene",
+    "liver"
+   ]
+  },
+  "WAL-CLM-DDDL-000611": {
+   "subject": "liver_cancer",
+   "facet": "warning",
+   "also_about": [
+    "liver",
+    "hepatitis"
+   ],
+   "question": "Is liver cancer more common where hepatitis is common?",
+   "answer_short": "In China, Wallach puts endemic hepatitis at 10 percent — 100 million cases a year — and the liver cancer rate very high. He sets the two side by side without claiming one causes the other.",
+   "topics": [
+    "liver-cancer",
+    "hepatitis",
+    "china",
+    "liver"
+   ]
+  },
+  "WAL-CLM-DDDL-000612": {
+   "subject": "liver",
+   "facet": "sources",
+   "also_about": [
+    "liver_disease",
+    "selenium",
+    "vitamin-c",
+    "vitamin-a",
+    "omega-3"
+   ],
+   "question": "Which foods and nutrients support a healthy liver?",
+   "answer_short": "Vitamin C, vitamin A as beta carotene, B-complex, B12, folic acid, selenium and the EFAs in salmon and flaxseed oil — with milk thistle, and fried foods and margarine off the plate.",
+   "topics": [
+    "best foods for liver",
+    "best supplement for liver",
+    "essential-fatty-acids",
+    "folic-acid",
+    "foods",
+    "foods good for liver",
+    "liver",
+    "liver-protocol",
+    "milk-thistle",
+    "selenium",
+    "supplements for liver",
+    "vitamin-a",
+    "vitamin-c",
+    "vitamins for liver",
+    "what to eat for liver",
+    "what to take for liver"
+   ]
+  },
+  "WAL-CLM-EPIGEN-000498": {
+   "subject": "liver",
+   "facet": "basics",
+   "also_about": [],
+   "question": "What does the liver actually do?",
+   "answer_short": "Over 500 jobs, by the British Liver Trust’s count that Wallach cites — three of them being to manage digested food, disarm toxins, and make the bile you need to absorb fats and fat-soluble vitamins.",
+   "topics": [
+    "bile",
+    "detoxification",
+    "digestion",
+    "liver",
+    "liver job",
+    "liver-function",
+    "what does the liver do",
+    "what the liver does"
+   ]
+  },
+  "WAL-CLM-EPIGEN-000499": {
+   "subject": "liver",
+   "facet": "protocol",
+   "also_about": [
+    "liver_cirrhosis",
+    "selenium"
+   ],
+   "question": "Can cirrhosis be reversed without a liver transplant?",
+   "answer_short": "Wallach reports one patient who did it — off the transplant list in sixty days on a gluten-free diet plus the 90 essentials spiked with selenium and B vitamins. No amounts are stated.",
+   "topics": [
+    "liver",
+    "cirrhosis",
+    "reversal",
+    "transplant",
+    "selenium",
+    "gluten-free",
+    "case-history"
+   ]
+  },
+  "WAL-CLM-EPIGEN-000500": {
+   "subject": "liver_cancer",
+   "facet": "mechanism",
+   "also_about": [
+    "liver"
+   ],
+   "question": "Can moldy food cause liver cancer?",
+   "answer_short": "Wallach says the bread mold Aspergillus makes aflatoxin — a large dose kills the liver outright, a low dose produces a very specific liver cancer, the one that struck zoo bears.",
+   "topics": [
+    "liver-cancer",
+    "aflatoxin",
+    "mold",
+    "liver",
+    "zoo-animals"
+   ]
+  },
+  "WAL-CLM-EPIGEN-000501": {
+   "subject": "liver",
+   "facet": "protocol",
+   "also_about": [
+    "liver_cirrhosis",
+    "liver_disease",
+    "selenium"
+   ],
+   "question": "How do I improve my liver health and reverse liver damage?",
+   "answer_short": "Wallach’s answer is that a damaged liver can come back: a gluten-free diet on the platform of all 90 essentials, therapeutic levels of what is missing, a monthly liver flush, and fried food, margarine, sugar and alcohol out.",
+   "topics": [
+    "alfalfa",
+    "detox",
+    "gluten-free",
+    "how to take care of my liver",
+    "improve liver health",
+    "liver",
+    "liver care",
+    "liver-flush",
+    "look after my liver",
+    "ninety-essentials",
+    "reversal",
+    "take care of my liver"
+   ]
+  },
+  "WAL-CLM-RARE-000419": {
+   "subject": "cadmium",
+   "facet": "warning",
+   "also_about": [
+    "liver"
+   ],
+   "question": "Can cadmium damage my liver?",
+   "answer_short": "Wallach reports liver disease, kidney damage and treatment-resistant glaucoma attributed to elevated tissue cadmium. It is an attribution he relays, not a mechanism he demonstrates.",
+   "topics": [
+    "cadmium",
+    "liver",
+    "toxic-metals",
+    "glaucoma",
+    "kidney"
+   ]
+  },
+  "WAL-CLM-RARE-000420": {
+   "subject": "liver",
+   "facet": "physiology",
+   "also_about": [
+    "liver_cirrhosis",
+    "selenium",
+    "copper",
+    "sulfur"
+   ],
+   "question": "Which nutrient deficiencies does Wallach blame for cirrhosis?",
+   "answer_short": "Selenium, copper and sulfur — the row he sets against liver cirrhosis in his table of what kills American physicians.",
+   "topics": [
+    "liver",
+    "cirrhosis",
+    "selenium",
+    "copper",
+    "sulfur",
+    "physician-mortality",
+    "deficiency"
+   ]
+  },
+  "WAL-CLM-LETS-000540": {
+   "subject": "liver",
+   "facet": "physiology",
+   "also_about": [
+    "liver_disease"
+   ],
+   "question": "Is there a cheap test I can do at home to check for liver disease?",
+   "answer_short": "Urine dip sticks — about $1.50 a test, and they flag liver disease alongside kidney disease, diabetes and blood in the urine. Wallach names no brand and no reading to look for.",
+   "topics": [
+    "liver",
+    "liver-disease",
+    "self-testing",
+    "urine-test",
+    "diagnosis"
+   ]
+  },
+  "WAL-CLM-LETS-000541": {
+   "subject": "liver",
+   "facet": "physiology",
+   "also_about": [
+    "liver_cirrhosis"
+   ],
+   "question": "Can a blood test show whether drinking has affected my liver?",
+   "answer_short": "GGT is the one Wallach names — a barometer of connective tissue growth in the liver, which is cirrhosis, and highly sensitive to alcohol and drug abuse.",
+   "topics": [
+    "liver",
+    "ggt",
+    "blood-test",
+    "alcohol",
+    "cirrhosis",
+    "diagnosis"
+   ]
+  },
+  "WAL-CLM-HELLS-000124": {
+   "subject": "liver",
+   "facet": "warning",
+   "also_about": [
+    "liver_cirrhosis"
+   ],
+   "question": "How many drinks a day does it take to damage my liver?",
+   "answer_short": "Two a day, on a 2004 NIAAA report Wallach passes on without objection — though he rejects its benefit half: any good comes from the drink’s phytonutrients, not the alcohol.",
+   "topics": [
+    "liver",
+    "alcohol",
+    "cirrhosis",
+    "pancreatitis",
+    "colon-cancer",
+    "phytonutrients"
    ]
   }
  }

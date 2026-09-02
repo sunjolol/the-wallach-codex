@@ -17413,10 +17413,11 @@
    "essentials": [],
    "other_substances": [],
    "conditions": [
-    "gray_hair"
+    "gray_hair",
+    "liver_cirrhosis"
    ],
    "symptoms": [],
-   "claim_text": "Wallach says strict vegans who do not supplement heavily and correctly with minerals develop grey hair, receding gums, anemia, and other problems before five years have elapsed.",
+   "claim_text": "Wallach says most vegans do not seriously supplement heavily and correctly with a special emphasis on minerals, and that as a result strict vegans develop grey hair, receding gums, periodontal disease, blood sugar problems, arthritis, osteoporosis, anemia, hypertension, fibromyalgia, chronic fatigue syndrome, cancer, liver cirrhosis, and cognitive, memory and emotional problems before five years has elapsed. The cause he names is the missing mineral supplementation, not the plant food itself.",
    "verbatim": "Most vegans do not seriously supplement heavily and\ncorrectly with a special emphasis on minerals, and as a result\nstrict vegans develop grey hair, receding gums, periodontal\ndisease, blood sugar problems, arthritis, osteoporosis, anemia,\nhypertension, fibromyalgia, chronic fatigue syndrome, cancer,\nliver cirrhosis, cognitive, memory and emotional problems\nbefore five years has elapsed.",
    "locator": {
     "book": "immortality",

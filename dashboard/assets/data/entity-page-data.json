@@ -1176,8 +1176,8 @@
       "symbol": "S",
       "category": "mineral",
       "is_essential": true,
-      "claim_count": 14,
-      "distinct_claim_count": 28,
+      "claim_count": 15,
+      "distinct_claim_count": 29,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -1261,7 +1261,8 @@
             "WAL-CLM-LETS-000495",
             "WAL-CLM-RARE-000223",
             "WAL-CLM-RARE-000303",
-            "WAL-CLM-RARE-000370"
+            "WAL-CLM-RARE-000370",
+            "WAL-CLM-RARE-000420"
           ]
         },
         {
@@ -1309,6 +1310,7 @@
         "collagen_disease",
         "degenerative_disc_disease",
         "joint_pain",
+        "liver_cirrhosis",
         "lupus",
         "osteoarthritis",
         "osteoporosis",
@@ -1323,7 +1325,7 @@
         "arthritis",
         "osteoporosis",
         "manganese",
-        "anemia"
+        "selenium"
       ]
     },
     "chloride": {
@@ -2803,8 +2805,8 @@
       "symbol": "Cu",
       "category": "mineral",
       "is_essential": true,
-      "claim_count": 72,
-      "distinct_claim_count": 99,
+      "claim_count": 73,
+      "distinct_claim_count": 100,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -2955,7 +2957,8 @@
             "WAL-CLM-RARE-000303",
             "WAL-CLM-RARE-000344",
             "WAL-CLM-RARE-000345",
-            "WAL-CLM-RARE-000347"
+            "WAL-CLM-RARE-000347",
+            "WAL-CLM-RARE-000420"
           ]
         },
         {
@@ -3115,9 +3118,9 @@
         "zinc",
         "magnesium",
         "arthritis",
+        "selenium",
         "varicose_veins",
         "aneurysm",
-        "selenium",
         "vitamin-e"
       ]
     },
@@ -4096,8 +4099,8 @@
       "symbol": "Se",
       "category": "mineral",
       "is_essential": true,
-      "claim_count": 130,
-      "distinct_claim_count": 163,
+      "claim_count": 135,
+      "distinct_claim_count": 168,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -4200,7 +4203,8 @@
             "WAL-CLM-LETS-000030",
             "WAL-CLM-RARE-000227",
             "WAL-CLM-RARE-000269",
-            "WAL-CLM-RARE-000355"
+            "WAL-CLM-RARE-000355",
+            "WAL-CLM-RARE-000420"
           ]
         },
         {
@@ -4222,6 +4226,7 @@
         {
           "facet": "sources",
           "claim_ids": [
+            "WAL-CLM-DDDL-000612",
             "WAL-CLM-EPIGEN-000171",
             "WAL-CLM-EPIGEN-000187"
           ]
@@ -4263,6 +4268,8 @@
             "WAL-CLM-DDDL-000601",
             "WAL-CLM-EPIGEN-000136",
             "WAL-CLM-EPIGEN-000172",
+            "WAL-CLM-EPIGEN-000499",
+            "WAL-CLM-EPIGEN-000501",
             "WAL-CLM-IMMORT-000164",
             "WAL-CLM-IMMORT-000265",
             "WAL-CLM-LETS-000065",
@@ -4320,6 +4327,7 @@
             "WAL-CLM-DDDL-000136",
             "WAL-CLM-DDDL-000147",
             "WAL-CLM-DDDL-000260",
+            "WAL-CLM-DDDL-000609",
             "WAL-CLM-EPIGEN-000004",
             "WAL-CLM-EPIGEN-000005",
             "WAL-CLM-HELLS-000026",
@@ -11031,8 +11039,8 @@
       "symbol": "A",
       "category": "vitamin",
       "is_essential": true,
-      "claim_count": 79,
-      "distinct_claim_count": 100,
+      "claim_count": 81,
+      "distinct_claim_count": 102,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -11090,6 +11098,7 @@
           "kind": "protocol",
           "claim_ids": [
             "WAL-CLM-DDDL-000567",
+            "WAL-CLM-EPIGEN-000501",
             "WAL-CLM-LETS-000157",
             "WAL-CLM-LETS-000245",
             "WAL-CLM-LETS-000275",
@@ -11107,7 +11116,7 @@
           ]
         }
       ],
-      "record_claim_count": 10,
+      "record_claim_count": 11,
       "search": [
         {
           "facet": "basics",
@@ -11144,6 +11153,7 @@
         {
           "facet": "sources",
           "claim_ids": [
+            "WAL-CLM-DDDL-000612",
             "WAL-CLM-EPIGEN-000175",
             "WAL-CLM-EPIGEN-000216",
             "WAL-CLM-IMMORT-000221",
@@ -12278,8 +12288,8 @@
       "symbol": "B9",
       "category": "vitamin",
       "is_essential": true,
-      "claim_count": 27,
-      "distinct_claim_count": 42,
+      "claim_count": 29,
+      "distinct_claim_count": 44,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -12324,6 +12334,8 @@
         {
           "kind": "protocol",
           "claim_ids": [
+            "WAL-CLM-DDDL-000612",
+            "WAL-CLM-EPIGEN-000501",
             "WAL-CLM-LETS-000137",
             "WAL-CLM-LETS-000243",
             "WAL-CLM-LETS-000255",
@@ -12333,7 +12345,7 @@
           ]
         }
       ],
-      "record_claim_count": 6,
+      "record_claim_count": 8,
       "search": [
         {
           "facet": "basics",
@@ -12471,10 +12483,10 @@
         "vitamin-b12",
         "vitamin-a",
         "selenium",
-        "birth_defects",
         "omega-3",
-        "spina_bifida",
-        "vitamin-b6"
+        "vitamin-c",
+        "birth_defects",
+        "spina_bifida"
       ]
     },
     "vitamin-b12": {
@@ -12484,8 +12496,8 @@
       "symbol": "B12",
       "category": "vitamin",
       "is_essential": true,
-      "claim_count": 42,
-      "distinct_claim_count": 75,
+      "claim_count": 44,
+      "distinct_claim_count": 77,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -12542,6 +12554,8 @@
           "claim_ids": [
             "WAL-CLM-DDDL-000049",
             "WAL-CLM-DDDL-000080",
+            "WAL-CLM-DDDL-000612",
+            "WAL-CLM-EPIGEN-000501",
             "WAL-CLM-LETS-000244",
             "WAL-CLM-LETS-000267",
             "WAL-CLM-LETS-000300",
@@ -12550,7 +12564,7 @@
           ]
         }
       ],
-      "record_claim_count": 8,
+      "record_claim_count": 10,
       "search": [
         {
           "facet": "basics",
@@ -12707,13 +12721,13 @@
       ],
       "related": [
         "zinc",
-        "calcium",
         "vitamin-b9",
-        "magnesium",
+        "calcium",
         "vitamin-c",
+        "magnesium",
         "omega-3",
-        "vitamin-b6",
-        "anemia"
+        "selenium",
+        "vitamin-a"
       ]
     },
     "vitamin-c": {
@@ -12723,8 +12737,8 @@
       "symbol": "C",
       "category": "vitamin",
       "is_essential": true,
-      "claim_count": 89,
-      "distinct_claim_count": 114,
+      "claim_count": 91,
+      "distinct_claim_count": 116,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -12764,6 +12778,7 @@
         {
           "kind": "protocol",
           "claim_ids": [
+            "WAL-CLM-EPIGEN-000501",
             "WAL-CLM-LETS-000137",
             "WAL-CLM-LETS-000146",
             "WAL-CLM-LETS-000157",
@@ -12777,7 +12792,7 @@
           ]
         }
       ],
-      "record_claim_count": 10,
+      "record_claim_count": 11,
       "search": [
         {
           "facet": "basics",
@@ -12818,6 +12833,7 @@
           "facet": "sources",
           "claim_ids": [
             "WAL-CLM-DDDL-000021",
+            "WAL-CLM-DDDL-000612",
             "WAL-CLM-HELLS-000024"
           ]
         },
@@ -13030,8 +13046,8 @@
         "zinc",
         "vitamin-e",
         "vitamin-a",
-        "flavonoids",
         "omega-3",
+        "flavonoids",
         "magnesium",
         "calcium"
       ]
@@ -14947,8 +14963,8 @@
       "symbol": null,
       "category": "amino_acid",
       "is_essential": true,
-      "claim_count": 7,
-      "distinct_claim_count": 17,
+      "claim_count": 8,
+      "distinct_claim_count": 18,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -14968,13 +14984,19 @@
       ],
       "record": [
         {
+          "kind": "protocol",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000501"
+          ]
+        },
+        {
           "kind": "mechanism",
           "claim_ids": [
             "WAL-CLM-EPIGEN-000464"
           ]
         }
       ],
-      "record_claim_count": 1,
+      "record_claim_count": 2,
       "search": [
         {
           "facet": "basics",
@@ -15028,6 +15050,7 @@
         "fatty_liver",
         "fibromyalgia",
         "keshan_disease",
+        "liver_cirrhosis",
         "liver_disease",
         "muscular_dystrophy",
         "parkinsonism"
@@ -15035,13 +15058,13 @@
       "works_with": [],
       "related": [
         "selenium",
+        "omega-3",
         "vitamin-e",
         "fibromyalgia",
         "leucine",
-        "omega-3",
+        "liver_disease",
         "phenylalanine",
-        "vitamin-b1",
-        "anemia"
+        "vitamin-b1"
       ]
     },
     "phenylalanine": {
@@ -15565,8 +15588,8 @@
       "symbol": null,
       "category": "fatty_acid",
       "is_essential": true,
-      "claim_count": 99,
-      "distinct_claim_count": 124,
+      "claim_count": 101,
+      "distinct_claim_count": 126,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -15634,6 +15657,7 @@
         {
           "kind": "protocol",
           "claim_ids": [
+            "WAL-CLM-EPIGEN-000501",
             "WAL-CLM-LETS-000137",
             "WAL-CLM-LETS-000157",
             "WAL-CLM-LETS-000159",
@@ -15656,7 +15680,7 @@
           ]
         }
       ],
-      "record_claim_count": 19,
+      "record_claim_count": 20,
       "search": [
         {
           "facet": "basics",
@@ -15712,6 +15736,7 @@
           "facet": "sources",
           "claim_ids": [
             "WAL-CLM-DDDL-000161",
+            "WAL-CLM-DDDL-000612",
             "WAL-CLM-HELLS-000020",
             "WAL-CLM-IMMORT-000278",
             "WAL-CLM-RARE-000414"
@@ -15913,13 +15938,13 @@
       "works_with": [],
       "related": [
         "vitamin-e",
+        "selenium",
         "omega-6",
         "zinc",
-        "selenium",
         "vitamin-a",
         "vitamin-b6",
-        "calcium",
-        "vitamin-c"
+        "vitamin-c",
+        "calcium"
       ]
     },
     "omega-6": {
@@ -21728,8 +21753,8 @@
     "cancer": {
       "type": "condition",
       "name": "Cancer",
-      "claim_count": 76,
-      "distinct_claim_count": 104,
+      "claim_count": 77,
+      "distinct_claim_count": 105,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -21797,6 +21822,12 @@
           ]
         },
         {
+          "kind": "prognosis",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000608"
+          ]
+        },
+        {
           "kind": "contraindication",
           "claim_ids": [
             "WAL-CLM-DDDL-000061",
@@ -21811,7 +21842,7 @@
           ]
         }
       ],
-      "record_claim_count": 13,
+      "record_claim_count": 14,
       "search": [
         {
           "facet": "stance",
@@ -21951,24 +21982,24 @@
         }
       ],
       "related_conditions": [
-        "arthritis",
         "cardiomyopathy",
+        "arthritis",
+        "diabetes",
         "infertility",
         "liver_disease",
         "osteoporosis",
         "breast_cancer",
-        "colon_cancer",
-        "dementia"
+        "colon_cancer"
       ],
       "related": [
         "selenium",
+        "cardiomyopathy",
         "vitamin-a",
         "arthritis",
-        "cardiomyopathy",
+        "diabetes",
         "infertility",
         "liver_disease",
-        "osteoporosis",
-        "breast_cancer"
+        "osteoporosis"
       ]
     },
     "candidiasis": {
@@ -22290,8 +22321,8 @@
     "cardiomyopathy": {
       "type": "condition",
       "name": "Cardiomyopathy",
-      "claim_count": 12,
-      "distinct_claim_count": 16,
+      "claim_count": 14,
+      "distinct_claim_count": 18,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -22322,6 +22353,13 @@
           ]
         },
         {
+          "kind": "prognosis",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000608",
+            "WAL-CLM-DDDL-000609"
+          ]
+        },
+        {
           "kind": "contraindication",
           "claim_ids": [
             "WAL-CLM-EPIGEN-000177"
@@ -22340,7 +22378,7 @@
           ]
         }
       ],
-      "record_claim_count": 4,
+      "record_claim_count": 6,
       "search": [
         {
           "facet": "stance",
@@ -22387,22 +22425,22 @@
       ],
       "related_conditions": [
         "cancer",
+        "liver_cirrhosis",
+        "diabetes",
         "aneurysm",
         "cataracts",
         "cystic_fibrosis",
-        "diabetes",
-        "liver_cirrhosis",
         "liver_disease",
         "muscular_dystrophy"
       ],
       "related": [
         "selenium",
         "cancer",
+        "liver_cirrhosis",
+        "diabetes",
         "aneurysm",
         "cataracts",
         "cystic_fibrosis",
-        "diabetes",
-        "liver_cirrhosis",
         "liver_disease"
       ]
     },
@@ -24148,8 +24186,8 @@
     "colon_cancer": {
       "type": "condition",
       "name": "Colon Cancer",
-      "claim_count": 6,
-      "distinct_claim_count": 6,
+      "claim_count": 7,
+      "distinct_claim_count": 7,
       "books": [
         "epigenetics",
         "hells-kitchen",
@@ -24168,13 +24206,19 @@
       ],
       "record": [
         {
+          "kind": "toxicity_sign",
+          "claim_ids": [
+            "WAL-CLM-HELLS-000124"
+          ]
+        },
+        {
           "kind": "protocol",
           "claim_ids": [
             "WAL-CLM-IMMORT-000096"
           ]
         }
       ],
-      "record_claim_count": 1,
+      "record_claim_count": 2,
       "search": [
         {
           "facet": "mechanism",
@@ -24205,7 +24249,7 @@
         "brain_cancer",
         "esophageal_cancer",
         "liver_cancer",
-        "liver_disease"
+        "liver_cirrhosis"
       ],
       "related": [
         "cancer",
@@ -26390,8 +26434,8 @@
     "diabetes": {
       "type": "condition",
       "name": "Diabetes",
-      "claim_count": 35,
-      "distinct_claim_count": 53,
+      "claim_count": 36,
+      "distinct_claim_count": 54,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -26445,9 +26489,15 @@
           "claim_ids": [
             "WAL-CLM-LETS-000100"
           ]
+        },
+        {
+          "kind": "prognosis",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000608"
+          ]
         }
       ],
-      "record_claim_count": 4,
+      "record_claim_count": 5,
       "search": [
         {
           "facet": "stance",
@@ -26547,12 +26597,12 @@
       "related_conditions": [
         "hypoglycemia",
         "cancer",
+        "cardiomyopathy",
         "coronary_artery_disease",
         "depression",
         "high_cholesterol",
         "obesity",
-        "adhd",
-        "anxiety"
+        "adhd"
       ],
       "related": [
         "chromium",
@@ -26560,9 +26610,9 @@
         "hypoglycemia",
         "cancer",
         "zinc",
+        "cardiomyopathy",
         "coronary_artery_disease",
-        "depression",
-        "high_cholesterol"
+        "depression"
       ]
     },
     "diaper_rash": {
@@ -29431,11 +29481,12 @@
     "glaucoma": {
       "type": "condition",
       "name": "Glaucoma",
-      "claim_count": 2,
-      "distinct_claim_count": 2,
+      "claim_count": 3,
+      "distinct_claim_count": 3,
       "books": [
         "immortality",
-        "lets-play-doctor"
+        "lets-play-doctor",
+        "rare-earths"
       ],
       "synonyms": [
         "glaucoma",
@@ -29458,9 +29509,15 @@
           "claim_ids": [
             "WAL-CLM-IMMORT-000063"
           ]
+        },
+        {
+          "kind": "toxicity_sign",
+          "claim_ids": [
+            "WAL-CLM-RARE-000419"
+          ]
         }
       ],
-      "record_claim_count": 1,
+      "record_claim_count": 2,
       "search": [
         {
           "facet": "protocol",
@@ -29476,8 +29533,8 @@
         "dowagers_hump",
         "hypertension",
         "insomnia",
-        "kidney_stones",
-        "kyphosis"
+        "kidney_disease",
+        "kidney_stones"
       ],
       "related": [
         "ankylosing_spondylitis",
@@ -29487,7 +29544,7 @@
         "dowagers_hump",
         "hypertension",
         "insomnia",
-        "kidney_stones"
+        "kidney_disease"
       ]
     },
     "glucose_intolerance": {
@@ -29837,17 +29894,7 @@
         }
       ],
       "related_conditions": [
-        "adhd",
-        "anemia",
-        "aneurysm",
-        "arthritis",
-        "autism",
-        "blind_rage",
-        "brittle_hair",
-        "cerebellar_hypoplasia"
-      ],
-      "related": [
-        "copper",
+        "liver_cirrhosis",
         "adhd",
         "anemia",
         "aneurysm",
@@ -29855,6 +29902,16 @@
         "autism",
         "blind_rage",
         "brittle_hair"
+      ],
+      "related": [
+        "copper",
+        "liver_cirrhosis",
+        "adhd",
+        "anemia",
+        "aneurysm",
+        "arthritis",
+        "autism",
+        "blind_rage"
       ]
     },
     "growing_pains": {
@@ -30600,9 +30657,10 @@
     "hepatitis": {
       "type": "condition",
       "name": "Hepatitis",
-      "claim_count": 1,
-      "distinct_claim_count": 1,
+      "claim_count": 4,
+      "distinct_claim_count": 4,
       "books": [
+        "dddl-3e-2011",
         "lets-play-doctor"
       ],
       "synonyms": [
@@ -30615,6 +30673,7 @@
         "hepatitus"
       ],
       "protocol_claim_ids": [
+        "WAL-CLM-DDDL-000610",
         "WAL-CLM-LETS-000298"
       ],
       "restore": [
@@ -30630,15 +30689,32 @@
         {
           "facet": "protocol",
           "claim_ids": [
+            "WAL-CLM-DDDL-000610",
             "WAL-CLM-LETS-000298"
+          ]
+        },
+        {
+          "facet": "warning",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000611"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000606"
           ]
         }
       ],
       "related_conditions": [
+        "jaundice",
+        "liver_cancer",
         "liver_disease"
       ],
       "related": [
         "germanium",
+        "jaundice",
+        "liver_cancer",
         "liver_disease",
         "selenium",
         "vitamin-b12",
@@ -33662,9 +33738,10 @@
     "jaundice": {
       "type": "condition",
       "name": "Jaundice",
-      "claim_count": 2,
-      "distinct_claim_count": 3,
+      "claim_count": 3,
+      "distinct_claim_count": 4,
       "books": [
+        "dddl-3e-2011",
         "epigenetics",
         "lets-play-doctor"
       ],
@@ -33705,6 +33782,12 @@
           "facet": "warning",
           "claim_ids": [
             "WAL-CLM-EPIGEN-000289"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000606"
           ]
         }
       ],
@@ -34222,13 +34305,14 @@
     "kidney_disease": {
       "type": "condition",
       "name": "Kidney Disease",
-      "claim_count": 7,
-      "distinct_claim_count": 10,
+      "claim_count": 8,
+      "distinct_claim_count": 11,
       "books": [
         "dddl-3e-2011",
         "hells-kitchen",
         "immortality",
-        "lets-play-doctor"
+        "lets-play-doctor",
+        "rare-earths"
       ],
       "synonyms": [
         "kidney problems",
@@ -34259,6 +34343,12 @@
           ]
         },
         {
+          "kind": "toxicity_sign",
+          "claim_ids": [
+            "WAL-CLM-RARE-000419"
+          ]
+        },
+        {
           "kind": "protocol",
           "claim_ids": [
             "WAL-CLM-LETS-000332"
@@ -34271,7 +34361,7 @@
           ]
         }
       ],
-      "record_claim_count": 3,
+      "record_claim_count": 4,
       "search": [
         {
           "facet": "stance",
@@ -35223,14 +35313,22 @@
     "liver_cancer": {
       "type": "condition",
       "name": "Liver Cancer",
-      "claim_count": 4,
-      "distinct_claim_count": 4,
+      "claim_count": 6,
+      "distinct_claim_count": 6,
       "books": [
+        "dddl-3e-2011",
+        "epigenetics",
         "immortality",
         "lets-play-doctor",
         "rare-earths"
       ],
-      "synonyms": [],
+      "synonyms": [
+        "cancer of the liver",
+        "hepatic cancer",
+        "liver tumor",
+        "liver tumour",
+        "hepatocellular carcinoma"
+      ],
       "protocol_claim_ids": [],
       "restore": [],
       "record": [],
@@ -35239,12 +35337,14 @@
         {
           "facet": "mechanism",
           "claim_ids": [
+            "WAL-CLM-EPIGEN-000500",
             "WAL-CLM-LETS-000195"
           ]
         },
         {
           "facet": "warning",
           "claim_ids": [
+            "WAL-CLM-DDDL-000611",
             "WAL-CLM-IMMORT-000123",
             "WAL-CLM-RARE-000134"
           ]
@@ -35280,24 +35380,28 @@
     "liver_cirrhosis": {
       "type": "condition",
       "name": "Liver Cirrhosis",
-      "claim_count": 10,
-      "distinct_claim_count": 10,
+      "claim_count": 18,
+      "distinct_claim_count": 18,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
+        "hells-kitchen",
         "immortality",
         "lets-play-doctor",
         "rare-earths"
       ],
       "synonyms": [],
       "protocol_claim_ids": [
+        "WAL-CLM-EPIGEN-000501",
         "WAL-CLM-LETS-000348"
       ],
       "restore": [
         "choline",
         "copper",
+        "methionine",
         "omega-3",
         "selenium",
+        "sulfur",
         "vitamin-a",
         "vitamin-b12",
         "vitamin-b9",
@@ -35318,6 +35422,12 @@
       "record_claim_count": 5,
       "search": [
         {
+          "facet": "stance",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000609"
+          ]
+        },
+        {
           "facet": "mechanism",
           "claim_ids": [
             "WAL-CLM-DDDL-000010"
@@ -35326,49 +35436,56 @@
         {
           "facet": "protocol",
           "claim_ids": [
+            "WAL-CLM-EPIGEN-000499",
+            "WAL-CLM-EPIGEN-000501",
             "WAL-CLM-LETS-000348"
           ]
         },
         {
           "facet": "warning",
           "claim_ids": [
-            "WAL-CLM-DDDL-000022"
+            "WAL-CLM-DDDL-000022",
+            "WAL-CLM-HELLS-000124"
           ]
         },
         {
           "facet": "physiology",
           "claim_ids": [
+            "WAL-CLM-DDDL-000608",
+            "WAL-CLM-IMMORT-000543",
             "WAL-CLM-LETS-000030",
-            "WAL-CLM-RARE-000227"
+            "WAL-CLM-LETS-000541",
+            "WAL-CLM-RARE-000227",
+            "WAL-CLM-RARE-000420"
           ]
         }
       ],
       "related_conditions": [
         "liver_disease",
+        "cardiomyopathy",
         "anemia",
+        "cancer",
         "aneurysm",
         "arthritis",
-        "cancer",
-        "cardiomyopathy",
-        "hernia",
-        "kawasaki_disease"
+        "diabetes",
+        "hernia"
       ],
       "related": [
         "liver_disease",
-        "anemia",
         "selenium",
-        "aneurysm",
-        "arthritis",
-        "cancer",
         "cardiomyopathy",
-        "copper"
+        "anemia",
+        "cancer",
+        "copper",
+        "aneurysm",
+        "arthritis"
       ]
     },
     "liver_disease": {
       "type": "condition",
       "name": "Liver Disease",
-      "claim_count": 27,
-      "distinct_claim_count": 29,
+      "claim_count": 32,
+      "distinct_claim_count": 34,
       "books": [
         "dddl-3e-2011",
         "epigenetics",
@@ -35385,6 +35502,8 @@
         "hepatic disease"
       ],
       "protocol_claim_ids": [
+        "WAL-CLM-DDDL-000612",
+        "WAL-CLM-EPIGEN-000501",
         "WAL-CLM-LETS-000298",
         "WAL-CLM-LETS-000348"
       ],
@@ -35425,7 +35544,8 @@
         {
           "kind": "toxicity_sign",
           "claim_ids": [
-            "WAL-CLM-LETS-000040"
+            "WAL-CLM-LETS-000040",
+            "WAL-CLM-RARE-000419"
           ]
         },
         {
@@ -35438,13 +35558,19 @@
           ]
         },
         {
+          "kind": "prognosis",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000607"
+          ]
+        },
+        {
           "kind": "diagnostic_pattern",
           "claim_ids": [
             "WAL-CLM-LETS-000517"
           ]
         }
       ],
-      "record_claim_count": 18,
+      "record_claim_count": 20,
       "search": [
         {
           "facet": "mechanism",
@@ -35456,6 +35582,7 @@
         {
           "facet": "protocol",
           "claim_ids": [
+            "WAL-CLM-EPIGEN-000501",
             "WAL-CLM-LETS-000298",
             "WAL-CLM-LETS-000348"
           ]
@@ -35471,27 +35598,39 @@
             "WAL-CLM-LETS-000020",
             "WAL-CLM-LETS-000031"
           ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-LETS-000540"
+          ]
+        },
+        {
+          "facet": "sources",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000612"
+          ]
         }
       ],
       "related_conditions": [
         "liver_cirrhosis",
         "cancer",
+        "kidney_disease",
         "anemia",
         "arthritis",
         "fatty_liver",
-        "kidney_disease",
         "alopecia",
         "anorexia"
       ],
       "related": [
         "liver_cirrhosis",
-        "cancer",
         "selenium",
+        "cancer",
+        "kidney_disease",
         "anemia",
         "arthritis",
         "fatty_liver",
-        "kidney_disease",
-        "alopecia"
+        "vitamin-b12"
       ]
     },
     "lordosis": {
@@ -39613,9 +39752,10 @@
     "pancreatitis": {
       "type": "condition",
       "name": "Pancreatitis",
-      "claim_count": 1,
-      "distinct_claim_count": 2,
+      "claim_count": 2,
+      "distinct_claim_count": 3,
       "books": [
+        "hells-kitchen",
         "rare-earths"
       ],
       "synonyms": [],
@@ -39629,9 +39769,15 @@
           "claim_ids": [
             "WAL-CLM-RARE-000270"
           ]
+        },
+        {
+          "kind": "toxicity_sign",
+          "claim_ids": [
+            "WAL-CLM-HELLS-000124"
+          ]
         }
       ],
-      "record_claim_count": 1,
+      "record_claim_count": 2,
       "search": [
         {
           "facet": "physiology",
@@ -39646,9 +39792,9 @@
         "alzheimers",
         "anemia",
         "cancer",
+        "colon_cancer",
         "dementia",
-        "hiv_aids",
-        "infertility"
+        "hiv_aids"
       ],
       "related": [
         "adrenoleukodystrophy",
@@ -39656,9 +39802,9 @@
         "alzheimers",
         "anemia",
         "cancer",
+        "colon_cancer",
         "dementia",
-        "hiv_aids",
-        "infertility"
+        "hiv_aids"
       ]
     },
     "panic_attacks": {
@@ -42337,9 +42483,10 @@
     "reyes_syndrome": {
       "type": "condition",
       "name": "Reyes Syndrome",
-      "claim_count": 1,
-      "distinct_claim_count": 1,
+      "claim_count": 2,
+      "distinct_claim_count": 2,
       "books": [
+        "dddl-3e-2011",
         "lets-play-doctor"
       ],
       "synonyms": [],
@@ -42360,9 +42507,19 @@
         }
       ],
       "record_claim_count": 1,
-      "search": [],
-      "related_conditions": [],
+      "search": [
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000607"
+          ]
+        }
+      ],
+      "related_conditions": [
+        "liver_disease"
+      ],
       "related": [
+        "liver_disease",
         "selenium",
         "vitamin-b12",
         "vitamin-c"

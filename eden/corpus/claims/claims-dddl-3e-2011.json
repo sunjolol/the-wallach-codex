@@ -19657,6 +19657,262 @@
    "extracted_at": "2026-08-18T22:38:20+00:00",
    "reviewed_at": null,
    "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000606",
+   "kind": "diagnostic_pattern",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "hepatitis",
+    "jaundice"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach says hepatitis is difficult to diagnose in the early stages but easy after a week or so. The early signs are flu-like: loss of appetite, prostration, nausea and vomiting, and fever. After 3 to 10 days the urine turns dark and jaundice — yellow eyes and skin — appears, and at that point the patient starts to feel better. On blood work he expects SGOT (AST) and SGPT (ALT) to run elevated up to ten times normal values, decreasing gradually as recovery takes place.",
+   "verbatim": "Diagnosis of hepatitis is difficult in the early stages\nbut easy after a week or so. Loss of appetite, prostration, nausea and\nvomiting, and fever are the early flu-like signs; after 3-10 days the urine\nwill turn dark and jaundice (yellow eyes and skin) will appear. The patient\nfeels better at this point. Blood test show a marked elevation in the SGOT\n(AST) and SGPT (ALT) up ten times the normal values; the elevated\nenzymes gradually decrease as recovery takes place.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 791763
+   },
+   "dose": null,
+   "tags": [
+    "liver-health",
+    "hepatitis",
+    "symptom-timeline"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-09-01T22:04:01+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000607",
+   "kind": "prognosis",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "reyes_syndrome",
+    "liver_disease"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach says the cause of Reye's syndrome is thought to be consumption of aflatoxin, an exotoxin of the grain mold Aspergillus flavus, and that a typical liver necrosis — dead liver tissue — is present on biopsy. Survivors, he reports, show a 100 percent recovery of the liver tissue twelve weeks after the attack. He states this recovery for survivors of a Reye's syndrome attack specifically; he does not extend it here to liver damage in general or to cirrhosis.",
+   "verbatim": "The cause of Reye’s syndrome is thought to be\nconsumption of aflatoxin (an exotoxin of the grain mold Aspergillus\nflavus). A typical liver necrosis is present on biopsy. Survivors show a 100\npercent recovery of the liver tissue in twelve weeks after the\nattack.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 915090
+   },
+   "dose": null,
+   "tags": [
+    "liver-health",
+    "reyes-syndrome",
+    "recovery"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-09-01T22:04:01+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000608",
+   "kind": "prognosis",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "liver_cirrhosis",
+    "cardiomyopathy",
+    "diabetes",
+    "cancer"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach places liver cirrhosis in what he calls the clinical phase of trace mineral deficiency — the stage of full-blown disease and even death, alongside cardiomyopathy, diabetes and cancer. He says these are almost never diagnosed as deficiencies by the orthodox physician, that the cure is often simply a matter of replacing the missing trace element, and that positive clinical responses can come in as little as 48 hours to 30 days. He states the limit himself: only the very few whose deficiencies have already caused permanent biochemical, chromosomal or gross physical damage will not return to normal health. He does not name which trace element is missing in cirrhosis here, and states no amount.",
+   "verbatim": "The clinical phase of trace mineral deficiencies is characterized by the onset\nof full-blown disease states and even death—i.e., cardiomyopathy, diabetes,\ncancer, liver cirrhosis. Most trace mineral deficiencies in the clinical phase,\nthough, are never diagnosed as such by the “orthodox” physician. The\n“cure,” however, is often simply a matter of replacing the missing trace\nelement. Positive clinical responses using this method can occur in as little\nas 48 hours to 30 days. Only those very few people whose deficiencies have\ncaused permanent biochemical, chromosomal, or gross physical damage\nwill not return to normal health.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 68069
+   },
+   "dose": null,
+   "tags": [
+    "liver-health",
+    "reversal",
+    "trace-minerals"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-09-01T22:04:01+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000609",
+   "kind": "prognosis",
+   "essentials": [
+    "selenium"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "liver_cirrhosis",
+    "cardiomyopathy"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach draws a contrast between livestock and people. In livestock, he says, these diseases are prevented and reversed with a few pennies a day of selenium — because there is no health insurance to pay for symptomatic treatment or for the losses in meat production. In humans the same conditions — fibromyalgia, muscular dystrophy, liver cirrhosis and cardiomyopathy — are met with treatments aimed at the symptom rather than the deficiency: muscle relaxants, prednisone, liver transplants, pacemakers and heart transplants. His position is that the transplant is what you get when the deficiency is never addressed. The 'few pennies a day' is a cost, not a dose; he states no human amount here.",
+   "verbatim": "Muscle is meat. Muscle disease costs farmers money. In livestock we\nprevent and reverse these diseases with a few pennies a day of selenium\nbecause we don’t have health insurance to pay for symptomatic treatment or\nto pay for the losses of meat production.\nIn humans we deal with fibromyalgia, muscular dystrophy, liver cirrhosis,\nand cardiomyopathy by treating the symptoms—not the deficiency, with\nmuscle relaxants, prednisone, liver transplants, pacemakers, and heart\ntransplants.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 60355
+   },
+   "dose": null,
+   "tags": [
+    "liver-health",
+    "transplant",
+    "selenium",
+    "livestock-contrast"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-09-01T22:04:01+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000610",
+   "kind": "protocol",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "hepatitis"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach's hepatitis prevention program is hygiene. Follow good personal hygiene: wash your hands after using the toilet, and wash your hands before cooking and eating. He addresses doctors and nurses directly, telling them to wash their hands between patients and saying that failing to do so causes two million infections each year in hospitals alone. He adds: do not do illegal drugs, and do not use shared 'community' needles. Following these rules, he says, will reduce your risk of contracting hepatitis by 97 percent. This passage says nothing about the hepatitis B vaccine.",
+   "verbatim": "Prevention of hepatitis is fairly simple—follow good personal hygiene,\nwash your hands after using the toilet, and wash your hands before cooking\nand eating. DOCTORS AND NURSES, PLEASE WASH YOUR HANDS\nBETWEEN PATIENTS. By not washing their hands between patients\ndoctors and nurses cause two million infections each\nyear in hospitals alone. Do not do illegal drugs, do not use “community”\nneedles, etc. Follow the above simple rules and you will reduce your risk of\ncontracting hepatitis by 97 percent.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 791047
+   },
+   "dose": null,
+   "tags": [
+    "liver-health",
+    "hepatitis",
+    "prevention",
+    "hygiene"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-09-01T22:04:01+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000611",
+   "kind": "prevalence",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "hepatitis",
+    "liver_cancer"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach sets hepatitis and liver cancer side by side at the population level: in China, where he puts the endemic hepatitis rate at 10 percent — 100 million cases a year — the rate of liver cancer is very high. He states the two rates together; in this passage he does not assert a causal link or a mechanism between them.",
+   "verbatim": "In China, where there is an endemic hepatitis rate of 10 percent (that\nis 100 million cases a year!), the rate of liver cancer is very high.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 790906
+   },
+   "dose": null,
+   "tags": [
+    "liver-health",
+    "hepatitis",
+    "liver-cancer",
+    "china"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-09-01T22:04:01+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-DDDL-000612",
+   "kind": "protocol",
+   "essentials": [
+    "vitamin-c",
+    "vitamin-a",
+    "selenium",
+    "vitamin-b12",
+    "vitamin-b9",
+    "omega-3"
+   ],
+   "other_substances": [
+    "milk-thistle",
+    "parsley",
+    "beta-carotene",
+    "colloidal-minerals"
+   ],
+   "conditions": [
+    "liver_disease"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach's liver-disease protocol — the entry covers cirrhosis and nonviral hepatitis — is a nutrient list: vitamin C to bowel tolerance, vitamin A at 10,000 to 300,000 IU per day as beta carotene, B-complex at 100 mg each three times a day, selenium at 500-1,000 mcg per day, B12 at 1,000 mcg per day, folic acid at 15-25 mg per day, and essential fatty acids from both salmon oil and flaxseed oil at 1 gm three times a day, with amino acids and interlipids alongside IV or oral chelation. He names herbs with it — milk thistle, parsley, tamarac and hemp acrimony — tells you not to forget the base line nutrition program and colloidal minerals, and says to avoid fried foods and margarine. For hepatitis he keeps vitamin C, B12 and folic acid and adds catechin, germanium, selenium and an oxygen supplement, with licorice, chicory and dandelion as the herbs, fluids including chicken soup, and no sugar, fat, margarine, fried foods or alcohol. Salmon and other cold-water fish are rich sources of the essential fatty acids the liver requires to process cholesterol properly and prevent platelet clumping. Selenium is the nutrient he ties to the liver in book after book, listing liver necrosis and cirrhosis as direct results of a selenium deficiency. Copper deficiency also carries liver cirrhosis, and with it abnormal iron accumulation in the liver; choline deficiency produces fatty liver and cirrhosis, because choline's job in humans is transporting fat out of the liver, where it forms lecithin; inositol deficiency produces fatty liver; biotin deficiency shows as fatty liver; and vitamin E deficiency shows as liver necrosis. Excess iron can cause cirrhosis too, but he says that is not iron toxicity — the extra iron raises the body's need for selenium, copper and zinc. Underneath all of it, he says optimal liver nutrition takes the faithful use of every one of the essential nutrients.",
+   "verbatim": "Treatment of liver disease includes IV or oral chelation with complete IV\nsupplementation including amino acids and interlipids, vitamin C to bowel\ntolerance, vitamin A at 10,000 to 300,000 IU per day as beta carotene, B-\ncomplex at 100 mg each t.i.d., selenium at 500-1,000 mcg per day, B12 at\n1,000 mcg per day, folic acid at 15-25 mg per day, essential fatty acids\n(both salmon oil and flaxseed oil) at 1 gm t.i.d., and herbs including\ntamarac (Larix americana), parsley (Carum petro-selinum), hemp acrimony\n(Eupatorium cannabium), and milk thistle (Silybum marianum). Don’t\nforget the base line nutrition program and colloidal minerals and avoid fried\nfoods and margarine.",
+   "locator": {
+    "book": "dddl-3e-2011",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 844069
+   },
+   "dose": null,
+   "tags": [
+    "liver-health",
+    "liver-protocol",
+    "nutrients",
+    "foods"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-09-01T22:04:01+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
   }
  ]
 }

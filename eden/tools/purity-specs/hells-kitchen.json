@@ -1,31 +1,44 @@
 {
-  "book": "hells-kitchen",
-  "_doc": "Source-purification spec for Hell's Kitchen. CHUNK A (2026-07-23): the ORAC top-10 table on p.253 - four numeral OCR failures. Verified against the page rendered from the source PDF (fitz index 268) at 4x; the PDF's embedded text layer carries the IDENTICAL damage, so the rendered image is the sole authority. Applied via safe_write + corpus_resnap. Entries are the historical audit trail, not a re-runnable script.",
-  "replacements": [
-    {
-      "find": "] Prunes 21.00) \n",
-      "repl": "1 Prunes 5,770 \n",
-      "expect": 1,
-      "word": false,
-      "why": "rank glyph ']'->1; value '21.00)'->5,770"
-    },
-    {
-      "find": "5 Kale Le KO \n",
-      "repl": "5 Kale 1,770 \n",
-      "expect": 1,
-      "word": false,
-      "why": "value 'Le KO'->1,770"
-    },
-    {
-      "find": "8 Raspberries 1220 \n",
-      "repl": "8 Raspberries 1,220 \n",
-      "expect": 1,
-      "word": false,
-      "why": "missing thousands separator"
-    }
-  ],
-  "regex_replacements": [],
-  "line_fuses": [],
-  "hyphen_reflow": [],
-  "flags": []
+ "book": "hells-kitchen",
+ "_doc": "Source-purification spec for Hell's Kitchen. CHUNK A (2026-07-23): the ORAC top-10 table on p.253 - four numeral OCR failures. Verified against the page rendered from the source PDF (fitz index 268) at 4x; the PDF's embedded text layer carries the IDENTICAL damage, so the rendered image is the sole authority. Applied via safe_write + corpus_resnap. Entries are the historical audit trail, not a re-runnable script.",
+ "replacements": [
+  {
+   "find": "] Prunes 21.00) \n",
+   "repl": "1 Prunes 5,770 \n",
+   "expect": 1,
+   "word": false,
+   "why": "rank glyph ']'->1; value '21.00)'->5,770"
+  },
+  {
+   "find": "5 Kale Le KO \n",
+   "repl": "5 Kale 1,770 \n",
+   "expect": 1,
+   "word": false,
+   "why": "value 'Le KO'->1,770"
+  },
+  {
+   "find": "8 Raspberries 1220 \n",
+   "repl": "8 Raspberries 1,220 \n",
+   "expect": 1,
+   "word": false,
+   "why": "missing thousands separator"
+  }
+ ],
+ "regex_replacements": [],
+ "line_fuses": [],
+ "hyphen_reflow": [
+  {
+   "find": "in gen- \neral",
+   "repl": "in general",
+   "expect": 1,
+   "why": "line-wrap rejoin; NIAAA alcohol passage p.319, front-faced by WAL-CLM-HELLS-000124"
+  },
+  {
+   "find": "pan- \ncreatitis",
+   "repl": "pancreatitis",
+   "expect": 1,
+   "why": "line-wrap rejoin; same passage, the liver-harm finding"
+  }
+ ],
+ "flags": []
 }

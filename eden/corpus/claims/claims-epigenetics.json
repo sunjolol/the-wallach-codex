@@ -17105,6 +17105,154 @@
    "extracted_at": "2026-08-20T01:50:37+00:00",
    "reviewed_at": null,
    "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-EPIGEN-000498",
+   "kind": "definition",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [],
+   "symptoms": [],
+   "claim_text": "Citing the British Liver Trust, Wallach reports that the liver brags of over 500 functions. He names three of them: it manages food that has been digested and absorbed from the gastrointestinal tract, it disarms toxins, and it produces bile to support the absorption of lipids and fat-soluble vitamins — and, he adds, 497 other tasks. The 500 figure is the British Liver Trust's, relayed by him.",
+   "verbatim": "The British Liver Trust points out that the liver brags of over 500 functions,\nincluding managing food that has been digested and absorbed from the\ngastrointestinal tract, disarms toxins, produces bile to support absorption of\nlipids and fat soluble vitamins, and 497 other tasks.",
+   "locator": {
+    "book": "epigenetics",
+    "scheme": "screenshot",
+    "chapter": null,
+    "page": 342,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 593309
+   },
+   "dose": null,
+   "tags": [
+    "liver-health",
+    "liver-function",
+    "basics"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-09-01T22:04:01+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-EPIGEN-000499",
+   "kind": "personal_anecdote",
+   "essentials": [
+    "selenium"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "liver_cirrhosis"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach gives a case history with a stated outcome. In 1998 he was introduced to a woman diagnosed ten years earlier with primary sclerosing cholangitis — a form of liver cirrhosis, and the disease that caused the death of NFL great Walter Payton. The preferred medical treatment was to install stents into the bile ducts to stop them being crushed by scar tissue and to surgically remove as much damaged liver as possible until a transplant became necessary; she had had 12 major liver surgeries at the Harvard Teaching Hospital and was on the liver transplant list. Wallach put her on a gluten-free anti-inflammatory diet and added the 90 essential nutrient supplement program spiked with selenium and mega doses of B vitamins. In sixty days she had regrown her liver to normal size, cancelled the transplant, and went back to a normal life. No amounts are stated — 'spiked with selenium' and 'mega doses of B vitamins' are the only quantities the passage gives.",
+   "verbatim": "Later in 1998, Wallach was introduced to Elaine lagotta, who was diagnosed\nten years earlier with primary sclerosing cholangitis, a form of liver cirrhosis that\ncaused the death of NFL great Walter Payton, and for which the preferred medical\ntreatment was to install stints into the bile ducts to prevent them from being\ncrushed by scar tissue and surgically remove as much damaged liver as possible\nuntil a liver transplant became necessary. lagotta had had 12 major liver surgeries\nat the Harvard Teaching Hospital prior to meeting Wallach and was on the liver\n\n\ntransplant list.\n\nWallach put lagotta on a gluten-free anti-inflammatory diet and added the 90\nessential nutrient supplement program spiked with selenium and mega doses of\nB vitamins. In sixty days she had regrown her liver to normal size, canceled the\nplans for a liver transplant, and went back to a normal life.",
+   "locator": {
+    "book": "epigenetics",
+    "scheme": "screenshot",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 957842
+   },
+   "dose": null,
+   "tags": [
+    "liver-health",
+    "cirrhosis",
+    "reversal",
+    "case-history"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-09-01T22:04:01+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-EPIGEN-000500",
+   "kind": "mechanism",
+   "essentials": [],
+   "other_substances": [],
+   "conditions": [
+    "liver_cancer"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach explains that Aspergillus is a common bread mold which, under certain circumstances, produces an exotoxin called aflatoxin. He splits the effect by dose: in large doses aflatoxin causes sudden death from liver necrosis — liver death — while in low doses it produces a very specific type of liver cancer, the same type that plagued the captive bear populations in the world's zoos. He gives no human threshold; 'large' and 'low' are the only quantities stated.",
+   "verbatim": "Aspergillus is a common bread mold. However, under certain circumstances it\nproduces an exotoxin called aflatoxin, which in large doses causes a sudden death\nfrom liver necrosis (liver death). In low doses the aflatoxin produces a very specific\ntype of liver cancer—the same type of liver cancer that plagued the captive bear\npopulations in the world's zoos!",
+   "locator": {
+    "book": "epigenetics",
+    "scheme": "screenshot",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 811108
+   },
+   "dose": null,
+   "tags": [
+    "liver-health",
+    "aflatoxin",
+    "liver-cancer",
+    "mold"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-09-01T22:04:01+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-EPIGEN-000501",
+   "kind": "protocol",
+   "essentials": [
+    "selenium",
+    "vitamin-c",
+    "vitamin-a",
+    "vitamin-b12",
+    "vitamin-b9",
+    "omega-3",
+    "methionine"
+   ],
+   "other_substances": [
+    "milk-thistle",
+    "parsley",
+    "colloidal-minerals"
+   ],
+   "conditions": [
+    "liver_cirrhosis",
+    "liver_disease"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach's answer is that a damaged liver can come back. His case history is a woman on the liver transplant list with primary sclerosing cholangitis, a form of liver cirrhosis, after 12 major liver surgeries: he puts her on a gluten-free anti-inflammatory diet plus the 90 essential nutrient supplement program spiked with selenium and mega doses of B vitamins, and in sixty days she has regrown her liver to normal size, cancels the transplant and goes back to a normal life. He states the same shape generally — a gluten-free diet, the basic platform of the 90 essential nutrients, and therapeutic levels of the deficient nutrient — because gluten intolerance strips the villi from the small intestine and cuts absorption, which is what leaves a person short of selenium and at risk of liver cirrhosis in the first place. Underneath that sits his liver-disease protocol: vitamin C, vitamin A as beta carotene, B-complex, B12, folic acid, selenium and the essential fatty acids in salmon oil and flaxseed oil, with milk thistle, parsley, tamarac and hemp acrimony, plus the base line nutrition program and colloidal minerals. For upkeep he prescribes alfalfa daily as a detoxifier and a liver flush — an apple juice fast followed by olive oil and lemon juice — repeated monthly, and he names virgin olive oil in grapefruit or lemon juice as another way to flush the liver. He is equally clear about what to stop: fried foods, margarine, sugar, fat and alcohol come out, and he says the pigment of aging that accumulates in the liver can be prevented and quickly reversed by cutting free radicals and sharply raising essential nutrients and antioxidants. He says of Reye's syndrome that biopsy shows liver necrosis and survivors recover the liver tissue completely. In animals the same reversal shows up nutrient by nutrient: rats on a methionine-free diet develop fatty liver disease and methionine supplementation resolves all of it, and selenium supplementation prevents and in many cases reverses or cures existing disease, liver cirrhosis included, in laboratory animals and livestock.",
+   "verbatim": "will significantly\n\nincrease the risk for cardiomyopathy heart disease, liver cirrhosis, cancer,\ncataracts, macular degeneration, MS, dementia, infertility, muscular dystrophy,\ncystic fibrosis, fibromyalgia, lupus, thyroid disease, and other illness.\n\nPutting an afflicted individual on a gluten-free diet and supplementing the\nperson correctly with the basic platform of the 90 essential nutrients and\ntherapeutic levels of the deficient nutrient will solve many health problems,\nsave the community an enormous amount of unnecessary misery, save an\nenormous amount of unnecessary spending, and add many healthful years to the\nindividual's life.",
+   "locator": {
+    "book": "epigenetics",
+    "scheme": "screenshot",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 690959
+   },
+   "dose": null,
+   "tags": [
+    "liver-health",
+    "reversal",
+    "liver-flush",
+    "gluten-free"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-09-01T22:04:01+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
   }
  ]
 }

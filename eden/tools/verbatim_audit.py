@@ -44,12 +44,14 @@ STOP = {"disease", "diseases", "syndrome", "disorder", "the", "and", "of", "chro
         "acute", "congenital", "deficiency", "s", "a", "in", "type", "problems", "condition"}
 _FOLD = {"‘": "'", "’": "'", "“": '"', "”": '"', "—": "-", "–": "-"}
 
-
 def norm(s: str) -> str:
+    # Apostrophes are DROPPED, not turned into a space: a possessive disease name in the book
+    # ("Reye's syndrome", "Erb's palsy") must match its catalogue form ("Reyes Syndrome",
+    # "Erbs Palsy"). Turning ' into a space produced "reye s syndrome", which could never match.
+    # Measured before changing: 2 violations resolved, 0 created.
     s = "".join(_FOLD.get(c, c) for c in s)
-    s = re.sub(r"[^a-z0-9 ]", " ", s.lower())
+    s = re.sub(r"[^a-z0-9 ]", " ", s.lower().replace("'", ""))
     return re.sub(r"\s+", " ", s).strip()
-
 
 def sig_phrase(s: str) -> str:
     return " ".join(w for w in norm(s).split() if w not in STOP)

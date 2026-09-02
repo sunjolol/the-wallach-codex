@@ -174,6 +174,10 @@
   "WAL-CLM-EPIGEN-000495",
   "WAL-CLM-EPIGEN-000496",
   "WAL-CLM-EPIGEN-000497",
+  "WAL-CLM-EPIGEN-000498",
+  "WAL-CLM-EPIGEN-000499",
+  "WAL-CLM-EPIGEN-000500",
+  "WAL-CLM-EPIGEN-000501",
   "WAL-CLM-HELLS-000001",
   "WAL-CLM-HELLS-000006",
   "WAL-CLM-HELLS-000012",
@@ -211,6 +215,7 @@
   "WAL-CLM-HELLS-000121",
   "WAL-CLM-HELLS-000122",
   "WAL-CLM-HELLS-000123",
+  "WAL-CLM-HELLS-000124",
   "WAL-CLM-IMMORT-000001",
   "WAL-CLM-IMMORT-000003",
   "WAL-CLM-IMMORT-000009",
@@ -689,6 +694,8 @@
   "WAL-CLM-LETS-000537",
   "WAL-CLM-LETS-000538",
   "WAL-CLM-LETS-000539",
+  "WAL-CLM-LETS-000540",
+  "WAL-CLM-LETS-000541",
   "WAL-CLM-RARE-000010",
   "WAL-CLM-RARE-000026",
   "WAL-CLM-RARE-000031",
@@ -813,7 +820,9 @@
   "WAL-CLM-RARE-000415",
   "WAL-CLM-RARE-000416",
   "WAL-CLM-RARE-000417",
-  "WAL-CLM-RARE-000418"
+  "WAL-CLM-RARE-000418",
+  "WAL-CLM-RARE-000419",
+  "WAL-CLM-RARE-000420"
  ],
  "grandfathered": {
   "frozen_at": "2026-08-02",
@@ -2176,5 +2185,14 @@
     "how": "Wave 3 — the 11 reader-facing sibling occurrences waves 1 and 2 left unread. DEFECT-SPAN grade, not whole-verbatim. 11 confirmed and fixed, 1 refuted to UNREADABLE and left alone. kv 453 -> 454."
    }
   ]
- }
+ },
+ "history": [
+  {
+   "date": "2026-09-01",
+   "wave": "liver-health round",
+   "added": 9,
+   "grade": "WHOLE-VERBATIM verified against rendered page images",
+   "how": "Each span was rendered from the book's own page source and read end to end: Epigenetics screenshots 443 (p.342, British Liver Trust 500 functions), 502 (p.461, aflatoxin/liver cancer) and 540 (p.541, the Iagotta cirrhosis-reversal case, shared by 000499 and the re-cut 000501 whose new span at 691248 was read on its own page); Rare Earths PDF pages rendered via PyMuPDF at idx 297 (p.276, cadmium) and idx 484 (p.463, Table 12-2 — the table body is a GRAPHIC with no text layer, and the printed row reads 'Liver cirrhosis | Selenium, Copper, Sulfur'); Hell's Kitchen idx 334 (p.319, the 2004 NIAAA alcohol passage); Let's Play Doctor idx 42 (urine dip sticks) and idx 47 (GGT). FOUR source defects were found by this read and fixed at the source, not patched in the quote: 'in gen-/eral' and 'pan-/creatitis' (Hell's Kitchen), 'Gallblad-/der', 'choles-/terol', 'barom-/eter', 'ofconnective' and 'GGT(gamma' (Let's Play Doctor). PDF-text-layer agreement was used only to LOCATE pages and is deliberately not counted as verification, per this file's own standard."
+  }
+ ]
 }

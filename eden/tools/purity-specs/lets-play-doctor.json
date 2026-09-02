@@ -1,0 +1,43 @@
+{
+ "book": "lets-play-doctor",
+ "_doc": "Source purification for Let's Play Doctor. Every entry is an OCR artifact confirmed count=1 book-wide before writing; the PDF text layer of the same page carries the same words, so these are wrap/space damage, not Wallach's text.",
+ "replacements": [
+  {
+   "find": "barometer ofconnective tissue",
+   "repl": "barometer of connective tissue",
+   "expect": 1,
+   "word": false,
+   "why": "OCR lost the space in 'of connective'; GGT passage, front-faced by WAL-CLM-LETS-000541"
+  },
+  {
+   "find": "GGT(gamma",
+   "repl": "GGT (gamma",
+   "expect": 1,
+   "word": false,
+   "why": "OCR welded the space; the page prints 'GGT (gamma-glutamyl transpeptidase)'. Confirmed against the rendered page image (PDF page idx 47). APPLIED OUT-OF-BAND (safe_write + corpus_resnap) because this spec's first pass is already baked into the .txt and it can no longer be re-run end to end."
+  }
+ ],
+ "regex_replacements": [],
+ "line_fuses": [],
+ "hyphen_reflow": [
+  {
+   "find": "Gallblad-\nder",
+   "repl": "Gallbladder",
+   "expect": 1,
+   "why": "line-wrap rejoin; gallbladder/liver passage front-faced by WAL-CLM-LETS-000283"
+  },
+  {
+   "find": "choles-\nterol",
+   "repl": "cholesterol",
+   "expect": 1,
+   "why": "line-wrap rejoin; same passage"
+  },
+  {
+   "find": "barom-\neter",
+   "repl": "barometer",
+   "expect": 1,
+   "why": "line-wrap rejoin; GGT passage front-faced by WAL-CLM-LETS-000541"
+  }
+ ],
+ "flags": []
+}

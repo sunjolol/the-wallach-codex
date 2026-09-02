@@ -774,6 +774,10 @@
         "book": "epigenetics"
       },
       {
+        "claim_id": "WAL-CLM-EPIGEN-000498",
+        "book": "epigenetics"
+      },
+      {
         "claim_id": "WAL-CLM-HELLS-000013",
         "book": "hells-kitchen"
       },
@@ -1867,7 +1871,7 @@
       }
     ],
     "books_repeating": 6,
-    "claim_count": 402
+    "claim_count": 403
   },
   {
     "id": "CG-0004",

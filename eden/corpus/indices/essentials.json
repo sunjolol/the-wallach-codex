@@ -833,13 +833,14 @@
     "display_name": "Sulfur",
     "canon_slug": "sulfur",
     "category": "mineral",
-    "claim_count": 14,
+    "claim_count": 15,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-IMMORT-000535",
         "WAL-CLM-RARE-000223",
         "WAL-CLM-RARE-000275",
-        "WAL-CLM-RARE-000303"
+        "WAL-CLM-RARE-000303",
+        "WAL-CLM-RARE-000420"
       ],
       "definition": [
         "WAL-CLM-RARE-000408"
@@ -872,6 +873,7 @@
       "collagen_disease",
       "degenerative_disc_disease",
       "joint_pain",
+      "liver_cirrhosis",
       "low_back_pain",
       "lupus",
       "osteoarthritis",
@@ -1931,7 +1933,7 @@
     "display_name": "Copper",
     "canon_slug": "copper",
     "category": "mineral",
-    "claim_count": 72,
+    "claim_count": 73,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-RARE-000181"
@@ -1962,7 +1964,8 @@
         "WAL-CLM-RARE-000275",
         "WAL-CLM-RARE-000303",
         "WAL-CLM-RARE-000308",
-        "WAL-CLM-RARE-000413"
+        "WAL-CLM-RARE-000413",
+        "WAL-CLM-RARE-000420"
       ],
       "definition": [
         "WAL-CLM-DDDL-000386",
@@ -2804,7 +2807,7 @@
     "display_name": "Selenium",
     "canon_slug": "selenium",
     "category": "mineral",
-    "claim_count": 130,
+    "claim_count": 135,
     "claims_by_kind": {
       "contraindication": [
         "WAL-CLM-EPIGEN-000177"
@@ -2827,7 +2830,8 @@
         "WAL-CLM-RARE-000269",
         "WAL-CLM-RARE-000270",
         "WAL-CLM-RARE-000306",
-        "WAL-CLM-RARE-000310"
+        "WAL-CLM-RARE-000310",
+        "WAL-CLM-RARE-000420"
       ],
       "dose": [
         "WAL-CLM-DDDL-000593",
@@ -2865,11 +2869,13 @@
         "WAL-CLM-DDDL-000301",
         "WAL-CLM-EPIGEN-000456",
         "WAL-CLM-EPIGEN-000457",
-        "WAL-CLM-EPIGEN-000458"
+        "WAL-CLM-EPIGEN-000458",
+        "WAL-CLM-EPIGEN-000499"
       ],
       "prognosis": [
         "WAL-CLM-DDDL-000007",
-        "WAL-CLM-DDDL-000072"
+        "WAL-CLM-DDDL-000072",
+        "WAL-CLM-DDDL-000609"
       ],
       "protocol": [
         "WAL-CLM-DDDL-000054",
@@ -2889,9 +2895,11 @@
         "WAL-CLM-DDDL-000509",
         "WAL-CLM-DDDL-000533",
         "WAL-CLM-DDDL-000579",
+        "WAL-CLM-DDDL-000612",
         "WAL-CLM-EPIGEN-000005",
         "WAL-CLM-EPIGEN-000015",
         "WAL-CLM-EPIGEN-000172",
+        "WAL-CLM-EPIGEN-000501",
         "WAL-CLM-IMMORT-000265",
         "WAL-CLM-LETS-000126",
         "WAL-CLM-LETS-000137",
@@ -4682,7 +4690,7 @@
     "display_name": "Retinol",
     "canon_slug": "vitamin-a",
     "category": "vitamin",
-    "claim_count": 79,
+    "claim_count": 81,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000041",
@@ -4721,6 +4729,8 @@
         "WAL-CLM-DDDL-000532",
         "WAL-CLM-DDDL-000567",
         "WAL-CLM-DDDL-000579",
+        "WAL-CLM-DDDL-000612",
+        "WAL-CLM-EPIGEN-000501",
         "WAL-CLM-LETS-000123",
         "WAL-CLM-LETS-000126",
         "WAL-CLM-LETS-000128",
@@ -4891,6 +4901,7 @@
       "iodine",
       "lysine",
       "magnesium",
+      "methionine",
       "omega-3",
       "omega-6",
       "phenylalanine",
@@ -5936,7 +5947,7 @@
     "display_name": "Folate",
     "canon_slug": "vitamin-b9",
     "category": "vitamin",
-    "claim_count": 27,
+    "claim_count": 29,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000042",
@@ -5953,6 +5964,8 @@
       "protocol": [
         "WAL-CLM-DDDL-000080",
         "WAL-CLM-DDDL-000482",
+        "WAL-CLM-DDDL-000612",
+        "WAL-CLM-EPIGEN-000501",
         "WAL-CLM-LETS-000137",
         "WAL-CLM-LETS-000143",
         "WAL-CLM-LETS-000238",
@@ -6072,6 +6085,7 @@
       "iron",
       "magnesium",
       "manganese",
+      "methionine",
       "omega-3",
       "phenylalanine",
       "selenium",
@@ -6098,7 +6112,7 @@
     "display_name": "Cobalamin",
     "canon_slug": "vitamin-b12",
     "category": "vitamin",
-    "claim_count": 42,
+    "claim_count": 44,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000040",
@@ -6141,6 +6155,8 @@
         "WAL-CLM-DDDL-000080",
         "WAL-CLM-DDDL-000086",
         "WAL-CLM-DDDL-000351",
+        "WAL-CLM-DDDL-000612",
+        "WAL-CLM-EPIGEN-000501",
         "WAL-CLM-LETS-000132",
         "WAL-CLM-LETS-000137",
         "WAL-CLM-LETS-000143",
@@ -6293,6 +6309,7 @@
       "lithium",
       "magnesium",
       "manganese",
+      "methionine",
       "nickel",
       "omega-3",
       "phenylalanine",
@@ -6325,7 +6342,7 @@
     "display_name": "Ascorbic Acid",
     "canon_slug": "vitamin-c",
     "category": "vitamin",
-    "claim_count": 89,
+    "claim_count": 91,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000043",
@@ -6360,6 +6377,8 @@
         "WAL-CLM-DDDL-000524",
         "WAL-CLM-DDDL-000531",
         "WAL-CLM-DDDL-000579",
+        "WAL-CLM-DDDL-000612",
+        "WAL-CLM-EPIGEN-000501",
         "WAL-CLM-LETS-000118",
         "WAL-CLM-LETS-000119",
         "WAL-CLM-LETS-000124",
@@ -6585,6 +6604,7 @@
       "lithium",
       "lysine",
       "magnesium",
+      "methionine",
       "omega-3",
       "phenylalanine",
       "potassium",
@@ -7773,7 +7793,7 @@
     "display_name": "Methionine",
     "canon_slug": "methionine",
     "category": "amino_acid",
-    "claim_count": 7,
+    "claim_count": 8,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-EPIGEN-000052"
@@ -7785,6 +7805,7 @@
       "protocol": [
         "WAL-CLM-DDDL-000456",
         "WAL-CLM-DDDL-000533",
+        "WAL-CLM-EPIGEN-000501",
         "WAL-CLM-LETS-000373",
         "WAL-CLM-LETS-000396"
       ]
@@ -7795,6 +7816,7 @@
       "fatty_liver",
       "fibromyalgia",
       "keshan_disease",
+      "liver_cirrhosis",
       "liver_disease",
       "muscular_dystrophy",
       "parkinsonism"
@@ -7810,8 +7832,12 @@
       "tryptophan",
       "tyrosine",
       "valine",
+      "vitamin-a",
       "vitamin-b1",
+      "vitamin-b12",
       "vitamin-b6",
+      "vitamin-b9",
+      "vitamin-c",
       "vitamin-e"
     ],
     "books_cited": [
@@ -8082,7 +8108,7 @@
     "display_name": "Omega-3",
     "canon_slug": "omega-3",
     "category": "fatty_acid",
-    "claim_count": 99,
+    "claim_count": 101,
     "claims_by_kind": {
       "deficiency_sign": [
         "WAL-CLM-DDDL-000065",
@@ -8125,7 +8151,9 @@
         "WAL-CLM-DDDL-000463",
         "WAL-CLM-DDDL-000483",
         "WAL-CLM-DDDL-000586",
+        "WAL-CLM-DDDL-000612",
         "WAL-CLM-EPIGEN-000016",
+        "WAL-CLM-EPIGEN-000501",
         "WAL-CLM-LETS-000123",
         "WAL-CLM-LETS-000125",
         "WAL-CLM-LETS-000128",

@@ -13364,6 +13364,82 @@
    "extracted_at": "2026-08-20T00:24:31+00:00",
    "reviewed_at": null,
    "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-RARE-000419",
+   "kind": "toxicity_sign",
+   "essentials": [],
+   "other_substances": [
+    "cadmium"
+   ],
+   "conditions": [
+    "liver_disease",
+    "kidney_disease",
+    "glaucoma"
+   ],
+   "symptoms": [],
+   "claim_text": "Wallach reports that kidney damage, liver disease and treatment-resistant glaucoma have been attributed to elevated tissue cadmium levels. The hedge is his own — 'have been attributed to' — so this is an attribution rather than a mechanism he demonstrates. He states no safe or toxic tissue level.",
+   "verbatim": "Kidney damage, liver disease and treatment resistant glaucoma have been attributed to elevated tissue cadmium levels.",
+   "locator": {
+    "book": "rare-earths",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": null,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 703928
+   },
+   "dose": null,
+   "tags": [
+    "liver-health",
+    "cadmium",
+    "toxic-metals"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-09-01T22:04:02+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
+  },
+  {
+   "id": "WAL-CLM-RARE-000420",
+   "kind": "deficiency_sign",
+   "essentials": [
+    "selenium",
+    "copper",
+    "sulfur"
+   ],
+   "other_substances": [],
+   "conditions": [
+    "liver_cirrhosis"
+   ],
+   "symptoms": [],
+   "claim_text": "In his table of the causes of death in American allopathic physicians, Wallach pairs each cause with the nutritional deficiency he holds responsible, and against liver cirrhosis he sets selenium, copper and sulfur. The table is his argument that doctors, who as a profession refuse to supplement with the essential 90 nutrients, make a good control group for preventable nutritional deficiency diseases. He states element names only — no amounts appear anywhere in the table.",
+   "verbatim": "Looking at the specific causes of death\nwe find that doctors die of a\ndisproportionately high rate of\npreventable nutritional deficiency\ndiseases (Table 12-2). As a whole medical\ndoctors refuse to take supplements of the\nessential 90 nutrients so the medical\nprofession makes a great control group\n\nTable 12-2. Causes of Death In American Allopathic Physicians.\n\nCause of Death\nCardiomyopathy\n\nCoronary disease\n(including aneurysms & stroke)\n\nCerebrovascular disease\n(including aneurysms & stroke)\n\nAneurysms\nDiabetes\nLiver cirrhosis\n\nCancer\n\nSuicide\n\nAlzheimer’s disease\n\nNutritional Deficiency\nSelenium, Vitamin E, essential fatty acids\n\nSelenium, Vitamin E, vitamin C\nmagnesium, copper, essential fatty acids\n\nSame as above\n\nCopper\nChromium, Vanadium, Zinc\nSelenium, Copper, Sulfur\n\nSelenium, Tin, Zinc, Gallium, Vitamin E (all types) ,\nbeta carotene, Germanium, Vitamin C\n\nLithium, Chromium, Vanadium\n\nVitamin E, Selenium, Thiamine",
+   "locator": {
+    "book": "rare-earths",
+    "scheme": "chapter_page",
+    "chapter": null,
+    "page": 463,
+    "screenshot": null,
+    "kindle_location": null,
+    "char_offset": 1088603
+   },
+   "dose": null,
+   "tags": [
+    "liver-health",
+    "cirrhosis",
+    "table-12-2",
+    "physician-mortality",
+    "page-image-verified"
+   ],
+   "confidence": "high",
+   "review_state": "draft",
+   "superseded_by": null,
+   "extracted_at": "2026-09-01T22:04:02+00:00",
+   "reviewed_at": null,
+   "reviewed_by": null
   }
  ]
 }

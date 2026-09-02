@@ -1376,10 +1376,12 @@
     "beef",
     "poultry",
     "organ meats",
-    "liver",
     "shellfish",
     "animal fats",
-    "meats"
+    "meats",
+    "beef liver",
+    "liver and onions",
+    "chicken liver"
    ],
    "related": [
     "cholesterol",
@@ -12517,6 +12519,62 @@
     "minerals"
    ],
    "intro_claim": "WAL-CLM-IMMORT-000488"
+  },
+  "liver": {
+   "display_name": "Liver Health",
+   "type": "topic",
+   "synonyms": [
+    "bad for the liver",
+    "bad for your liver",
+    "bad liver",
+    "damaged liver",
+    "failing liver",
+    "health of the liver",
+    "healthy liver",
+    "hepatic",
+    "hepatic function",
+    "liver",
+    "liver care",
+    "liver cleanse",
+    "liver damage",
+    "liver detox",
+    "liver diet",
+    "liver enzymes",
+    "liver failure",
+    "liver flush",
+    "liver function",
+    "liver function test",
+    "liver functions",
+    "liver health",
+    "liver issues",
+    "liver panel",
+    "liver problems",
+    "liver regeneration",
+    "liver repair",
+    "liver support",
+    "liver test",
+    "liver trouble",
+    "liver warning signs",
+    "my liver",
+    "sick liver",
+    "signs of liver problems",
+    "symptoms of liver problems",
+    "the liver",
+    "what damages the liver",
+    "what hurts the liver"
+   ],
+   "related": [
+    "liver_disease",
+    "liver_cirrhosis",
+    "hepatitis",
+    "jaundice",
+    "gallstones",
+    "selenium",
+    "choline",
+    "detox"
+   ],
+   "intro_claim": "WAL-CLM-EPIGEN-000498",
+   "hub": true
   }
  }
 }

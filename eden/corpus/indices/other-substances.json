@@ -656,20 +656,23 @@
   },
   "beta-carotene": {
     "display_name": "Beta Carotene",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "mechanism": [
         "WAL-CLM-LETS-000196"
       ],
       "protocol": [
+        "WAL-CLM-DDDL-000612",
         "WAL-CLM-LETS-000178"
       ]
     },
     "conditions_treated": [
       "cancer",
-      "carcinoma"
+      "carcinoma",
+      "liver_disease"
     ],
     "books_cited": [
+      "dddl-3e-2011",
       "lets-play-doctor"
     ]
   },
@@ -1227,14 +1230,21 @@
   },
   "cadmium": {
     "display_name": "Cadmium",
-    "claim_count": 2,
+    "claim_count": 3,
     "claims_by_kind": {
       "mechanism": [
         "WAL-CLM-EPIGEN-000074",
         "WAL-CLM-RARE-000143"
+      ],
+      "toxicity_sign": [
+        "WAL-CLM-RARE-000419"
       ]
     },
-    "conditions_treated": [],
+    "conditions_treated": [
+      "glaucoma",
+      "kidney_disease",
+      "liver_disease"
+    ],
     "books_cited": [
       "epigenetics",
       "rare-earths"
@@ -1922,7 +1932,7 @@
   },
   "colloidal-minerals": {
     "display_name": "Colloidal Minerals",
-    "claim_count": 56,
+    "claim_count": 58,
     "claims_by_kind": {
       "definition": [
         "WAL-CLM-DDDL-000116",
@@ -1936,6 +1946,8 @@
         "WAL-CLM-DDDL-000119"
       ],
       "protocol": [
+        "WAL-CLM-DDDL-000612",
+        "WAL-CLM-EPIGEN-000501",
         "WAL-CLM-LETS-000122",
         "WAL-CLM-LETS-000145",
         "WAL-CLM-LETS-000146",
@@ -2050,6 +2062,7 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor"
     ]
   },
@@ -4996,9 +5009,11 @@
   },
   "milk-thistle": {
     "display_name": "Milk Thistle",
-    "claim_count": 1,
+    "claim_count": 3,
     "claims_by_kind": {
       "protocol": [
+        "WAL-CLM-DDDL-000612",
+        "WAL-CLM-EPIGEN-000501",
         "WAL-CLM-LETS-000348"
       ]
     },
@@ -5007,6 +5022,8 @@
       "liver_disease"
     ],
     "books_cited": [
+      "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor"
     ]
   },
@@ -5697,9 +5714,11 @@
   },
   "parsley": {
     "display_name": "Parsley",
-    "claim_count": 4,
+    "claim_count": 6,
     "claims_by_kind": {
       "protocol": [
+        "WAL-CLM-DDDL-000612",
+        "WAL-CLM-EPIGEN-000501",
         "WAL-CLM-LETS-000153",
         "WAL-CLM-LETS-000253",
         "WAL-CLM-LETS-000332",
@@ -5715,6 +5734,8 @@
       "liver_disease"
     ],
     "books_cited": [
+      "dddl-3e-2011",
+      "epigenetics",
       "lets-play-doctor"
     ]
   },
