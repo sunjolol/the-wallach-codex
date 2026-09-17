@@ -55,7 +55,7 @@
       ]
     },
     "conditions_treated": [
-      "adrenal_exhaustion",
+      "adrenal_fatigue",
       "aids",
       "food_allergy",
       "hypoglycemia",
@@ -3234,8 +3234,8 @@
       ]
     },
     "conditions_treated": [
-      "congestive_heart_failure",
       "dropsy",
+      "heart_failure",
       "palpitations"
     ],
     "books_cited": [
@@ -3680,8 +3680,8 @@
     },
     "conditions_treated": [
       "angina",
-      "congestive_heart_failure",
       "dropsy",
+      "heart_failure",
       "mitral_valve_prolapse",
       "nervous_heart",
       "palpitations",
@@ -4088,7 +4088,6 @@
     },
     "conditions_treated": [
       "alopecia",
-      "atopic_dermatitis",
       "eczema",
       "liver_cirrhosis",
       "liver_disease"
@@ -4676,8 +4675,8 @@
       ]
     },
     "conditions_treated": [
-      "congestive_heart_failure",
       "dropsy",
+      "heart_failure",
       "nervous_tension",
       "palpitations",
       "poor_circulation",

@@ -455,7 +455,7 @@
         "depression",
         "anxiety",
         "bipolar_disorder",
-        "adrenal_exhaustion",
+        "adrenal_fatigue",
         "addisons_disease",
         "stress"
       ]
@@ -514,7 +514,7 @@
         "high_cholesterol",
         "hypertension",
         "heart_attack",
-        "congestive_heart_failure",
+        "heart_failure",
         "cardiac_arrhythmia",
         "atrial_fibrillation",
         "tachycardia",

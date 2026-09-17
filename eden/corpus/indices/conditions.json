@@ -276,8 +276,8 @@
       "rare-earths"
     ]
   },
-  "adrenal_exhaustion": {
-    "display_name": "Adrenal Exhaustion",
+  "adrenal_fatigue": {
+    "display_name": "Adrenal Fatigue",
     "claim_count": 2,
     "claims_by_role": {
       "diagnostics": [
@@ -334,9 +334,13 @@
     ]
   },
   "aids": {
-    "display_name": "Aids",
-    "claim_count": 2,
+    "display_name": "HIV/AIDS",
+    "claim_count": 4,
     "claims_by_role": {
+      "deficiency_signs": [
+        "WAL-CLM-RARE-000269",
+        "WAL-CLM-RARE-000270"
+      ],
       "protocols": [
         "WAL-CLM-DDDL-000579",
         "WAL-CLM-LETS-000126"
@@ -362,7 +366,8 @@
     ],
     "books_cited": [
       "dddl-3e-2011",
-      "lets-play-doctor"
+      "lets-play-doctor",
+      "rare-earths"
     ]
   },
   "airway_obstruction": {
@@ -1503,47 +1508,6 @@
       "pancreatic-enzymes"
     ],
     "books_cited": [
-      "lets-play-doctor"
-    ]
-  },
-  "atopic_dermatitis": {
-    "display_name": "Atopic Dermatitis",
-    "claim_count": 12,
-    "claims_by_role": {
-      "causes": [
-        "WAL-CLM-DDDL-000391",
-        "WAL-CLM-DDDL-000480",
-        "WAL-CLM-DDDL-000572"
-      ],
-      "definitions": [
-        "WAL-CLM-DDDL-000553",
-        "WAL-CLM-DDDL-000564"
-      ],
-      "diagnostics": [
-        "WAL-CLM-DDDL-000563"
-      ],
-      "protocols": [
-        "WAL-CLM-DDDL-000482",
-        "WAL-CLM-DDDL-000527",
-        "WAL-CLM-DDDL-000532",
-        "WAL-CLM-DDDL-000548",
-        "WAL-CLM-DDDL-000559",
-        "WAL-CLM-LETS-000148"
-      ]
-    },
-    "essentials_involved": [
-      "chromium",
-      "omega-3",
-      "vitamin-a",
-      "vitamin-b9",
-      "vitamin-e",
-      "zinc"
-    ],
-    "other_substances_involved": [
-      "interlipids"
-    ],
-    "books_cited": [
-      "dddl-3e-2011",
       "lets-play-doctor"
     ]
   },
@@ -3890,39 +3854,6 @@
     "books_cited": [
       "dddl-3e-2011",
       "lets-play-doctor"
-    ]
-  },
-  "congestive_heart_failure": {
-    "display_name": "Congestive Heart Failure",
-    "claim_count": 5,
-    "claims_by_role": {
-      "deficiency_signs": [
-        "WAL-CLM-DDDL-000043",
-        "WAL-CLM-EPIGEN-000035",
-        "WAL-CLM-RARE-000233"
-      ],
-      "protocols": [
-        "WAL-CLM-LETS-000229"
-      ],
-      "toxicity_signs": [
-        "WAL-CLM-LETS-000033"
-      ]
-    },
-    "essentials_involved": [
-      "selenium",
-      "sodium",
-      "vitamin-b1"
-    ],
-    "other_substances_involved": [
-      "foxglove",
-      "hawthorn",
-      "lily-of-the-valley"
-    ],
-    "books_cited": [
-      "dddl-3e-2011",
-      "epigenetics",
-      "lets-play-doctor",
-      "rare-earths"
     ]
   },
   "conjunctivitis": {
@@ -6584,22 +6515,41 @@
   },
   "heart_failure": {
     "display_name": "Heart Failure",
-    "claim_count": 2,
+    "claim_count": 7,
     "claims_by_role": {
       "contraindications": [
         "WAL-CLM-DDDL-000022"
       ],
+      "deficiency_signs": [
+        "WAL-CLM-DDDL-000043",
+        "WAL-CLM-EPIGEN-000035",
+        "WAL-CLM-RARE-000233"
+      ],
+      "protocols": [
+        "WAL-CLM-LETS-000229"
+      ],
       "toxicity_signs": [
-        "WAL-CLM-IMMORT-000133"
+        "WAL-CLM-IMMORT-000133",
+        "WAL-CLM-LETS-000033"
       ]
     },
     "essentials_involved": [
-      "iron"
+      "iron",
+      "selenium",
+      "sodium",
+      "vitamin-b1"
     ],
-    "other_substances_involved": [],
+    "other_substances_involved": [
+      "foxglove",
+      "hawthorn",
+      "lily-of-the-valley"
+    ],
     "books_cited": [
       "dddl-3e-2011",
-      "immortality"
+      "epigenetics",
+      "immortality",
+      "lets-play-doctor",
+      "rare-earths"
     ]
   },
   "heartburn": {
@@ -6979,23 +6929,6 @@
       "epigenetics",
       "immortality",
       "lets-play-doctor"
-    ]
-  },
-  "hiv_aids": {
-    "display_name": "Hiv Aids",
-    "claim_count": 2,
-    "claims_by_role": {
-      "deficiency_signs": [
-        "WAL-CLM-RARE-000269",
-        "WAL-CLM-RARE-000270"
-      ]
-    },
-    "essentials_involved": [
-      "selenium"
-    ],
-    "other_substances_involved": [],
-    "books_cited": [
-      "rare-earths"
     ]
   },
   "hoarseness": {

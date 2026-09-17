@@ -1421,7 +1421,7 @@
    "other_substances": [],
    "conditions": [
     "anorexia",
-    "congestive_heart_failure",
+    "heart_failure",
     "edema",
     "hyperactivity",
     "hypertension",
@@ -4786,7 +4786,7 @@
     "adrenal-cortical-extract"
    ],
    "conditions": [
-    "adrenal_exhaustion"
+    "adrenal_fatigue"
    ],
    "symptoms": [
     "fatigue"
@@ -5627,7 +5627,6 @@
     "interlipids"
    ],
    "conditions": [
-    "atopic_dermatitis",
     "eczema"
    ],
    "symptoms": [],
@@ -8728,7 +8727,7 @@
     "hawthorn"
    ],
    "conditions": [
-    "congestive_heart_failure"
+    "heart_failure"
    ],
    "symptoms": [
     "edema"

@@ -7554,7 +7554,7 @@
    ],
    "other_substances": [],
    "conditions": [
-    "congestive_heart_failure",
+    "heart_failure",
     "beriberi",
     "wernicke_korsakoff_syndrome",
     "depression"
@@ -8520,7 +8520,7 @@
    ],
    "other_substances": [],
    "conditions": [
-    "hiv_aids",
+    "aids",
     "anemia",
     "scoliosis",
     "muscular_dystrophy",
@@ -8581,7 +8581,7 @@
     "sids",
     "cancer",
     "sickle_cell_anemia",
-    "hiv_aids",
+    "aids",
     "anemia",
     "dementia"
    ],

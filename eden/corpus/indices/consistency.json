@@ -4670,49 +4670,6 @@
     "id": "CG-0022",
     "essentials": [],
     "conditions": [
-      "atopic_dermatitis",
-      "eczema"
-    ],
-    "kind": "definition",
-    "repetitions": [
-      {
-        "claim_id": "WAL-CLM-DDDL-000553",
-        "book": "dddl-3e-2011"
-      },
-      {
-        "claim_id": "WAL-CLM-DDDL-000564",
-        "book": "dddl-3e-2011"
-      }
-    ],
-    "books_repeating": 1,
-    "claim_count": 2
-  },
-  {
-    "id": "CG-0023",
-    "essentials": [],
-    "conditions": [
-      "atopic_dermatitis",
-      "eczema",
-      "psoriasis"
-    ],
-    "kind": "mechanism",
-    "repetitions": [
-      {
-        "claim_id": "WAL-CLM-DDDL-000391",
-        "book": "dddl-3e-2011"
-      },
-      {
-        "claim_id": "WAL-CLM-DDDL-000480",
-        "book": "dddl-3e-2011"
-      }
-    ],
-    "books_repeating": 1,
-    "claim_count": 2
-  },
-  {
-    "id": "CG-0024",
-    "essentials": [],
-    "conditions": [
       "benign_prostatic_hyperplasia"
     ],
     "kind": "diagnostic_pattern",
@@ -4730,7 +4687,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0025",
+    "id": "CG-0023",
     "essentials": [],
     "conditions": [
       "benign_prostatic_hyperplasia"
@@ -4754,7 +4711,7 @@
     "claim_count": 3
   },
   {
-    "id": "CG-0026",
+    "id": "CG-0024",
     "essentials": [],
     "conditions": [
       "birth_defects"
@@ -4782,7 +4739,7 @@
     "claim_count": 4
   },
   {
-    "id": "CG-0027",
+    "id": "CG-0025",
     "essentials": [],
     "conditions": [
       "cancer"
@@ -4850,7 +4807,7 @@
     "claim_count": 14
   },
   {
-    "id": "CG-0028",
+    "id": "CG-0026",
     "essentials": [],
     "conditions": [
       "cancer"
@@ -4870,7 +4827,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0029",
+    "id": "CG-0027",
     "essentials": [],
     "conditions": [
       "cataracts"
@@ -4890,7 +4847,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0030",
+    "id": "CG-0028",
     "essentials": [],
     "conditions": [
       "celiac_disease"
@@ -4910,7 +4867,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0031",
+    "id": "CG-0029",
     "essentials": [],
     "conditions": [
       "chicken_pox",
@@ -4931,7 +4888,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0032",
+    "id": "CG-0030",
     "essentials": [],
     "conditions": [
       "chronic_fatigue"
@@ -4955,7 +4912,7 @@
     "claim_count": 3
   },
   {
-    "id": "CG-0033",
+    "id": "CG-0031",
     "essentials": [],
     "conditions": [
       "constipation"
@@ -4979,7 +4936,7 @@
     "claim_count": 3
   },
   {
-    "id": "CG-0034",
+    "id": "CG-0032",
     "essentials": [],
     "conditions": [
       "cystitis"
@@ -4999,7 +4956,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0035",
+    "id": "CG-0033",
     "essentials": [],
     "conditions": [
       "diarrhea"
@@ -5019,7 +4976,7 @@
     "claim_count": 2
   },
   {
-    "id": "CG-0036",
+    "id": "CG-0034",
     "essentials": [],
     "conditions": [
       "diverticulitis"
@@ -5036,6 +4993,47 @@
       }
     ],
     "books_repeating": 2,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0035",
+    "essentials": [],
+    "conditions": [
+      "eczema"
+    ],
+    "kind": "definition",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-DDDL-000553",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000564",
+        "book": "dddl-3e-2011"
+      }
+    ],
+    "books_repeating": 1,
+    "claim_count": 2
+  },
+  {
+    "id": "CG-0036",
+    "essentials": [],
+    "conditions": [
+      "eczema",
+      "psoriasis"
+    ],
+    "kind": "mechanism",
+    "repetitions": [
+      {
+        "claim_id": "WAL-CLM-DDDL-000391",
+        "book": "dddl-3e-2011"
+      },
+      {
+        "claim_id": "WAL-CLM-DDDL-000480",
+        "book": "dddl-3e-2011"
+      }
+    ],
+    "books_repeating": 1,
     "claim_count": 2
   },
   {

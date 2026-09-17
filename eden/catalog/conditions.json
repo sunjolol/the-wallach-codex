@@ -1,11 +1,11 @@
 {
   "schema_version": 1,
   "_doctrine": "The pre-registered condition catalog -- the SINGLE home for each condition's identity (display_name), umbrella->subtype structure (umbrella_of), and Wallach's synonym phrasings. Promoted 2026-07-05 (Phase B) from the emergent derived index + eden/tools/{condition-taxonomy,condition-synonyms}.json + corpus_derive DISPLAY_OVERRIDES (all retired). A claim may reference a condition slug ONLY if it appears here (references_resolve gate) -- closing the phantom-slug hole where a typo silently minted a condition. Hand-edited pillar: register a NEW condition here BEFORE mining a claim that maps to it. User is sole writer once sealed. SYNONYM MATCHING is OCR-folded, punctuation-insensitive, all-words-present; significant words of display_name + slug tokens are accepted implicitly, so list only DIFFERENT wordings. UMBRELLA_OF children must be real condition slugs (child->parent only; naming 'cancer' does NOT name 'leukemia'). display_name for the search-only slugs absent from the operational index is humanize(slug).",
-  "sealed_at": "2026-08-20T01:50:04+00:00",
+  "sealed_at": "2026-09-17T21:58:52+00:00",
   "counts": {
-    "conditions": 524,
+    "conditions": 521,
     "umbrellas": 7,
-    "with_synonyms": 145
+    "with_synonyms": 147
   },
   "conditions": {
     "abrasions": {
@@ -48,8 +48,11 @@
         "hyperactivity"
       ]
     },
-    "adrenal_exhaustion": {
-      "display_name": "Adrenal Exhaustion"
+    "adrenal_fatigue": {
+      "display_name": "Adrenal Fatigue",
+      "synonyms": [
+        "adrenal exhaustion"
+      ]
     },
     "adrenoleukodystrophy": {
       "display_name": "Adrenoleukodystrophy",
@@ -65,7 +68,10 @@
       ]
     },
     "aids": {
-      "display_name": "Aids"
+      "display_name": "HIV/AIDS",
+      "synonyms": [
+        "hiv infection"
+      ]
     },
     "airway_obstruction": {
       "display_name": "Airway Obstruction"
@@ -207,9 +213,6 @@
     },
     "atopic_asthma": {
       "display_name": "Atopic Asthma"
-    },
-    "atopic_dermatitis": {
-      "display_name": "Atopic Dermatitis"
     },
     "atrial_fibrillation": {
       "display_name": "Atrial Fibrillation"
@@ -571,9 +574,6 @@
     "congested_lungs": {
       "display_name": "Congested Lungs"
     },
-    "congestive_heart_failure": {
-      "display_name": "Congestive Heart Failure"
-    },
     "conjunctivitis": {
       "display_name": "Conjunctivitis"
     },
@@ -689,10 +689,12 @@
     "dermatitis": {
       "display_name": "Dermatitis",
       "umbrella_of": [
-        "atopic_dermatitis",
-        "seborrheic_dermatitis",
-        "eczema"
+        "eczema",
+        "seborrheic_dermatitis"
       ]
+    },
+    "dermatitis_herpetiformis": {
+      "display_name": "Dermatitis Herpetiformis"
     },
     "dermatosis": {
       "display_name": "Dermatosis"
@@ -797,6 +799,9 @@
     "encephalopathy": {
       "display_name": "Encephalopathy"
     },
+    "endometriosis": {
+      "display_name": "Endometriosis"
+    },
     "enuresis": {
       "display_name": "Enuresis"
     },
@@ -817,6 +822,9 @@
       "synonyms": [
         "impotence"
       ]
+    },
+    "ergotism": {
+      "display_name": "Ergotism"
     },
     "esophageal_cancer": {
       "display_name": "Esophageal Cancer"
@@ -913,6 +921,9 @@
         "reduced glucose tolerance"
       ]
     },
+    "gluten_intolerance": {
+      "display_name": "Gluten Intolerance"
+    },
     "goiter": {
       "display_name": "Goiter",
       "synonyms": [
@@ -971,7 +982,10 @@
       "display_name": "Heart Defects"
     },
     "heart_failure": {
-      "display_name": "Heart Failure"
+      "display_name": "Heart Failure",
+      "synonyms": [
+        "congestive heart failure"
+      ]
     },
     "heartburn": {
       "display_name": "Heartburn",
@@ -1008,6 +1022,9 @@
     "hernia": {
       "display_name": "Hernia"
     },
+    "herniated_disc": {
+      "display_name": "Herniated Disc"
+    },
     "herpes_simplex": {
       "display_name": "Herpes Simplex"
     },
@@ -1035,12 +1052,6 @@
         "elevated triglycerides",
         "high triglycerides",
         "hypertriglyceridemia"
-      ]
-    },
-    "hiv_aids": {
-      "display_name": "Hiv Aids",
-      "synonyms": [
-        "hiv infection"
       ]
     },
     "hoarseness": {
@@ -1213,6 +1224,9 @@
         "sleeplessness",
         "cannot sleep"
       ]
+    },
+    "insulin_resistance": {
+      "display_name": "Insulin Resistance"
     },
     "intermittent_claudication": {
       "display_name": "Intermittent Claudication"
@@ -1606,6 +1620,9 @@
         "epistaxis"
       ]
     },
+    "nystagmus": {
+      "display_name": "Nystagmus"
+    },
     "obesity": {
       "display_name": "Obesity",
       "synonyms": [
@@ -1905,6 +1922,9 @@
     "restless_leg_syndrome": {
       "display_name": "Restless Leg Syndrome"
     },
+    "retinal_vascular_changes": {
+      "display_name": "Retinal Vascular Changes"
+    },
     "reyes_syndrome": {
       "display_name": "Reyes Syndrome"
     },
@@ -1926,6 +1946,12 @@
     "rocky_mountain_spotted_fever": {
       "display_name": "Rocky Mountain Spotted Fever"
     },
+    "rosacea": {
+      "display_name": "Rosacea",
+      "synonyms": [
+        "acne rosacea"
+      ]
+    },
     "roseola": {
       "display_name": "Roseola"
     },
@@ -1934,6 +1960,9 @@
     },
     "sarcoma": {
       "display_name": "Sarcoma"
+    },
+    "sarcopenia": {
+      "display_name": "Sarcopenia"
     },
     "scabies": {
       "display_name": "Scabies"
@@ -1988,8 +2017,14 @@
         "cot death"
       ]
     },
+    "sinusitis": {
+      "display_name": "Sinusitis"
+    },
     "skin_diseases": {
       "display_name": "Skin Diseases"
+    },
+    "sleep_apnea": {
+      "display_name": "Sleep Apnea"
     },
     "sore_throat": {
       "display_name": "Sore Throat"
@@ -2250,45 +2285,6 @@
     },
     "xerophthalmia": {
       "display_name": "Xerophthalmia"
-    },
-    "rosacea": {
-      "display_name": "Rosacea",
-      "synonyms": [
-        "acne rosacea"
-      ]
-    },
-    "sinusitis": {
-      "display_name": "Sinusitis"
-    },
-    "sleep_apnea": {
-      "display_name": "Sleep Apnea"
-    },
-    "endometriosis": {
-      "display_name": "Endometriosis"
-    },
-    "ergotism": {
-      "display_name": "Ergotism"
-    },
-    "sarcopenia": {
-      "display_name": "Sarcopenia"
-    },
-    "nystagmus": {
-      "display_name": "Nystagmus"
-    },
-    "insulin_resistance": {
-      "display_name": "Insulin Resistance"
-    },
-    "herniated_disc": {
-      "display_name": "Herniated Disc"
-    },
-    "dermatitis_herpetiformis": {
-      "display_name": "Dermatitis Herpetiformis"
-    },
-    "retinal_vascular_changes": {
-      "display_name": "Retinal Vascular Changes"
-    },
-    "gluten_intolerance": {
-      "display_name": "Gluten Intolerance"
     }
   }
 }

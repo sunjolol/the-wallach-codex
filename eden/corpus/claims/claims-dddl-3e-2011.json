@@ -1233,7 +1233,7 @@
    "other_substances": [],
    "conditions": [
     "beriberi",
-    "congestive_heart_failure"
+    "heart_failure"
    ],
    "symptoms": [],
    "claim_text": "Beriberi is the classic thiamine (vitamin B1) deficiency disease. Wallach describes it as a common disease of the Asian rice cultures (the name is Sinhalese for 'I cannot'), characterized by weakness in the legs, hands, and arms together with congestive heart failure, with death from pulmonary edema and abdominal 'dropsy.' He identifies the cause as a thiamine (vitamin B1) deficiency — historically appearing where the diet was polished white rice with its thiamine-bearing bran removed.",
@@ -10245,7 +10245,7 @@
    "other_substances": [],
    "conditions": [
     "chronic_fatigue",
-    "adrenal_exhaustion"
+    "adrenal_fatigue"
    ],
    "symptoms": [],
    "claim_text": "Wallach says stress-driven adrenal exhaustion is marked by fatigue and an inability to cope, and you can check it at home by lying down five minutes then standing up suddenly -- the pulse should rise at least ten points, and if it does not, your adrenals need support.",
@@ -12284,7 +12284,6 @@
    "other_substances": [],
    "conditions": [
     "eczema",
-    "atopic_dermatitis",
     "psoriasis"
    ],
    "symptoms": [],
@@ -15303,8 +15302,7 @@
    "other_substances": [],
    "conditions": [
     "psoriasis",
-    "eczema",
-    "atopic_dermatitis"
+    "eczema"
    ],
    "symptoms": [],
    "claim_text": "Wallach groups psoriasis with eczema and links it to food allergies, especially cow's milk, wheat, and soy, using pulse tests and elimination diets to find the culprit foods.",
@@ -15371,7 +15369,6 @@
    "other_substances": [],
    "conditions": [
     "eczema",
-    "atopic_dermatitis",
     "psoriasis"
    ],
    "symptoms": [],
@@ -16846,8 +16843,7 @@
    "essentials": [],
    "other_substances": [],
    "conditions": [
-    "eczema",
-    "atopic_dermatitis"
+    "eczema"
    ],
    "symptoms": [],
    "claim_text": "Wallach supplements eczema (atopic dermatitis) with essential fatty acids as flaxseed oil at 9 grams per day, plus vitamin E, taking the fats as intravenous interlipids if malabsorption is severe.",
@@ -17018,8 +17014,7 @@
    "other_substances": [],
    "conditions": [
     "eczema",
-    "dermatitis",
-    "atopic_dermatitis"
+    "dermatitis"
    ],
    "symptoms": [],
    "claim_text": "Wallach recommends vitamin A at 300,000 IU per day as beta-carotene for dermatitis and eczema, while the gut heals over 60-90 days.",
@@ -17562,8 +17557,7 @@
    "other_substances": [],
    "conditions": [
     "eczema",
-    "dermatitis",
-    "atopic_dermatitis"
+    "dermatitis"
    ],
    "symptoms": [],
    "claim_text": "Because eczema involves a damaged gut that can't absorb nutrients, Wallach adds betaine HCl and digestive enzymes at 75-200 mg each three times a day before meals to his dermatitis program.",
@@ -17728,8 +17722,7 @@
    "essentials": [],
    "other_substances": [],
    "conditions": [
-    "eczema",
-    "atopic_dermatitis"
+    "eczema"
    ],
    "symptoms": [],
    "claim_text": "Wallach defines eczema as essentially the same lesion as atopic dermatitis but less localized, and dermatitis herpetiformis as clusters of itchy blisters resembling a herpes eruption.",
@@ -17930,7 +17923,6 @@
    "other_substances": [],
    "conditions": [
     "eczema",
-    "atopic_dermatitis",
     "psoriasis"
    ],
    "symptoms": [],
@@ -18063,8 +18055,7 @@
    "other_substances": [],
    "conditions": [
     "eczema",
-    "dermatitis",
-    "atopic_dermatitis"
+    "dermatitis"
    ],
    "symptoms": [],
    "claim_text": "Wallach advises doing a pulse test on the foods you eat often to reveal which ones are secretly aggravating your eczema.",
@@ -18096,8 +18087,7 @@
    "essentials": [],
    "other_substances": [],
    "conditions": [
-    "eczema",
-    "atopic_dermatitis"
+    "eczema"
    ],
    "symptoms": [],
    "claim_text": "Wallach describes atopic dermatitis (eczema) as patchy areas of crusty, weeping lesions usually found on the lips, ears, neck, hands, and joints.",
@@ -18365,8 +18355,7 @@
    "other_substances": [],
    "conditions": [
     "eczema",
-    "dermatitis",
-    "atopic_dermatitis"
+    "dermatitis"
    ],
    "symptoms": [],
    "claim_text": "Wallach warns that the rash you see on the skin in eczema is mirrored by lesions in your small intestine, a life-threatening absorption problem that can deplete your immune system and lead to diabetes, cancer, arthritis, and birth defects.",

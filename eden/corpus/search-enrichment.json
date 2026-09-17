@@ -21319,11 +21319,10 @@
    ]
   },
   "WAL-CLM-LETS-000124": {
-   "subject": "adrenal_exhaustion",
+   "subject": "adrenal_fatigue",
    "also_about": [
     "vitamin-c",
-    "zinc",
-    "adrenal_fatigue"
+    "zinc"
    ],
    "facet": "protocol",
    "question": "How do you treat adrenal fatigue or exhaustion?",
@@ -23441,7 +23440,7 @@
    ]
   },
   "WAL-CLM-LETS-000229": {
-   "subject": "congestive_heart_failure",
+   "subject": "heart_failure",
    "also_about": [
     "vitamin-b1",
     "selenium"
@@ -26912,7 +26911,6 @@
   "WAL-CLM-LETS-000148": {
    "subject": "eczema",
    "also_about": [
-    "atopic_dermatitis",
     "omega-3",
     "vitamin-e",
     "chromium"
@@ -32044,7 +32042,7 @@
    "subject": "vitamin-b1",
    "also_about": [
     "beriberi",
-    "congestive_heart_failure",
+    "heart_failure",
     "dementia",
     "fibromyalgia",
     "wernicke_korsakoff_syndrome",
@@ -32122,7 +32120,7 @@
   "WAL-CLM-RARE-000233": {
    "subject": "vitamin-b1",
    "also_about": [
-    "congestive_heart_failure",
+    "heart_failure",
     "beriberi",
     "wernicke_korsakoff_syndrome",
     "depression"
@@ -32902,7 +32900,7 @@
   "WAL-CLM-RARE-000269": {
    "subject": "selenium",
    "also_about": [
-    "hiv_aids",
+    "aids",
     "anemia",
     "muscular_dystrophy",
     "cystic_fibrosis",
@@ -34128,7 +34126,7 @@
   "WAL-CLM-DDDL-000330": {
    "subject": "chronic_fatigue",
    "also_about": [
-    "adrenal_exhaustion"
+    "adrenal_fatigue"
    ],
    "facet": "protocol",
    "question": "How can I test for adrenal fatigue at home?",
@@ -34953,7 +34951,6 @@
   "WAL-CLM-DDDL-000391": {
    "subject": "eczema",
    "also_about": [
-    "atopic_dermatitis",
     "psoriasis"
    ],
    "facet": "mechanism",
@@ -36470,8 +36467,7 @@
   "WAL-CLM-DDDL-000480": {
    "subject": "psoriasis",
    "also_about": [
-    "eczema",
-    "atopic_dermatitis"
+    "eczema"
    ],
    "facet": "mechanism",
    "question": "Can food allergies cause psoriasis?",
@@ -36499,7 +36495,6 @@
   "WAL-CLM-DDDL-000482": {
    "subject": "eczema",
    "also_about": [
-    "atopic_dermatitis",
     "psoriasis",
     "vitamin-b9"
    ],
@@ -37179,9 +37174,7 @@
   },
   "WAL-CLM-DDDL-000527": {
    "subject": "eczema",
-   "also_about": [
-    "atopic_dermatitis"
-   ],
+   "also_about": [],
    "facet": "protocol",
    "question": "Does flaxseed oil or omega-3 help eczema, and how much?",
    "answer_short": "Wallach treats eczema as an essential-fatty-acid problem and supplements flaxseed oil at 9 grams per day (with vitamin E) -- switching to intravenous interlipids only if the gut is too damaged to absorb the oil.",
@@ -37256,7 +37249,6 @@
    "subject": "eczema",
    "also_about": [
     "dermatitis",
-    "atopic_dermatitis",
     "vitamin-a"
    ],
    "facet": "protocol",
@@ -37508,8 +37500,7 @@
   "WAL-CLM-DDDL-000548": {
    "subject": "eczema",
    "also_about": [
-    "dermatitis",
-    "atopic_dermatitis"
+    "dermatitis"
    ],
    "facet": "protocol",
    "question": "Do digestive enzymes help eczema?",
@@ -37592,9 +37583,7 @@
   },
   "WAL-CLM-DDDL-000553": {
    "subject": "eczema",
-   "also_about": [
-    "atopic_dermatitis"
-   ],
+   "also_about": [],
    "facet": "basics",
    "question": "What's the difference between eczema, atopic dermatitis, and dermatitis herpetiformis?",
    "answer_short": "Wallach says eczema is basically the same lesion as atopic dermatitis but more spread out, while dermatitis herpetiformis is clusters of itchy blisters that look like a herpes outbreak -- all three, in his view, driven by the same gluten/food-allergy gut damage.",
@@ -37681,7 +37670,6 @@
   "WAL-CLM-DDDL-000559": {
    "subject": "eczema",
    "also_about": [
-    "atopic_dermatitis",
     "psoriasis",
     "zinc"
    ],
@@ -37741,8 +37729,7 @@
   "WAL-CLM-DDDL-000563": {
    "subject": "eczema",
    "also_about": [
-    "dermatitis",
-    "atopic_dermatitis"
+    "dermatitis"
    ],
    "facet": "protocol",
    "question": "How do I find out which foods trigger my eczema?",
@@ -37756,9 +37743,7 @@
   },
   "WAL-CLM-DDDL-000564": {
    "subject": "eczema",
-   "also_about": [
-    "atopic_dermatitis"
-   ],
+   "also_about": [],
    "facet": "basics",
    "question": "Where on the body does eczema usually appear?",
    "answer_short": "Wallach describes eczema (atopic dermatitis) as patchy, crusty, weeping lesions that most often show up on the lips, ears, neck, hands, and joints.",
@@ -37877,8 +37862,7 @@
   "WAL-CLM-DDDL-000572": {
    "subject": "eczema",
    "also_about": [
-    "dermatitis",
-    "atopic_dermatitis"
+    "dermatitis"
    ],
    "facet": "mechanism",
    "question": "Is eczema just a skin problem, or a sign of something deeper?",
@@ -39360,7 +39344,6 @@
   "WAL-CLM-HELLS-000100": {
    "subject": "acne",
    "also_about": [
-    "acne",
     "birth_defects"
    ],
    "facet": "warning",

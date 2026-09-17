@@ -3,7 +3,7 @@
     "_doc": "GENERATED per-entity page view-model (Phase H0 + H1). Lean: claim IDs + derived extras only; text/verbatim/citation resolve at render from corpus-embed + search-index. Pills are the DIRECTED maps(E,C) relation (H1 essentials[]-union fix); works_with is interaction-kind; protocol_claim_ids drops base-line-table rows (prominence). Regenerate: python eden/tools/entity_page_derive.py.",
     "counts": {
       "essentials": 90,
-      "conditions": 510
+      "conditions": 507
     },
     "generated_from": [
       "corpus-embed.json",
@@ -2703,7 +2703,6 @@
         "anxiety",
         "asthma",
         "atherosclerosis",
-        "atopic_dermatitis",
         "autism",
         "bedwetting",
         "bipolar_disorder",
@@ -4362,7 +4361,6 @@
         "cerebrovascular_disease",
         "chorea",
         "chronic_fatigue",
-        "congestive_heart_failure",
         "cor_pulmonale",
         "crohns_disease",
         "cystic_fibrosis",
@@ -4376,11 +4374,11 @@
         "gallstones",
         "growing_pains",
         "heart_attack",
+        "heart_failure",
         "heavy_metal_toxicity",
         "hepatitis",
         "high_cholesterol",
         "high_triglycerides",
-        "hiv_aids",
         "hypothyroidism",
         "immune_depression",
         "incontinence",
@@ -5238,7 +5236,7 @@
       "conditions": [
         "acne",
         "acrodermatitis_enteropathica",
-        "adrenal_exhaustion",
+        "adrenal_fatigue",
         "ageusia",
         "aids",
         "alcoholism",
@@ -5252,7 +5250,6 @@
         "aphthous_stomatitis",
         "arthritis",
         "athletes_foot",
-        "atopic_dermatitis",
         "autoimmune_disorders",
         "bad_breath",
         "benign_prostatic_hyperplasia",
@@ -11190,7 +11187,6 @@
         "anencephaly",
         "arthritis",
         "athletes_foot",
-        "atopic_dermatitis",
         "autoimmune_disorders",
         "benign_prostatic_hyperplasia",
         "birth_defects",
@@ -11424,11 +11420,11 @@
         "bipolar_disorder",
         "cardiac_arrhythmia",
         "cataracts",
-        "congestive_heart_failure",
         "dementia",
         "depression",
         "edema",
         "fibromyalgia",
+        "heart_failure",
         "korsakoffs_syndrome",
         "nervous_heart",
         "palpitations",
@@ -11446,7 +11442,7 @@
         "vanadium",
         "vitamin-c",
         "beriberi",
-        "congestive_heart_failure"
+        "dementia"
       ]
     },
     "vitamin-b2": {
@@ -12354,7 +12350,6 @@
         "anorexia",
         "aphthous_stomatitis",
         "arthritis",
-        "atopic_dermatitis",
         "birth_defects",
         "bleeding_gums",
         "canker_sores",
@@ -12860,7 +12855,7 @@
       "conditions": [
         "abrasions",
         "abscess",
-        "adrenal_exhaustion",
+        "adrenal_fatigue",
         "aids",
         "allergies",
         "anemia",
@@ -13415,7 +13410,6 @@
         "amenorrhea",
         "anemia",
         "arthritis",
-        "atopic_dermatitis",
         "autoimmune_disorders",
         "bedsores",
         "bleeding_gums",
@@ -15726,7 +15720,6 @@
         "arthritis",
         "asthma",
         "atopic_asthma",
-        "atopic_dermatitis",
         "autoimmune_disorders",
         "bells_palsy",
         "benign_prostatic_hyperplasia",
@@ -16623,17 +16616,18 @@
         "blind_rage"
       ]
     },
-    "adrenal_exhaustion": {
+    "adrenal_fatigue": {
       "type": "condition",
-      "name": "Adrenal Exhaustion",
+      "name": "Adrenal Fatigue",
       "claim_count": 2,
-      "distinct_claim_count": 2,
+      "distinct_claim_count": 15,
       "books": [
         "dddl-3e-2011",
-        "lets-play-doctor"
+        "epigenetics",
+        "lets-play-doctor",
+        "rare-earths"
       ],
       "synonyms": [
-        "adrenal fatigue",
         "tired adrenals",
         "burnout",
         "adrenal burnout",
@@ -16652,10 +16646,33 @@
       "record_claim_count": 0,
       "search": [
         {
+          "facet": "mechanism",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000068",
+            "WAL-CLM-RARE-000188",
+            "WAL-CLM-RARE-000221"
+          ]
+        },
+        {
           "facet": "protocol",
           "claim_ids": [
             "WAL-CLM-DDDL-000330",
-            "WAL-CLM-LETS-000124"
+            "WAL-CLM-LETS-000124",
+            "WAL-CLM-LETS-000126",
+            "WAL-CLM-LETS-000279",
+            "WAL-CLM-LETS-000280",
+            "WAL-CLM-LETS-000307",
+            "WAL-CLM-LETS-000308",
+            "WAL-CLM-LETS-000311",
+            "WAL-CLM-LETS-000315",
+            "WAL-CLM-LETS-000438"
+          ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000102",
+            "WAL-CLM-RARE-000083"
           ]
         }
       ],
@@ -16692,22 +16709,22 @@
       "record_claim_count": 1,
       "search": [],
       "related_conditions": [
+        "aids",
         "als",
         "alzheimers",
         "anemia",
         "cancer",
         "dementia",
-        "hiv_aids",
         "infertility",
         "pancreatitis"
       ],
       "related": [
+        "aids",
         "als",
         "alzheimers",
         "anemia",
         "cancer",
         "dementia",
-        "hiv_aids",
         "infertility",
         "pancreatitis"
       ]
@@ -16760,12 +16777,13 @@
     },
     "aids": {
       "type": "condition",
-      "name": "Aids",
-      "claim_count": 2,
-      "distinct_claim_count": 2,
+      "name": "HIV/AIDS",
+      "claim_count": 4,
+      "distinct_claim_count": 4,
       "books": [
         "dddl-3e-2011",
-        "lets-play-doctor"
+        "lets-play-doctor",
+        "rare-earths"
       ],
       "synonyms": [
         "hiv",
@@ -16773,7 +16791,11 @@
         "acquired immunodeficiency",
         "immune deficiency virus",
         "aids virus",
-        "aids"
+        "aids",
+        "hiv positive",
+        "acquired immune deficiency",
+        "hiv infection",
+        "human immunodeficiency virus"
       ],
       "protocol_claim_ids": [
         "WAL-CLM-DDDL-000579",
@@ -16786,8 +16808,15 @@
         "vitamin-e",
         "zinc"
       ],
-      "record": [],
-      "record_claim_count": 0,
+      "record": [
+        {
+          "kind": "deficiency_sign",
+          "claim_ids": [
+            "WAL-CLM-RARE-000270"
+          ]
+        }
+      ],
+      "record_claim_count": 1,
       "search": [
         {
           "facet": "protocol",
@@ -16795,15 +16824,33 @@
             "WAL-CLM-DDDL-000579",
             "WAL-CLM-LETS-000126"
           ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-RARE-000269"
+          ]
         }
       ],
-      "related_conditions": [],
+      "related_conditions": [
+        "anemia",
+        "adrenoleukodystrophy",
+        "als",
+        "alzheimers",
+        "cancer",
+        "cardiomyopathy",
+        "cystic_fibrosis",
+        "dementia"
+      ],
       "related": [
         "selenium",
+        "anemia",
         "vitamin-a",
         "vitamin-c",
         "vitamin-e",
-        "zinc"
+        "zinc",
+        "adrenoleukodystrophy",
+        "als"
       ]
     },
     "airway_obstruction": {
@@ -17285,8 +17332,8 @@
         "cancer",
         "dementia",
         "adrenoleukodystrophy",
-        "anemia",
-        "cardiomyopathy"
+        "aids",
+        "anemia"
       ],
       "related": [
         "multiple_sclerosis",
@@ -17296,7 +17343,7 @@
         "dementia",
         "selenium",
         "adrenoleukodystrophy",
-        "anemia"
+        "aids"
       ]
     },
     "alzheimers": {
@@ -19172,79 +19219,6 @@
         "omega-3"
       ]
     },
-    "atopic_dermatitis": {
-      "type": "condition",
-      "name": "Atopic Dermatitis",
-      "claim_count": 12,
-      "distinct_claim_count": 12,
-      "books": [
-        "dddl-3e-2011",
-        "lets-play-doctor"
-      ],
-      "synonyms": [],
-      "protocol_claim_ids": [
-        "WAL-CLM-DDDL-000482",
-        "WAL-CLM-DDDL-000527",
-        "WAL-CLM-DDDL-000532",
-        "WAL-CLM-DDDL-000548",
-        "WAL-CLM-DDDL-000559",
-        "WAL-CLM-LETS-000148"
-      ],
-      "restore": [
-        "chromium",
-        "omega-3",
-        "vitamin-a",
-        "vitamin-b9",
-        "vitamin-e",
-        "zinc"
-      ],
-      "record": [],
-      "record_claim_count": 0,
-      "search": [
-        {
-          "facet": "mechanism",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000391",
-            "WAL-CLM-DDDL-000480",
-            "WAL-CLM-DDDL-000572"
-          ]
-        },
-        {
-          "facet": "protocol",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000482",
-            "WAL-CLM-DDDL-000527",
-            "WAL-CLM-DDDL-000532",
-            "WAL-CLM-DDDL-000548",
-            "WAL-CLM-DDDL-000559",
-            "WAL-CLM-DDDL-000563",
-            "WAL-CLM-LETS-000148"
-          ]
-        },
-        {
-          "facet": "basics",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000553",
-            "WAL-CLM-DDDL-000564"
-          ]
-        }
-      ],
-      "related_conditions": [
-        "eczema",
-        "dermatitis",
-        "psoriasis"
-      ],
-      "related": [
-        "eczema",
-        "dermatitis",
-        "psoriasis",
-        "chromium",
-        "omega-3",
-        "vitamin-a",
-        "vitamin-b9",
-        "vitamin-e"
-      ]
-    },
     "atrial_fibrillation": {
       "type": "condition",
       "name": "Atrial Fibrillation",
@@ -19953,7 +19927,7 @@
         }
       ],
       "related_conditions": [
-        "congestive_heart_failure",
+        "heart_failure",
         "wernicke_korsakoff_syndrome",
         "anorexia",
         "dementia",
@@ -19964,7 +19938,7 @@
       ],
       "related": [
         "vitamin-b1",
-        "congestive_heart_failure",
+        "heart_failure",
         "wernicke_korsakoff_syndrome",
         "anorexia",
         "dementia",
@@ -23414,14 +23388,14 @@
       "related_conditions": [
         "candidiasis",
         "hypoglycemia",
-        "adrenal_exhaustion",
+        "adrenal_fatigue",
         "hypothyroidism"
       ],
       "related": [
         "candidiasis",
         "hypoglycemia",
         "lanthanum",
-        "adrenal_exhaustion",
+        "adrenal_fatigue",
         "chromium",
         "hypothyroidism",
         "selenium",
@@ -24315,83 +24289,6 @@
       "related": [
         "magnesium",
         "manganese"
-      ]
-    },
-    "congestive_heart_failure": {
-      "type": "condition",
-      "name": "Congestive Heart Failure",
-      "claim_count": 5,
-      "distinct_claim_count": 5,
-      "books": [
-        "dddl-3e-2011",
-        "epigenetics",
-        "lets-play-doctor",
-        "rare-earths"
-      ],
-      "synonyms": [
-        "heart failure",
-        "chf",
-        "weak heart",
-        "fluid around the heart",
-        "failing heart",
-        "congestive heart failure"
-      ],
-      "protocol_claim_ids": [
-        "WAL-CLM-LETS-000229"
-      ],
-      "restore": [
-        "selenium",
-        "vitamin-b1"
-      ],
-      "record": [
-        {
-          "kind": "deficiency_sign",
-          "claim_ids": [
-            "WAL-CLM-DDDL-000043"
-          ]
-        },
-        {
-          "kind": "toxicity_sign",
-          "claim_ids": [
-            "WAL-CLM-LETS-000033"
-          ]
-        }
-      ],
-      "record_claim_count": 2,
-      "search": [
-        {
-          "facet": "protocol",
-          "claim_ids": [
-            "WAL-CLM-LETS-000229"
-          ]
-        },
-        {
-          "facet": "physiology",
-          "claim_ids": [
-            "WAL-CLM-EPIGEN-000035",
-            "WAL-CLM-RARE-000233"
-          ]
-        }
-      ],
-      "related_conditions": [
-        "beriberi",
-        "anorexia",
-        "wernicke_korsakoff_syndrome",
-        "dementia",
-        "depression",
-        "edema",
-        "fibromyalgia",
-        "hyperactivity"
-      ],
-      "related": [
-        "vitamin-b1",
-        "beriberi",
-        "anorexia",
-        "wernicke_korsakoff_syndrome",
-        "dementia",
-        "depression",
-        "edema",
-        "fibromyalgia"
       ]
     },
     "conjunctivitis": {
@@ -26254,7 +26151,7 @@
         "acne",
         "insomnia",
         "anemia",
-        "atopic_dermatitis"
+        "diarrhea"
       ],
       "related": [
         "eczema",
@@ -27508,7 +27405,11 @@
       "synonyms": [
         "eczema",
         "atopic dermatitis",
-        "eczma"
+        "eczma",
+        "atopic eczema",
+        "itchy skin rash",
+        "skin allergy rash",
+        "eczyma"
       ],
       "protocol_claim_ids": [
         "WAL-CLM-DDDL-000394",
@@ -27613,23 +27514,23 @@
       ],
       "related_conditions": [
         "dermatitis",
-        "atopic_dermatitis",
         "alopecia",
         "depression",
         "psoriasis",
         "anorexia",
         "insomnia",
-        "acne"
+        "acne",
+        "asthma"
       ],
       "related": [
         "dermatitis",
-        "atopic_dermatitis",
         "alopecia",
         "depression",
         "omega-3",
         "psoriasis",
         "anorexia",
-        "insomnia"
+        "insomnia",
+        "omega-6"
       ]
     },
     "edema": {
@@ -27689,8 +27590,8 @@
         "kwashiorkor",
         "acne",
         "arthritis",
-        "congestive_heart_failure",
-        "dementia"
+        "dementia",
+        "food_allergy"
       ],
       "related": [
         "anorexia",
@@ -27700,7 +27601,7 @@
         "nitrogen",
         "acne",
         "arthritis",
-        "congestive_heart_failure"
+        "dementia"
       ]
     },
     "electric_shock": {
@@ -30084,46 +29985,87 @@
     "heart_failure": {
       "type": "condition",
       "name": "Heart Failure",
-      "claim_count": 2,
-      "distinct_claim_count": 2,
+      "claim_count": 7,
+      "distinct_claim_count": 7,
       "books": [
         "dddl-3e-2011",
-        "immortality"
+        "epigenetics",
+        "immortality",
+        "lets-play-doctor",
+        "rare-earths"
       ],
-      "synonyms": [],
-      "protocol_claim_ids": [],
-      "restore": [],
+      "synonyms": [
+        "heart can't pump",
+        "heart faliure",
+        "chf",
+        "weak heart",
+        "fluid around the heart",
+        "failing heart",
+        "congestive heart failure"
+      ],
+      "protocol_claim_ids": [
+        "WAL-CLM-LETS-000229"
+      ],
+      "restore": [
+        "selenium",
+        "vitamin-b1"
+      ],
       "record": [
+        {
+          "kind": "deficiency_sign",
+          "claim_ids": [
+            "WAL-CLM-DDDL-000043"
+          ]
+        },
         {
           "kind": "toxicity_sign",
           "claim_ids": [
-            "WAL-CLM-IMMORT-000133"
+            "WAL-CLM-IMMORT-000133",
+            "WAL-CLM-LETS-000033"
           ]
         }
       ],
-      "record_claim_count": 1,
+      "record_claim_count": 3,
       "search": [
+        {
+          "facet": "protocol",
+          "claim_ids": [
+            "WAL-CLM-LETS-000229"
+          ]
+        },
         {
           "facet": "warning",
           "claim_ids": [
             "WAL-CLM-DDDL-000022"
           ]
+        },
+        {
+          "facet": "physiology",
+          "claim_ids": [
+            "WAL-CLM-EPIGEN-000035",
+            "WAL-CLM-RARE-000233"
+          ]
         }
       ],
       "related_conditions": [
+        "beriberi",
+        "anorexia",
         "diabetes",
+        "wernicke_korsakoff_syndrome",
         "cirrhosis",
-        "liver_cirrhosis",
-        "liver_disease",
-        "pancreatic_fibrosis"
+        "dementia",
+        "depression",
+        "edema"
       ],
       "related": [
+        "vitamin-b1",
+        "beriberi",
+        "anorexia",
         "diabetes",
         "iron",
+        "wernicke_korsakoff_syndrome",
         "cirrhosis",
-        "liver_cirrhosis",
-        "liver_disease",
-        "pancreatic_fibrosis"
+        "dementia"
       ]
     },
     "heartburn": {
@@ -30928,57 +30870,6 @@
         "depression",
         "diabetes",
         "high_cholesterol"
-      ]
-    },
-    "hiv_aids": {
-      "type": "condition",
-      "name": "Hiv Aids",
-      "claim_count": 2,
-      "distinct_claim_count": 2,
-      "books": [
-        "rare-earths"
-      ],
-      "synonyms": [],
-      "protocol_claim_ids": [],
-      "restore": [
-        "selenium"
-      ],
-      "record": [
-        {
-          "kind": "deficiency_sign",
-          "claim_ids": [
-            "WAL-CLM-RARE-000270"
-          ]
-        }
-      ],
-      "record_claim_count": 1,
-      "search": [
-        {
-          "facet": "physiology",
-          "claim_ids": [
-            "WAL-CLM-RARE-000269"
-          ]
-        }
-      ],
-      "related_conditions": [
-        "anemia",
-        "adrenoleukodystrophy",
-        "als",
-        "alzheimers",
-        "cancer",
-        "cardiomyopathy",
-        "cystic_fibrosis",
-        "dementia"
-      ],
-      "related": [
-        "anemia",
-        "selenium",
-        "adrenoleukodystrophy",
-        "als",
-        "alzheimers",
-        "cancer",
-        "cardiomyopathy",
-        "cystic_fibrosis"
       ]
     },
     "hoarseness": {
@@ -34030,9 +33921,9 @@
         "cardiomyopathy",
         "liver_cirrhosis",
         "liver_disease",
+        "aids",
         "anemia",
-        "cancer",
-        "cataracts"
+        "cancer"
       ],
       "related": [
         "selenium",
@@ -34041,8 +33932,8 @@
         "cardiomyopathy",
         "liver_cirrhosis",
         "liver_disease",
-        "anemia",
-        "cancer"
+        "aids",
+        "anemia"
       ]
     },
     "ketoacidosis": {
@@ -34407,8 +34298,8 @@
         "alzheimers",
         "anorexia",
         "beriberi",
-        "congestive_heart_failure",
         "fibromyalgia",
+        "heart_failure",
         "memory_loss",
         "wernicke_korsakoff_syndrome"
       ],
@@ -34420,7 +34311,7 @@
         "anorexia",
         "beriberi",
         "choline",
-        "congestive_heart_failure"
+        "fibromyalgia"
       ]
     },
     "kwashiorkor": {
@@ -37244,9 +37135,9 @@
         "cardiomyopathy",
         "liver_cirrhosis",
         "liver_disease",
+        "aids",
         "alzheimers",
-        "anemia",
-        "cancer"
+        "anemia"
       ],
       "related": [
         "als",
@@ -37255,8 +37146,8 @@
         "cardiomyopathy",
         "liver_cirrhosis",
         "liver_disease",
-        "alzheimers",
-        "anemia"
+        "aids",
+        "alzheimers"
       ]
     },
     "mumps": {
@@ -39587,23 +39478,23 @@
       ],
       "related_conditions": [
         "adrenoleukodystrophy",
+        "aids",
         "als",
         "alzheimers",
         "anemia",
         "cancer",
         "colon_cancer",
-        "dementia",
-        "hiv_aids"
+        "dementia"
       ],
       "related": [
         "adrenoleukodystrophy",
+        "aids",
         "als",
         "alzheimers",
         "anemia",
         "cancer",
         "colon_cancer",
-        "dementia",
-        "hiv_aids"
+        "dementia"
       ]
     },
     "panic_attacks": {
@@ -39904,8 +39795,8 @@
         "cancer",
         "dementia",
         "adrenoleukodystrophy",
-        "anemia",
-        "cardiomyopathy"
+        "aids",
+        "anemia"
       ],
       "related": [
         "als",
@@ -39915,7 +39806,7 @@
         "dementia",
         "selenium",
         "adrenoleukodystrophy",
-        "anemia"
+        "aids"
       ]
     },
     "pediculosis": {
@@ -41424,23 +41315,23 @@
       ],
       "related_conditions": [
         "eczema",
-        "atopic_dermatitis",
         "dermatitis",
         "acne",
         "asthma",
         "bronchitis",
         "cough",
-        "depression"
+        "depression",
+        "rosacea"
       ],
       "related": [
         "eczema",
-        "atopic_dermatitis",
         "omega-3",
         "vitamin-a",
         "vitamin-b9",
         "zinc",
         "copper",
-        "dermatitis"
+        "dermatitis",
+        "omega-6"
       ]
     },
     "psychosis": {
@@ -42073,20 +41964,20 @@
       ],
       "related_conditions": [
         "anorexia",
-        "congestive_heart_failure",
         "diabetes",
         "edema",
         "fatty_liver",
+        "heart_failure",
         "hyperactivity",
         "hypertension",
         "liver_disease"
       ],
       "related": [
         "anorexia",
-        "congestive_heart_failure",
         "diabetes",
         "edema",
         "fatty_liver",
+        "heart_failure",
         "hyperactivity",
         "hypertension",
         "inositol"
@@ -43141,10 +43032,10 @@
         }
       ],
       "related_conditions": [
+        "aids",
         "anemia",
         "cardiomyopathy",
         "cystic_fibrosis",
-        "hiv_aids",
         "keshan_disease",
         "liver_cirrhosis",
         "liver_disease",
@@ -43152,11 +43043,11 @@
       ],
       "related": [
         "selenium",
+        "aids",
         "anemia",
         "calcium",
         "cardiomyopathy",
         "cystic_fibrosis",
-        "hiv_aids",
         "keshan_disease",
         "liver_cirrhosis"
       ]
@@ -43513,22 +43404,22 @@
       "related_conditions": [
         "anemia",
         "adrenoleukodystrophy",
+        "aids",
         "als",
         "alzheimers",
         "arthritis",
         "cancer",
-        "collagen_disease",
-        "dementia"
+        "collagen_disease"
       ],
       "related": [
         "anemia",
         "adrenoleukodystrophy",
+        "aids",
         "als",
         "alzheimers",
         "arthritis",
         "cancer",
-        "collagen_disease",
-        "dementia"
+        "collagen_disease"
       ]
     },
     "sids": {
@@ -43566,23 +43457,23 @@
       ],
       "related_conditions": [
         "adrenoleukodystrophy",
+        "aids",
         "als",
         "alzheimers",
         "anemia",
         "anxiety",
         "birth_defects",
-        "cancer",
-        "dementia"
+        "cancer"
       ],
       "related": [
         "adrenoleukodystrophy",
+        "aids",
         "als",
         "alzheimers",
         "anemia",
         "anxiety",
         "birth_defects",
-        "cancer",
-        "dementia"
+        "cancer"
       ]
     },
     "skin_diseases": {
@@ -46674,7 +46565,7 @@
       ],
       "related_conditions": [
         "beriberi",
-        "congestive_heart_failure",
+        "heart_failure",
         "anorexia",
         "dementia",
         "depression",
@@ -46684,7 +46575,7 @@
       ],
       "related": [
         "beriberi",
-        "congestive_heart_failure",
+        "heart_failure",
         "vitamin-b1",
         "anorexia",
         "dementia",
@@ -46727,9 +46618,9 @@
       "related_conditions": [
         "cardiomyopathy",
         "muscular_dystrophy",
+        "aids",
         "anemia",
         "cystic_fibrosis",
-        "hiv_aids",
         "keshan_disease",
         "liver_cirrhosis",
         "liver_disease"
@@ -46738,9 +46629,9 @@
         "cardiomyopathy",
         "muscular_dystrophy",
         "selenium",
+        "aids",
         "anemia",
         "cystic_fibrosis",
-        "hiv_aids",
         "keshan_disease",
         "liver_cirrhosis"
       ]
