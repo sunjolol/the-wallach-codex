@@ -2675,14 +2675,15 @@
       "display_name": "Cystitis",
       "type": "condition",
       "synonyms": [
-        "bladder infection",
-        "uti",
-        "urinary tract infection",
+        "cistitis",
+        "acute cystitis",
         "bladder inflammation",
-        "painful urination",
-        "cistitis"
+        "inflamed bladder",
+        "irritation of the bladder",
+        "honeymoon disease"
       ],
       "related": [
+        "urinary_tract_infection",
         "vaginitis"
       ],
       "claim_count": 4
@@ -10102,15 +10103,32 @@
       "type": "condition",
       "synonyms": [
         "uti",
-        "bladder infection",
-        "water infection",
+        "utis",
+        "u.t.i",
+        "urinary tract infection",
+        "urinary tract infections",
+        "urinary infection",
+        "urinary tract",
         "urine infection",
-        "cystitis",
+        "water infection",
+        "bladder infection",
+        "bladder infections",
+        "kidney infection",
+        "painful urination",
+        "burning urination",
         "burning when peeing",
         "burning pee",
-        "u.t.i"
+        "burning when i pee",
+        "burning when urinating",
+        "it burns when i pee",
+        "it hurts to pee",
+        "peeing hurts",
+        "pain when peeing"
       ],
-      "related": [],
+      "related": [
+        "cystitis",
+        "bladder_stones"
+      ],
       "claim_count": 1
     },
     "urine_therapy": {
@@ -18769,7 +18787,9 @@
     {
       "id": "WAL-CLM-DDDL-000338",
       "subject": "cystitis",
-      "also_about": [],
+      "also_about": [
+        "urinary_tract_infection"
+      ],
       "facet": "protocol",
       "question": "What does Wallach recommend for cystitis (a bladder infection)?",
       "answer_short": "Acidify the urine with one to two quarts of unsweetened cranberry juice a day the first day, then one quart daily as needed, plus herbs like bearberry, birch, juniper and lovage.",
@@ -59012,7 +59032,9 @@
     {
       "id": "WAL-CLM-LETS-000241",
       "subject": "cystitis",
-      "also_about": [],
+      "also_about": [
+        "urinary_tract_infection"
+      ],
       "facet": "protocol",
       "question": "How do you treat a bladder infection (cystitis) naturally?",
       "answer_short": "Wallach treats cystitis by acidifying the urine with cranberry juice plus herbs such as bearberry, birch, juniper, lovage, prickly restharrow, and rupturewort.",

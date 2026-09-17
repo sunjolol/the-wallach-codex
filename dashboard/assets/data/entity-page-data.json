@@ -25518,12 +25518,12 @@
         "rare-earths"
       ],
       "synonyms": [
-        "bladder infection",
-        "uti",
-        "urinary tract infection",
+        "cistitis",
+        "acute cystitis",
         "bladder inflammation",
-        "painful urination",
-        "cistitis"
+        "inflamed bladder",
+        "irritation of the bladder",
+        "honeymoon disease"
       ],
       "protocol_claim_ids": [
         "WAL-CLM-DDDL-000338",
@@ -45968,7 +45968,7 @@
       "type": "condition",
       "name": "Urinary Tract Infection",
       "claim_count": 6,
-      "distinct_claim_count": 6,
+      "distinct_claim_count": 8,
       "books": [
         "dddl-3e-2011",
         "immortality",
@@ -45977,13 +45977,27 @@
       ],
       "synonyms": [
         "uti",
-        "bladder infection",
-        "water infection",
+        "utis",
+        "u.t.i",
+        "urinary tract infection",
+        "urinary tract infections",
+        "urinary infection",
+        "urinary tract",
         "urine infection",
-        "cystitis",
+        "water infection",
+        "bladder infection",
+        "bladder infections",
+        "kidney infection",
+        "painful urination",
+        "burning urination",
         "burning when peeing",
         "burning pee",
-        "u.t.i"
+        "burning when i pee",
+        "burning when urinating",
+        "it burns when i pee",
+        "it hurts to pee",
+        "peeing hurts",
+        "pain when peeing"
       ],
       "protocol_claim_ids": [
         "WAL-CLM-DDDL-000544",
@@ -46007,6 +46021,8 @@
         {
           "facet": "protocol",
           "claim_ids": [
+            "WAL-CLM-DDDL-000338",
+            "WAL-CLM-LETS-000241",
             "WAL-CLM-RARE-000136"
           ]
         },

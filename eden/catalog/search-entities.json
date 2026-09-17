@@ -7399,14 +7399,15 @@
    "catalog_ref": true,
    "type": "condition",
    "synonyms": [
-    "bladder infection",
-    "uti",
-    "urinary tract infection",
+    "cistitis",
+    "acute cystitis",
     "bladder inflammation",
-    "painful urination",
-    "cistitis"
+    "inflamed bladder",
+    "irritation of the bladder",
+    "honeymoon disease"
    ],
    "related": [
+    "urinary_tract_infection",
     "vaginitis"
    ]
   },
@@ -7415,15 +7416,32 @@
    "type": "condition",
    "synonyms": [
     "uti",
-    "bladder infection",
-    "water infection",
+    "utis",
+    "u.t.i",
+    "urinary tract infection",
+    "urinary tract infections",
+    "urinary infection",
+    "urinary tract",
     "urine infection",
-    "cystitis",
+    "water infection",
+    "bladder infection",
+    "bladder infections",
+    "kidney infection",
+    "painful urination",
+    "burning urination",
     "burning when peeing",
     "burning pee",
-    "u.t.i"
+    "burning when i pee",
+    "burning when urinating",
+    "it burns when i pee",
+    "it hurts to pee",
+    "peeing hurts",
+    "pain when peeing"
    ],
-   "related": []
+   "related": [
+    "cystitis",
+    "bladder_stones"
+   ]
   },
   "dyspepsia": {
    "catalog_ref": true,

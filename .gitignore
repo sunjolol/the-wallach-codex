@@ -26,8 +26,16 @@ chronicle/next-chunk.md
 # a clear reason. See eden/corpus/README.md.
 eden/corpus/books/*.txt
 
-# Page scans of those same books, used only to verify OCR locally.
+# The local scratch directory: page scans of those same books (kept to verify OCR
+# against the real page), probe screenshots, and per-campaign working folders.
 temporary/
+
+# Mining DRAFTS. Untracked on purpose in the 2026-08-20 public-release cleanup, but
+# never ignored — so every mining round regenerates ~92k lines of them and they come
+# back as untracked noise that buries the real diff. They must stay ON DISK: the seal
+# reads them (corpus_seal.draft_offset_failures()), and a stale draft silently restores
+# old offsets. Derived from the sealed shards in one command; never a source of truth.
+eden/corpus/drafts/
 
 # Wallach material recorded in full but deliberately held out of the app and out
 # of the published repository. Kept on disk for review; nothing in the app or the

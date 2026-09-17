@@ -185,7 +185,7 @@ node tools/probes/render_probe.js        # a headless render check
 
 `tools/build.mjs` installs its own dev dependencies on first run. **You do not need to build to run the
 app** — `dist/main.js` is committed, so a fresh clone opens and works immediately. Alongside the build,
-`tools/probes/` holds 60 headless render probes and `tools/tests/` 55 standalone Python
+`tools/probes/` holds 61 headless render probes and `tools/tests/` 55 standalone Python
 control tests. The render probes need Puppeteer, which lives in the ROOT `package.json` — run
 `npm install` at the repo root once, or `render_probe.js` exits 2 with `NO_PUPPETEER`.
 
