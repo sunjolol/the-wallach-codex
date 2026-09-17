@@ -51349,7 +51349,27 @@ TWO CORRECTIONS WORTH RECORDING. First, the gate's own comments overstated claus
 
 VERIFIED. Board 110/110. typecheck clean. 100 unit tests pass. Build OK. Eleven render probes pass. Both pages driven in the real app and screenshotted, zero page errors: 25 rows under omega-3 (17 of them fish), 53 under omega-6 (2 fish).
 
-FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with the food's COLLECTIVE share, so sunflower seeds still fill an omega-3 goal gap at 152.9%. Defensible -- the pair shares one budget -- and it is a separate owner ruling from 2026-08-22 with its own reasoning, so it was left alone rather than changed unasked.` }, { id: "lg_mthzl5w7_a75950", ts: "2026-08-31T20:26:36.823339-05:00", surface: "foods+gates+probes", kind: "round-close", summary: `A goal naming omega-3 now gets foods that carry omega-3: four more surfaces left the pair's combined figure, the "Omega-3" filter went from 83 foods to 25, and all three long-red render probes are green.`, detail: '`usda_bindings_are_all_load_bearing` (external). Every nutrient bound in usda-source.json must\n    be PRESENT in the pinned extract and resolve to at least one NON-ZERO cell on the shipped\n    catalogue; no two slugs may bind one cell; nothing may sit in `no_usda_composition` and the\n    bound map at once. This is this morning\'s EPA/DHA failure generalised \u2014 both were named in the\n    map and never extracted, so the terms existed in every docstring while reading zero rows on\n    all 192 foods, and every arithmetic gate recomputed 18:2 + 18:3 and agreed with itself at\n    108/108. All 28 bindings are live today; the thinnest is CLA at 17 foods, EPA at 43 and DHA at\n    39 are 2nd and 3rd thinnest. All four clauses re-broken and watched red.\n  \xB7 `per_essential_food_lists_are_distinct` (consistency). For every pair of essentials with 3+\n    food sources, the two sourced sets must differ; and at least 15 essentials must clear that\n    floor so the comparison can never pass vacuously. 325 pairs across 26 essentials today, zero\n    collisions. Re-broken by giving both omegas one shared block, and it names the collision\n    exactly: "omega-3 and omega-6 are sourced from one identical set of 53 food(s)". It would have\n    caught the defect that cost the last two rounds.\n\nTHREE RED PROBES, THREE DIFFERENT DISEASES. The suite went 55/58 to 58/58.\n  \xB7 `render_probe_group_dots` \u2014 the probe was wrong about the app. It NAMED which goals Wallach is\n    recorded as naming the plant-derived complex for. The layout moved to 19 of 30 and the list\n    did not, so `more-energy` NAMES the group and was being used as the NEGATIVE CONTROL: all four\n    of its failures asserted the opposite of the truth. Now derived from `g.groups`, 14 checks,\n    with a new clause asserting the split is non-trivial in both directions so the controls can\n    never go vacuous. views/coverage.ts said "20 of the 30 goals" in two places; the data says 19,\n    and the ~11% figure beside it is 10.2%. Both corrected \u2014 the same drift in prose instead of\n    code.\n  \xB7 `render_probe_mech_shape` \u2014 stale goldens, re-blessed on his explicit ruling with the full\n    diff read first. 17 changed regions across the four signed-off headers, and EVERY one of them\n    sits below the sources label: all four header BODIES are byte-identical to the 2026-08-20\n    capture, which is the property the fixture exists to protect. Two commits caused them, not\n    one, and that is worth saying because the ruling asked whether anything else rode along:\n    34fe0cc9 (2026-08-21) registered btt-2-0-citrus-peach-fusion as superseded, dropping it from\n    every dock and taking zinc\'s collapse from "Show all 53 sources" to 49; e38d9e50 (2026-08-24)\n    inserted the food-first "Best food sources" run, which pushed vitamin-a past the collapse\n    threshold. Determinism was checked before blessing \u2014 two independent captures byte-identical.\n    The fixture\'s own `_captured` note carries the whole account, including that re-capturing\n    eleven days late breaks its own same-patch rule.\n  \xB7 `render_probe_orac` \u2014 it described a design that had been replaced around it, and its own\n    header said so in a note nobody acted on, because the probe suite is not on the invariant\n    board and a red probe is silent. All seven failures were stale: \xA701\'s four `.kd-orac-dec`\n    decade bars are now one scrubbable `.kd-orac-cell`, and \xA706\'s nine `.kd-orac-tbl` tables are\n    now nine `.kd-orac-lane` rows in a plot; neither dead class appears in any view or stylesheet.\n    Zero live defects \u2014 the per-100 g guard survived the redesign in a stronger form, as an <i>\n    sub-label on the diverging lane and a per-dot `data-unit`. Re-pointed with every expectation\n    DERIVED from orac-data.json and orac-foods-data.json, and two assertions are now stronger than\n    what they replaced: the reach bar is measured against the share it prints (448.5 of 625 px =\n    71.8% against a printed 72%) rather than merely being a gradient, and the scrubber is driven\n    to each of Wallach\'s four measured band midpoints and must report 35/41/55/78 exactly. Both\n    re-broken and watched red.\n\nVERIFICATION. Board 112/112, 0 failed, external 27. Probe suite 58/58. Unit tests 106/106, tsc\nclean. Build fresh. Every negative control restored its files and the restore was confirmed by\nsha256, not by assumption.\n\nDEFERRED / DROPPED. The X share card (1500x500 from tools/make_share_card.js) is dropped\npermanently at his instruction \u2014 struck from the handoff, not to be raised again. Untouched: the\n121 unruled drawer-knowledge.css classes, the pH-ladder ACID cap, the 13 dark-theme dead args.\ntools/make_share_card.js is now unreferenced by any live task and is a candidate for the next\nobsolescence pass \u2014 flagged, not deleted.' }, { id: "lg_mtj4v39x_9bsvb1", ts: "2026-09-01T15:42:04.245982-05:00", surface: "web-build", kind: "round-close", summary: "The website now carries this round's fix, and forgetting it again is a red board rather than something he has to notice: dist-web rebuilt and verified by census, and a new gate refuses to let the two distributions drift apart.", detail: "CONTENT, NOT MTIME, and that choice is load-bearing: dist-web/ is gitignored while\n       dashboard/assets/js/dist/main.js is tracked, so any checkout can make the tracked file\n       newer than the untracked build and a timestamp comparison would cry stale on a perfectly\n       current one. A digest cannot be confused by a checkout.\n     \xB7 The key list is PARSED out of tools/esbuild_web.mjs and vacuity-checked, never typed into\n       the gate \u2014 an artifact added to the split cannot escape by not being listed, and a\n       reshaped builder fails loudly instead of silently parsing nothing. Both of those clauses\n       exist because this same session watched `render_probe_group_dots` invert its own negative\n       control by hardcoding what it measured against.\n     \xB7 Three re-breaks, each watched RED: a re-serialised creators-log-embed with dist-web\n       untouched (the exact failure mode \u2014 \"the web build is BEHIND this tree: creators-log-embed\n       (this tree's digest is e22723f5f3; dist-web ships no such file)\"), SPLIT_ARTIFACTS emptied,\n       and SPLIT_ARTIFACTS renamed. Both touched files restored and confirmed by sha256.\n     \xB7 HONEST LIMIT, stated in the gate: it proves the LOCAL web build is current and says\n       NOTHING about what is served at nutrientcodex.com. Uploading is a human act;\n       `render_probe_live_host` remains the instrument for the host.\n  4. The round-close skill gained the step it was missing \u2014 step 7, the second distribution,\n     placed AFTER the Creator's Log entry because the web build ships that embed too. The ritual\n     had seven steps and rebuilt one of two live targets.\n\nVERIFICATION. Board 113/113, 0 failed, external 27. render_probe_web_build PASS. The omega census\non the web target: 25 / 53 exact, both directions clean. Local build fresh and rebuilt AFTER the\nCreator's Log entry, then the web build rebuilt after that, in the order the new gate enforces.\nCLAUDE.md and README.md updated 112 to 113 in the same patch that made them wrong.\n\nDEFERRED. The upload itself is his \u2014 dist-web/ is gitignored and lives only on this machine.\nAfter he uploads, `node tools/probes/render_probe_live_host.js` is the check that the HOST agrees;\nit cannot run meaningfully until then." }, { id: "lg_mtjhy3hx_u1q13r", ts: "2026-09-01T21:48:19.509419-05:00", surface: "search+corpus", kind: "round-close", summary: "Searching the liver used to hand you Meat & Animal Foods. It now opens a Liver Health topic with 28 answers, and asking how to look after your liver heroes the real answer.", detail: 'A person typing "liver health" into this app was being shown red meat. That is now a\nLiver Health topic carrying 28 answers, and the common questions - how do I take care of my liver,\nwhich foods and nutrients support it, can a damaged liver heal - each hero the claim that actually\nanswers them rather than dumping the reader on a page.\n\nTHE DEFECT, MEASURED BEFORE IT WAS FIXED. Driving the live resolver on the built bundle, 12 of 20\nliver queries resolved to the `meat` entity: it carried the bare synonym "liver" for organ meat and\nno liver-organ entity existed to outrank it. Two landed somewhere with no liver content at all -\n"signs of liver problems" heroed "What are the signs of too much calcium?", and "liver damage from\nalcohol" heroed a resveratrol high-fat-diet claim.\n\nTHE FIX. A new `liver` entity, type topic, `hub: true` - the aggregation shape already used by\nmuscle_strength, veganism and healthy_foods, where claims attach through `also_about` rather than\n`subject`, so nothing was re-homed and no existing page lost a claim. `intro_claim` is the\nBritish-Liver-Trust "over 500 functions" claim, so the page ledes on what the organ actually does.\nThe bare token came off `meat`, which keeps "organ meats" and gained "beef liver" and "chicken\nliver" so the FOOD sense still resolves to the food entity.\n\nTHE CORPUS WORK. All 230 claims whose text or quote mentions the liver, hepatic tissue, cirrhosis,\njaundice or bile were triaged against one rubric - does this teach a reader about the human liver as\nan ORGAN: 11 CORE, 84 supporting, 14 gallbladder-only, 121 rejected. The rejects are mostly the very\nconfusion the topic exists to fix: eating liver as food, "liver spots" (which are skin), and the\nliver inside a passing list of organs. 17 new claims were then mined across six books and sealed\n(knowledge_version 492, then 493 after the corrections; 2,617 claims). Two of them are cross-book\nsyntheses answering the owner\'s own two questions: "Which foods and nutrients support a healthy\nliver?" - anchored on Wallach\'s dosed liver-disease protocol (vitamin C to bowel tolerance, vitamin\nA 10,000-300,000 IU as beta carotene, B-complex 100 mg t.i.d., selenium 500-1,000 mcg/day, B12 1,000\nmcg/day, folic acid 15-25 mg/day, EFAs from salmon and flaxseed oil 1 gm t.i.d., milk thistle, and\nfried foods and margarine out) - and "How do I improve my liver health and reverse liver damage?".\nAn adversarial auditor cut four sentences from those two before they were authored; both defects\nwere the same class, an exclusivity claim scoped to one book and silently inflated to corpus scope,\nand both contradicted their own claim\'s text.\n\nTEN GATE REDS, ALL REAL. Sealing turned the board from 113/113 to 103/113, and every one of the ten\nwas a genuine defect this round had introduced or exposed. The dose kind on the protocol claim was\nfanning one shared budget across six essentials; two claims mapped conditions their own quotes never\nnamed; one new claim shared its entire span with an existing one; the topic had no authored lede;\n"cholangitis" had no glossary entry; and ten claims were front-faced from books not in the\nverification ledger.\n\nWHAT THE OWNER CAUGHT, AND IT MATTERS MOST. He asked whether the relayed sources - the 2004 NIAAA\nalcohol report, the British Liver Trust, the cadmium attribution - were ones Wallach ENDORSES rather\nthan argues against. On alcohol he does not. The quote stopped at the report\'s findings; three\nsentences later Wallach rejects the benefit half outright, saying the "benefits of alcohol" are\nreally the benefits of the phytonutrients in the drink rather than the alcohol itself. The claim was\npassing that off as neutral reporting. The quote was extended from 426 to 975 characters so it\ncarries his pushback, and the answer now says plainly which half he lets stand and which he rejects.\nThe other two check out: the Liver Trust figure sits inside his own argument, and the cadmium\npassage is his own case against cadmium.\n\nTWO MISTAKES OF MINE, RECORDED BECAUSE THEY WILL RECUR OTHERWISE.\n  1. I told him no page image existed for Rare Earths Table 12-2 and that the claim therefore could\n     not be checked. That was false. My search piped through `head -25`, the repository\'s own USDA\n     PDFs filled all 25 lines, and I reported the clipped output as a fact about the world - having\n     also left *.png out of the pattern, which hid 753 page images. Every page of all seven books has\n     an image source on this machine. Rendered via PyMuPDF (poppler is not installed, so the Read\n     tool cannot open a PDF here), printed page 463 reads "Liver cirrhosis | Selenium, Copper,\n     Sulfur" on one baseline. Nothing was mis-claimed; confidence went medium to high and the page\n     number is recorded. The same clipping error then produced a second false alarm - a "mid-sentence\n     cutoff" that was my print truncating at 260 characters, not the stored verbatim.\n  2. Fixing the routing, I loaded the new entity\'s synonym list with full QUESTION phrasings ("how do\n     I keep my liver healthy"). resolveQuery step 1 short-circuits a whole-query synonym match\n     straight to mode \'entity\', so every real question opened the page instead of ranking an answer -\n     precisely the laziness he had told me to avoid. Synonyms are now NAMES only; the three claims\n     that answer the common questions carry explicit intent topics; and genuinely BROAD queries\n     ("what damages the liver", "signs of liver problems") are deliberately kept on the page, because\n     no single claim is the honest answer to those.\n\nSOURCE PURIFICATION. Seven OCR defects inside newly front-faced spans were fixed at the SOURCE rather\nthan patched in the quote: "in gen-/eral" and "pan-/creatitis" in Hell\'s Kitchen, and "Gallblad-/der",\n"choles-/terol", "barom-/eter", "ofconnective" and "GGT(gamma" in Let\'s Play Doctor. A new\nlets-play-doctor purity spec carries the audit trail; the Hell\'s Kitchen entries were applied\nout-of-band because that spec is apply-once and already baked into the text, following the precedent\nthe immortality spec records. resnap reported 0 broken, and 514 draft claims were synced shard to\ndraft before sealing - the seal-order trap that has cost this project four sessions.\n\nONE GATE REFINED, MEASURED FIRST. verbatim_audit.norm turned an apostrophe into a space, so a book\nprinting "Reye\'s syndrome" could never match the catalogue\'s "Reyes Syndrome". It now drops the\napostrophe. This was measured before it was changed: 2 violations resolved - one of them\npre-existing, erbs_palsy - and 0 created. That is a refinement, not a bypass.\n\nVERIFICATION. Board 112/113 with only web_build_not_stale outstanding, which this round-close then\nclears. A new render_probe_liver_routing pins 17 routing expectations plus the rendered page count,\nand it drives the real UI: it types "liver health" into the app and asserts the hero reads Liver\nHealth with 28 answers, because a topic that resolves but renders empty is exactly the bug reported.\nNine claims were whole-verbatim verified against rendered page images and added to claims_verified,\nnow 813; PDF-text-layer agreement was used only to locate pages and is deliberately not counted as\nverification, per that ledger\'s own standard.\n\nDEFERRED, AND HIS TO RULE ON. The two synthesis claims draw on 18 and 13 further passages whose\nsentence-level trace lives only in temporary/liver/synthesis-provenance.json - the schema carries one\nverbatim per claim and has no home for the rest, so sealing them as they stand loses that trace. The\noptions are to keep them and move the list somewhere permanent, trim each answer back to what its own\nquote supports, or split each into smaller claims that carry their own quotes. `cirrhosis` and\n`liver_cirrhosis` remain two slugs for one disease at his instruction. Ten liver questions a real\nreader would ask still have no Wallach answer at all - fatty-liver dosing, statins, sugar, Wilson\'s\ndisease - and under the source rule they stay honest gaps. Uploading dist-web/ to SiteGround is his\nact; render_probe_live_host is the instrument for the host and says nothing until he has.' }, { id: "lg_mu5ytct1_pzlmbw", ts: "2026-09-17T15:11:27.637435-05:00", surface: "search/uti-routing", kind: "round-close", summary: `Typing "UTI" opened Cystitis, not Urinary Tract Infection \u2014 two entities shared the synonym and alphabetical registry order silently decided it. Sole ownership restored; the umbrella page now carries Wallach's cranberry-and-herbs protocol.`, detail: 'Someone searching the way people actually search \u2014 "UTI", "natural remedy for UTI", "how to heal UTI" \u2014 was sent to a page titled Cystitis. Only typing "Urinary Tract Infection" in full reached the right one. Now every one of those phrasings opens Urinary Tract Infection, and that page shows what Wallach actually prescribes for it instead of just wearing the right name.\n\nTHE DEFECT, MEASURED ON THE LIVE RESOLVER. 30 UTI queries were run through window.wallachSearch.resolveQuery before any edit; 27 resolved wrongly. Root cause: `cystitis` and `urinary_tract_infection` BOTH carried the synonyms "uti", "urinary tract infection" and "bladder infection". state/search.ts::entityHit pass 2 is `for (const [slug, e] of Object.entries(index().entities)) if (e.synonyms.some(...)) return slug` \u2014 the FIRST match in registry iteration order, which is slug-ALPHABETICAL. cystitis sits at index 137, urinary_tract_infection at 512, so cystitis won every query carrying the token, forever, with nothing red. The fully typed name worked only because it hits pass 1 (canonical slug/display_name), the one path a synonym collision cannot hijack. Two further misses in the same measurement: the plural "utis" matched no entity at all and fell through to askRanked, which heroed "How do you treat autism naturally?"; and "burning when I pee" heroed "What causes burning feet?" (vitamin B5), because the registered synonym was "burning when peeing".\n\nTHE FIX \u2014 UMBRELLA/SUBTYPE SPLIT WITH SOLE OWNERSHIP. urinary_tract_infection now owns every lay phrasing (22: uti, utis, u.t.i, urinary tract infection(s), urinary infection, urinary tract, urine infection, water infection, bladder infection(s), kidney infection, painful urination, burning urination, burning when peeing / burning pee / burning when i pee / burning when urinating / it burns when i pee, it hurts to pee, peeing hurts, pain when peeing). cystitis keeps only its own clinical names (cistitis, acute cystitis, bladder inflammation, inflamed bladder, irritation of the bladder, honeymoon disease \u2014 Wallach\'s own term for it, from LETS-000241). The two entities no longer share a single synonym, so iteration order cannot decide anything between them; they cross-link through `related` in both directions instead.\n\nSYNONYMS ARE NAMES, NEVER QUESTIONS. The requested "natural remedy for UTI" and "how to heal UTI" were deliberately NOT added as synonyms. resolveQuery step 1 short-circuits a whole-query synonym match straight to mode \'entity\', so registering a question phrase freezes that query into a page-open and bypasses ranking forever \u2014 the exact second mistake the liver round made on 2026-09-01. Those queries route correctly for free, because entityInQuery() finds the bare token "uti" inside the sentence.\n\nCONTENT, NOT JUST A LABEL. The umbrella page held 6 claims and neither of Wallach\'s two cranberry+herb protocols, which were subjected to cystitis. A claim heroes an ANSWER only when best.subject === mentioned, and also_about does not satisfy that \u2014 so the honest fix was to put the treatment ON the umbrella page. DDDL-000338 and LETS-000241 gained `urinary_tract_infection` in also_about. That edit is in eden/corpus/search-enrichment.json, which is NOT sealed (its own _note says so; the gate search_index_wellformed stands in for a golden hash), so no corpus_seal was required and none was taken. eden/catalog/conditions.json, which IS sealed, was not touched \u2014 it already registers "cystitis" as a synonym of urinary_tract_infection, which is also what keeps verbatim_names_mapped_conditions satisfied. No dose, amount, range, target or claim text was touched anywhere in this round.\n\nWHAT THE PAGE SHOWS NOW. Driven through the real UI, not the index: hero "Urinary Tract Infection", 8 answers, including "What does Wallach recommend for cystitis (a bladder infection)?" and "How do you treat a bladder infection (cystitis) naturally?" with the bearberry / birch / juniper / lovage / prickly restharrow / rupturewort list. Verified on BOTH distributions \u2014 file:// and dist-web served over real http.\n\nREPO HYGIENE, ASKED FOR IN THE SAME BREATH. The working tree was showing +92,981 lines. It had nothing to do with concealing the books \u2014 that landed on 2026-08-20 in 05ec2d09 and is complete (the seven .txt sources are untracked and gitignored). 92,407 of those lines were eden/corpus/drafts/, which that same cleanup untracked but never added to .gitignore, so every mining round regenerates them and they return as untracked noise that buries the real diff. Now ignored. They stay ON DISK on purpose: corpus_seal.draft_offset_failures() reads them, and a stale draft silently restores old offsets. While in the file, the comment above temporary/ was corrected \u2014 it claimed the directory held only book page scans, and it also holds probe screenshots and per-campaign working folders.\n\nVERIFIED. Board 113/113 (readme_counts_match_reality went red on the new probe and the README count was corrected, not baselined). New tools/probes/render_probe_uti_routing.js: 30 routing checks plus rendered-page population (hero name, answer count, cranberry present, bearberry present), all pass; it also guards the neighbours (bladder stones, kidney stones) against capture by the new "urinary tract" phrase, and the subtype\'s own page against being swallowed. render_probe_search, render_probe_search_routing, render_probe_search_browse, render_probe_liver_routing and render_probe_knowledge all PASS. Web build rebuilt; render_probe_web_build PASS.\n\nWHAT THIS EXPOSED, AND IT IS BIGGER THAN ONE CONDITION. The same collision class was then censused across all 549 entities: 142 synonym phrases are owned by two or more entities with no canonical name to settle them, so alphabetical order silently picks the destination, plus 55 intra-entity duplicate synonyms. Confirmed wrong on the live resolver: "b12", "cobalamine" and "cyanocobalamine" all resolve to cobalt rather than vitamin-b12 (the code comment in entityHit pass 1 specifically cites fixing "vitamin-b12", but the bare "b12" still lands on cobalt); "beta carotene" to antioxidants rather than vitamin-a; "bone loss" and "brittle bones" to calcium rather than osteoporosis; "eating dirt" to iron rather than pica. Others in the list are genuinely defensible, so they need ruling one at a time rather than a bulk reassignment. The owner has asked for all of them to be fixed; that is the next round. No gate covers them today.' }];
+FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with the food's COLLECTIVE share, so sunflower seeds still fill an omega-3 goal gap at 152.9%. Defensible -- the pair shares one budget -- and it is a separate owner ruling from 2026-08-22 with its own reasoning, so it was left alone rather than changed unasked.` }, { id: "lg_mthzl5w7_a75950", ts: "2026-08-31T20:26:36.823339-05:00", surface: "foods+gates+probes", kind: "round-close", summary: `A goal naming omega-3 now gets foods that carry omega-3: four more surfaces left the pair's combined figure, the "Omega-3" filter went from 83 foods to 25, and all three long-red render probes are green.`, detail: '`usda_bindings_are_all_load_bearing` (external). Every nutrient bound in usda-source.json must\n    be PRESENT in the pinned extract and resolve to at least one NON-ZERO cell on the shipped\n    catalogue; no two slugs may bind one cell; nothing may sit in `no_usda_composition` and the\n    bound map at once. This is this morning\'s EPA/DHA failure generalised \u2014 both were named in the\n    map and never extracted, so the terms existed in every docstring while reading zero rows on\n    all 192 foods, and every arithmetic gate recomputed 18:2 + 18:3 and agreed with itself at\n    108/108. All 28 bindings are live today; the thinnest is CLA at 17 foods, EPA at 43 and DHA at\n    39 are 2nd and 3rd thinnest. All four clauses re-broken and watched red.\n  \xB7 `per_essential_food_lists_are_distinct` (consistency). For every pair of essentials with 3+\n    food sources, the two sourced sets must differ; and at least 15 essentials must clear that\n    floor so the comparison can never pass vacuously. 325 pairs across 26 essentials today, zero\n    collisions. Re-broken by giving both omegas one shared block, and it names the collision\n    exactly: "omega-3 and omega-6 are sourced from one identical set of 53 food(s)". It would have\n    caught the defect that cost the last two rounds.\n\nTHREE RED PROBES, THREE DIFFERENT DISEASES. The suite went 55/58 to 58/58.\n  \xB7 `render_probe_group_dots` \u2014 the probe was wrong about the app. It NAMED which goals Wallach is\n    recorded as naming the plant-derived complex for. The layout moved to 19 of 30 and the list\n    did not, so `more-energy` NAMES the group and was being used as the NEGATIVE CONTROL: all four\n    of its failures asserted the opposite of the truth. Now derived from `g.groups`, 14 checks,\n    with a new clause asserting the split is non-trivial in both directions so the controls can\n    never go vacuous. views/coverage.ts said "20 of the 30 goals" in two places; the data says 19,\n    and the ~11% figure beside it is 10.2%. Both corrected \u2014 the same drift in prose instead of\n    code.\n  \xB7 `render_probe_mech_shape` \u2014 stale goldens, re-blessed on his explicit ruling with the full\n    diff read first. 17 changed regions across the four signed-off headers, and EVERY one of them\n    sits below the sources label: all four header BODIES are byte-identical to the 2026-08-20\n    capture, which is the property the fixture exists to protect. Two commits caused them, not\n    one, and that is worth saying because the ruling asked whether anything else rode along:\n    34fe0cc9 (2026-08-21) registered btt-2-0-citrus-peach-fusion as superseded, dropping it from\n    every dock and taking zinc\'s collapse from "Show all 53 sources" to 49; e38d9e50 (2026-08-24)\n    inserted the food-first "Best food sources" run, which pushed vitamin-a past the collapse\n    threshold. Determinism was checked before blessing \u2014 two independent captures byte-identical.\n    The fixture\'s own `_captured` note carries the whole account, including that re-capturing\n    eleven days late breaks its own same-patch rule.\n  \xB7 `render_probe_orac` \u2014 it described a design that had been replaced around it, and its own\n    header said so in a note nobody acted on, because the probe suite is not on the invariant\n    board and a red probe is silent. All seven failures were stale: \xA701\'s four `.kd-orac-dec`\n    decade bars are now one scrubbable `.kd-orac-cell`, and \xA706\'s nine `.kd-orac-tbl` tables are\n    now nine `.kd-orac-lane` rows in a plot; neither dead class appears in any view or stylesheet.\n    Zero live defects \u2014 the per-100 g guard survived the redesign in a stronger form, as an <i>\n    sub-label on the diverging lane and a per-dot `data-unit`. Re-pointed with every expectation\n    DERIVED from orac-data.json and orac-foods-data.json, and two assertions are now stronger than\n    what they replaced: the reach bar is measured against the share it prints (448.5 of 625 px =\n    71.8% against a printed 72%) rather than merely being a gradient, and the scrubber is driven\n    to each of Wallach\'s four measured band midpoints and must report 35/41/55/78 exactly. Both\n    re-broken and watched red.\n\nVERIFICATION. Board 112/112, 0 failed, external 27. Probe suite 58/58. Unit tests 106/106, tsc\nclean. Build fresh. Every negative control restored its files and the restore was confirmed by\nsha256, not by assumption.\n\nDEFERRED / DROPPED. The X share card (1500x500 from tools/make_share_card.js) is dropped\npermanently at his instruction \u2014 struck from the handoff, not to be raised again. Untouched: the\n121 unruled drawer-knowledge.css classes, the pH-ladder ACID cap, the 13 dark-theme dead args.\ntools/make_share_card.js is now unreferenced by any live task and is a candidate for the next\nobsolescence pass \u2014 flagged, not deleted.' }, { id: "lg_mtj4v39x_9bsvb1", ts: "2026-09-01T15:42:04.245982-05:00", surface: "web-build", kind: "round-close", summary: "The website now carries this round's fix, and forgetting it again is a red board rather than something he has to notice: dist-web rebuilt and verified by census, and a new gate refuses to let the two distributions drift apart.", detail: "CONTENT, NOT MTIME, and that choice is load-bearing: dist-web/ is gitignored while\n       dashboard/assets/js/dist/main.js is tracked, so any checkout can make the tracked file\n       newer than the untracked build and a timestamp comparison would cry stale on a perfectly\n       current one. A digest cannot be confused by a checkout.\n     \xB7 The key list is PARSED out of tools/esbuild_web.mjs and vacuity-checked, never typed into\n       the gate \u2014 an artifact added to the split cannot escape by not being listed, and a\n       reshaped builder fails loudly instead of silently parsing nothing. Both of those clauses\n       exist because this same session watched `render_probe_group_dots` invert its own negative\n       control by hardcoding what it measured against.\n     \xB7 Three re-breaks, each watched RED: a re-serialised creators-log-embed with dist-web\n       untouched (the exact failure mode \u2014 \"the web build is BEHIND this tree: creators-log-embed\n       (this tree's digest is e22723f5f3; dist-web ships no such file)\"), SPLIT_ARTIFACTS emptied,\n       and SPLIT_ARTIFACTS renamed. Both touched files restored and confirmed by sha256.\n     \xB7 HONEST LIMIT, stated in the gate: it proves the LOCAL web build is current and says\n       NOTHING about what is served at nutrientcodex.com. Uploading is a human act;\n       `render_probe_live_host` remains the instrument for the host.\n  4. The round-close skill gained the step it was missing \u2014 step 7, the second distribution,\n     placed AFTER the Creator's Log entry because the web build ships that embed too. The ritual\n     had seven steps and rebuilt one of two live targets.\n\nVERIFICATION. Board 113/113, 0 failed, external 27. render_probe_web_build PASS. The omega census\non the web target: 25 / 53 exact, both directions clean. Local build fresh and rebuilt AFTER the\nCreator's Log entry, then the web build rebuilt after that, in the order the new gate enforces.\nCLAUDE.md and README.md updated 112 to 113 in the same patch that made them wrong.\n\nDEFERRED. The upload itself is his \u2014 dist-web/ is gitignored and lives only on this machine.\nAfter he uploads, `node tools/probes/render_probe_live_host.js` is the check that the HOST agrees;\nit cannot run meaningfully until then." }, { id: "lg_mtjhy3hx_u1q13r", ts: "2026-09-01T21:48:19.509419-05:00", surface: "search+corpus", kind: "round-close", summary: "Searching the liver used to hand you Meat & Animal Foods. It now opens a Liver Health topic with 28 answers, and asking how to look after your liver heroes the real answer.", detail: 'A person typing "liver health" into this app was being shown red meat. That is now a\nLiver Health topic carrying 28 answers, and the common questions - how do I take care of my liver,\nwhich foods and nutrients support it, can a damaged liver heal - each hero the claim that actually\nanswers them rather than dumping the reader on a page.\n\nTHE DEFECT, MEASURED BEFORE IT WAS FIXED. Driving the live resolver on the built bundle, 12 of 20\nliver queries resolved to the `meat` entity: it carried the bare synonym "liver" for organ meat and\nno liver-organ entity existed to outrank it. Two landed somewhere with no liver content at all -\n"signs of liver problems" heroed "What are the signs of too much calcium?", and "liver damage from\nalcohol" heroed a resveratrol high-fat-diet claim.\n\nTHE FIX. A new `liver` entity, type topic, `hub: true` - the aggregation shape already used by\nmuscle_strength, veganism and healthy_foods, where claims attach through `also_about` rather than\n`subject`, so nothing was re-homed and no existing page lost a claim. `intro_claim` is the\nBritish-Liver-Trust "over 500 functions" claim, so the page ledes on what the organ actually does.\nThe bare token came off `meat`, which keeps "organ meats" and gained "beef liver" and "chicken\nliver" so the FOOD sense still resolves to the food entity.\n\nTHE CORPUS WORK. All 230 claims whose text or quote mentions the liver, hepatic tissue, cirrhosis,\njaundice or bile were triaged against one rubric - does this teach a reader about the human liver as\nan ORGAN: 11 CORE, 84 supporting, 14 gallbladder-only, 121 rejected. The rejects are mostly the very\nconfusion the topic exists to fix: eating liver as food, "liver spots" (which are skin), and the\nliver inside a passing list of organs. 17 new claims were then mined across six books and sealed\n(knowledge_version 492, then 493 after the corrections; 2,617 claims). Two of them are cross-book\nsyntheses answering the owner\'s own two questions: "Which foods and nutrients support a healthy\nliver?" - anchored on Wallach\'s dosed liver-disease protocol (vitamin C to bowel tolerance, vitamin\nA 10,000-300,000 IU as beta carotene, B-complex 100 mg t.i.d., selenium 500-1,000 mcg/day, B12 1,000\nmcg/day, folic acid 15-25 mg/day, EFAs from salmon and flaxseed oil 1 gm t.i.d., milk thistle, and\nfried foods and margarine out) - and "How do I improve my liver health and reverse liver damage?".\nAn adversarial auditor cut four sentences from those two before they were authored; both defects\nwere the same class, an exclusivity claim scoped to one book and silently inflated to corpus scope,\nand both contradicted their own claim\'s text.\n\nTEN GATE REDS, ALL REAL. Sealing turned the board from 113/113 to 103/113, and every one of the ten\nwas a genuine defect this round had introduced or exposed. The dose kind on the protocol claim was\nfanning one shared budget across six essentials; two claims mapped conditions their own quotes never\nnamed; one new claim shared its entire span with an existing one; the topic had no authored lede;\n"cholangitis" had no glossary entry; and ten claims were front-faced from books not in the\nverification ledger.\n\nWHAT THE OWNER CAUGHT, AND IT MATTERS MOST. He asked whether the relayed sources - the 2004 NIAAA\nalcohol report, the British Liver Trust, the cadmium attribution - were ones Wallach ENDORSES rather\nthan argues against. On alcohol he does not. The quote stopped at the report\'s findings; three\nsentences later Wallach rejects the benefit half outright, saying the "benefits of alcohol" are\nreally the benefits of the phytonutrients in the drink rather than the alcohol itself. The claim was\npassing that off as neutral reporting. The quote was extended from 426 to 975 characters so it\ncarries his pushback, and the answer now says plainly which half he lets stand and which he rejects.\nThe other two check out: the Liver Trust figure sits inside his own argument, and the cadmium\npassage is his own case against cadmium.\n\nTWO MISTAKES OF MINE, RECORDED BECAUSE THEY WILL RECUR OTHERWISE.\n  1. I told him no page image existed for Rare Earths Table 12-2 and that the claim therefore could\n     not be checked. That was false. My search piped through `head -25`, the repository\'s own USDA\n     PDFs filled all 25 lines, and I reported the clipped output as a fact about the world - having\n     also left *.png out of the pattern, which hid 753 page images. Every page of all seven books has\n     an image source on this machine. Rendered via PyMuPDF (poppler is not installed, so the Read\n     tool cannot open a PDF here), printed page 463 reads "Liver cirrhosis | Selenium, Copper,\n     Sulfur" on one baseline. Nothing was mis-claimed; confidence went medium to high and the page\n     number is recorded. The same clipping error then produced a second false alarm - a "mid-sentence\n     cutoff" that was my print truncating at 260 characters, not the stored verbatim.\n  2. Fixing the routing, I loaded the new entity\'s synonym list with full QUESTION phrasings ("how do\n     I keep my liver healthy"). resolveQuery step 1 short-circuits a whole-query synonym match\n     straight to mode \'entity\', so every real question opened the page instead of ranking an answer -\n     precisely the laziness he had told me to avoid. Synonyms are now NAMES only; the three claims\n     that answer the common questions carry explicit intent topics; and genuinely BROAD queries\n     ("what damages the liver", "signs of liver problems") are deliberately kept on the page, because\n     no single claim is the honest answer to those.\n\nSOURCE PURIFICATION. Seven OCR defects inside newly front-faced spans were fixed at the SOURCE rather\nthan patched in the quote: "in gen-/eral" and "pan-/creatitis" in Hell\'s Kitchen, and "Gallblad-/der",\n"choles-/terol", "barom-/eter", "ofconnective" and "GGT(gamma" in Let\'s Play Doctor. A new\nlets-play-doctor purity spec carries the audit trail; the Hell\'s Kitchen entries were applied\nout-of-band because that spec is apply-once and already baked into the text, following the precedent\nthe immortality spec records. resnap reported 0 broken, and 514 draft claims were synced shard to\ndraft before sealing - the seal-order trap that has cost this project four sessions.\n\nONE GATE REFINED, MEASURED FIRST. verbatim_audit.norm turned an apostrophe into a space, so a book\nprinting "Reye\'s syndrome" could never match the catalogue\'s "Reyes Syndrome". It now drops the\napostrophe. This was measured before it was changed: 2 violations resolved - one of them\npre-existing, erbs_palsy - and 0 created. That is a refinement, not a bypass.\n\nVERIFICATION. Board 112/113 with only web_build_not_stale outstanding, which this round-close then\nclears. A new render_probe_liver_routing pins 17 routing expectations plus the rendered page count,\nand it drives the real UI: it types "liver health" into the app and asserts the hero reads Liver\nHealth with 28 answers, because a topic that resolves but renders empty is exactly the bug reported.\nNine claims were whole-verbatim verified against rendered page images and added to claims_verified,\nnow 813; PDF-text-layer agreement was used only to locate pages and is deliberately not counted as\nverification, per that ledger\'s own standard.\n\nDEFERRED, AND HIS TO RULE ON. The two synthesis claims draw on 18 and 13 further passages whose\nsentence-level trace lives only in temporary/liver/synthesis-provenance.json - the schema carries one\nverbatim per claim and has no home for the rest, so sealing them as they stand loses that trace. The\noptions are to keep them and move the list somewhere permanent, trim each answer back to what its own\nquote supports, or split each into smaller claims that carry their own quotes. `cirrhosis` and\n`liver_cirrhosis` remain two slugs for one disease at his instruction. Ten liver questions a real\nreader would ask still have no Wallach answer at all - fatty-liver dosing, statins, sugar, Wilson\'s\ndisease - and under the source rule they stay honest gaps. Uploading dist-web/ to SiteGround is his\nact; render_probe_live_host is the instrument for the host and says nothing until he has.' }, { id: "lg_mu5ytct1_pzlmbw", ts: "2026-09-17T15:11:27.637435-05:00", surface: "search/uti-routing", kind: "round-close", summary: `Typing "UTI" opened Cystitis, not Urinary Tract Infection \u2014 two entities shared the synonym and alphabetical registry order silently decided it. Sole ownership restored; the umbrella page now carries Wallach's cranberry-and-herbs protocol.`, detail: 'Someone searching the way people actually search \u2014 "UTI", "natural remedy for UTI", "how to heal UTI" \u2014 was sent to a page titled Cystitis. Only typing "Urinary Tract Infection" in full reached the right one. Now every one of those phrasings opens Urinary Tract Infection, and that page shows what Wallach actually prescribes for it instead of just wearing the right name.\n\nTHE DEFECT, MEASURED ON THE LIVE RESOLVER. 30 UTI queries were run through window.wallachSearch.resolveQuery before any edit; 27 resolved wrongly. Root cause: `cystitis` and `urinary_tract_infection` BOTH carried the synonyms "uti", "urinary tract infection" and "bladder infection". state/search.ts::entityHit pass 2 is `for (const [slug, e] of Object.entries(index().entities)) if (e.synonyms.some(...)) return slug` \u2014 the FIRST match in registry iteration order, which is slug-ALPHABETICAL. cystitis sits at index 137, urinary_tract_infection at 512, so cystitis won every query carrying the token, forever, with nothing red. The fully typed name worked only because it hits pass 1 (canonical slug/display_name), the one path a synonym collision cannot hijack. Two further misses in the same measurement: the plural "utis" matched no entity at all and fell through to askRanked, which heroed "How do you treat autism naturally?"; and "burning when I pee" heroed "What causes burning feet?" (vitamin B5), because the registered synonym was "burning when peeing".\n\nTHE FIX \u2014 UMBRELLA/SUBTYPE SPLIT WITH SOLE OWNERSHIP. urinary_tract_infection now owns every lay phrasing (22: uti, utis, u.t.i, urinary tract infection(s), urinary infection, urinary tract, urine infection, water infection, bladder infection(s), kidney infection, painful urination, burning urination, burning when peeing / burning pee / burning when i pee / burning when urinating / it burns when i pee, it hurts to pee, peeing hurts, pain when peeing). cystitis keeps only its own clinical names (cistitis, acute cystitis, bladder inflammation, inflamed bladder, irritation of the bladder, honeymoon disease \u2014 Wallach\'s own term for it, from LETS-000241). The two entities no longer share a single synonym, so iteration order cannot decide anything between them; they cross-link through `related` in both directions instead.\n\nSYNONYMS ARE NAMES, NEVER QUESTIONS. The requested "natural remedy for UTI" and "how to heal UTI" were deliberately NOT added as synonyms. resolveQuery step 1 short-circuits a whole-query synonym match straight to mode \'entity\', so registering a question phrase freezes that query into a page-open and bypasses ranking forever \u2014 the exact second mistake the liver round made on 2026-09-01. Those queries route correctly for free, because entityInQuery() finds the bare token "uti" inside the sentence.\n\nCONTENT, NOT JUST A LABEL. The umbrella page held 6 claims and neither of Wallach\'s two cranberry+herb protocols, which were subjected to cystitis. A claim heroes an ANSWER only when best.subject === mentioned, and also_about does not satisfy that \u2014 so the honest fix was to put the treatment ON the umbrella page. DDDL-000338 and LETS-000241 gained `urinary_tract_infection` in also_about. That edit is in eden/corpus/search-enrichment.json, which is NOT sealed (its own _note says so; the gate search_index_wellformed stands in for a golden hash), so no corpus_seal was required and none was taken. eden/catalog/conditions.json, which IS sealed, was not touched \u2014 it already registers "cystitis" as a synonym of urinary_tract_infection, which is also what keeps verbatim_names_mapped_conditions satisfied. No dose, amount, range, target or claim text was touched anywhere in this round.\n\nWHAT THE PAGE SHOWS NOW. Driven through the real UI, not the index: hero "Urinary Tract Infection", 8 answers, including "What does Wallach recommend for cystitis (a bladder infection)?" and "How do you treat a bladder infection (cystitis) naturally?" with the bearberry / birch / juniper / lovage / prickly restharrow / rupturewort list. Verified on BOTH distributions \u2014 file:// and dist-web served over real http.\n\nREPO HYGIENE, ASKED FOR IN THE SAME BREATH. The working tree was showing +92,981 lines. It had nothing to do with concealing the books \u2014 that landed on 2026-08-20 in 05ec2d09 and is complete (the seven .txt sources are untracked and gitignored). 92,407 of those lines were eden/corpus/drafts/, which that same cleanup untracked but never added to .gitignore, so every mining round regenerates them and they return as untracked noise that buries the real diff. Now ignored. They stay ON DISK on purpose: corpus_seal.draft_offset_failures() reads them, and a stale draft silently restores old offsets. While in the file, the comment above temporary/ was corrected \u2014 it claimed the directory held only book page scans, and it also holds probe screenshots and per-campaign working folders.\n\nVERIFIED. Board 113/113 (readme_counts_match_reality went red on the new probe and the README count was corrected, not baselined). New tools/probes/render_probe_uti_routing.js: 30 routing checks plus rendered-page population (hero name, answer count, cranberry present, bearberry present), all pass; it also guards the neighbours (bladder stones, kidney stones) against capture by the new "urinary tract" phrase, and the subtype\'s own page against being swallowed. render_probe_search, render_probe_search_routing, render_probe_search_browse, render_probe_liver_routing and render_probe_knowledge all PASS. Web build rebuilt; render_probe_web_build PASS.\n\nWHAT THIS EXPOSED, AND IT IS BIGGER THAN ONE CONDITION. The same collision class was then censused across all 549 entities: 142 synonym phrases are owned by two or more entities with no canonical name to settle them, so alphabetical order silently picks the destination, plus 55 intra-entity duplicate synonyms. Confirmed wrong on the live resolver: "b12", "cobalamine" and "cyanocobalamine" all resolve to cobalt rather than vitamin-b12 (the code comment in entityHit pass 1 specifically cites fixing "vitamin-b12", but the bare "b12" still lands on cobalt); "beta carotene" to antioxidants rather than vitamin-a; "bone loss" and "brittle bones" to calcium rather than osteoporosis; "eating dirt" to iron rather than pica. Others in the list are genuinely defensible, so they need ruling one at a time rather than a bulk reassignment. The owner has asked for all of them to be fixed; that is the next round. No gate covers them today.' }, { id: "lg_mu61n4uq_rivbu7", ts: "2026-09-17T16:30:36.242422-05:00", surface: "search/synonym-sole-ownership", kind: "round-close", summary: 'The UTI bug was one of 352: whenever two topics claimed the same search word, the alphabetically-earlier one silently won. "b12" opened Cobalt, "bone loss" opened Calcium. Every contested word now has one owner, and a gate keeps it that way.', detail: `Fixing the UTI search bug exposed that the same defect was quietly deciding 352 other searches. Whenever two topics both claimed a search word, the one whose name came first in the alphabet won it - every time, forever, with nothing on the board ever showing it. Typing "b12" opened Cobalt rather than Vitamin B12. "bone loss" opened Calcium rather than Osteoporosis. "eating dirt" opened Iron rather than Pica. Every contested word now belongs to exactly one topic, and a new gate makes that permanent.
+
+THE MECHANIC. state/search.ts::entityHit pass 2 returns the FIRST entity whose synonym matches while iterating index().entities, and that iteration is slug-ALPHABETICAL. entityPhrases() - which powers entityInQuery, the path taken by a phrase MENTIONED inside a sentence - dedups by phrase under the same first-wins rule and has NO canonical-name pass. So a bare name and a sentence containing that name can resolve to DIFFERENT pages, which is worse than either being wrong consistently.
+
+THE CENSUS, AND A COUNTING MISTAKE WORTH RECORDING. The first census read the DERIVED search index (549 entities) and found 187 contested phrases. The hand-edited SOURCE registry holds 695: 146 entities are registered but carry no enriched claim, so they are absent from the index and their collisions are LATENT rather than live - they land the moment a claim is mined. Reading the derived artifact instead of the source undercounted by 165. True scope: 305 contested phrases + 47 solo name-shadows + 62 intra-entity duplicate synonyms.
+
+METHOD, AND WHY THE FIRST RESULT WAS A WARNING. 1,408 agents across two fleets ruled every phrase individually against an 8-rule rubric - canonical name, then searcher intent, symptom-over-nutrient, specific-over-group, umbrella-takes-the-lay-word, toxicity-over-element, content check, remove - with each ruling attacked by three refutation lenses (the searcher, the corpus, the doctrine). Batch 1 returned 0 overturns out of 187. That was the warning, not the reassurance: the 2-of-3 overturn threshold was too strict, and BOTH single-lens dissents that survived to human review turned out to be RIGHT. Both had gone and read the real data instead of the summary they were handed. "liver problems" -> liver_disease would have broken last round's liver probe and split identical intent away from "liver issues", which was never contested and is therefore frozen. "branched chain amino acid" -> REMOVE does not neutralize a query: it falls through to the next-longest registered phrase, "amino acid", landing on a 2-claim generic page that never says branched-chain, while "bcaa" already resolved solely to Leucine.
+
+THE TWO BLIND SPOTS OF A PER-PHRASE FLEET, SCREENED MECHANICALLY. (a) FAMILIES: 44 entity pairs were ruled in BOTH directions by agents that never saw each other, splitting identical intent - "liver damage" to one page and "liver problems" to another; "cod liver oil" and "salmon oil" to Fish but "fish oil" to Omega-3. Not every reversal is a defect: an element keeping its own name while the group keeps the group word is correct. Split INTENT is the defect. (b) DEAD ENDS: 30 rulings sent a common query to a 1-3 claim stub while the page losing it held 10x to 100x more - "white spots on nails", the classic zinc sign, would have gone from zinc's 144 claims to a 1-claim page that does not even link back.
+
+A third fleet of 237 agents reviewed all 79 flagged cases with the WHOLE family visible, plus every uncontested synonym the entities already own - those are frozen and can never be re-ruled, so a decision has to be coherent with them. It independently reached both human overrides and changed 30 winners.
+
+ITS SKEPTICS FOUND A CLASS NOBODY HAD ANTICIPATED. 41 winners were not in the derived index at all. eden/tools/search_index_derive.py seeds index().entities from claim SUBJECTS plus hub:true only, so awarding a phrase to a 0-claim entity is a SILENT REMOVE - the synonym is dead weight and the query falls through. 20 of those are reachable anyway because the phrase IS the page name (wideEntityHit covers condition/essential pages). The other 21 were reassigned to the best ROUTABLE owner, which preserves exactly the destination they have today: "water retention" stays on dropsy, "weil's disease" on leptospirosis, "dry eyes" on vitamin-a.
+
+APPLIED. 416 synonyms dropped across 199 entities, 54 added across 52, 60 intra-entity duplicates deduped. The apply script computes losers from the REGISTRY rather than from the ruling's own drop_from - review case 2 proved drop_from can be incomplete, naming two owners of "hyperactive" while a third, hyperkinesis, also held it - and it REFUSES to write unless the sweep converges to zero remaining collisions.
+
+VERIFIED BY CENSUSING THE OUTPUT, NOT THE WIRING. 5,546 registry phrases x 4 sentence frames were resolved through the live resolver before and after. COLLATERAL CHANGES: 0 - not one unruled phrase moved. Then every ruled phrase was driven directly, because the registry-enumeration census cannot see a phrase that left the registry entirely: 342 of 347 bare queries land on their ruled winner. The 8 that do not were each proved PRE-EXISTING against git HEAD - no in-index entity owned them before either. They are registered conditions with zero claims (parkinsons, harelip, rage, bone cancer, insulin resistance, low white blood cells, cleft lip and palate) and they were already falling through. The 70 off-winner sentence frames are an artifact of the instrument rather than defects: resolveQuery returns the HERO CLAIM's subject, not the topic, so "what causes silver nitrate" correctly heroes "Why are newborn babies given silver drops in their eyes?".
+
+THE GATE. search_synonyms_sole_owner (114th) covers all three ambiguity classes: contested, duplicate, and name-shadow. Its exemption is CONDITIONAL rather than an allowlist - a name-shadow is excused only while the shadowed entity has no claim and is absent from the shipped index, so it cannot be a destination on either path. That is recomputed every run and lapses by itself the moment the entity gains a claim, so it can never rot into a permanent excuse. The 10 current exemptions are NAMED in the pass message on every green run, so they stay under human eyes. The gate is honest about its scope: it proves the ambiguity is gone, not that each owner is the right one - a phrase solely owned by the WRONG entity still passes green, and only a human ruling decides that. Negative test replants the real uti and b12 collisions and asserts the gate reddens for THAT reason, not merely that it reddens.
+
+DEFERRED, NEEDS HIS RULING. Ten DUPLICATE ENTITY pairs, one disease or food registered twice with the second carrying no claims: adrenal_exhaustion/adrenal_fatigue, aids/hiv_aids, heart_failure/congestive_heart_failure, eczema/atopic_dermatitis, fibrocystic_breast_disease/breast_cysts, fish/salmon, korsakoff/wernicke_korsakoff_syndrome, pork/processed_meat, quinsy/peritonsillar_abscess, tularemia/rabbit_fever - plus cirrhosis/liver_cirrhosis carried over from last round. Sole ownership makes each pair ROUTE consistently but cannot merge them, and for adrenal_fatigue the fix is temporary: the moment it gains a claim, its own display name re-captures the query through entityHit pass 1, which no synonym rule can prevent. Also deferred: roughly 40 registered conditions are unreachable because they hold no claims, and 67 review cases named specific claims that should be also_about cross-linked so a thin winner is not a dead end - none were applied, because that is corpus enrichment rather than routing. \`related\` was deliberately left untouched: synonyms are matcher-only and render nowhere, so this round changes routing and Knowledge-drawer filter reach and nothing else. No dose, amount, target or claim text was touched anywhere.` }];
 
   // assets/js/src/state/log.ts
   var CREATORS_LOG_KEY = "wallachCreatorsLog_v1";
@@ -51442,12 +51462,12 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         display_name: "Abscess",
         type: "condition",
         synonyms: [
-          "boil",
           "pus pocket",
           "absess",
           "skin infection lump",
           "pus filled bump",
-          "infected lump"
+          "infected lump",
+          "abscess"
         ],
         related: [
           "anal_abscess"
@@ -51474,7 +51494,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         type: "concept",
         synonyms: [
           "nutrient absorption",
-          "malabsorption",
           "bioavailability",
           "assimilation",
           "you are what you absorb",
@@ -51512,7 +51531,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         display_name: "Achalasia",
         type: "condition",
         synonyms: [
-          "trouble swallowing",
           "food stuck in throat",
           "swallowing disorder",
           "akalasia",
@@ -51542,9 +51560,7 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         synonyms: [
           "adhd",
           "add",
-          "hyperactivity",
           "attention deficit",
-          "hyperactive",
           "cant focus"
         ],
         related: [
@@ -51562,7 +51578,8 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "burnout",
           "adrenal burnout",
           "worn out adrenals",
-          "exhausted adrenals"
+          "exhausted adrenals",
+          "adrenal exhaustion"
         ],
         related: [],
         claim_count: 1
@@ -51573,10 +51590,10 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         synonyms: [
           "hiv",
           "hiv/aids",
-          "hiv aids",
           "acquired immunodeficiency",
           "immune deficiency virus",
-          "aids virus"
+          "aids virus",
+          "aids"
         ],
         related: [
           "autoimmune_disorders"
@@ -51615,11 +51632,9 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         synonyms: [
           "allergy",
           "allergic reaction",
-          "hay fever",
-          "allergic rhinitis",
-          "seasonal allergies",
           "alergies",
-          "sneezing and itching"
+          "sneezing and itching",
+          "allergies"
         ],
         related: [],
         claim_count: 8
@@ -51645,7 +51660,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         synonyms: [
           "aluminum",
           "aluminium",
-          "aluminum",
           "aluminum foil",
           "aluminum deficiency",
           "aluminum supplement",
@@ -51680,7 +51694,8 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "alzheimer's disease",
           "alzheimer",
           "early onset alzheimers",
-          "AD"
+          "AD",
+          "alzheimers"
         ],
         related: [
           "memory_loss",
@@ -51699,8 +51714,7 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "weak eye",
           "lazy eye in kids",
           "amblyopa",
-          "amblyopia eye",
-          "wandering eye"
+          "amblyopia eye"
         ],
         related: [
           "diplopia"
@@ -51808,7 +51822,8 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "no appetite",
           "eating disorder",
           "anorexic",
-          "wont eat"
+          "wont eat",
+          "anorexia"
         ],
         related: [],
         claim_count: 1
@@ -51846,14 +51861,8 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "antioxidants",
           "anti oxidant",
           "anti-oxidants",
-          "polyphenols",
-          "flavonoids",
-          "flavanols",
-          "bioflavonoids",
-          "resveratrol",
           "catechins",
           "lycopene",
-          "beta carotene",
           "proanthocyanins",
           "what foods fight free radicals",
           "foods that fight aging"
@@ -51875,7 +51884,8 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "panic",
           "anxiety disorder",
           "feeling anxious",
-          "stress and anxiety"
+          "stress and anxiety",
+          "anxiety"
         ],
         related: [],
         claim_count: 4
@@ -51884,12 +51894,8 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         display_name: "Aphthous Stomatitis",
         type: "condition",
         synonyms: [
-          "canker sores",
-          "mouth ulcers",
-          "mouth sores",
           "aphthous ulcers",
-          "recurring mouth ulcers",
-          "stomatitis"
+          "recurring mouth ulcers"
         ],
         related: [
           "canker_sores"
@@ -51902,8 +51908,7 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         synonyms: [
           "arachidonic acid",
           "arachidonate",
-          "arachidonic",
-          "omega-6 fatty acid"
+          "arachidonic"
         ],
         related: [
           "omega-6",
@@ -51918,7 +51923,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         synonyms: [
           "arginine",
           "l-arginine",
-          "l arginine",
           "arg",
           "arginine supplement",
           "l-arginine supplement",
@@ -51968,9 +51972,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "arsenic supplement",
           "arsenic benefits",
           "is arsenic essential",
-          "arsenic poison",
-          "arsenic poisoning",
-          "arsenic toxicity",
           "arsenic symptoms",
           "what is arsenic",
           "arsenic trace mineral",
@@ -52050,13 +52051,10 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         display_name: "Arthritis",
         type: "condition",
         synonyms: [
-          "joint pain",
           "joint inflammation",
-          "achy joints",
           "stiff joints",
           "arthritic",
-          "rheumatism",
-          "sore joints"
+          "rheumatism"
         ],
         related: [
           "osteoporosis",
@@ -52115,10 +52113,7 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         synonyms: [
           "afib",
           "a-fib",
-          "irregular heartbeat",
-          "heart flutter",
-          "atrial fib",
-          "irregular heart rhythm"
+          "atrial fib"
         ],
         related: [],
         claim_count: 1
@@ -52270,10 +52265,10 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         synonyms: [
           "bed wetting",
           "nocturnal enuresis",
-          "enuresis",
           "wetting the bed",
           "child bedwetting",
-          "night wetting"
+          "night wetting",
+          "bedwetting"
         ],
         related: [],
         claim_count: 1
@@ -52300,7 +52295,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         type: "substance",
         synonyms: [
           "beef",
-          "red meat",
           "steak",
           "sirloin",
           "roast beef",
@@ -52381,8 +52375,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "beryllium supplement",
           "beryllium benefits",
           "is beryllium toxic",
-          "beryllium poisoning",
-          "berylliosis",
           "glucinium",
           "beryllium in the body",
           "Be mineral",
@@ -52455,7 +52447,8 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "born with defect",
           "birth abnormality",
           "congenital abnormality",
-          "deformity at birth"
+          "deformity at birth",
+          "birth defects"
         ],
         related: [
           "spina_bifida",
@@ -52469,7 +52462,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         synonyms: [
           "bi",
           "pepto-bismol",
-          "pepto bismol",
           "bismuth subsalicylate"
         ],
         related: [
@@ -52548,7 +52540,8 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "bleeding when brushing",
           "sore bleeding gums",
           "bloody gums",
-          "gum bleeding"
+          "gum bleeding",
+          "bleeding gums"
         ],
         related: [
           "toothache"
@@ -52560,9 +52553,7 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         type: "condition",
         synonyms: [
           "skin boil",
-          "abscess",
           "boil on skin",
-          "pus filled bump",
           "skin abscess",
           "boil"
         ],
@@ -52709,8 +52700,7 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "chest infection",
           "chest cold",
           "bronchitis cough",
-          "inflamed airways",
-          "chesty cough"
+          "inflamed airways"
         ],
         related: [
           "cough",
@@ -52735,7 +52725,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         display_name: "Bursitis",
         type: "condition",
         synonyms: [
-          "joint inflammation",
           "shoulder bursitis",
           "hip bursitis",
           "swollen joint",
@@ -52834,10 +52823,7 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "calx",
           "calcuim",
           "caclium",
-          "calcuim deficiency",
-          "brittle bones",
-          "weak bones",
-          "bone loss"
+          "calcuim deficiency"
         ],
         related: [
           "magnesium",
@@ -52860,10 +52846,10 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "tumor",
           "tumour",
           "malignancy",
-          "carcinoma",
           "cancerous",
           "the big c",
-          "malignant"
+          "malignant",
+          "cancer"
         ],
         related: [
           "chemotherapy"
@@ -52876,7 +52862,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         synonyms: [
           "candida",
           "yeast infection",
-          "thrush",
           "candida overgrowth",
           "fungal infection",
           "yeast overgrowth"
@@ -52893,7 +52878,7 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "canker sore",
           "cankers",
           "ulcers in mouth",
-          "aphthous ulcers"
+          "canker sores"
         ],
         related: [
           "aphthous_stomatitis"
@@ -52939,7 +52924,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "pop",
           "cola",
           "diet soda",
-          "phosphates",
           "phosphoric acid"
         ],
         related: [
@@ -52958,7 +52942,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         synonyms: [
           "irregular heartbeat",
           "arrhythmia",
-          "skipped heartbeat",
           "heart flutter",
           "arrythmia",
           "irregular heart rhythm"
@@ -53036,7 +53019,8 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "throat mucus",
           "post nasal drip",
           "stuffy nose mucus",
-          "excess mucus"
+          "excess mucus",
+          "catarrh"
         ],
         related: [
           "congested_lungs",
@@ -53063,7 +53047,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "long lived cultures",
           "longest living people",
           "people who live to 100",
-          "hunza",
           "vilcabamba",
           "cultures that live longest"
         ],
@@ -53108,7 +53091,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "what is cerium",
           "cerium mineral",
           "cerium rare earth",
-          "rare earth minerals",
           "cerium nitrate",
           "cerium for burns",
           "Ce mineral",
@@ -53190,7 +53172,8 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "cracks at corners of mouth",
           "angular cheilitis",
           "chapped lip corners",
-          "sore lip corners"
+          "sore lip corners",
+          "cheilosis"
         ],
         related: [],
         claim_count: 1
@@ -53295,13 +53278,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "chloride in blood",
           "hypochloremia",
           "chloride ions",
-          "salt",
-          "table salt",
-          "sodium chloride",
-          "NaCl",
-          "salt deficiency",
-          "low salt diet",
-          "low-salt diet",
           "chloride of soda",
           "natrum mur",
           "nat mur",
@@ -53350,7 +53326,8 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         display_name: "Cholesterol",
         type: "substance",
         synonyms: [
-          "sterol"
+          "sterol",
+          "cholesterol"
         ],
         related: [
           "vanadium",
@@ -53478,7 +53455,8 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "feel tired",
           "tired all the time",
           "feel tired all the time",
-          "no pep"
+          "no pep",
+          "chronic fatigue"
         ],
         related: [
           "chronic_fatigue_syndrome"
@@ -53493,8 +53471,7 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "me/cfs",
           "myalgic encephalomyelitis",
           "constant exhaustion",
-          "always exhausted",
-          "chronic fatigue"
+          "always exhausted"
         ],
         related: [
           "chronic_fatigue",
@@ -53566,17 +53543,12 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "Co mineral",
           "cobalt blue",
           "is cobalt magnetic",
-          "cobalamin",
-          "cobalamine",
-          "cyanocobalamine",
           "kobald",
           "kobalt",
           "cobolt",
           "cobalt element",
           "bush sickness",
-          "co",
-          "vitamin b12",
-          "b12"
+          "co"
         ],
         related: [
           "vitamin-b12",
@@ -53600,7 +53572,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         type: "substance",
         synonyms: [
           "coenzyme A",
-          "coenzyme a",
           "CoA",
           "co-enzyme A",
           "what is coenzyme A",
@@ -53628,14 +53599,7 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
       colds: {
         display_name: "Colds",
         type: "condition",
-        synonyms: [
-          "cold",
-          "common cold",
-          "head cold",
-          "runny nose",
-          "cold virus",
-          "catching a cold"
-        ],
+        synonyms: [],
         related: [
           "catarrh",
           "congested_lungs",
@@ -53738,11 +53702,10 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         synonyms: [
           "cold",
           "head cold",
-          "runny nose",
-          "stuffy nose",
           "cold virus",
           "catching a cold",
-          "sniffles"
+          "sniffles",
+          "common cold"
         ],
         related: [
           "allergies"
@@ -53774,7 +53737,8 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "chf",
           "weak heart",
           "fluid around the heart",
-          "failing heart"
+          "failing heart",
+          "congestive heart failure"
         ],
         related: [
           "cardiovascular_disease",
@@ -53788,7 +53752,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         synonyms: [
           "pink eye",
           "pinkeye",
-          "red eye",
           "eye infection",
           "conjuctivitis",
           "itchy red eye",
@@ -53827,7 +53790,8 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "seizure",
           "fits",
           "convulsion",
-          "spasms"
+          "spasms",
+          "convulsions"
         ],
         related: [],
         claim_count: 3
@@ -53917,10 +53881,7 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "coronary heart disease",
           "coronary artery disease",
           "cad",
-          "chd",
-          "heart disease",
-          "clogged arteries",
-          "hardening of the arteries"
+          "chd"
         ],
         related: [
           "selenium",
@@ -53984,8 +53945,7 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "criminal behaviour",
           "delinquency",
           "violence",
-          "criminality",
-          "violent behavior"
+          "criminality"
         ],
         related: [
           "hyperactivity"
@@ -54037,8 +53997,8 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "wound",
           "laceration",
           "cut skin",
-          "open wound",
-          "gash"
+          "gash",
+          "cuts"
         ],
         related: [
           "boils",
@@ -54086,8 +54046,7 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "whole milk",
           "raw milk",
           "pasteurized milk",
-          "cheese",
-          "butter"
+          "cheese"
         ],
         related: [
           "cholesterol",
@@ -54106,7 +54065,8 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "dandruf",
           "scalp flakes",
           "white flakes in hair",
-          "dry scalp flakes"
+          "dry scalp flakes",
+          "dandruff"
         ],
         related: [
           "cradle_cap"
@@ -54131,9 +54091,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         type: "condition",
         synonyms: [
           "dementia",
-          "memory loss",
-          "senility",
-          "alzheimers",
           "losing memory",
           "confusion in elderly"
         ],
@@ -54180,9 +54137,9 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "skin inflammation",
           "skin rash",
           "inflamed skin",
-          "itchy skin",
           "rash",
-          "irritated skin"
+          "irritated skin",
+          "dermatitis"
         ],
         related: [
           "eczema",
@@ -54280,8 +54237,7 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "loose bowels",
           "diarrhoea",
           "watery stools",
-          "diarreah",
-          "upset stomach"
+          "diarreah"
         ],
         related: [
           "vomiting",
@@ -54301,7 +54257,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "trans fats",
           "rancid fat",
           "oxidized oils",
-          "free radicals",
           "fried food",
           "deep fried"
         ],
@@ -54487,8 +54442,7 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "bloody diarrhea",
           "severe diarrhea",
           "dysentery",
-          "gut infection diarrhea",
-          "amoebic dysentery"
+          "gut infection diarrhea"
         ],
         related: [
           "bleeding_bowels",
@@ -54505,7 +54459,8 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "trouble reading",
           "dislexia",
           "learning disability reading",
-          "word blindness"
+          "word blindness",
+          "dyslexia"
         ],
         related: [],
         claim_count: 2
@@ -54528,12 +54483,9 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         display_name: "Dyspepsia",
         type: "condition",
         synonyms: [
-          "indigestion",
-          "upset stomach",
-          "heartburn",
           "stomach upset",
-          "acid indigestion",
-          "dispepsia"
+          "dispepsia",
+          "dyspepsia"
         ],
         related: [],
         claim_count: 1
@@ -54565,14 +54517,11 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "dysprosium mineral",
           "dysprosium metal",
           "dysprosium rare earth",
-          "rare earth minerals",
           "dysprosium supplement",
           "dysprosium benefits",
           "dysprosium deficiency",
           "what is dysprosium",
-          "dysprosium in the body",
-          "plant derived minerals",
-          "trace minerals"
+          "dysprosium in the body"
         ],
         related: [
           "erbium",
@@ -54604,9 +54553,7 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         display_name: "Ecchymosis",
         type: "condition",
         synonyms: [
-          "bruising",
           "bruise",
-          "easy bruising",
           "black and blue mark",
           "bruise easily",
           "skin bruising"
@@ -54621,9 +54568,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         type: "condition",
         synonyms: [
           "eczema",
-          "itchy skin",
-          "dry itchy skin",
-          "skin rash",
           "atopic dermatitis",
           "eczma"
         ],
@@ -54698,12 +54642,9 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         display_name: "Enuresis",
         type: "condition",
         synonyms: [
-          "bedwetting",
-          "bed wetting",
-          "wetting the bed",
-          "bed-wetting",
           "child wets bed",
-          "nighttime wetting"
+          "nighttime wetting",
+          "enuresis"
         ],
         related: [],
         claim_count: 1
@@ -54736,12 +54677,9 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         display_name: "Epilepsy",
         type: "condition",
         synonyms: [
-          "seizures",
           "seizure disorder",
-          "convulsions",
           "epileptic seizures",
-          "epilepsi",
-          "fits"
+          "epilepsi"
         ],
         related: [],
         claim_count: 1
@@ -54800,7 +54738,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         synonyms: [
           "erectile dysfunction",
           "ed",
-          "impotence",
           "cant get hard",
           "cant get an erection",
           "impotent",
@@ -54857,7 +54794,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "europium",
           "europium mineral",
           "europium rare earth",
-          "light rare earth",
           "rare earth mineral",
           "europium supplement",
           "europium benefits",
@@ -54900,7 +54836,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "red eyes",
           "bloodshot eyes",
           "red eye",
-          "pink eye",
           "bloodshot",
           "irritated eyes"
         ],
@@ -55016,11 +54951,9 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         synonyms: [
           "fish",
           "seafood",
-          "tuna",
           "salmon",
           "cod",
           "cod liver oil",
-          "cod-liver oil",
           "fish oil",
           "salmon oil",
           "shark",
@@ -55159,7 +55092,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         type: "condition",
         synonyms: [
           "brown spots skin",
-          "sun spots",
           "freckels",
           "spots on skin",
           "skin freckles",
@@ -55243,7 +55175,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "gadolinium deficiency",
           "gadolinium benefits",
           "gadolinium mineral",
-          "rare earth minerals",
           "gadolinium rare earth",
           "gd mineral",
           "what is gadolinium",
@@ -55317,7 +55248,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         synonyms: [
           "GLA",
           "gamma-linolenic acid",
-          "gamma linolenic acid",
           "is GLA essential",
           "conditionally essential omega-6",
           "GLA omega 6 fatty acid",
@@ -55368,7 +55298,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "germanium supplements",
           "organic germanium",
           "GE-132",
-          "Ge-132",
           "germanium 132",
           "germanium sesquioxide",
           "carboxyethyl germanium sesquioxide",
@@ -55428,7 +55357,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         synonyms: [
           "gum inflammation",
           "inflamed gums",
-          "bleeding gums",
           "sore gums",
           "swollen gums"
         ],
@@ -55496,7 +55424,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "gluten intolerance",
           "gluten sensitivity",
           "gluten-free",
-          "gluten enteropathy",
           "wheat",
           "villi"
         ],
@@ -55523,7 +55450,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "frankenstein food",
           "franken food",
           "non-gmo",
-          "non gmo",
           "gm food",
           "gmo crops",
           "modified food"
@@ -55540,7 +55466,8 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "goitre",
           "thyroid swelling",
           "neck swelling",
-          "swollen neck"
+          "swollen neck",
+          "goiter"
         ],
         related: [
           "hypothyroidism"
@@ -55699,12 +55626,12 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         display_name: "Hay Fever",
         type: "condition",
         synonyms: [
-          "allergies",
           "seasonal allergies",
           "pollen allergy",
           "allergic rhinitis",
           "hayfever",
-          "runny nose allergy"
+          "runny nose allergy",
+          "hay fever"
         ],
         related: [
           "anaphylaxis",
@@ -55758,10 +55685,10 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         synonyms: [
           "acid reflux",
           "burning chest",
-          "indigestion",
           "acid indigestion",
           "gerd",
-          "burning stomach"
+          "burning stomach",
+          "heartburn"
         ],
         related: [
           "hyperacidity",
@@ -55788,7 +55715,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         type: "element",
         synonyms: [
           "he",
-          "noble gas",
           "the bends",
           "decompression sickness"
         ],
@@ -55858,7 +55784,8 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "hernia in diaphragm",
           "hital hernia",
           "hiatal hernia stomach",
-          "diaphragm hernia"
+          "diaphragm hernia",
+          "hiatal hernia"
         ],
         related: [
           "heartburn",
@@ -55885,7 +55812,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         type: "condition",
         synonyms: [
           "high cholesterol",
-          "cholesterol",
           "elevated cholesterol",
           "bad cholesterol",
           "high ldl",
@@ -55903,7 +55829,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         synonyms: [
           "hfcs",
           "high fructose corn syrup",
-          "high-fructose corn syrup",
           "corn syrup",
           "corn sugar",
           "fructose corn syrup"
@@ -55982,7 +55907,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "holmium deficiency",
           "holmium mineral",
           "holmium rare earth",
-          "rare earth minerals",
           "holmium element",
           "do I need holmium",
           "holmium trace mineral",
@@ -56078,9 +56002,7 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         type: "topic",
         synonyms: [
           "hospital safety",
-          "nosocomial infection",
-          "iatrogenic",
-          "medical errors"
+          "nosocomial infection"
         ],
         related: [
           "be_your_own_doctor"
@@ -56120,8 +56042,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "hydrogen H",
           "hydrogen gas",
           "hydrogen atom",
-          "hydrogen peroxide",
-          "hydrogenated oils",
           "hydrogen in the body",
           "hydrogen ion",
           "what is hydrogen",
@@ -56161,7 +56081,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "food-grade peroxide",
           "peroxide",
           "hydrogen peroxide therapy",
-          "oxygen therapy",
           "35% food grade",
           "hydrogen peroxide for cancer"
         ],
@@ -56192,7 +56111,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         type: "condition",
         synonyms: [
           "too much stomach acid",
-          "acid stomach",
           "excess stomach acid",
           "acidity",
           "high stomach acid",
@@ -56209,12 +56127,11 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         type: "condition",
         synonyms: [
           "hyper kids",
-          "adhd",
-          "add",
           "overactive child",
           "cant sit still",
           "restless child",
-          "hyperactive"
+          "hyperactive",
+          "hyperactivity"
         ],
         related: [
           "criminal_behavior"
@@ -56378,11 +56295,10 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         display_name: "Impotence",
         type: "condition",
         synonyms: [
-          "erectile dysfunction",
-          "ed",
           "cant get erection",
           "impotency",
-          "cant perform"
+          "cant perform",
+          "impotence"
         ],
         related: [
           "benign_prostatic_hyperplasia"
@@ -56410,12 +56326,10 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         type: "condition",
         synonyms: [
           "upset stomach",
-          "heartburn",
-          "dyspepsia",
           "acid stomach",
           "stomach ache after eating",
-          "acid indigestion",
-          "sour stomach"
+          "sour stomach",
+          "indigestion"
         ],
         related: [
           "gallstones",
@@ -56504,8 +56418,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "inositol benefits",
           "cyclohexanehexol",
           "inositol hexaphosphate",
-          "phytic acid",
-          "phytates",
           "inositol for hair loss",
           "inositol for insomnia",
           "inositol for sleep",
@@ -56657,9 +56569,7 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "elemental iodine",
           "too much iodine",
           "iodine toxicity",
-          "iodine benefits",
-          "goiter",
-          "goitre"
+          "iodine benefits"
         ],
         related: [
           "tyrosine",
@@ -56692,7 +56602,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "iron supplements",
           "iron pills",
           "iron tablets",
-          "anemia",
           "anaemia",
           "iron deficiency anemia",
           "iron-deficiency anaemia",
@@ -56718,10 +56627,8 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "iron poisoning",
           "hemochromatosis",
           "iron storage disease",
-          "pica",
           "craving ice",
           "eating ice",
-          "eating dirt",
           "iron for periods",
           "iron for heavy periods",
           "iron in pregnancy",
@@ -56769,7 +56676,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "isoleucine",
           "l-isoleucine",
           "isoleucine supplement",
-          "branched chain amino acid",
           "isoleucine amino acid",
           "isoleucine deficiency",
           "what is isoleucine"
@@ -56849,7 +56755,8 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "dry eyes vitamin a",
           "eye softening",
           "softening of cornea",
-          "vitamin a eye damage"
+          "vitamin a eye damage",
+          "keratomalacia"
         ],
         related: [
           "eye_redness"
@@ -56864,7 +56771,8 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "skin growths",
           "keratoses",
           "scaly skin patches",
-          "actinic keratosis"
+          "actinic keratosis",
+          "keratosis"
         ],
         related: [],
         claim_count: 2
@@ -56904,15 +56812,7 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         synonyms: [
           "keto",
           "keto diet",
-          "ketogenic diet",
-          "low carb diet",
-          "low carbohydrate diet",
-          "low carb",
-          "ketosis",
-          "atkins diet",
-          "atkins",
-          "low glycemic diet",
-          "see food diet"
+          "ketogenic diet"
         ],
         related: [
           "obesity",
@@ -57023,7 +56923,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         display_name: "Labor",
         type: "condition",
         synonyms: [
-          "childbirth",
           "labour",
           "giving birth",
           "labor pains",
@@ -57040,7 +56939,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "cant digest milk sugar",
           "low lactase",
           "lactase enzyme deficiency",
-          "lactose intolerance",
           "missing lactase"
         ],
         related: [
@@ -57073,12 +56971,8 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "lanthanum supplement",
           "lanthanum benefits",
           "what is lanthanum",
-          "rare earth minerals",
-          "rare earths",
-          "light rare earth",
           "lanthanum in the body",
           "cerium metals",
-          "plant derived minerals",
           "lanthinum",
           "lanthanam"
         ],
@@ -57095,10 +56989,8 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         display_name: "Laryngitis",
         type: "condition",
         synonyms: [
-          "hoarse voice",
           "lost voice",
           "voice box inflammation",
-          "hoarseness",
           "sore throat hoarse"
         ],
         related: [],
@@ -57109,9 +57001,7 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         type: "element",
         synonyms: [
           "lead",
-          "lead poisoning",
-          "pb",
-          "lead toxicity"
+          "pb"
         ],
         related: [],
         claim_count: 4
@@ -57148,7 +57038,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         type: "condition",
         synonyms: [
           "leptospirosis",
-          "weils disease",
           "weil's disease",
           "rat urine disease",
           "lepto"
@@ -57370,11 +57259,7 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         display_name: "Liver Disease",
         type: "condition",
         synonyms: [
-          "liver problems",
-          "bad liver",
-          "liver damage",
           "liver condition",
-          "sick liver",
           "hepatic disease"
         ],
         related: [
@@ -57388,8 +57273,7 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         synonyms: [
           "lifespan",
           "aging",
-          "live longer",
-          "hunza"
+          "live longer"
         ],
         related: [
           "essential_nutrients",
@@ -57409,11 +57293,8 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "low carbohydrate diet",
           "atkins",
           "atkins diet",
-          "keto",
-          "ketogenic diet",
           "carbohydrate restriction",
           "south beach diet",
-          "see food diet",
           "low glycemic diet"
         ],
         related: [
@@ -57455,8 +57336,7 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "cassiopium",
           "what is lutetium",
           "lutetium in the body",
-          "lutetium element",
-          "plant derived minerals"
+          "lutetium element"
         ],
         related: [
           "ytterbium",
@@ -57557,9 +57437,7 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         synonyms: [
           "carbohydrates",
           "carbs",
-          "fats",
-          "protein",
-          "sugar"
+          "fats"
         ],
         related: [
           "amino_acids",
@@ -57779,13 +57657,9 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         synonyms: [
           "meat",
           "red meat",
-          "beef",
-          "poultry",
           "organ meats",
-          "shellfish",
           "animal fats",
           "meats",
-          "beef liver",
           "liver and onions",
           "chicken liver"
         ],
@@ -57861,7 +57735,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         type: "condition",
         synonyms: [
           "memory loss",
-          "dementia",
           "senile dementia",
           "senility",
           "forgetfulness",
@@ -57914,7 +57787,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         display_name: "Meningocele",
         type: "condition",
         synonyms: [
-          "spina bifida",
           "spinal defect",
           "neural tube defect",
           "spinal sac defect",
@@ -57978,7 +57850,8 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "mercury toxicity",
           "mercury poison",
           "heavy metal poisoning",
-          "mercury exposure"
+          "mercury exposure",
+          "mercury poisoning"
         ],
         related: [
           "plumbism",
@@ -57999,7 +57872,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "methionine deficiency",
           "sulfur amino acid",
           "what is methionine",
-          "selenomethionine",
           "s-adenosyl methionine"
         ],
         related: [
@@ -58119,7 +57991,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "moly",
           "molybdenite",
           "Mo",
-          "molybdenum",
           "molybdenm",
           "molybdenium",
           "molibdenum",
@@ -58146,7 +58017,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "monckeberg's sclerosis",
           "calcified arteries",
           "artery calcification",
-          "hardened arteries",
           "calcium in arteries"
         ],
         related: [
@@ -58292,8 +58162,7 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "stuffy nose",
           "nasal congestion",
           "runny nose",
-          "mucus in nose",
-          "catarrh"
+          "mucus in nose"
         ],
         related: [],
         claim_count: 1
@@ -58322,7 +58191,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         synonyms: [
           "feeling sick to my stomach",
           "queasiness",
-          "upset stomach",
           "feeling nauseous",
           "want to vomit"
         ],
@@ -58354,8 +58222,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "neodymium deficiency",
           "neodymium supplement",
           "neodymium benefits",
-          "light rare earth",
-          "rare earth minerals",
           "neodymium magnets",
           "what is neodymium",
           "neodimium",
@@ -58393,9 +58259,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         synonyms: [
           "nervous tension",
           "tension",
-          "stress",
-          "anxiety",
-          "nervousness",
           "feeling tense"
         ],
         related: [
@@ -58407,10 +58270,8 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         display_name: "Neuralgia",
         type: "condition",
         synonyms: [
-          "nerve pain",
           "shooting nerve pain",
           "burning nerve pain",
-          "facial nerve pain",
           "nerve ache"
         ],
         related: [
@@ -58475,7 +58336,8 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "poor night vision",
           "trouble seeing in the dark",
           "night vision problems",
-          "nyctalopia"
+          "nyctalopia",
+          "night blindness"
         ],
         related: [],
         claim_count: 1
@@ -58713,13 +58575,8 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "obscure elements",
           "trace elements",
           "actinium",
-          "bromine",
-          "cesium",
-          "caesium",
-          "hafnium",
           "indium",
-          "iridium",
-          "bromide"
+          "iridium"
         ],
         related: [
           "rare_earth_elements",
@@ -58748,22 +58605,16 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         type: "nutrient",
         synonyms: [
           "omega-3",
-          "omega 3",
           "omega3",
           "omega-3s",
-          "omega 3s",
           "omega threes",
           "omega-3 fatty acid",
           "omega 3 fatty acids",
-          "omega-3 fatty acids",
           "n-3",
           "n-3 fatty acid",
           "alpha-linolenic acid",
-          "alpha linolenic acid",
           "ALA",
           "linolenic acid",
-          "DHA",
-          "docosahexaenoic acid",
           "EPA",
           "eicosapentaenoic acid",
           "essential fatty acids",
@@ -58771,10 +58622,7 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "EFA",
           "EFAs",
           "vitamin F",
-          "fish oil",
           "fish oil supplement",
-          "cod liver oil",
-          "salmon oil",
           "flaxseed oil",
           "flax oil",
           "flax seed oil",
@@ -58782,13 +58630,11 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "good fats",
           "healthy fats",
           "omega-3 deficiency",
-          "omega 3 deficiency",
           "essential fatty acid deficiency",
           "EFA deficiency",
           "low omega-3",
           "not enough omega-3",
           "omega-3 supplement",
-          "omega 3 supplement",
           "omega-3 benefits",
           "omega-3 for the heart",
           "omega-3 for depression",
@@ -58798,8 +58644,7 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "omega-3 to omega-6 ratio",
           "dry skin means essential fatty acids",
           "DSM/EFA",
-          "omeaga 3",
-          "omega -3"
+          "omeaga 3"
         ],
         related: [
           "omega-6",
@@ -58819,7 +58664,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         type: "nutrient",
         synonyms: [
           "omega-6",
-          "omega 6",
           "omega6",
           "omega six",
           "omega-6 fatty acid",
@@ -58829,8 +58673,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "omega-6 deficiency",
           "omega-6 supplement",
           "omega-6 benefits",
-          "essential fatty acids",
-          "EFA",
           "what is omega-6",
           "linoleic acid omega 6"
         ],
@@ -58848,7 +58690,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         type: "nutrient",
         synonyms: [
           "omega-9",
-          "omega 9",
           "omega nine",
           "omega-9 fatty acid",
           "oleic acid",
@@ -59054,12 +58895,10 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "hyperbaric oxygen therapy",
           "oxygen and cancer",
           "does oxygen kill cancer cells",
-          "hydrogen peroxide therapy",
           "oxygen supplement",
           "oxygenation",
           "is oxygen poisonous",
           "oxygen free radicals",
-          "oxidation",
           "oxygen benefits",
           "increase oxygen in blood"
         ],
@@ -59232,7 +59071,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "body ph",
           "ph balance",
           "acid-base balance",
-          "acid base balance",
           "alkalinity",
           "blood ph",
           "urine ph"
@@ -59317,7 +59155,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "phosphorus levels",
           "blood phosphorus",
           "low blood phosphorus",
-          "hypophosphatemia",
           "phosphate",
           "phosphates",
           "phosphorus in food",
@@ -59355,7 +59192,8 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "phytate",
           "phytic acid",
           "anti-nutrient",
-          "mineral blockers"
+          "mineral blockers",
+          "phytates"
         ],
         related: [
           "absorption",
@@ -59498,7 +59336,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "K",
           "potassium deficiency",
           "low potassium",
-          "hypokalemia",
           "potassium supplement",
           "potassium supplements",
           "potassium levels",
@@ -59510,9 +59347,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "potassium citrate",
           "potassium gluconate",
           "potassium 40",
-          "potassium-40",
-          "electrolyte",
-          "electrolytes",
           "potassium for cramps",
           "potassium for muscle cramps",
           "charley horse potassium",
@@ -59557,9 +59391,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "praseodymium deficiency",
           "praseodymium benefits",
           "what is praseodymium",
-          "rare earth minerals",
-          "rare earth elements",
-          "light rare earth",
           "praseodymium mineral",
           "praseodymium in the body",
           "praseodimium",
@@ -59583,7 +59414,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "pre eclampsia",
           "pregnancy high blood pressure",
           "toxemia of pregnancy",
-          "pre-eclampsia",
           "high bp in pregnancy"
         ],
         related: [
@@ -59602,7 +59432,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "prenatal",
           "obstetrics",
           "contraception",
-          "birth defects",
           "congenital defects",
           "teratology"
         ],
@@ -59669,7 +59498,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         display_name: "Psoriasis",
         type: "condition",
         synonyms: [
-          "scaly skin",
           "skin plaques",
           "psorisis",
           "flaky red patches",
@@ -59714,10 +59542,7 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         display_name: "Pyorrhea",
         type: "condition",
         synonyms: [
-          "gum disease",
-          "bleeding gums",
           "pyorrhoea",
-          "gum infection",
           "receding gums"
         ],
         related: [
@@ -59734,7 +59559,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "q fever",
           "query fever",
           "coxiella",
-          "q-fever",
           "fever from farm animals"
         ],
         related: [],
@@ -59822,14 +59646,10 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "rare earths",
           "lanthanides",
           "rare earth metals",
-          "dysprosium",
-          "erbium",
-          "europium",
-          "gadolinium",
-          "holmium",
-          "lutetium",
-          "cerium",
-          "monazite"
+          "monazite",
+          "light rare earth",
+          "rare earth elements",
+          "rare earth minerals"
         ],
         related: [
           "obscure_elements",
@@ -59849,8 +59669,7 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "white fingers",
           "numb fingers",
           "poor circulation hands",
-          "fingers turn white",
-          "cold hands and feet"
+          "fingers turn white"
         ],
         related: [
           "hypotension"
@@ -60103,13 +59922,8 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         display_name: "Salt",
         type: "substance",
         synonyms: [
-          "table salt",
-          "sodium chloride",
-          "nacl",
-          "sea salt",
-          "salt-restricted diet",
-          "low-salt diet",
-          "salting your food"
+          "salting your food",
+          "salt"
         ],
         related: [
           "sodium",
@@ -60138,8 +59952,7 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "light rare earth element",
           "samarium in the body",
           "what is samarium",
-          "samarium mineral",
-          "rare earth minerals"
+          "samarium mineral"
         ],
         related: [
           "rare_earth_elements"
@@ -60269,10 +60082,7 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         type: "condition",
         synonyms: [
           "seborrheic dermatitis",
-          "dandruff",
-          "flaky scalp",
           "scalp dermatitis",
-          "cradle cap",
           "seborrhea"
         ],
         related: [
@@ -60285,7 +60095,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         type: "concept",
         synonyms: [
           "see food diet",
-          "see-food diet",
           "sea food diet",
           "wallach diet",
           "wallach's diet",
@@ -60444,7 +60253,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "how much silver",
           "silver for immune system",
           "silver germ killer",
-          "silver nitrate",
           "silver argyria",
           "silver side effects",
           "is silver essential",
@@ -60494,14 +60302,12 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         type: "nutrient",
         synonyms: [
           "sodium",
-          "salt",
           "table salt",
           "sodium chloride",
           "NaCl",
           "Na",
           "sea salt",
           "rock salt",
-          "iodized salt",
           "salt substitute",
           "salt intake",
           "sodium intake",
@@ -60531,11 +60337,8 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "is salt bad",
           "salt lick",
           "salt block",
-          "water intoxication",
           "hyponatremia",
           "hypernatremia",
-          "electrolyte",
-          "electrolytes",
           "soduim",
           "sodiam"
         ],
@@ -60575,7 +60378,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "reflexology",
           "rolfing",
           "structural integration",
-          "spinal manipulation",
           "massage therapy",
           "somatics",
           "doctor of osteopathy",
@@ -60598,7 +60400,8 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "scratchy throat",
           "throat hurts",
           "strep throat",
-          "sore throught"
+          "sore throught",
+          "sore throat"
         ],
         related: [
           "scarlatina",
@@ -60662,7 +60465,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         synonyms: [
           "crossed eyes",
           "cross eyed",
-          "lazy eye",
           "wandering eye",
           "eye squint",
           "misaligned eyes"
@@ -60692,7 +60494,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "stress",
           "stressed",
           "stressed out",
-          "tension",
           "overwhelmed",
           "under stress"
         ],
@@ -60733,7 +60534,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "is strontium essential",
           "strontium and calcium",
           "strontium 90",
-          "strontium-90",
           "is strontium radioactive",
           "is strontium safe",
           "strontium mineral"
@@ -60777,8 +60577,7 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "sweets",
           "caffeine",
           "coffee",
-          "sugar cravings",
-          "carbohydrates"
+          "sugar cravings"
         ],
         related: [
           "carbonated_beverages",
@@ -60877,8 +60676,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         synonyms: [
           "fast heartbeat",
           "rapid heart rate",
-          "racing heart",
-          "heart racing",
           "fast pulse"
         ],
         related: [
@@ -60920,7 +60717,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "tapeworm",
           "tape worm",
           "tape worms",
-          "intestinal worms",
           "parasitic worms",
           "worms in gut"
         ],
@@ -60933,9 +60729,7 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         display_name: "Tardive Dyskinesia",
         type: "condition",
         synonyms: [
-          "involuntary movements",
           "tardive dyskinesia",
-          "uncontrollable movements",
           "facial twitching from meds",
           "drug-induced movements",
           "medication movement disorder"
@@ -61024,8 +60818,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "terbium deficiency",
           "what is terbium",
           "terbium rare earth",
-          "rare earth minerals",
-          "rare earth elements",
           "terbium trace mineral",
           "Tb mineral",
           "terbium Wallach",
@@ -61080,7 +60872,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         synonyms: [
           "thallium",
           "tl",
-          "thallium poisoning",
           "toxic metal"
         ],
         related: [],
@@ -61092,7 +60883,8 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         synonyms: [
           "thallium toxicity",
           "thallium poison",
-          "thallium exposure"
+          "thallium exposure",
+          "thallium poisoning"
         ],
         related: [
           "plumbism",
@@ -61143,10 +60935,10 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         synonyms: [
           "oral thrush",
           "yeast infection mouth",
-          "candida",
           "white tongue",
           "mouth fungus",
-          "white patches mouth"
+          "white patches mouth",
+          "thrush"
         ],
         related: [
           "rectal_itching"
@@ -61270,11 +61062,9 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         display_name: "Tonsillitis",
         type: "condition",
         synonyms: [
-          "sore throat",
           "swollen tonsils",
           "tonsil infection",
           "inflamed tonsils",
-          "strep throat",
           "tonsilitis"
         ],
         related: [],
@@ -61365,11 +61155,9 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "trp",
           "tryp",
           "l-tryptophan",
-          "l tryptophan",
           "l-trp",
           "d-tryptophan",
           "5-htp",
-          "5 htp",
           "5-hydroxytryptophan",
           "s-hydroxytryptophan",
           "tryptophan deficiency",
@@ -61402,7 +61190,8 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "deer fly fever",
           "tularaemia",
           "tularemia infection",
-          "hunter's disease"
+          "hunter's disease",
+          "tularemia"
         ],
         related: [
           "rabbit_fever",
@@ -61569,7 +61358,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         synonyms: [
           "vaginal infection",
           "vaginal inflammation",
-          "yeast infection",
           "vaginal irritation",
           "vaginitis",
           "bacterial vaginosis"
@@ -61600,7 +61388,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "valine",
           "l-valine",
           "valine supplement",
-          "branched-chain amino acid",
           "valine amino acid",
           "valine deficiency",
           "what is valine"
@@ -61655,10 +61442,8 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "vanadim",
           "venadium",
           "vanadium deficency",
-          "sugar cravings",
           "candy cravings",
           "carb cravings",
-          "chocolate cravings",
           "the munchies",
           "craving sweets",
           "always craving soda"
@@ -61698,7 +61483,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "vegetarianism",
           "veganism",
           "plant-based",
-          "plant based",
           "plant-based diet",
           "vegan diet",
           "vegetarian diet",
@@ -61738,9 +61522,7 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         type: "nutrient",
         synonyms: [
           "vitamin a",
-          "vitamin-a",
           "vit a",
-          "vit-a",
           "vitamin a1",
           "retinol",
           "retinoic acid",
@@ -61749,7 +61531,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "retinoids",
           "preformed vitamin a",
           "beta carotene",
-          "beta-carotene",
           "betacarotene",
           "beta carotine",
           "carotene",
@@ -61766,11 +61547,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "vitamin a overdose",
           "vitamin a toxicity",
           "too much vitamin a",
-          "night blindness",
-          "nyctalopia",
-          "xerophthalmia",
-          "keratomalacia",
-          "keratosis",
           "shark skin",
           "goose bumps skin",
           "bumpy skin on arms",
@@ -61846,11 +61622,8 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         type: "nutrient",
         synonyms: [
           "vitamin B12",
-          "vitamin b12",
           "B12",
-          "b12",
           "vitamin b-12",
-          "vitamin b 12",
           "vit b12",
           "vitamin b twelve",
           "b-12",
@@ -61877,7 +61650,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "B12 for vegans",
           "B12 for energy",
           "B12 anemia",
-          "pernicious anemia",
           "cobalt vitamin"
         ],
         related: [
@@ -61901,7 +61673,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "vitamin b-2",
           "b2",
           "b-2",
-          "vitamin b 2",
           "vitamin b two",
           "b vitamin 2",
           "riboflavin",
@@ -61929,11 +61700,7 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "vitamin b2 for eyes",
           "vitamin b2 energy",
           "cracks in corners of mouth",
-          "cracked mouth corners",
           "cracked lips corners",
-          "cheilosis",
-          "angular stomatitis",
-          "geographic tongue",
           "sore burning tongue",
           "yellow vitamin",
           "flavin vitamin"
@@ -61957,7 +61724,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "niacin",
           "vitamin b3",
           "vitamin b-3",
-          "vitamin b 3",
           "b3",
           "b-3",
           "b3 vitamin",
@@ -61998,7 +61764,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         synonyms: [
           "vitamin b5",
           "vitamin b-5",
-          "vitamin b 5",
           "vit b5",
           "b5",
           "b-5",
@@ -62047,7 +61812,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "b6",
           "vitamin b-6",
           "b-6",
-          "vitamin b 6",
           "vit b6",
           "pyridoxine",
           "pyridoxin",
@@ -62100,7 +61864,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "folacin",
           "vitamin b9",
           "vitamin b-9",
-          "vitamin b 9",
           "b9",
           "b-9",
           "vitamin b nine",
@@ -62144,9 +61907,7 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         type: "nutrient",
         synonyms: [
           "vitamin c",
-          "vitamin-c",
           "vit c",
-          "vit-c",
           "ascorbic acid",
           "ascorbate",
           "ascorbic",
@@ -62167,8 +61928,7 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "vitamin c benefits",
           "vitamine c",
           "vitimin c",
-          "vitiman c",
-          "scurvy"
+          "vitiman c"
         ],
         related: [
           "iron",
@@ -62188,14 +61948,9 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         type: "nutrient",
         synonyms: [
           "vitamin D",
-          "vitamin d",
           "vit D",
-          "vit d",
-          "vitamin-d",
           "vitamin D3",
-          "vitamin d3",
           "vitamin D2",
-          "vitamin d2",
           "D3",
           "D2",
           "cholecalciferol",
@@ -62228,8 +61983,7 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "vitamin d rich foods",
           "vitamin d from sun",
           "vitamin d hormone",
-          "is vitamin d a hormone",
-          "cod liver oil"
+          "is vitamin d a hormone"
         ],
         related: [
           "calcium",
@@ -62249,22 +62003,14 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         type: "nutrient",
         synonyms: [
           "vitamin E",
-          "vitamin e",
           "vit E",
-          "vit e",
-          "vit. E",
-          "vitamin-e",
           "vitamin E deficiency",
-          "vitamin e deficiency",
           "low vitamin E",
           "vitamin E supplement",
-          "vitamin e supplement",
           "vitamin E oil",
-          "vitamin e oil",
           "tocopherol",
           "tocopherols",
           "alpha-tocopherol",
-          "alpha tocopherol",
           "alpha-tocopherols",
           "mixed tocopherols",
           "d-alpha-tocopherol",
@@ -62293,7 +62039,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         type: "nutrient",
         synonyms: [
           "vitamin k",
-          "vitamin-k",
           "vit k",
           "vitk",
           "vitamin k1",
@@ -62345,7 +62090,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "vitamin",
           "fat-soluble",
           "water-soluble",
-          "flavanols",
           "megavitamin",
           "megavitamin therapy",
           "orthomolecular",
@@ -62475,7 +62219,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         display_name: "Wounds",
         type: "condition",
         synonyms: [
-          "cuts",
           "wound healing",
           "sores",
           "injuries",
@@ -62490,7 +62233,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         synonyms: [
           "xenon",
           "xe",
-          "noble gas",
           "xenon anesthetic"
         ],
         related: [],
@@ -62531,10 +62273,8 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "ytterbium supplement",
           "ytterbium benefits",
           "ytterbium rare earth",
-          "rare earth minerals",
           "ytterbium in the body",
           "ytterbium in bone",
-          "plant derived minerals",
           "what is ytterbium",
           "ytterbium metals"
         ],
@@ -62562,9 +62302,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "what is yttrium",
           "yttrium mineral",
           "yttrium rare earth",
-          "rare earth minerals",
-          "rare earth elements",
-          "plant derived minerals",
           "yttrium in the body",
           "yttrium element",
           "ytrium",
@@ -62583,7 +62320,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
         type: "nutrient",
         synonyms: [
           "zinc",
-          "Zinc",
           "zinc mineral",
           "zinc (Zn)",
           "Zn",
@@ -62612,7 +62348,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "zinc for acne",
           "zinc for skin",
           "how much zinc",
-          "white spots on nails",
           "loss of smell and taste"
         ],
         related: [
@@ -62641,7 +62376,6 @@ FLAGGED, NOT CHANGED. The goal-gap fill still credits a goal naming omega-3 with
           "Zr",
           "zircon",
           "zirconium silicate",
-          "rare earth minerals",
           "zirconium in the body",
           "is zirconium essential",
           "zircon gemstone",
@@ -130287,8 +130021,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "hydrogen H",
           "hydrogen gas",
           "hydrogen atom",
-          "hydrogen peroxide",
-          "hydrogenated oils",
           "hydrogen in the body",
           "hydrogen ion",
           "what is hydrogen",
@@ -130551,12 +130283,10 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "hyperbaric oxygen therapy",
           "oxygen and cancer",
           "does oxygen kill cancer cells",
-          "hydrogen peroxide therapy",
           "oxygen supplement",
           "oxygenation",
           "is oxygen poisonous",
           "oxygen free radicals",
-          "oxidation",
           "oxygen benefits",
           "increase oxygen in blood"
         ],
@@ -130670,14 +130400,12 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         ],
         synonyms: [
           "sodium",
-          "salt",
           "table salt",
           "sodium chloride",
           "NaCl",
           "Na",
           "sea salt",
           "rock salt",
-          "iodized salt",
           "salt substitute",
           "salt intake",
           "sodium intake",
@@ -130707,11 +130435,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "is salt bad",
           "salt lick",
           "salt block",
-          "water intoxication",
           "hyponatremia",
           "hypernatremia",
-          "electrolyte",
-          "electrolytes",
           "soduim",
           "sodiam"
         ],
@@ -131287,7 +131012,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "phosphorus levels",
           "blood phosphorus",
           "low blood phosphorus",
-          "hypophosphatemia",
           "phosphate",
           "phosphates",
           "phosphorus in food",
@@ -131613,13 +131337,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "chloride in blood",
           "hypochloremia",
           "chloride ions",
-          "salt",
-          "table salt",
-          "sodium chloride",
-          "NaCl",
-          "salt deficiency",
-          "low salt diet",
-          "low-salt diet",
           "chloride of soda",
           "natrum mur",
           "nat mur",
@@ -131743,7 +131460,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "K",
           "potassium deficiency",
           "low potassium",
-          "hypokalemia",
           "potassium supplement",
           "potassium supplements",
           "potassium levels",
@@ -131755,9 +131471,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "potassium citrate",
           "potassium gluconate",
           "potassium 40",
-          "potassium-40",
-          "electrolyte",
-          "electrolytes",
           "potassium for cramps",
           "potassium for muscle cramps",
           "charley horse potassium",
@@ -131987,10 +131700,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "calx",
           "calcuim",
           "caclium",
-          "calcuim deficiency",
-          "brittle bones",
-          "weak bones",
-          "bone loss"
+          "calcuim deficiency"
         ],
         record: [
           {
@@ -132625,17 +132335,12 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "Co mineral",
           "cobalt blue",
           "is cobalt magnetic",
-          "cobalamin",
-          "cobalamine",
-          "cyanocobalamine",
           "kobald",
           "kobalt",
           "cobolt",
           "cobalt element",
           "bush sickness",
-          "co",
-          "vitamin b12",
-          "b12"
+          "co"
         ],
         record: [],
         record_claim_count: 0,
@@ -133401,7 +133106,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "germanium supplements",
           "organic germanium",
           "GE-132",
-          "Ge-132",
           "germanium 132",
           "germanium sesquioxide",
           "carboxyethyl germanium sesquioxide",
@@ -133631,7 +133335,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "iron supplements",
           "iron pills",
           "iron tablets",
-          "anemia",
           "anaemia",
           "iron deficiency anemia",
           "iron-deficiency anaemia",
@@ -133657,10 +133360,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "iron poisoning",
           "hemochromatosis",
           "iron storage disease",
-          "pica",
           "craving ice",
           "eating ice",
-          "eating dirt",
           "iron for periods",
           "iron for heavy periods",
           "iron in pregnancy",
@@ -133880,9 +133581,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "elemental iodine",
           "too much iodine",
           "iodine toxicity",
-          "iodine benefits",
-          "goiter",
-          "goitre"
+          "iodine benefits"
         ],
         record: [
           {
@@ -134272,7 +133971,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "moly",
           "molybdenite",
           "Mo",
-          "molybdenum",
           "molybdenm",
           "molybdenium",
           "molibdenum",
@@ -134847,7 +134545,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "is strontium essential",
           "strontium and calcium",
           "strontium 90",
-          "strontium-90",
           "is strontium radioactive",
           "is strontium safe",
           "strontium mineral"
@@ -135045,10 +134742,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "vanadim",
           "venadium",
           "vanadium deficency",
-          "sugar cravings",
           "candy cravings",
           "carb cravings",
-          "chocolate cravings",
           "the munchies",
           "craving sweets",
           "always craving soda"
@@ -135257,7 +134952,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         ],
         synonyms: [
           "zinc",
-          "Zinc",
           "zinc mineral",
           "zinc (Zn)",
           "Zn",
@@ -135286,7 +134980,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "zinc for acne",
           "zinc for skin",
           "how much zinc",
-          "white spots on nails",
           "loss of smell and taste"
         ],
         record: [
@@ -135679,7 +135372,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "how much silver",
           "silver for immune system",
           "silver germ killer",
-          "silver nitrate",
           "silver argyria",
           "silver side effects",
           "is silver essential",
@@ -135786,7 +135478,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         synonyms: [
           "aluminum",
           "aluminium",
-          "aluminum",
           "aluminum foil",
           "aluminum deficiency",
           "aluminum supplement",
@@ -135979,9 +135670,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "arsenic supplement",
           "arsenic benefits",
           "is arsenic essential",
-          "arsenic poison",
-          "arsenic poisoning",
-          "arsenic toxicity",
           "arsenic symptoms",
           "what is arsenic",
           "arsenic trace mineral",
@@ -136542,8 +136230,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "beryllium supplement",
           "beryllium benefits",
           "is beryllium toxic",
-          "beryllium poisoning",
-          "berylliosis",
           "glucinium",
           "beryllium in the body",
           "Be mineral",
@@ -136854,7 +136540,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "what is cerium",
           "cerium mineral",
           "cerium rare earth",
-          "rare earth minerals",
           "cerium nitrate",
           "cerium for burns",
           "Ce mineral",
@@ -137183,14 +136868,11 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "dysprosium mineral",
           "dysprosium metal",
           "dysprosium rare earth",
-          "rare earth minerals",
           "dysprosium supplement",
           "dysprosium benefits",
           "dysprosium deficiency",
           "what is dysprosium",
-          "dysprosium in the body",
-          "plant derived minerals",
-          "trace minerals"
+          "dysprosium in the body"
         ],
         record: [],
         record_claim_count: 0,
@@ -137473,7 +137155,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "europium",
           "europium mineral",
           "europium rare earth",
-          "light rare earth",
           "rare earth mineral",
           "europium supplement",
           "europium benefits",
@@ -137807,7 +137488,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "gadolinium deficiency",
           "gadolinium benefits",
           "gadolinium mineral",
-          "rare earth minerals",
           "gadolinium rare earth",
           "gd mineral",
           "what is gadolinium",
@@ -138091,7 +137771,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "holmium deficiency",
           "holmium mineral",
           "holmium rare earth",
-          "rare earth minerals",
           "holmium element",
           "do I need holmium",
           "holmium trace mineral",
@@ -138234,12 +137913,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "lanthanum supplement",
           "lanthanum benefits",
           "what is lanthanum",
-          "rare earth minerals",
-          "rare earths",
-          "light rare earth",
           "lanthanum in the body",
           "cerium metals",
-          "plant derived minerals",
           "lanthinum",
           "lanthanam"
         ],
@@ -138662,8 +138337,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "cassiopium",
           "what is lutetium",
           "lutetium in the body",
-          "lutetium element",
-          "plant derived minerals"
+          "lutetium element"
         ],
         record: [],
         record_claim_count: 0,
@@ -138951,8 +138625,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "neodymium deficiency",
           "neodymium supplement",
           "neodymium benefits",
-          "light rare earth",
-          "rare earth minerals",
           "neodymium magnets",
           "what is neodymium",
           "neodimium",
@@ -139289,9 +138961,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "praseodymium deficiency",
           "praseodymium benefits",
           "what is praseodymium",
-          "rare earth minerals",
-          "rare earth elements",
-          "light rare earth",
           "praseodymium mineral",
           "praseodymium in the body",
           "praseodimium",
@@ -139903,8 +139572,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "light rare earth element",
           "samarium in the body",
           "what is samarium",
-          "samarium mineral",
-          "rare earth minerals"
+          "samarium mineral"
         ],
         record: [],
         record_claim_count: 0,
@@ -140397,8 +140065,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "terbium deficiency",
           "what is terbium",
           "terbium rare earth",
-          "rare earth minerals",
-          "rare earth elements",
           "terbium trace mineral",
           "Tb mineral",
           "terbium Wallach",
@@ -140857,9 +140523,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "what is yttrium",
           "yttrium mineral",
           "yttrium rare earth",
-          "rare earth minerals",
-          "rare earth elements",
-          "plant derived minerals",
           "yttrium in the body",
           "yttrium element",
           "ytrium",
@@ -141013,10 +140676,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "ytterbium supplement",
           "ytterbium benefits",
           "ytterbium rare earth",
-          "rare earth minerals",
           "ytterbium in the body",
           "ytterbium in bone",
-          "plant derived minerals",
           "what is ytterbium",
           "ytterbium metals"
         ],
@@ -141148,7 +140809,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "Zr",
           "zircon",
           "zirconium silicate",
-          "rare earth minerals",
           "zirconium in the body",
           "is zirconium essential",
           "zircon gemstone",
@@ -141305,9 +140965,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         ],
         synonyms: [
           "vitamin a",
-          "vitamin-a",
           "vit a",
-          "vit-a",
           "vitamin a1",
           "retinol",
           "retinoic acid",
@@ -141316,7 +140974,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "retinoids",
           "preformed vitamin a",
           "beta carotene",
-          "beta-carotene",
           "betacarotene",
           "beta carotine",
           "carotene",
@@ -141333,11 +140990,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "vitamin a overdose",
           "vitamin a toxicity",
           "too much vitamin a",
-          "night blindness",
-          "nyctalopia",
-          "xerophthalmia",
-          "keratomalacia",
-          "keratosis",
           "shark skin",
           "goose bumps skin",
           "bumpy skin on arms",
@@ -141806,7 +141458,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "vitamin b-2",
           "b2",
           "b-2",
-          "vitamin b 2",
           "vitamin b two",
           "b vitamin 2",
           "riboflavin",
@@ -141834,11 +141485,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "vitamin b2 for eyes",
           "vitamin b2 energy",
           "cracks in corners of mouth",
-          "cracked mouth corners",
           "cracked lips corners",
-          "cheilosis",
-          "angular stomatitis",
-          "geographic tongue",
           "sore burning tongue",
           "yellow vitamin",
           "flavin vitamin"
@@ -141960,7 +141607,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "niacin",
           "vitamin b3",
           "vitamin b-3",
-          "vitamin b 3",
           "b3",
           "b-3",
           "b3 vitamin",
@@ -142144,7 +141790,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         synonyms: [
           "vitamin b5",
           "vitamin b-5",
-          "vitamin b 5",
           "vit b5",
           "b5",
           "b-5",
@@ -142298,7 +141943,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "b6",
           "vitamin b-6",
           "b-6",
-          "vitamin b 6",
           "vit b6",
           "pyridoxine",
           "pyridoxin",
@@ -142558,7 +142202,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "folacin",
           "vitamin b9",
           "vitamin b-9",
-          "vitamin b 9",
           "b9",
           "b-9",
           "vitamin b nine",
@@ -142762,11 +142405,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         ],
         synonyms: [
           "vitamin B12",
-          "vitamin b12",
           "B12",
-          "b12",
           "vitamin b-12",
-          "vitamin b 12",
           "vit b12",
           "vitamin b twelve",
           "b-12",
@@ -142793,7 +142433,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "B12 for vegans",
           "B12 for energy",
           "B12 anemia",
-          "pernicious anemia",
           "cobalt vitamin"
         ],
         record: [
@@ -143002,9 +142641,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         ],
         synonyms: [
           "vitamin c",
-          "vitamin-c",
           "vit c",
-          "vit-c",
           "ascorbic acid",
           "ascorbate",
           "ascorbic",
@@ -143025,8 +142662,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "vitamin c benefits",
           "vitamine c",
           "vitimin c",
-          "vitiman c",
-          "scurvy"
+          "vitiman c"
         ],
         record: [
           {
@@ -143325,14 +142961,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         ],
         synonyms: [
           "vitamin D",
-          "vitamin d",
           "vit D",
-          "vit d",
-          "vitamin-d",
           "vitamin D3",
-          "vitamin d3",
           "vitamin D2",
-          "vitamin d2",
           "D3",
           "D2",
           "cholecalciferol",
@@ -143365,8 +142996,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "vitamin d rich foods",
           "vitamin d from sun",
           "vitamin d hormone",
-          "is vitamin d a hormone",
-          "cod liver oil"
+          "is vitamin d a hormone"
         ],
         record: [
           {
@@ -143556,22 +143186,14 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         ],
         synonyms: [
           "vitamin E",
-          "vitamin e",
           "vit E",
-          "vit e",
-          "vit. E",
-          "vitamin-e",
           "vitamin E deficiency",
-          "vitamin e deficiency",
           "low vitamin E",
           "vitamin E supplement",
-          "vitamin e supplement",
           "vitamin E oil",
-          "vitamin e oil",
           "tocopherol",
           "tocopherols",
           "alpha-tocopherol",
-          "alpha tocopherol",
           "alpha-tocopherols",
           "mixed tocopherols",
           "d-alpha-tocopherol",
@@ -143883,7 +143505,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         ],
         synonyms: [
           "vitamin k",
-          "vitamin-k",
           "vit k",
           "vitk",
           "vitamin k1",
@@ -144345,8 +143966,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "inositol benefits",
           "cyclohexanehexol",
           "inositol hexaphosphate",
-          "phytic acid",
-          "phytates",
           "inositol for hair loss",
           "inositol for insomnia",
           "inositol for sleep",
@@ -144646,7 +144265,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         synonyms: [
           "arginine",
           "l-arginine",
-          "l arginine",
           "arg",
           "arginine supplement",
           "l-arginine supplement",
@@ -144962,7 +144580,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "isoleucine",
           "l-isoleucine",
           "isoleucine supplement",
-          "branched chain amino acid",
           "isoleucine amino acid",
           "isoleucine deficiency",
           "what is isoleucine"
@@ -145233,7 +144850,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "methionine deficiency",
           "sulfur amino acid",
           "what is methionine",
-          "selenomethionine",
           "s-adenosyl methionine"
         ],
         record: [
@@ -145533,11 +145149,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "trp",
           "tryp",
           "l-tryptophan",
-          "l tryptophan",
           "l-trp",
           "d-tryptophan",
           "5-htp",
-          "5 htp",
           "5-hydroxytryptophan",
           "s-hydroxytryptophan",
           "tryptophan deficiency",
@@ -145763,7 +145377,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "valine",
           "l-valine",
           "valine supplement",
-          "branched-chain amino acid",
           "valine amino acid",
           "valine deficiency",
           "what is valine"
@@ -145854,22 +145467,16 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         ],
         synonyms: [
           "omega-3",
-          "omega 3",
           "omega3",
           "omega-3s",
-          "omega 3s",
           "omega threes",
           "omega-3 fatty acid",
           "omega 3 fatty acids",
-          "omega-3 fatty acids",
           "n-3",
           "n-3 fatty acid",
           "alpha-linolenic acid",
-          "alpha linolenic acid",
           "ALA",
           "linolenic acid",
-          "DHA",
-          "docosahexaenoic acid",
           "EPA",
           "eicosapentaenoic acid",
           "essential fatty acids",
@@ -145877,10 +145484,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "EFA",
           "EFAs",
           "vitamin F",
-          "fish oil",
           "fish oil supplement",
-          "cod liver oil",
-          "salmon oil",
           "flaxseed oil",
           "flax oil",
           "flax seed oil",
@@ -145888,13 +145492,11 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "good fats",
           "healthy fats",
           "omega-3 deficiency",
-          "omega 3 deficiency",
           "essential fatty acid deficiency",
           "EFA deficiency",
           "low omega-3",
           "not enough omega-3",
           "omega-3 supplement",
-          "omega 3 supplement",
           "omega-3 benefits",
           "omega-3 for the heart",
           "omega-3 for depression",
@@ -145904,8 +145506,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "omega-3 to omega-6 ratio",
           "dry skin means essential fatty acids",
           "DSM/EFA",
-          "omeaga 3",
-          "omega -3"
+          "omeaga 3"
         ],
         record: [
           {
@@ -146219,7 +145820,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         ],
         synonyms: [
           "omega-6",
-          "omega 6",
           "omega6",
           "omega six",
           "omega-6 fatty acid",
@@ -146229,8 +145829,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "omega-6 deficiency",
           "omega-6 supplement",
           "omega-6 benefits",
-          "essential fatty acids",
-          "EFA",
           "what is omega-6",
           "linoleic acid omega 6"
         ],
@@ -146376,7 +145974,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         ],
         synonyms: [
           "omega-9",
-          "omega 9",
           "omega nine",
           "omega-9 fatty acid",
           "oleic acid",
@@ -146469,12 +146066,12 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "lets-play-doctor"
         ],
         synonyms: [
-          "boil",
           "pus pocket",
           "absess",
           "skin infection lump",
           "pus filled bump",
-          "infected lump"
+          "infected lump",
+          "abscess"
         ],
         protocol_claim_ids: [
           "WAL-CLM-LETS-000119"
@@ -146548,7 +146145,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "lets-play-doctor"
         ],
         synonyms: [
-          "trouble swallowing",
           "food stuck in throat",
           "swallowing disorder",
           "akalasia",
@@ -146917,9 +146513,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         synonyms: [
           "adhd",
           "add",
-          "hyperactivity",
           "attention deficit",
-          "hyperactive",
           "cant focus"
         ],
         protocol_claim_ids: [],
@@ -147032,7 +146626,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "burnout",
           "adrenal burnout",
           "worn out adrenals",
-          "exhausted adrenals"
+          "exhausted adrenals",
+          "adrenal exhaustion"
         ],
         protocol_claim_ids: [
           "WAL-CLM-LETS-000124"
@@ -147163,10 +146758,10 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         synonyms: [
           "hiv",
           "hiv/aids",
-          "hiv aids",
           "acquired immunodeficiency",
           "immune deficiency virus",
-          "aids virus"
+          "aids virus",
+          "aids"
         ],
         protocol_claim_ids: [
           "WAL-CLM-DDDL-000579",
@@ -147379,11 +146974,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         synonyms: [
           "allergy",
           "allergic reaction",
-          "hay fever",
-          "allergic rhinitis",
-          "seasonal allergies",
           "alergies",
-          "sneezing and itching"
+          "sneezing and itching",
+          "allergies"
         ],
         protocol_claim_ids: [
           "WAL-CLM-DDDL-000531",
@@ -147713,7 +147306,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "alzheimer's disease",
           "alzheimer",
           "early onset alzheimers",
-          "AD"
+          "AD",
+          "alzheimers"
         ],
         protocol_claim_ids: [
           "WAL-CLM-EPIGEN-000016",
@@ -147848,8 +147442,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "weak eye",
           "lazy eye in kids",
           "amblyopa",
-          "amblyopia eye",
-          "wandering eye"
+          "amblyopia eye"
         ],
         protocol_claim_ids: [
           "WAL-CLM-LETS-000132"
@@ -148584,7 +148177,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "no appetite",
           "eating disorder",
           "anorexic",
-          "wont eat"
+          "wont eat",
+          "anorexia"
         ],
         protocol_claim_ids: [
           "WAL-CLM-LETS-000140"
@@ -148778,7 +148372,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "panic",
           "anxiety disorder",
           "feeling anxious",
-          "stress and anxiety"
+          "stress and anxiety",
+          "anxiety"
         ],
         protocol_claim_ids: [
           "WAL-CLM-DDDL-000078",
@@ -148881,12 +148476,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "lets-play-doctor"
         ],
         synonyms: [
-          "canker sores",
-          "mouth ulcers",
-          "mouth sores",
           "aphthous ulcers",
-          "recurring mouth ulcers",
-          "stomatitis"
+          "recurring mouth ulcers"
         ],
         protocol_claim_ids: [
           "WAL-CLM-DDDL-000080",
@@ -149095,13 +148686,10 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "rare-earths"
         ],
         synonyms: [
-          "joint pain",
           "joint inflammation",
-          "achy joints",
           "stiff joints",
           "arthritic",
-          "rheumatism",
-          "sore joints"
+          "rheumatism"
         ],
         protocol_claim_ids: [
           "WAL-CLM-DDDL-000051",
@@ -149657,10 +149245,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         synonyms: [
           "afib",
           "a-fib",
-          "irregular heartbeat",
-          "heart flutter",
-          "atrial fib",
-          "irregular heart rhythm"
+          "atrial fib"
         ],
         protocol_claim_ids: [],
         restore: [
@@ -150033,10 +149618,10 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         synonyms: [
           "bed wetting",
           "nocturnal enuresis",
-          "enuresis",
           "wetting the bed",
           "child bedwetting",
-          "night wetting"
+          "night wetting",
+          "bedwetting"
         ],
         protocol_claim_ids: [
           "WAL-CLM-LETS-000155",
@@ -150488,7 +150073,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "born with defect",
           "birth abnormality",
           "congenital abnormality",
-          "deformity at birth"
+          "deformity at birth",
+          "birth defects"
         ],
         protocol_claim_ids: [
           "WAL-CLM-LETS-000160",
@@ -150809,7 +150395,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "bleeding when brushing",
           "sore bleeding gums",
           "bloody gums",
-          "gum bleeding"
+          "gum bleeding",
+          "bleeding gums"
         ],
         protocol_claim_ids: [
           "WAL-CLM-LETS-000164"
@@ -151109,9 +150696,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         ],
         synonyms: [
           "skin boil",
-          "abscess",
           "boil on skin",
-          "pus filled bump",
           "skin abscess",
           "boil"
         ],
@@ -151611,8 +151196,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "chest infection",
           "chest cold",
           "bronchitis cough",
-          "inflamed airways",
-          "chesty cough"
+          "inflamed airways"
         ],
         protocol_claim_ids: [
           "WAL-CLM-LETS-000172"
@@ -151882,7 +151466,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "lets-play-doctor"
         ],
         synonyms: [
-          "joint inflammation",
           "shoulder bursitis",
           "hip bursitis",
           "swollen joint",
@@ -152021,10 +151604,10 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "tumor",
           "tumour",
           "malignancy",
-          "carcinoma",
           "cancerous",
           "the big c",
-          "malignant"
+          "malignant",
+          "cancer"
         ],
         protocol_claim_ids: [
           "WAL-CLM-DDDL-000018",
@@ -152270,7 +151853,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         synonyms: [
           "candida",
           "yeast infection",
-          "thrush",
           "candida overgrowth",
           "fungal infection",
           "yeast overgrowth"
@@ -152347,7 +151929,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "canker sore",
           "cankers",
           "ulcers in mouth",
-          "aphthous ulcers"
+          "canker sores"
         ],
         protocol_claim_ids: [
           "WAL-CLM-DDDL-000080",
@@ -152489,7 +152071,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         synonyms: [
           "irregular heartbeat",
           "arrhythmia",
-          "skipped heartbeat",
           "heart flutter",
           "arrythmia",
           "irregular heart rhythm"
@@ -153030,7 +152611,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "throat mucus",
           "post nasal drip",
           "stuffy nose mucus",
-          "excess mucus"
+          "excess mucus",
+          "catarrh"
         ],
         protocol_claim_ids: [
           "WAL-CLM-LETS-000208"
@@ -153443,7 +153025,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "cracks at corners of mouth",
           "angular cheilitis",
           "chapped lip corners",
-          "sore lip corners"
+          "sore lip corners",
+          "cheilosis"
         ],
         protocol_claim_ids: [
           "WAL-CLM-LETS-000214"
@@ -153773,7 +153356,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "feel tired",
           "tired all the time",
           "feel tired all the time",
-          "no pep"
+          "no pep",
+          "chronic fatigue"
         ],
         protocol_claim_ids: [
           "WAL-CLM-DDDL-000421",
@@ -153846,8 +153430,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "me/cfs",
           "myalgic encephalomyelitis",
           "constant exhaustion",
-          "always exhausted",
-          "chronic fatigue"
+          "always exhausted"
         ],
         protocol_claim_ids: [
           "WAL-CLM-LETS-000221"
@@ -154246,14 +153829,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         books: [
           "lets-play-doctor"
         ],
-        synonyms: [
-          "cold",
-          "common cold",
-          "head cold",
-          "runny nose",
-          "cold virus",
-          "catching a cold"
-        ],
+        synonyms: [],
         protocol_claim_ids: [
           "WAL-CLM-LETS-000225"
         ],
@@ -154528,11 +154104,10 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         synonyms: [
           "cold",
           "head cold",
-          "runny nose",
-          "stuffy nose",
           "cold virus",
           "catching a cold",
-          "sniffles"
+          "sniffles",
+          "common cold"
         ],
         protocol_claim_ids: [
           "WAL-CLM-DDDL-000094"
@@ -154746,7 +154321,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "chf",
           "weak heart",
           "fluid around the heart",
-          "failing heart"
+          "failing heart",
+          "congestive heart failure"
         ],
         protocol_claim_ids: [
           "WAL-CLM-LETS-000229"
@@ -154819,7 +154395,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         synonyms: [
           "pink eye",
           "pinkeye",
-          "red eye",
           "eye infection",
           "conjuctivitis",
           "itchy red eye",
@@ -155003,7 +154578,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "seizure",
           "fits",
           "convulsion",
-          "spasms"
+          "spasms",
+          "convulsions"
         ],
         protocol_claim_ids: [
           "WAL-CLM-DDDL-000349",
@@ -155190,10 +154766,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "coronary heart disease",
           "coronary artery disease",
           "cad",
-          "chd",
-          "heart disease",
-          "clogged arteries",
-          "hardening of the arteries"
+          "chd"
         ],
         protocol_claim_ids: [],
         restore: [
@@ -155441,8 +155014,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "criminal behaviour",
           "delinquency",
           "violence",
-          "criminality",
-          "violent behavior"
+          "criminality"
         ],
         protocol_claim_ids: [],
         restore: [
@@ -155588,8 +155160,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "wound",
           "laceration",
           "cut skin",
-          "open wound",
-          "gash"
+          "gash",
+          "cuts"
         ],
         protocol_claim_ids: [
           "WAL-CLM-LETS-000239"
@@ -155863,7 +155435,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "dandruf",
           "scalp flakes",
           "white flakes in hair",
-          "dry scalp flakes"
+          "dry scalp flakes",
+          "dandruff"
         ],
         protocol_claim_ids: [
           "WAL-CLM-LETS-000242",
@@ -156112,9 +155685,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         ],
         synonyms: [
           "dementia",
-          "memory loss",
-          "senility",
-          "alzheimers",
           "losing memory",
           "confusion in elderly"
         ],
@@ -156564,9 +156134,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "skin inflammation",
           "skin rash",
           "inflamed skin",
-          "itchy skin",
           "rash",
-          "irritated skin"
+          "irritated skin",
+          "dermatitis"
         ],
         protocol_claim_ids: [
           "WAL-CLM-DDDL-000532",
@@ -156929,8 +156499,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "loose bowels",
           "diarrhoea",
           "watery stools",
-          "diarreah",
-          "upset stomach"
+          "diarreah"
         ],
         protocol_claim_ids: [
           "WAL-CLM-DDDL-000422",
@@ -157463,8 +157032,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "bloody diarrhea",
           "severe diarrhea",
           "dysentery",
-          "gut infection diarrhea",
-          "amoebic dysentery"
+          "gut infection diarrhea"
         ],
         protocol_claim_ids: [
           "WAL-CLM-LETS-000256"
@@ -157524,7 +157092,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "trouble reading",
           "dislexia",
           "learning disability reading",
-          "word blindness"
+          "word blindness",
+          "dyslexia"
         ],
         protocol_claim_ids: [
           "WAL-CLM-LETS-000257"
@@ -157656,12 +157225,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "lets-play-doctor"
         ],
         synonyms: [
-          "indigestion",
-          "upset stomach",
-          "heartburn",
           "stomach upset",
-          "acid indigestion",
-          "dispepsia"
+          "dispepsia",
+          "dyspepsia"
         ],
         protocol_claim_ids: [
           "WAL-CLM-LETS-000259",
@@ -157817,9 +157383,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "lets-play-doctor"
         ],
         synonyms: [
-          "bruising",
           "bruise",
-          "easy bruising",
           "black and blue mark",
           "bruise easily",
           "skin bruising"
@@ -157931,9 +157495,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         ],
         synonyms: [
           "eczema",
-          "itchy skin",
-          "dry itchy skin",
-          "skin rash",
           "atopic dermatitis",
           "eczma"
         ],
@@ -158299,12 +157860,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "lets-play-doctor"
         ],
         synonyms: [
-          "bedwetting",
-          "bed wetting",
-          "wetting the bed",
-          "bed-wetting",
           "child wets bed",
-          "nighttime wetting"
+          "nighttime wetting",
+          "enuresis"
         ],
         protocol_claim_ids: [
           "WAL-CLM-LETS-000266"
@@ -158401,12 +157959,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "rare-earths"
         ],
         synonyms: [
-          "seizures",
           "seizure disorder",
-          "convulsions",
           "epileptic seizures",
-          "epilepsi",
-          "fits"
+          "epilepsi"
         ],
         protocol_claim_ids: [
           "WAL-CLM-LETS-000233",
@@ -158537,7 +158092,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         synonyms: [
           "erectile dysfunction",
           "ed",
-          "impotence",
           "cant get hard",
           "cant get an erection",
           "impotent",
@@ -158726,7 +158280,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "red eyes",
           "bloodshot eyes",
           "red eye",
-          "pink eye",
           "bloodshot",
           "irritated eyes"
         ],
@@ -159342,7 +158895,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         ],
         synonyms: [
           "brown spots skin",
-          "sun spots",
           "freckels",
           "spots on skin",
           "skin freckles",
@@ -159660,7 +159212,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         synonyms: [
           "gum inflammation",
           "inflamed gums",
-          "bleeding gums",
           "sore gums",
           "swollen gums"
         ],
@@ -159869,7 +159420,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "goitre",
           "thyroid swelling",
           "neck swelling",
-          "swollen neck"
+          "swollen neck",
+          "goiter"
         ],
         protocol_claim_ids: [
           "WAL-CLM-DDDL-000359",
@@ -160307,12 +159859,12 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "lets-play-doctor"
         ],
         synonyms: [
-          "allergies",
           "seasonal allergies",
           "pollen allergy",
           "allergic rhinitis",
           "hayfever",
-          "runny nose allergy"
+          "runny nose allergy",
+          "hay fever"
         ],
         protocol_claim_ids: [
           "WAL-CLM-DDDL-000510",
@@ -160574,10 +160126,10 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         synonyms: [
           "acid reflux",
           "burning chest",
-          "indigestion",
           "acid indigestion",
           "gerd",
-          "burning stomach"
+          "burning stomach",
+          "heartburn"
         ],
         protocol_claim_ids: [
           "WAL-CLM-DDDL-000353",
@@ -161105,7 +160657,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "hernia in diaphragm",
           "hital hernia",
           "hiatal hernia stomach",
-          "diaphragm hernia"
+          "diaphragm hernia",
+          "hiatal hernia"
         ],
         protocol_claim_ids: [
           "WAL-CLM-LETS-000301"
@@ -161182,7 +160735,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         ],
         synonyms: [
           "high cholesterol",
-          "cholesterol",
           "elevated cholesterol",
           "bad cholesterol",
           "high ldl",
@@ -161598,7 +161150,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         ],
         synonyms: [
           "too much stomach acid",
-          "acid stomach",
           "excess stomach acid",
           "acidity",
           "high stomach acid",
@@ -161635,12 +161186,11 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         ],
         synonyms: [
           "hyper kids",
-          "adhd",
-          "add",
           "overactive child",
           "cant sit still",
           "restless child",
-          "hyperactive"
+          "hyperactive",
+          "hyperactivity"
         ],
         protocol_claim_ids: [
           "WAL-CLM-LETS-000257",
@@ -162981,11 +162531,10 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "lets-play-doctor"
         ],
         synonyms: [
-          "erectile dysfunction",
-          "ed",
           "cant get erection",
           "impotency",
-          "cant perform"
+          "cant perform",
+          "impotence"
         ],
         protocol_claim_ids: [
           "WAL-CLM-LETS-000315"
@@ -163091,12 +162640,10 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         ],
         synonyms: [
           "upset stomach",
-          "heartburn",
-          "dyspepsia",
           "acid stomach",
           "stomach ache after eating",
-          "acid indigestion",
-          "sour stomach"
+          "sour stomach",
+          "indigestion"
         ],
         protocol_claim_ids: [
           "WAL-CLM-LETS-000321"
@@ -164256,7 +163803,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "dry eyes vitamin a",
           "eye softening",
           "softening of cornea",
-          "vitamin a eye damage"
+          "vitamin a eye damage",
+          "keratomalacia"
         ],
         protocol_claim_ids: [
           "WAL-CLM-DDDL-000346",
@@ -164324,7 +163872,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "skin growths",
           "keratoses",
           "scaly skin patches",
-          "actinic keratosis"
+          "actinic keratosis",
+          "keratosis"
         ],
         protocol_claim_ids: [
           "WAL-CLM-LETS-000329",
@@ -164983,7 +164532,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "lets-play-doctor"
         ],
         synonyms: [
-          "childbirth",
           "labour",
           "giving birth",
           "labor pains",
@@ -165021,7 +164569,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "cant digest milk sugar",
           "low lactase",
           "lactase enzyme deficiency",
-          "lactose intolerance",
           "missing lactase"
         ],
         protocol_claim_ids: [
@@ -165097,10 +164644,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "lets-play-doctor"
         ],
         synonyms: [
-          "hoarse voice",
           "lost voice",
           "voice box inflammation",
-          "hoarseness",
           "sore throat hoarse"
         ],
         protocol_claim_ids: [
@@ -165371,7 +164916,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         ],
         synonyms: [
           "leptospirosis",
-          "weils disease",
           "weil's disease",
           "rat urine disease",
           "lepto"
@@ -165748,11 +165292,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "rare-earths"
         ],
         synonyms: [
-          "liver problems",
-          "bad liver",
-          "liver damage",
           "liver condition",
-          "sick liver",
           "hepatic disease"
         ],
         protocol_claim_ids: [
@@ -166629,7 +166169,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         ],
         synonyms: [
           "memory loss",
-          "dementia",
           "senile dementia",
           "senility",
           "forgetfulness",
@@ -166887,7 +166426,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "lets-play-doctor"
         ],
         synonyms: [
-          "spina bifida",
           "spinal defect",
           "neural tube defect",
           "spinal sac defect",
@@ -167188,7 +166726,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "mercury toxicity",
           "mercury poison",
           "heavy metal poisoning",
-          "mercury exposure"
+          "mercury exposure",
+          "mercury poisoning"
         ],
         protocol_claim_ids: [
           "WAL-CLM-LETS-000361"
@@ -167508,7 +167047,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "monckeberg's sclerosis",
           "calcified arteries",
           "artery calcification",
-          "hardened arteries",
           "calcium in arteries"
         ],
         protocol_claim_ids: [
@@ -168142,8 +167680,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "stuffy nose",
           "nasal congestion",
           "runny nose",
-          "mucus in nose",
-          "catarrh"
+          "mucus in nose"
         ],
         protocol_claim_ids: [
           "WAL-CLM-LETS-000375"
@@ -168211,9 +167748,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         synonyms: [
           "nervous tension",
           "tension",
-          "stress",
-          "anxiety",
-          "nervousness",
           "feeling tense"
         ],
         protocol_claim_ids: [
@@ -168301,10 +167835,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "lets-play-doctor"
         ],
         synonyms: [
-          "nerve pain",
           "shooting nerve pain",
           "burning nerve pain",
-          "facial nerve pain",
           "nerve ache"
         ],
         protocol_claim_ids: [
@@ -168492,7 +168024,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "poor night vision",
           "trouble seeing in the dark",
           "night vision problems",
-          "nyctalopia"
+          "nyctalopia",
+          "night blindness"
         ],
         protocol_claim_ids: [
           "WAL-CLM-LETS-000380"
@@ -171553,7 +171086,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "pre eclampsia",
           "pregnancy high blood pressure",
           "toxemia of pregnancy",
-          "pre-eclampsia",
           "high bp in pregnancy"
         ],
         protocol_claim_ids: [
@@ -171797,7 +171329,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "lets-play-doctor"
         ],
         synonyms: [
-          "scaly skin",
           "skin plaques",
           "psorisis",
           "flaky red patches",
@@ -172053,10 +171584,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "lets-play-doctor"
         ],
         synonyms: [
-          "gum disease",
-          "bleeding gums",
           "pyorrhoea",
-          "gum infection",
           "receding gums"
         ],
         protocol_claim_ids: [
@@ -172123,7 +171651,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "q fever",
           "query fever",
           "coxiella",
-          "q-fever",
           "fever from farm animals"
         ],
         protocol_claim_ids: [
@@ -172297,8 +171824,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "white fingers",
           "numb fingers",
           "poor circulation hands",
-          "fingers turn white",
-          "cold hands and feet"
+          "fingers turn white"
         ],
         protocol_claim_ids: [
           "WAL-CLM-LETS-000415",
@@ -173745,10 +173271,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         ],
         synonyms: [
           "seborrheic dermatitis",
-          "dandruff",
-          "flaky scalp",
           "scalp dermatitis",
-          "cradle cap",
           "seborrhea"
         ],
         protocol_claim_ids: [
@@ -174124,7 +173647,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "scratchy throat",
           "throat hurts",
           "strep throat",
-          "sore throught"
+          "sore throught",
+          "sore throat"
         ],
         protocol_claim_ids: [
           "WAL-CLM-LETS-000434"
@@ -174553,7 +174077,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         synonyms: [
           "crossed eyes",
           "cross eyed",
-          "lazy eye",
           "wandering eye",
           "eye squint",
           "misaligned eyes"
@@ -174619,7 +174142,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "stress",
           "stressed",
           "stressed out",
-          "tension",
           "overwhelmed",
           "under stress"
         ],
@@ -174879,8 +174401,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         synonyms: [
           "fast heartbeat",
           "rapid heart rate",
-          "racing heart",
-          "heart racing",
           "fast pulse"
         ],
         protocol_claim_ids: [
@@ -174947,7 +174467,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "tapeworm",
           "tape worm",
           "tape worms",
-          "intestinal worms",
           "parasitic worms",
           "worms in gut"
         ],
@@ -174985,9 +174504,7 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "lets-play-doctor"
         ],
         synonyms: [
-          "involuntary movements",
           "tardive dyskinesia",
-          "uncontrollable movements",
           "facial twitching from meds",
           "drug-induced movements",
           "medication movement disorder"
@@ -175244,7 +174761,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         synonyms: [
           "thallium toxicity",
           "thallium poison",
-          "thallium exposure"
+          "thallium exposure",
+          "thallium poisoning"
         ],
         protocol_claim_ids: [
           "WAL-CLM-LETS-000449"
@@ -175353,10 +174871,10 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         synonyms: [
           "oral thrush",
           "yeast infection mouth",
-          "candida",
           "white tongue",
           "mouth fungus",
-          "white patches mouth"
+          "white patches mouth",
+          "thrush"
         ],
         protocol_claim_ids: [
           "WAL-CLM-LETS-000450"
@@ -175712,11 +175230,9 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "rare-earths"
         ],
         synonyms: [
-          "sore throat",
           "swollen tonsils",
           "tonsil infection",
           "inflamed tonsils",
-          "strep throat",
           "tonsilitis"
         ],
         protocol_claim_ids: [
@@ -176160,7 +175676,8 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "deer fly fever",
           "tularaemia",
           "tularemia infection",
-          "hunter's disease"
+          "hunter's disease",
+          "tularemia"
         ],
         protocol_claim_ids: [
           "WAL-CLM-LETS-000411"
@@ -176441,7 +175958,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
         synonyms: [
           "vaginal infection",
           "vaginal inflammation",
-          "yeast infection",
           "vaginal irritation",
           "vaginitis",
           "bacterial vaginosis"
@@ -177302,7 +176818,6 @@ Rather than the drug, he offers a "mineral replacement" \u2014 calcium, magnesiu
           "lets-play-doctor"
         ],
         synonyms: [
-          "cuts",
           "wound healing",
           "sores",
           "injuries",

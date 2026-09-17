@@ -179,13 +179,13 @@ export/import is plain JSON.
 
 ```bash
 node tools/build.mjs                     # type-check (tsc) + bundle (esbuild)
-PYTHONUTF8=1 python tools/invariants.py  # the integrity board — 113 gates
+PYTHONUTF8=1 python tools/invariants.py  # the integrity board — 114 gates
 node tools/probes/render_probe.js        # a headless render check
 ```
 
 `tools/build.mjs` installs its own dev dependencies on first run. **You do not need to build to run the
 app** — `dist/main.js` is committed, so a fresh clone opens and works immediately. Alongside the build,
-`tools/probes/` holds 61 headless render probes and `tools/tests/` 55 standalone Python
+`tools/probes/` holds 61 headless render probes and `tools/tests/` 56 standalone Python
 control tests. The render probes need Puppeteer, which lives in the ROOT `package.json` — run
 `npm install` at the repo root once, or `render_probe.js` exits 2 with `NO_PUPPETEER`.
 
@@ -210,7 +210,7 @@ reach past state, `localStorage` is confined to `core/storage.ts`, and `any` is 
 
 ### What a green board means
 
-`invariants.py` reports 113 gates. Green means **nothing drifted** — it does not mean anything is right.
+`invariants.py` reports 114 gates. Green means **nothing drifted** — it does not mean anything is right.
 Only the 27 gates anchored outside the project's own files (book bytes, physical constants, git) can
 catch a value that is wrong but self-consistent. The board prints that split every run, and it is worth
 reading honestly.

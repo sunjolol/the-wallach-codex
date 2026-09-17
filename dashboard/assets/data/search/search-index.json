@@ -53,12 +53,12 @@
       "display_name": "Abscess",
       "type": "condition",
       "synonyms": [
-        "boil",
         "pus pocket",
         "absess",
         "skin infection lump",
         "pus filled bump",
-        "infected lump"
+        "infected lump",
+        "abscess"
       ],
       "related": [
         "anal_abscess"
@@ -85,7 +85,6 @@
       "type": "concept",
       "synonyms": [
         "nutrient absorption",
-        "malabsorption",
         "bioavailability",
         "assimilation",
         "you are what you absorb",
@@ -123,7 +122,6 @@
       "display_name": "Achalasia",
       "type": "condition",
       "synonyms": [
-        "trouble swallowing",
         "food stuck in throat",
         "swallowing disorder",
         "akalasia",
@@ -153,9 +151,7 @@
       "synonyms": [
         "adhd",
         "add",
-        "hyperactivity",
         "attention deficit",
-        "hyperactive",
         "cant focus"
       ],
       "related": [
@@ -173,7 +169,8 @@
         "burnout",
         "adrenal burnout",
         "worn out adrenals",
-        "exhausted adrenals"
+        "exhausted adrenals",
+        "adrenal exhaustion"
       ],
       "related": [],
       "claim_count": 1
@@ -184,10 +181,10 @@
       "synonyms": [
         "hiv",
         "hiv/aids",
-        "hiv aids",
         "acquired immunodeficiency",
         "immune deficiency virus",
-        "aids virus"
+        "aids virus",
+        "aids"
       ],
       "related": [
         "autoimmune_disorders"
@@ -226,11 +223,9 @@
       "synonyms": [
         "allergy",
         "allergic reaction",
-        "hay fever",
-        "allergic rhinitis",
-        "seasonal allergies",
         "alergies",
-        "sneezing and itching"
+        "sneezing and itching",
+        "allergies"
       ],
       "related": [],
       "claim_count": 8
@@ -256,7 +251,6 @@
       "synonyms": [
         "aluminum",
         "aluminium",
-        "aluminum",
         "aluminum foil",
         "aluminum deficiency",
         "aluminum supplement",
@@ -291,7 +285,8 @@
         "alzheimer's disease",
         "alzheimer",
         "early onset alzheimers",
-        "AD"
+        "AD",
+        "alzheimers"
       ],
       "related": [
         "memory_loss",
@@ -310,8 +305,7 @@
         "weak eye",
         "lazy eye in kids",
         "amblyopa",
-        "amblyopia eye",
-        "wandering eye"
+        "amblyopia eye"
       ],
       "related": [
         "diplopia"
@@ -419,7 +413,8 @@
         "no appetite",
         "eating disorder",
         "anorexic",
-        "wont eat"
+        "wont eat",
+        "anorexia"
       ],
       "related": [],
       "claim_count": 1
@@ -457,14 +452,8 @@
         "antioxidants",
         "anti oxidant",
         "anti-oxidants",
-        "polyphenols",
-        "flavonoids",
-        "flavanols",
-        "bioflavonoids",
-        "resveratrol",
         "catechins",
         "lycopene",
-        "beta carotene",
         "proanthocyanins",
         "what foods fight free radicals",
         "foods that fight aging"
@@ -486,7 +475,8 @@
         "panic",
         "anxiety disorder",
         "feeling anxious",
-        "stress and anxiety"
+        "stress and anxiety",
+        "anxiety"
       ],
       "related": [],
       "claim_count": 4
@@ -495,12 +485,8 @@
       "display_name": "Aphthous Stomatitis",
       "type": "condition",
       "synonyms": [
-        "canker sores",
-        "mouth ulcers",
-        "mouth sores",
         "aphthous ulcers",
-        "recurring mouth ulcers",
-        "stomatitis"
+        "recurring mouth ulcers"
       ],
       "related": [
         "canker_sores"
@@ -513,8 +499,7 @@
       "synonyms": [
         "arachidonic acid",
         "arachidonate",
-        "arachidonic",
-        "omega-6 fatty acid"
+        "arachidonic"
       ],
       "related": [
         "omega-6",
@@ -529,7 +514,6 @@
       "synonyms": [
         "arginine",
         "l-arginine",
-        "l arginine",
         "arg",
         "arginine supplement",
         "l-arginine supplement",
@@ -579,9 +563,6 @@
         "arsenic supplement",
         "arsenic benefits",
         "is arsenic essential",
-        "arsenic poison",
-        "arsenic poisoning",
-        "arsenic toxicity",
         "arsenic symptoms",
         "what is arsenic",
         "arsenic trace mineral",
@@ -661,13 +642,10 @@
       "display_name": "Arthritis",
       "type": "condition",
       "synonyms": [
-        "joint pain",
         "joint inflammation",
-        "achy joints",
         "stiff joints",
         "arthritic",
-        "rheumatism",
-        "sore joints"
+        "rheumatism"
       ],
       "related": [
         "osteoporosis",
@@ -726,10 +704,7 @@
       "synonyms": [
         "afib",
         "a-fib",
-        "irregular heartbeat",
-        "heart flutter",
-        "atrial fib",
-        "irregular heart rhythm"
+        "atrial fib"
       ],
       "related": [],
       "claim_count": 1
@@ -881,10 +856,10 @@
       "synonyms": [
         "bed wetting",
         "nocturnal enuresis",
-        "enuresis",
         "wetting the bed",
         "child bedwetting",
-        "night wetting"
+        "night wetting",
+        "bedwetting"
       ],
       "related": [],
       "claim_count": 1
@@ -911,7 +886,6 @@
       "type": "substance",
       "synonyms": [
         "beef",
-        "red meat",
         "steak",
         "sirloin",
         "roast beef",
@@ -992,8 +966,6 @@
         "beryllium supplement",
         "beryllium benefits",
         "is beryllium toxic",
-        "beryllium poisoning",
-        "berylliosis",
         "glucinium",
         "beryllium in the body",
         "Be mineral",
@@ -1066,7 +1038,8 @@
         "born with defect",
         "birth abnormality",
         "congenital abnormality",
-        "deformity at birth"
+        "deformity at birth",
+        "birth defects"
       ],
       "related": [
         "spina_bifida",
@@ -1080,7 +1053,6 @@
       "synonyms": [
         "bi",
         "pepto-bismol",
-        "pepto bismol",
         "bismuth subsalicylate"
       ],
       "related": [
@@ -1159,7 +1131,8 @@
         "bleeding when brushing",
         "sore bleeding gums",
         "bloody gums",
-        "gum bleeding"
+        "gum bleeding",
+        "bleeding gums"
       ],
       "related": [
         "toothache"
@@ -1171,9 +1144,7 @@
       "type": "condition",
       "synonyms": [
         "skin boil",
-        "abscess",
         "boil on skin",
-        "pus filled bump",
         "skin abscess",
         "boil"
       ],
@@ -1320,8 +1291,7 @@
         "chest infection",
         "chest cold",
         "bronchitis cough",
-        "inflamed airways",
-        "chesty cough"
+        "inflamed airways"
       ],
       "related": [
         "cough",
@@ -1346,7 +1316,6 @@
       "display_name": "Bursitis",
       "type": "condition",
       "synonyms": [
-        "joint inflammation",
         "shoulder bursitis",
         "hip bursitis",
         "swollen joint",
@@ -1445,10 +1414,7 @@
         "calx",
         "calcuim",
         "caclium",
-        "calcuim deficiency",
-        "brittle bones",
-        "weak bones",
-        "bone loss"
+        "calcuim deficiency"
       ],
       "related": [
         "magnesium",
@@ -1471,10 +1437,10 @@
         "tumor",
         "tumour",
         "malignancy",
-        "carcinoma",
         "cancerous",
         "the big c",
-        "malignant"
+        "malignant",
+        "cancer"
       ],
       "related": [
         "chemotherapy"
@@ -1487,7 +1453,6 @@
       "synonyms": [
         "candida",
         "yeast infection",
-        "thrush",
         "candida overgrowth",
         "fungal infection",
         "yeast overgrowth"
@@ -1504,7 +1469,7 @@
         "canker sore",
         "cankers",
         "ulcers in mouth",
-        "aphthous ulcers"
+        "canker sores"
       ],
       "related": [
         "aphthous_stomatitis"
@@ -1550,7 +1515,6 @@
         "pop",
         "cola",
         "diet soda",
-        "phosphates",
         "phosphoric acid"
       ],
       "related": [
@@ -1569,7 +1533,6 @@
       "synonyms": [
         "irregular heartbeat",
         "arrhythmia",
-        "skipped heartbeat",
         "heart flutter",
         "arrythmia",
         "irregular heart rhythm"
@@ -1647,7 +1610,8 @@
         "throat mucus",
         "post nasal drip",
         "stuffy nose mucus",
-        "excess mucus"
+        "excess mucus",
+        "catarrh"
       ],
       "related": [
         "congested_lungs",
@@ -1674,7 +1638,6 @@
         "long lived cultures",
         "longest living people",
         "people who live to 100",
-        "hunza",
         "vilcabamba",
         "cultures that live longest"
       ],
@@ -1719,7 +1682,6 @@
         "what is cerium",
         "cerium mineral",
         "cerium rare earth",
-        "rare earth minerals",
         "cerium nitrate",
         "cerium for burns",
         "Ce mineral",
@@ -1801,7 +1763,8 @@
         "cracks at corners of mouth",
         "angular cheilitis",
         "chapped lip corners",
-        "sore lip corners"
+        "sore lip corners",
+        "cheilosis"
       ],
       "related": [],
       "claim_count": 1
@@ -1906,13 +1869,6 @@
         "chloride in blood",
         "hypochloremia",
         "chloride ions",
-        "salt",
-        "table salt",
-        "sodium chloride",
-        "NaCl",
-        "salt deficiency",
-        "low salt diet",
-        "low-salt diet",
         "chloride of soda",
         "natrum mur",
         "nat mur",
@@ -1961,7 +1917,8 @@
       "display_name": "Cholesterol",
       "type": "substance",
       "synonyms": [
-        "sterol"
+        "sterol",
+        "cholesterol"
       ],
       "related": [
         "vanadium",
@@ -2089,7 +2046,8 @@
         "feel tired",
         "tired all the time",
         "feel tired all the time",
-        "no pep"
+        "no pep",
+        "chronic fatigue"
       ],
       "related": [
         "chronic_fatigue_syndrome"
@@ -2104,8 +2062,7 @@
         "me/cfs",
         "myalgic encephalomyelitis",
         "constant exhaustion",
-        "always exhausted",
-        "chronic fatigue"
+        "always exhausted"
       ],
       "related": [
         "chronic_fatigue",
@@ -2177,17 +2134,12 @@
         "Co mineral",
         "cobalt blue",
         "is cobalt magnetic",
-        "cobalamin",
-        "cobalamine",
-        "cyanocobalamine",
         "kobald",
         "kobalt",
         "cobolt",
         "cobalt element",
         "bush sickness",
-        "co",
-        "vitamin b12",
-        "b12"
+        "co"
       ],
       "related": [
         "vitamin-b12",
@@ -2211,7 +2163,6 @@
       "type": "substance",
       "synonyms": [
         "coenzyme A",
-        "coenzyme a",
         "CoA",
         "co-enzyme A",
         "what is coenzyme A",
@@ -2239,14 +2190,7 @@
     "colds": {
       "display_name": "Colds",
       "type": "condition",
-      "synonyms": [
-        "cold",
-        "common cold",
-        "head cold",
-        "runny nose",
-        "cold virus",
-        "catching a cold"
-      ],
+      "synonyms": [],
       "related": [
         "catarrh",
         "congested_lungs",
@@ -2349,11 +2293,10 @@
       "synonyms": [
         "cold",
         "head cold",
-        "runny nose",
-        "stuffy nose",
         "cold virus",
         "catching a cold",
-        "sniffles"
+        "sniffles",
+        "common cold"
       ],
       "related": [
         "allergies"
@@ -2385,7 +2328,8 @@
         "chf",
         "weak heart",
         "fluid around the heart",
-        "failing heart"
+        "failing heart",
+        "congestive heart failure"
       ],
       "related": [
         "cardiovascular_disease",
@@ -2399,7 +2343,6 @@
       "synonyms": [
         "pink eye",
         "pinkeye",
-        "red eye",
         "eye infection",
         "conjuctivitis",
         "itchy red eye",
@@ -2438,7 +2381,8 @@
         "seizure",
         "fits",
         "convulsion",
-        "spasms"
+        "spasms",
+        "convulsions"
       ],
       "related": [],
       "claim_count": 3
@@ -2528,10 +2472,7 @@
         "coronary heart disease",
         "coronary artery disease",
         "cad",
-        "chd",
-        "heart disease",
-        "clogged arteries",
-        "hardening of the arteries"
+        "chd"
       ],
       "related": [
         "selenium",
@@ -2595,8 +2536,7 @@
         "criminal behaviour",
         "delinquency",
         "violence",
-        "criminality",
-        "violent behavior"
+        "criminality"
       ],
       "related": [
         "hyperactivity"
@@ -2648,8 +2588,8 @@
         "wound",
         "laceration",
         "cut skin",
-        "open wound",
-        "gash"
+        "gash",
+        "cuts"
       ],
       "related": [
         "boils",
@@ -2697,8 +2637,7 @@
         "whole milk",
         "raw milk",
         "pasteurized milk",
-        "cheese",
-        "butter"
+        "cheese"
       ],
       "related": [
         "cholesterol",
@@ -2717,7 +2656,8 @@
         "dandruf",
         "scalp flakes",
         "white flakes in hair",
-        "dry scalp flakes"
+        "dry scalp flakes",
+        "dandruff"
       ],
       "related": [
         "cradle_cap"
@@ -2742,9 +2682,6 @@
       "type": "condition",
       "synonyms": [
         "dementia",
-        "memory loss",
-        "senility",
-        "alzheimers",
         "losing memory",
         "confusion in elderly"
       ],
@@ -2791,9 +2728,9 @@
         "skin inflammation",
         "skin rash",
         "inflamed skin",
-        "itchy skin",
         "rash",
-        "irritated skin"
+        "irritated skin",
+        "dermatitis"
       ],
       "related": [
         "eczema",
@@ -2891,8 +2828,7 @@
         "loose bowels",
         "diarrhoea",
         "watery stools",
-        "diarreah",
-        "upset stomach"
+        "diarreah"
       ],
       "related": [
         "vomiting",
@@ -2912,7 +2848,6 @@
         "trans fats",
         "rancid fat",
         "oxidized oils",
-        "free radicals",
         "fried food",
         "deep fried"
       ],
@@ -3098,8 +3033,7 @@
         "bloody diarrhea",
         "severe diarrhea",
         "dysentery",
-        "gut infection diarrhea",
-        "amoebic dysentery"
+        "gut infection diarrhea"
       ],
       "related": [
         "bleeding_bowels",
@@ -3116,7 +3050,8 @@
         "trouble reading",
         "dislexia",
         "learning disability reading",
-        "word blindness"
+        "word blindness",
+        "dyslexia"
       ],
       "related": [],
       "claim_count": 2
@@ -3139,12 +3074,9 @@
       "display_name": "Dyspepsia",
       "type": "condition",
       "synonyms": [
-        "indigestion",
-        "upset stomach",
-        "heartburn",
         "stomach upset",
-        "acid indigestion",
-        "dispepsia"
+        "dispepsia",
+        "dyspepsia"
       ],
       "related": [],
       "claim_count": 1
@@ -3176,14 +3108,11 @@
         "dysprosium mineral",
         "dysprosium metal",
         "dysprosium rare earth",
-        "rare earth minerals",
         "dysprosium supplement",
         "dysprosium benefits",
         "dysprosium deficiency",
         "what is dysprosium",
-        "dysprosium in the body",
-        "plant derived minerals",
-        "trace minerals"
+        "dysprosium in the body"
       ],
       "related": [
         "erbium",
@@ -3215,9 +3144,7 @@
       "display_name": "Ecchymosis",
       "type": "condition",
       "synonyms": [
-        "bruising",
         "bruise",
-        "easy bruising",
         "black and blue mark",
         "bruise easily",
         "skin bruising"
@@ -3232,9 +3159,6 @@
       "type": "condition",
       "synonyms": [
         "eczema",
-        "itchy skin",
-        "dry itchy skin",
-        "skin rash",
         "atopic dermatitis",
         "eczma"
       ],
@@ -3309,12 +3233,9 @@
       "display_name": "Enuresis",
       "type": "condition",
       "synonyms": [
-        "bedwetting",
-        "bed wetting",
-        "wetting the bed",
-        "bed-wetting",
         "child wets bed",
-        "nighttime wetting"
+        "nighttime wetting",
+        "enuresis"
       ],
       "related": [],
       "claim_count": 1
@@ -3347,12 +3268,9 @@
       "display_name": "Epilepsy",
       "type": "condition",
       "synonyms": [
-        "seizures",
         "seizure disorder",
-        "convulsions",
         "epileptic seizures",
-        "epilepsi",
-        "fits"
+        "epilepsi"
       ],
       "related": [],
       "claim_count": 1
@@ -3411,7 +3329,6 @@
       "synonyms": [
         "erectile dysfunction",
         "ed",
-        "impotence",
         "cant get hard",
         "cant get an erection",
         "impotent",
@@ -3468,7 +3385,6 @@
         "europium",
         "europium mineral",
         "europium rare earth",
-        "light rare earth",
         "rare earth mineral",
         "europium supplement",
         "europium benefits",
@@ -3511,7 +3427,6 @@
         "red eyes",
         "bloodshot eyes",
         "red eye",
-        "pink eye",
         "bloodshot",
         "irritated eyes"
       ],
@@ -3627,11 +3542,9 @@
       "synonyms": [
         "fish",
         "seafood",
-        "tuna",
         "salmon",
         "cod",
         "cod liver oil",
-        "cod-liver oil",
         "fish oil",
         "salmon oil",
         "shark",
@@ -3770,7 +3683,6 @@
       "type": "condition",
       "synonyms": [
         "brown spots skin",
-        "sun spots",
         "freckels",
         "spots on skin",
         "skin freckles",
@@ -3854,7 +3766,6 @@
         "gadolinium deficiency",
         "gadolinium benefits",
         "gadolinium mineral",
-        "rare earth minerals",
         "gadolinium rare earth",
         "gd mineral",
         "what is gadolinium",
@@ -3928,7 +3839,6 @@
       "synonyms": [
         "GLA",
         "gamma-linolenic acid",
-        "gamma linolenic acid",
         "is GLA essential",
         "conditionally essential omega-6",
         "GLA omega 6 fatty acid",
@@ -3979,7 +3889,6 @@
         "germanium supplements",
         "organic germanium",
         "GE-132",
-        "Ge-132",
         "germanium 132",
         "germanium sesquioxide",
         "carboxyethyl germanium sesquioxide",
@@ -4039,7 +3948,6 @@
       "synonyms": [
         "gum inflammation",
         "inflamed gums",
-        "bleeding gums",
         "sore gums",
         "swollen gums"
       ],
@@ -4107,7 +4015,6 @@
         "gluten intolerance",
         "gluten sensitivity",
         "gluten-free",
-        "gluten enteropathy",
         "wheat",
         "villi"
       ],
@@ -4134,7 +4041,6 @@
         "frankenstein food",
         "franken food",
         "non-gmo",
-        "non gmo",
         "gm food",
         "gmo crops",
         "modified food"
@@ -4151,7 +4057,8 @@
         "goitre",
         "thyroid swelling",
         "neck swelling",
-        "swollen neck"
+        "swollen neck",
+        "goiter"
       ],
       "related": [
         "hypothyroidism"
@@ -4310,12 +4217,12 @@
       "display_name": "Hay Fever",
       "type": "condition",
       "synonyms": [
-        "allergies",
         "seasonal allergies",
         "pollen allergy",
         "allergic rhinitis",
         "hayfever",
-        "runny nose allergy"
+        "runny nose allergy",
+        "hay fever"
       ],
       "related": [
         "anaphylaxis",
@@ -4369,10 +4276,10 @@
       "synonyms": [
         "acid reflux",
         "burning chest",
-        "indigestion",
         "acid indigestion",
         "gerd",
-        "burning stomach"
+        "burning stomach",
+        "heartburn"
       ],
       "related": [
         "hyperacidity",
@@ -4399,7 +4306,6 @@
       "type": "element",
       "synonyms": [
         "he",
-        "noble gas",
         "the bends",
         "decompression sickness"
       ],
@@ -4469,7 +4375,8 @@
         "hernia in diaphragm",
         "hital hernia",
         "hiatal hernia stomach",
-        "diaphragm hernia"
+        "diaphragm hernia",
+        "hiatal hernia"
       ],
       "related": [
         "heartburn",
@@ -4496,7 +4403,6 @@
       "type": "condition",
       "synonyms": [
         "high cholesterol",
-        "cholesterol",
         "elevated cholesterol",
         "bad cholesterol",
         "high ldl",
@@ -4514,7 +4420,6 @@
       "synonyms": [
         "hfcs",
         "high fructose corn syrup",
-        "high-fructose corn syrup",
         "corn syrup",
         "corn sugar",
         "fructose corn syrup"
@@ -4593,7 +4498,6 @@
         "holmium deficiency",
         "holmium mineral",
         "holmium rare earth",
-        "rare earth minerals",
         "holmium element",
         "do I need holmium",
         "holmium trace mineral",
@@ -4689,9 +4593,7 @@
       "type": "topic",
       "synonyms": [
         "hospital safety",
-        "nosocomial infection",
-        "iatrogenic",
-        "medical errors"
+        "nosocomial infection"
       ],
       "related": [
         "be_your_own_doctor"
@@ -4731,8 +4633,6 @@
         "hydrogen H",
         "hydrogen gas",
         "hydrogen atom",
-        "hydrogen peroxide",
-        "hydrogenated oils",
         "hydrogen in the body",
         "hydrogen ion",
         "what is hydrogen",
@@ -4772,7 +4672,6 @@
         "food-grade peroxide",
         "peroxide",
         "hydrogen peroxide therapy",
-        "oxygen therapy",
         "35% food grade",
         "hydrogen peroxide for cancer"
       ],
@@ -4803,7 +4702,6 @@
       "type": "condition",
       "synonyms": [
         "too much stomach acid",
-        "acid stomach",
         "excess stomach acid",
         "acidity",
         "high stomach acid",
@@ -4820,12 +4718,11 @@
       "type": "condition",
       "synonyms": [
         "hyper kids",
-        "adhd",
-        "add",
         "overactive child",
         "cant sit still",
         "restless child",
-        "hyperactive"
+        "hyperactive",
+        "hyperactivity"
       ],
       "related": [
         "criminal_behavior"
@@ -4989,11 +4886,10 @@
       "display_name": "Impotence",
       "type": "condition",
       "synonyms": [
-        "erectile dysfunction",
-        "ed",
         "cant get erection",
         "impotency",
-        "cant perform"
+        "cant perform",
+        "impotence"
       ],
       "related": [
         "benign_prostatic_hyperplasia"
@@ -5021,12 +4917,10 @@
       "type": "condition",
       "synonyms": [
         "upset stomach",
-        "heartburn",
-        "dyspepsia",
         "acid stomach",
         "stomach ache after eating",
-        "acid indigestion",
-        "sour stomach"
+        "sour stomach",
+        "indigestion"
       ],
       "related": [
         "gallstones",
@@ -5115,8 +5009,6 @@
         "inositol benefits",
         "cyclohexanehexol",
         "inositol hexaphosphate",
-        "phytic acid",
-        "phytates",
         "inositol for hair loss",
         "inositol for insomnia",
         "inositol for sleep",
@@ -5268,9 +5160,7 @@
         "elemental iodine",
         "too much iodine",
         "iodine toxicity",
-        "iodine benefits",
-        "goiter",
-        "goitre"
+        "iodine benefits"
       ],
       "related": [
         "tyrosine",
@@ -5303,7 +5193,6 @@
         "iron supplements",
         "iron pills",
         "iron tablets",
-        "anemia",
         "anaemia",
         "iron deficiency anemia",
         "iron-deficiency anaemia",
@@ -5329,10 +5218,8 @@
         "iron poisoning",
         "hemochromatosis",
         "iron storage disease",
-        "pica",
         "craving ice",
         "eating ice",
-        "eating dirt",
         "iron for periods",
         "iron for heavy periods",
         "iron in pregnancy",
@@ -5380,7 +5267,6 @@
         "isoleucine",
         "l-isoleucine",
         "isoleucine supplement",
-        "branched chain amino acid",
         "isoleucine amino acid",
         "isoleucine deficiency",
         "what is isoleucine"
@@ -5460,7 +5346,8 @@
         "dry eyes vitamin a",
         "eye softening",
         "softening of cornea",
-        "vitamin a eye damage"
+        "vitamin a eye damage",
+        "keratomalacia"
       ],
       "related": [
         "eye_redness"
@@ -5475,7 +5362,8 @@
         "skin growths",
         "keratoses",
         "scaly skin patches",
-        "actinic keratosis"
+        "actinic keratosis",
+        "keratosis"
       ],
       "related": [],
       "claim_count": 2
@@ -5515,15 +5403,7 @@
       "synonyms": [
         "keto",
         "keto diet",
-        "ketogenic diet",
-        "low carb diet",
-        "low carbohydrate diet",
-        "low carb",
-        "ketosis",
-        "atkins diet",
-        "atkins",
-        "low glycemic diet",
-        "see food diet"
+        "ketogenic diet"
       ],
       "related": [
         "obesity",
@@ -5634,7 +5514,6 @@
       "display_name": "Labor",
       "type": "condition",
       "synonyms": [
-        "childbirth",
         "labour",
         "giving birth",
         "labor pains",
@@ -5651,7 +5530,6 @@
         "cant digest milk sugar",
         "low lactase",
         "lactase enzyme deficiency",
-        "lactose intolerance",
         "missing lactase"
       ],
       "related": [
@@ -5684,12 +5562,8 @@
         "lanthanum supplement",
         "lanthanum benefits",
         "what is lanthanum",
-        "rare earth minerals",
-        "rare earths",
-        "light rare earth",
         "lanthanum in the body",
         "cerium metals",
-        "plant derived minerals",
         "lanthinum",
         "lanthanam"
       ],
@@ -5706,10 +5580,8 @@
       "display_name": "Laryngitis",
       "type": "condition",
       "synonyms": [
-        "hoarse voice",
         "lost voice",
         "voice box inflammation",
-        "hoarseness",
         "sore throat hoarse"
       ],
       "related": [],
@@ -5720,9 +5592,7 @@
       "type": "element",
       "synonyms": [
         "lead",
-        "lead poisoning",
-        "pb",
-        "lead toxicity"
+        "pb"
       ],
       "related": [],
       "claim_count": 4
@@ -5759,7 +5629,6 @@
       "type": "condition",
       "synonyms": [
         "leptospirosis",
-        "weils disease",
         "weil's disease",
         "rat urine disease",
         "lepto"
@@ -5981,11 +5850,7 @@
       "display_name": "Liver Disease",
       "type": "condition",
       "synonyms": [
-        "liver problems",
-        "bad liver",
-        "liver damage",
         "liver condition",
-        "sick liver",
         "hepatic disease"
       ],
       "related": [
@@ -5999,8 +5864,7 @@
       "synonyms": [
         "lifespan",
         "aging",
-        "live longer",
-        "hunza"
+        "live longer"
       ],
       "related": [
         "essential_nutrients",
@@ -6020,11 +5884,8 @@
         "low carbohydrate diet",
         "atkins",
         "atkins diet",
-        "keto",
-        "ketogenic diet",
         "carbohydrate restriction",
         "south beach diet",
-        "see food diet",
         "low glycemic diet"
       ],
       "related": [
@@ -6066,8 +5927,7 @@
         "cassiopium",
         "what is lutetium",
         "lutetium in the body",
-        "lutetium element",
-        "plant derived minerals"
+        "lutetium element"
       ],
       "related": [
         "ytterbium",
@@ -6168,9 +6028,7 @@
       "synonyms": [
         "carbohydrates",
         "carbs",
-        "fats",
-        "protein",
-        "sugar"
+        "fats"
       ],
       "related": [
         "amino_acids",
@@ -6390,13 +6248,9 @@
       "synonyms": [
         "meat",
         "red meat",
-        "beef",
-        "poultry",
         "organ meats",
-        "shellfish",
         "animal fats",
         "meats",
-        "beef liver",
         "liver and onions",
         "chicken liver"
       ],
@@ -6472,7 +6326,6 @@
       "type": "condition",
       "synonyms": [
         "memory loss",
-        "dementia",
         "senile dementia",
         "senility",
         "forgetfulness",
@@ -6525,7 +6378,6 @@
       "display_name": "Meningocele",
       "type": "condition",
       "synonyms": [
-        "spina bifida",
         "spinal defect",
         "neural tube defect",
         "spinal sac defect",
@@ -6589,7 +6441,8 @@
         "mercury toxicity",
         "mercury poison",
         "heavy metal poisoning",
-        "mercury exposure"
+        "mercury exposure",
+        "mercury poisoning"
       ],
       "related": [
         "plumbism",
@@ -6610,7 +6463,6 @@
         "methionine deficiency",
         "sulfur amino acid",
         "what is methionine",
-        "selenomethionine",
         "s-adenosyl methionine"
       ],
       "related": [
@@ -6730,7 +6582,6 @@
         "moly",
         "molybdenite",
         "Mo",
-        "molybdenum",
         "molybdenm",
         "molybdenium",
         "molibdenum",
@@ -6757,7 +6608,6 @@
         "monckeberg's sclerosis",
         "calcified arteries",
         "artery calcification",
-        "hardened arteries",
         "calcium in arteries"
       ],
       "related": [
@@ -6903,8 +6753,7 @@
         "stuffy nose",
         "nasal congestion",
         "runny nose",
-        "mucus in nose",
-        "catarrh"
+        "mucus in nose"
       ],
       "related": [],
       "claim_count": 1
@@ -6933,7 +6782,6 @@
       "synonyms": [
         "feeling sick to my stomach",
         "queasiness",
-        "upset stomach",
         "feeling nauseous",
         "want to vomit"
       ],
@@ -6965,8 +6813,6 @@
         "neodymium deficiency",
         "neodymium supplement",
         "neodymium benefits",
-        "light rare earth",
-        "rare earth minerals",
         "neodymium magnets",
         "what is neodymium",
         "neodimium",
@@ -7004,9 +6850,6 @@
       "synonyms": [
         "nervous tension",
         "tension",
-        "stress",
-        "anxiety",
-        "nervousness",
         "feeling tense"
       ],
       "related": [
@@ -7018,10 +6861,8 @@
       "display_name": "Neuralgia",
       "type": "condition",
       "synonyms": [
-        "nerve pain",
         "shooting nerve pain",
         "burning nerve pain",
-        "facial nerve pain",
         "nerve ache"
       ],
       "related": [
@@ -7086,7 +6927,8 @@
         "poor night vision",
         "trouble seeing in the dark",
         "night vision problems",
-        "nyctalopia"
+        "nyctalopia",
+        "night blindness"
       ],
       "related": [],
       "claim_count": 1
@@ -7324,13 +7166,8 @@
         "obscure elements",
         "trace elements",
         "actinium",
-        "bromine",
-        "cesium",
-        "caesium",
-        "hafnium",
         "indium",
-        "iridium",
-        "bromide"
+        "iridium"
       ],
       "related": [
         "rare_earth_elements",
@@ -7359,22 +7196,16 @@
       "type": "nutrient",
       "synonyms": [
         "omega-3",
-        "omega 3",
         "omega3",
         "omega-3s",
-        "omega 3s",
         "omega threes",
         "omega-3 fatty acid",
         "omega 3 fatty acids",
-        "omega-3 fatty acids",
         "n-3",
         "n-3 fatty acid",
         "alpha-linolenic acid",
-        "alpha linolenic acid",
         "ALA",
         "linolenic acid",
-        "DHA",
-        "docosahexaenoic acid",
         "EPA",
         "eicosapentaenoic acid",
         "essential fatty acids",
@@ -7382,10 +7213,7 @@
         "EFA",
         "EFAs",
         "vitamin F",
-        "fish oil",
         "fish oil supplement",
-        "cod liver oil",
-        "salmon oil",
         "flaxseed oil",
         "flax oil",
         "flax seed oil",
@@ -7393,13 +7221,11 @@
         "good fats",
         "healthy fats",
         "omega-3 deficiency",
-        "omega 3 deficiency",
         "essential fatty acid deficiency",
         "EFA deficiency",
         "low omega-3",
         "not enough omega-3",
         "omega-3 supplement",
-        "omega 3 supplement",
         "omega-3 benefits",
         "omega-3 for the heart",
         "omega-3 for depression",
@@ -7409,8 +7235,7 @@
         "omega-3 to omega-6 ratio",
         "dry skin means essential fatty acids",
         "DSM/EFA",
-        "omeaga 3",
-        "omega -3"
+        "omeaga 3"
       ],
       "related": [
         "omega-6",
@@ -7430,7 +7255,6 @@
       "type": "nutrient",
       "synonyms": [
         "omega-6",
-        "omega 6",
         "omega6",
         "omega six",
         "omega-6 fatty acid",
@@ -7440,8 +7264,6 @@
         "omega-6 deficiency",
         "omega-6 supplement",
         "omega-6 benefits",
-        "essential fatty acids",
-        "EFA",
         "what is omega-6",
         "linoleic acid omega 6"
       ],
@@ -7459,7 +7281,6 @@
       "type": "nutrient",
       "synonyms": [
         "omega-9",
-        "omega 9",
         "omega nine",
         "omega-9 fatty acid",
         "oleic acid",
@@ -7665,12 +7486,10 @@
         "hyperbaric oxygen therapy",
         "oxygen and cancer",
         "does oxygen kill cancer cells",
-        "hydrogen peroxide therapy",
         "oxygen supplement",
         "oxygenation",
         "is oxygen poisonous",
         "oxygen free radicals",
-        "oxidation",
         "oxygen benefits",
         "increase oxygen in blood"
       ],
@@ -7843,7 +7662,6 @@
         "body ph",
         "ph balance",
         "acid-base balance",
-        "acid base balance",
         "alkalinity",
         "blood ph",
         "urine ph"
@@ -7928,7 +7746,6 @@
         "phosphorus levels",
         "blood phosphorus",
         "low blood phosphorus",
-        "hypophosphatemia",
         "phosphate",
         "phosphates",
         "phosphorus in food",
@@ -7966,7 +7783,8 @@
         "phytate",
         "phytic acid",
         "anti-nutrient",
-        "mineral blockers"
+        "mineral blockers",
+        "phytates"
       ],
       "related": [
         "absorption",
@@ -8109,7 +7927,6 @@
         "K",
         "potassium deficiency",
         "low potassium",
-        "hypokalemia",
         "potassium supplement",
         "potassium supplements",
         "potassium levels",
@@ -8121,9 +7938,6 @@
         "potassium citrate",
         "potassium gluconate",
         "potassium 40",
-        "potassium-40",
-        "electrolyte",
-        "electrolytes",
         "potassium for cramps",
         "potassium for muscle cramps",
         "charley horse potassium",
@@ -8168,9 +7982,6 @@
         "praseodymium deficiency",
         "praseodymium benefits",
         "what is praseodymium",
-        "rare earth minerals",
-        "rare earth elements",
-        "light rare earth",
         "praseodymium mineral",
         "praseodymium in the body",
         "praseodimium",
@@ -8194,7 +8005,6 @@
         "pre eclampsia",
         "pregnancy high blood pressure",
         "toxemia of pregnancy",
-        "pre-eclampsia",
         "high bp in pregnancy"
       ],
       "related": [
@@ -8213,7 +8023,6 @@
         "prenatal",
         "obstetrics",
         "contraception",
-        "birth defects",
         "congenital defects",
         "teratology"
       ],
@@ -8280,7 +8089,6 @@
       "display_name": "Psoriasis",
       "type": "condition",
       "synonyms": [
-        "scaly skin",
         "skin plaques",
         "psorisis",
         "flaky red patches",
@@ -8325,10 +8133,7 @@
       "display_name": "Pyorrhea",
       "type": "condition",
       "synonyms": [
-        "gum disease",
-        "bleeding gums",
         "pyorrhoea",
-        "gum infection",
         "receding gums"
       ],
       "related": [
@@ -8345,7 +8150,6 @@
         "q fever",
         "query fever",
         "coxiella",
-        "q-fever",
         "fever from farm animals"
       ],
       "related": [],
@@ -8433,14 +8237,10 @@
         "rare earths",
         "lanthanides",
         "rare earth metals",
-        "dysprosium",
-        "erbium",
-        "europium",
-        "gadolinium",
-        "holmium",
-        "lutetium",
-        "cerium",
-        "monazite"
+        "monazite",
+        "light rare earth",
+        "rare earth elements",
+        "rare earth minerals"
       ],
       "related": [
         "obscure_elements",
@@ -8460,8 +8260,7 @@
         "white fingers",
         "numb fingers",
         "poor circulation hands",
-        "fingers turn white",
-        "cold hands and feet"
+        "fingers turn white"
       ],
       "related": [
         "hypotension"
@@ -8714,13 +8513,8 @@
       "display_name": "Salt",
       "type": "substance",
       "synonyms": [
-        "table salt",
-        "sodium chloride",
-        "nacl",
-        "sea salt",
-        "salt-restricted diet",
-        "low-salt diet",
-        "salting your food"
+        "salting your food",
+        "salt"
       ],
       "related": [
         "sodium",
@@ -8749,8 +8543,7 @@
         "light rare earth element",
         "samarium in the body",
         "what is samarium",
-        "samarium mineral",
-        "rare earth minerals"
+        "samarium mineral"
       ],
       "related": [
         "rare_earth_elements"
@@ -8880,10 +8673,7 @@
       "type": "condition",
       "synonyms": [
         "seborrheic dermatitis",
-        "dandruff",
-        "flaky scalp",
         "scalp dermatitis",
-        "cradle cap",
         "seborrhea"
       ],
       "related": [
@@ -8896,7 +8686,6 @@
       "type": "concept",
       "synonyms": [
         "see food diet",
-        "see-food diet",
         "sea food diet",
         "wallach diet",
         "wallach's diet",
@@ -9055,7 +8844,6 @@
         "how much silver",
         "silver for immune system",
         "silver germ killer",
-        "silver nitrate",
         "silver argyria",
         "silver side effects",
         "is silver essential",
@@ -9105,14 +8893,12 @@
       "type": "nutrient",
       "synonyms": [
         "sodium",
-        "salt",
         "table salt",
         "sodium chloride",
         "NaCl",
         "Na",
         "sea salt",
         "rock salt",
-        "iodized salt",
         "salt substitute",
         "salt intake",
         "sodium intake",
@@ -9142,11 +8928,8 @@
         "is salt bad",
         "salt lick",
         "salt block",
-        "water intoxication",
         "hyponatremia",
         "hypernatremia",
-        "electrolyte",
-        "electrolytes",
         "soduim",
         "sodiam"
       ],
@@ -9186,7 +8969,6 @@
         "reflexology",
         "rolfing",
         "structural integration",
-        "spinal manipulation",
         "massage therapy",
         "somatics",
         "doctor of osteopathy",
@@ -9209,7 +8991,8 @@
         "scratchy throat",
         "throat hurts",
         "strep throat",
-        "sore throught"
+        "sore throught",
+        "sore throat"
       ],
       "related": [
         "scarlatina",
@@ -9273,7 +9056,6 @@
       "synonyms": [
         "crossed eyes",
         "cross eyed",
-        "lazy eye",
         "wandering eye",
         "eye squint",
         "misaligned eyes"
@@ -9303,7 +9085,6 @@
         "stress",
         "stressed",
         "stressed out",
-        "tension",
         "overwhelmed",
         "under stress"
       ],
@@ -9344,7 +9125,6 @@
         "is strontium essential",
         "strontium and calcium",
         "strontium 90",
-        "strontium-90",
         "is strontium radioactive",
         "is strontium safe",
         "strontium mineral"
@@ -9388,8 +9168,7 @@
         "sweets",
         "caffeine",
         "coffee",
-        "sugar cravings",
-        "carbohydrates"
+        "sugar cravings"
       ],
       "related": [
         "carbonated_beverages",
@@ -9488,8 +9267,6 @@
       "synonyms": [
         "fast heartbeat",
         "rapid heart rate",
-        "racing heart",
-        "heart racing",
         "fast pulse"
       ],
       "related": [
@@ -9531,7 +9308,6 @@
         "tapeworm",
         "tape worm",
         "tape worms",
-        "intestinal worms",
         "parasitic worms",
         "worms in gut"
       ],
@@ -9544,9 +9320,7 @@
       "display_name": "Tardive Dyskinesia",
       "type": "condition",
       "synonyms": [
-        "involuntary movements",
         "tardive dyskinesia",
-        "uncontrollable movements",
         "facial twitching from meds",
         "drug-induced movements",
         "medication movement disorder"
@@ -9635,8 +9409,6 @@
         "terbium deficiency",
         "what is terbium",
         "terbium rare earth",
-        "rare earth minerals",
-        "rare earth elements",
         "terbium trace mineral",
         "Tb mineral",
         "terbium Wallach",
@@ -9691,7 +9463,6 @@
       "synonyms": [
         "thallium",
         "tl",
-        "thallium poisoning",
         "toxic metal"
       ],
       "related": [],
@@ -9703,7 +9474,8 @@
       "synonyms": [
         "thallium toxicity",
         "thallium poison",
-        "thallium exposure"
+        "thallium exposure",
+        "thallium poisoning"
       ],
       "related": [
         "plumbism",
@@ -9754,10 +9526,10 @@
       "synonyms": [
         "oral thrush",
         "yeast infection mouth",
-        "candida",
         "white tongue",
         "mouth fungus",
-        "white patches mouth"
+        "white patches mouth",
+        "thrush"
       ],
       "related": [
         "rectal_itching"
@@ -9881,11 +9653,9 @@
       "display_name": "Tonsillitis",
       "type": "condition",
       "synonyms": [
-        "sore throat",
         "swollen tonsils",
         "tonsil infection",
         "inflamed tonsils",
-        "strep throat",
         "tonsilitis"
       ],
       "related": [],
@@ -9976,11 +9746,9 @@
         "trp",
         "tryp",
         "l-tryptophan",
-        "l tryptophan",
         "l-trp",
         "d-tryptophan",
         "5-htp",
-        "5 htp",
         "5-hydroxytryptophan",
         "s-hydroxytryptophan",
         "tryptophan deficiency",
@@ -10013,7 +9781,8 @@
         "deer fly fever",
         "tularaemia",
         "tularemia infection",
-        "hunter's disease"
+        "hunter's disease",
+        "tularemia"
       ],
       "related": [
         "rabbit_fever",
@@ -10180,7 +9949,6 @@
       "synonyms": [
         "vaginal infection",
         "vaginal inflammation",
-        "yeast infection",
         "vaginal irritation",
         "vaginitis",
         "bacterial vaginosis"
@@ -10211,7 +9979,6 @@
         "valine",
         "l-valine",
         "valine supplement",
-        "branched-chain amino acid",
         "valine amino acid",
         "valine deficiency",
         "what is valine"
@@ -10266,10 +10033,8 @@
         "vanadim",
         "venadium",
         "vanadium deficency",
-        "sugar cravings",
         "candy cravings",
         "carb cravings",
-        "chocolate cravings",
         "the munchies",
         "craving sweets",
         "always craving soda"
@@ -10309,7 +10074,6 @@
         "vegetarianism",
         "veganism",
         "plant-based",
-        "plant based",
         "plant-based diet",
         "vegan diet",
         "vegetarian diet",
@@ -10349,9 +10113,7 @@
       "type": "nutrient",
       "synonyms": [
         "vitamin a",
-        "vitamin-a",
         "vit a",
-        "vit-a",
         "vitamin a1",
         "retinol",
         "retinoic acid",
@@ -10360,7 +10122,6 @@
         "retinoids",
         "preformed vitamin a",
         "beta carotene",
-        "beta-carotene",
         "betacarotene",
         "beta carotine",
         "carotene",
@@ -10377,11 +10138,6 @@
         "vitamin a overdose",
         "vitamin a toxicity",
         "too much vitamin a",
-        "night blindness",
-        "nyctalopia",
-        "xerophthalmia",
-        "keratomalacia",
-        "keratosis",
         "shark skin",
         "goose bumps skin",
         "bumpy skin on arms",
@@ -10457,11 +10213,8 @@
       "type": "nutrient",
       "synonyms": [
         "vitamin B12",
-        "vitamin b12",
         "B12",
-        "b12",
         "vitamin b-12",
-        "vitamin b 12",
         "vit b12",
         "vitamin b twelve",
         "b-12",
@@ -10488,7 +10241,6 @@
         "B12 for vegans",
         "B12 for energy",
         "B12 anemia",
-        "pernicious anemia",
         "cobalt vitamin"
       ],
       "related": [
@@ -10512,7 +10264,6 @@
         "vitamin b-2",
         "b2",
         "b-2",
-        "vitamin b 2",
         "vitamin b two",
         "b vitamin 2",
         "riboflavin",
@@ -10540,11 +10291,7 @@
         "vitamin b2 for eyes",
         "vitamin b2 energy",
         "cracks in corners of mouth",
-        "cracked mouth corners",
         "cracked lips corners",
-        "cheilosis",
-        "angular stomatitis",
-        "geographic tongue",
         "sore burning tongue",
         "yellow vitamin",
         "flavin vitamin"
@@ -10568,7 +10315,6 @@
         "niacin",
         "vitamin b3",
         "vitamin b-3",
-        "vitamin b 3",
         "b3",
         "b-3",
         "b3 vitamin",
@@ -10609,7 +10355,6 @@
       "synonyms": [
         "vitamin b5",
         "vitamin b-5",
-        "vitamin b 5",
         "vit b5",
         "b5",
         "b-5",
@@ -10658,7 +10403,6 @@
         "b6",
         "vitamin b-6",
         "b-6",
-        "vitamin b 6",
         "vit b6",
         "pyridoxine",
         "pyridoxin",
@@ -10711,7 +10455,6 @@
         "folacin",
         "vitamin b9",
         "vitamin b-9",
-        "vitamin b 9",
         "b9",
         "b-9",
         "vitamin b nine",
@@ -10755,9 +10498,7 @@
       "type": "nutrient",
       "synonyms": [
         "vitamin c",
-        "vitamin-c",
         "vit c",
-        "vit-c",
         "ascorbic acid",
         "ascorbate",
         "ascorbic",
@@ -10778,8 +10519,7 @@
         "vitamin c benefits",
         "vitamine c",
         "vitimin c",
-        "vitiman c",
-        "scurvy"
+        "vitiman c"
       ],
       "related": [
         "iron",
@@ -10799,14 +10539,9 @@
       "type": "nutrient",
       "synonyms": [
         "vitamin D",
-        "vitamin d",
         "vit D",
-        "vit d",
-        "vitamin-d",
         "vitamin D3",
-        "vitamin d3",
         "vitamin D2",
-        "vitamin d2",
         "D3",
         "D2",
         "cholecalciferol",
@@ -10839,8 +10574,7 @@
         "vitamin d rich foods",
         "vitamin d from sun",
         "vitamin d hormone",
-        "is vitamin d a hormone",
-        "cod liver oil"
+        "is vitamin d a hormone"
       ],
       "related": [
         "calcium",
@@ -10860,22 +10594,14 @@
       "type": "nutrient",
       "synonyms": [
         "vitamin E",
-        "vitamin e",
         "vit E",
-        "vit e",
-        "vit. E",
-        "vitamin-e",
         "vitamin E deficiency",
-        "vitamin e deficiency",
         "low vitamin E",
         "vitamin E supplement",
-        "vitamin e supplement",
         "vitamin E oil",
-        "vitamin e oil",
         "tocopherol",
         "tocopherols",
         "alpha-tocopherol",
-        "alpha tocopherol",
         "alpha-tocopherols",
         "mixed tocopherols",
         "d-alpha-tocopherol",
@@ -10904,7 +10630,6 @@
       "type": "nutrient",
       "synonyms": [
         "vitamin k",
-        "vitamin-k",
         "vit k",
         "vitk",
         "vitamin k1",
@@ -10956,7 +10681,6 @@
         "vitamin",
         "fat-soluble",
         "water-soluble",
-        "flavanols",
         "megavitamin",
         "megavitamin therapy",
         "orthomolecular",
@@ -11086,7 +10810,6 @@
       "display_name": "Wounds",
       "type": "condition",
       "synonyms": [
-        "cuts",
         "wound healing",
         "sores",
         "injuries",
@@ -11101,7 +10824,6 @@
       "synonyms": [
         "xenon",
         "xe",
-        "noble gas",
         "xenon anesthetic"
       ],
       "related": [],
@@ -11142,10 +10864,8 @@
         "ytterbium supplement",
         "ytterbium benefits",
         "ytterbium rare earth",
-        "rare earth minerals",
         "ytterbium in the body",
         "ytterbium in bone",
-        "plant derived minerals",
         "what is ytterbium",
         "ytterbium metals"
       ],
@@ -11173,9 +10893,6 @@
         "what is yttrium",
         "yttrium mineral",
         "yttrium rare earth",
-        "rare earth minerals",
-        "rare earth elements",
-        "plant derived minerals",
         "yttrium in the body",
         "yttrium element",
         "ytrium",
@@ -11194,7 +10911,6 @@
       "type": "nutrient",
       "synonyms": [
         "zinc",
-        "Zinc",
         "zinc mineral",
         "zinc (Zn)",
         "Zn",
@@ -11223,7 +10939,6 @@
         "zinc for acne",
         "zinc for skin",
         "how much zinc",
-        "white spots on nails",
         "loss of smell and taste"
       ],
       "related": [
@@ -11252,7 +10967,6 @@
         "Zr",
         "zircon",
         "zirconium silicate",
-        "rare earth minerals",
         "zirconium in the body",
         "is zirconium essential",
         "zircon gemstone",

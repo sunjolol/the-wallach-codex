@@ -4405,6 +4405,122 @@ def check_search_index_wellformed():
                   f"resolves, answer+verbatim present, question capitalized; page int|null) + TS/Python facet taxonomy in sync")
 
 
+def _search_synonym_key(s):
+    """The resolver's own matching key: state/search.ts::matchKey -- lowercase, every non-alphanumeric
+    run collapsed to one space, trimmed. Kept byte-identical to the TS so this gate tests what the app
+    actually matches on, not a near-miss of it."""
+    return re.sub(r"\s+", " ", re.sub(r"[^a-z0-9]+", " ", s.lower())).strip()
+
+
+def _search_indexed_slugs():
+    """The entities the RESOLVER can actually reach. eden/tools/search_index_derive.py seeds
+    index().entities from claim SUBJECTS plus entities flagged hub:true, and state/search.ts reads
+    only that -- so a registered entity with no enriched claim is not a destination, and a synonym
+    placed on it is dead weight. None if the artifact is absent (bootstrap-guard)."""
+    p = ROOT / "dashboard" / "assets" / "data" / "search" / "search-index.json"
+    if not p.exists():
+        return None
+    try:
+        return set(json.loads(p.read_text(encoding="utf-8")).get("entities", {}))
+    except Exception:
+        return None
+
+
+def _search_synonym_violations(ents, indexed=None):
+    """Shared by the gate and its negative test, so the test can never drift from the gate.
+    Returns (contested, duplicate, shadow, exempt_shadow)."""
+    names = {}
+    for slug, e in ents.items():
+        for n in (slug, e.get("display_name") or slug):
+            names.setdefault(_search_synonym_key(n), slug)
+    owners, duplicate = {}, []
+    for slug, e in sorted(ents.items()):
+        seen = set()
+        for s in e.get("synonyms", []):
+            k = _search_synonym_key(s)
+            if k in seen:
+                duplicate.append((slug, s))
+                continue
+            seen.add(k)
+            owners.setdefault(k, []).append(slug)
+    contested = sorted((p, v) for p, v in owners.items() if len(v) > 1)
+    all_shadow = sorted((slug, p, names[p]) for p, v in owners.items() for slug in v
+                        if p in names and names[p] != slug)
+    # CONDITIONAL EXEMPTION, not an allowlist. A name-shadow is a defect because entityHit pass 1
+    # resolves the bare name to its owner while entityPhrases (no pass 1) resolves a SENTENCE
+    # containing it by registry order -- the two paths disagree. That disagreement cannot arise when
+    # the name-owner is not in the index at all: it is not a destination on either path, so routing
+    # the phrase to an entity that CAN answer it is the honest outcome. The exemption is recomputed
+    # from the shipped index every run and lapses by itself the moment that entity gains a claim, so
+    # it can never rot into a permanent excuse the way a hardcoded list would.
+    if indexed is None:
+        return contested, duplicate, all_shadow, []
+    shadow = [t for t in all_shadow if t[2] in indexed]
+    exempt = [t for t in all_shadow if t[2] not in indexed]
+    return contested, duplicate, shadow, exempt
+
+
+def check_search_synonyms_sole_owner():
+    """Every search synonym has EXACTLY ONE owner -- so no query's destination is decided by
+    alphabetical accident.
+
+    THE DEFECT THIS EXISTS FOR (2026-09-17). state/search.ts::entityHit pass 2 walks the entity
+    registry and returns the FIRST entity whose synonym matches, and the registry is
+    slug-ALPHABETICAL. entityPhrases() (which powers entityInQuery, the path a phrase MENTIONED
+    inside a sentence takes) dedups by phrase with the same first-wins rule. So when two entities
+    list the same synonym, the alphabetically-earlier slug silently takes every query carrying it,
+    forever, with nothing red. Typing "uti" opened Cystitis rather than Urinary Tract Infection for
+    exactly this reason; the census that followed found 352 contested phrases across 695 registered
+    entities, including "b12" landing on cobalt rather than vitamin-b12.
+
+    Three violation classes, all of them the same hazard:
+      1. CONTESTED    -- one matchKey listed by two or more entities.
+      2. DUPLICATE    -- one entity listing the same matchKey twice (dead weight; also hides a
+                         contested phrase from a naive census).
+      3. NAME-SHADOW  -- an entity listing ANOTHER entity's canonical slug/display_name as its own
+                         synonym. entityHit pass 1 still resolves the bare name correctly, so this
+                         looks harmless -- but entityPhrases has no pass 1, so a SENTENCE mentioning
+                         that name routes by registry order instead. The two paths disagree, which is
+                         worse than either being wrong consistently. Exempt only while the shadowed
+                         name-owner is absent from the shipped index (see _search_synonym_violations);
+                         the exempt count is REPORTED on every green run so it stays under human eyes.
+
+    HONEST SCOPE (structural): this proves exactly one entity owns each phrase. It says NOTHING about
+    whether that owner is the RIGHT one -- a phrase solely owned by the wrong entity passes green.
+    Only a human ruling decides correctness; this gate only forbids the ambiguity that made the
+    wrongness invisible. Negative-tested by tools/tests/test_search_synonyms_sole_owner.py.
+    """
+    reg_p = ROOT / "eden" / "catalog" / "search-entities.json"
+    if not reg_p.exists():
+        return True, "search registry not installed (bootstrap-guard)"
+    ents = json.loads(reg_p.read_text(encoding="utf-8"))["entities"]
+    contested, duplicate, shadow, exempt = _search_synonym_violations(ents, _search_indexed_slugs())
+    total = len(contested) + len(duplicate) + len(shadow)
+    if total:
+        bits = []
+        for phrase, owners in contested[:4]:
+            bits.append(f"{phrase!r} claimed by {owners}")
+        for slug, phrase in duplicate[:2]:
+            bits.append(f"{slug} lists {phrase!r} twice")
+        for slug, phrase, owner in shadow[:2]:
+            bits.append(f"{slug} shadows {owner}'s own name {phrase!r}")
+        return False, (f"{total} synonym ownership violation(s) -- registry order would silently "
+                       f"decide the destination ({len(contested)} contested, {len(duplicate)} "
+                       f"duplicate, {len(shadow)} name-shadow): " + "; ".join(bits)
+                       + (" ..." if total > len(bits) else ""))
+    n = sum(len(e.get("synonyms", [])) for e in ents.values())
+    tail = ""
+    if exempt:
+        pairs = ", ".join(f"{p!r}->{s}" for s, p, o in exempt[:4])
+        tail = (f"; {len(exempt)} name-shadow(s) EXEMPT because the shadowed entity has no claim and "
+                f"is absent from the index, so it cannot be a destination ({pairs}"
+                + (" ..." if len(exempt) > 4 else "") + ") -- each is a duplicate-entity pair awaiting "
+                f"a merge ruling, and the exemption lapses by itself the moment that entity gains a claim")
+    return True, (f"all {n} synonym(s) across {len(ents)} entities are solely owned -- no query's "
+                  f"destination rests on registry order (says nothing about whether each owner is the "
+                  f"RIGHT one; only a human ruling decides that)" + tail)
+
+
 def check_verbatim_names_mapped_conditions():
     """A Wallach quote shown under a condition
     MUST name that condition (or a registered synonym) in the SHOWN verbatim text --
@@ -10525,6 +10641,15 @@ INVARIANTS = [
         truth_anchor="eden/corpus/search-enrichment.json x registry/canon/conditions via search_index_derive.validate() + the TS schema SEARCH_FACETS literal",
         severity="critical",
         lesson_ref="Search G-7 (2026-07-09) -- de-blobbed faceted search template (mercury+calcium first entities); negative test tools/tests/test_search_index_wellformed.py",
+    ),
+    Invariant(
+        name="search_synonyms_sole_owner",
+        anchor_class="structural",  # shape + wellformedness only -- says nothing about whether a value is correct
+        description="every search synonym has EXACTLY ONE owner: no matchKey is claimed by two entities, listed twice by one entity, or shadows another entity's canonical name. Without this, state/search.ts entityHit pass 2 (and entityPhrases) resolve by slug-ALPHABETICAL registry order, so the destination of a query is decided by an accident of naming and nothing goes red -- typing \"uti\" opened Cystitis and \"b12\" opened Cobalt. HONEST SCOPE: proves the ambiguity is gone, NOT that each owner is the right one; only a human ruling decides that",
+        check_fn=check_search_synonyms_sole_owner,
+        truth_anchor="eden/catalog/search-entities.json synonyms x entity slugs/display_names, folded through the resolver's own matchKey and recomputed each run",
+        severity="critical",
+        lesson_ref="2026-09-17: the owner reported that searching UTI opened Cystitis. The census that followed found 352 contested phrases across 695 registered entities plus 60 intra-entity duplicates -- every one of them a destination decided by alphabetical accident. Negative test: tools/tests/test_search_synonyms_sole_owner.py replants the real uti and b12 collisions and asserts the gate reddens for THAT reason.",
     ),
     Invariant(
         name="verbatim_names_mapped_conditions",
